@@ -5,7 +5,7 @@ import smtplib
 from email.message import EmailMessage
 
 
-class ExceptionMail(BaseException):
+class ExceptMail(BaseException):
     def __init__(self, *args: object) -> None:
         super().__init__(*args)
 
@@ -101,7 +101,7 @@ if __name__ == '__main__':
     gmail_receiver = 'parkminwoo1991@gmail.com'
     gmail_sender = 'heydudenotice@gmail.com'
     gmail_app_password_of_sender = 'xxxxxxxxxxx'
-    sys.excepthook = ExceptionMail.__call__
+    sys.excepthook = ExceptMail.__call__
 
     try:
         # 02. Locate your code.
@@ -110,7 +110,7 @@ if __name__ == '__main__':
 
 
     # 03-a. Mail Sent: When strike exception
-    except ExceptionMail as e:                    
+    except ExceptMail as e:                    
         sys.exit()
 
     # 03-b. Mail Sent:  When code exit without exception

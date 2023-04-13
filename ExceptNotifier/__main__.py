@@ -1,7 +1,7 @@
 import argparse
 import subprocess
 
-from ExceptionNotifier import (chime_sender,
+from ExceptNotifier import (chime_sender,
                         desktop_sender,
                         dingtalk_sender,
                         discord_sender,
