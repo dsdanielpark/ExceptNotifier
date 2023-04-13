@@ -46,10 +46,10 @@ SendMail().__call__()           # When Process Ended -> Any Line mail.
 
 ```python
 import sys
-from ExceptNotifier import ExceptMail, SuccessMail
+from ExceptNotifier import ExceptMail, SuccessMail, SendMail
 
 # 01. Set variable.
-global gmail_receiver, gmail_sender, gmail_app_password_of_sender, SendMail
+global gmail_receiver, gmail_sender, gmail_app_password_of_sender
 gmail_receiver = 'parkminwoo1991@gmail.com'
 gmail_sender = 'heydudenotice@gmail.com'
 gmail_app_password_of_sender = 'xxxxxxxxxxx'
