@@ -47,13 +47,9 @@ class ExceptTelegram(BaseException):
 
         requests.get(bot_url).json()
 
-        
-
-        
-
 
     @staticmethod
-    def send_telegram_message(TOKEN, message):
+    def send_telegram_msg(TOKEN, message):
 
         url = f"https://api.telegram.org/bot{TOKEN}/getUpdates"
         req_dict = requests.get(url).json()
@@ -118,7 +114,6 @@ class SendTelegram:
 
 if __name__ == "__main__":
     
-    # Get your slcak bot and enter TOKEN
     """Get your bot from botfather. 
     https://core.telegram.org/bots/tutorial"""
 
