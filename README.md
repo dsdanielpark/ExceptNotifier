@@ -73,6 +73,7 @@ SendMail().__call__()          # Put Any Line: Sending mail
 
 <details>
 <summary> Snippets for Python developers.</summary>
+
 ```python
 import sys
 from ExceptNotifier import ExceptMail, SuccessMail, SendMail
@@ -82,5 +83,14 @@ gmail_receiver = 'xxxxxxx@gmail.com'
 gmail_sender = 'yyyyyy@gmail.com'
 gmail_app_password_of_sender = 'zzzzzz'
 sys.excepthook = ExceptMail.__call__
+
+
+try:
+    'your code'
+    SuccessMail().__call__()
+except ExceptMail:
+    pass
+
+SendMail().__call__() 
 ```
 </details>
