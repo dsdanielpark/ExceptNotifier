@@ -1,3 +1,6 @@
+Development Status :: 3 - Alpha
+Copyright (c) 2023 MinWoo Park
+
 # Python: ExceptNotifier
 ![Corpus-Show](https://img.shields.io/badge/pypi-ExceptNotifier-orange)
 ![Pypi Version](https://img.shields.io/pypi/v/ExceptNotifier.svg)
