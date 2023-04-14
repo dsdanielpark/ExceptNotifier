@@ -48,7 +48,7 @@ SendMail().__call__()           # When Process Ended -> Any Line mail.
 import sys
 from ExceptNotifier import ExceptMail, SuccessMail, SendMail
 
-# 01. Set variable.
+# 01. Set variable
 global gmail_receiver, gmail_sender, gmail_app_password_of_sender
 gmail_receiver = 'xxxxxx@gmail.com'
 gmail_sender = 'yyyyyy@gmail.com'
@@ -57,7 +57,7 @@ sys.excepthook = ExceptMail.__call__
 
 try:
     
-    print(1/0) # 02.Locate your code.           
+    print(1/0) # 02.Locate your code      
     SuccessMail().__call__()   # Success Mail
 
 except ExceptMail as e:        # Exception Mail       
