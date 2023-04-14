@@ -50,9 +50,9 @@ from ExceptNotifier import ExceptMail, SuccessMail, SendMail
 
 # 01. Set variable.
 global gmail_receiver, gmail_sender, gmail_app_password_of_sender
-gmail_receiver = 'parkminwoo1991@gmail.com'
-gmail_sender = 'heydudenotice@gmail.com'
-gmail_app_password_of_sender = 'xxxxxxxxxxx'
+gmail_receiver = 'xxxxxx@gmail.com'
+gmail_sender = 'yyyyyy@gmail.com'
+gmail_app_password_of_sender = 'zzzzzzzzzz'
 sys.excepthook = ExceptMail.__call__
 
 try:
@@ -68,5 +68,19 @@ SendMail().__call__()          # Put Any Line: Sending mail
 
 
 
+```
+</details>
+
+<details>
+<summary> Snippets for Python developers.</summary>
+```python
+import sys
+from ExceptNotifier import ExceptMail, SuccessMail, SendMail
+
+global gmail_receiver, gmail_sender, gmail_app_password_of_sender
+gmail_receiver = 'xxxxxxx@gmail.com'
+gmail_sender = 'yyyyyy@gmail.com'
+gmail_app_password_of_sender = 'zzzzzz'
+sys.excepthook = ExceptMail.__call__
 ```
 </details>
