@@ -72,7 +72,7 @@ SendMail().__call__()          # Put Any Line: Sending mail
 </details>
 
 <details>
-<summary> Snippets for Python developers...</summary>
+<summary> Snippet for Python developers...</summary>
 
 ```python
 import sys
