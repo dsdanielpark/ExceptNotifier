@@ -16,7 +16,7 @@ Regardless of whether an exception occurs or not, with `ExceptNotifier`, you can
 # Quick Start
 ExceptNotifier installation
 ```
-pip insall ExceptNotifier
+pip install ExceptNotifier
 ```
 
 
