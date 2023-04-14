@@ -1,18 +1,22 @@
 import argparse
 import subprocess
 
-from ExceptNotifier import (chime_sender,
-                        desktop_sender,
-                        dingtalk_sender,
-                        discord_sender,
+from ExceptNotifier import (chime_notifier,
+                        desktop_notifier,
+                        dingtalk_notifier,
+                        discord_notifier,
                         mail_notifier,
-                        matrix_sender,
-                        rocketchat_sender,
-                        sms_sender,
-                        teams_sender,
-                        telegram_sender,
-                        wechat_sender,
-                        slack_notifier)
+                        matrix_notifier,
+                        rocketchat_notifier,
+                        sms_notifier,
+                        teams_notifier,
+                        telegram_notifier,
+                        wechat_notifier,
+                        slack_notifier,
+                        discord_notifier,
+                        kakao_notifier,
+                        line_notifier,
+                        wechat_notifier)
 
 def main():
     parser = argparse.ArgumentParser(
