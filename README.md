@@ -1,7 +1,6 @@
 # Python: ExceptNotifier
 ![Corpus-Show](https://img.shields.io/badge/pypi-ExceptNotifier-orange)
 ![Pypi Version](https://img.shields.io/pypi/v/ExceptNotifier.svg)
-[![Contributor Covenant](https://img.shields.io/badge/contributor%20covenant-v2.0%20adopted-black.svg)](code_of_conduct.md)
 [![Python Version](https://img.shields.io/badge/python-3.6%2C3.7%2C3.8-black.svg)](code_of_conduct.md)
 ![Code convention](https://img.shields.io/badge/code%20convention-pep8-black)
 
@@ -23,7 +22,7 @@ pip install ExceptNotifier
 <br>
 
 # Features
-### `Mail`
+## `Mail Notifier`
 In the except statement, an email is sent along with the error message. Additionally, you can send emails from any desired line. <br><br>
 a. Log in with the sender's email ID. <br>
 b. Obtain an app password for sending Google Mail at the following [link](https://myaccount.google.com/u/3/apppasswords?utm_source=google-account&utm_medium=myaccountsecurity&utm_campaign=tsv-settings&rapt=AEjHL4N2bMRWO46VaMp_jP06zQK14BWNPv66l2o59iJ99CkO8BjYnmoRUe9dtSchkkbubHZMUhevkAnwVJRHb9ygO3afispNlw) or [google document](https://support.google.com/accounts/answer/185833?hl=en). 
@@ -48,7 +47,7 @@ SendMail().__call__()           # When Process Ended -> Any Line mail.
 import sys
 from ExceptNotifier import ExceptMail, SuccessMail, SendMail
 
-# 01. Set variable.
+# 01. Set variable
 global gmail_receiver, gmail_sender, gmail_app_password_of_sender
 gmail_receiver = 'xxxxxx@gmail.com'
 gmail_sender = 'yyyyyy@gmail.com'
@@ -57,7 +56,7 @@ sys.excepthook = ExceptMail.__call__
 
 try:
     
-    print(1/0) # 02.Locate your code.           
+    print(1/0) # 02.Locate your code      
     SuccessMail().__call__()   # Success Mail
 
 except ExceptMail as e:        # Exception Mail       
@@ -72,7 +71,7 @@ SendMail().__call__()          # Put Any Line: Sending mail
 </details>
 
 <details>
-<summary> Snippets for Python developers...</summary>
+<summary> Snippet for Python developers...</summary>
 
 ```python
 import sys
