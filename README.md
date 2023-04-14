@@ -23,7 +23,7 @@ pip install ExceptNotifier
 <br>
 
 # Features
-### `Mail`
+## `Mail Notifier`
 In the except statement, an email is sent along with the error message. Additionally, you can send emails from any desired line. <br><br>
 a. Log in with the sender's email ID. <br>
 b. Obtain an app password for sending Google Mail at the following [link](https://myaccount.google.com/u/3/apppasswords?utm_source=google-account&utm_medium=myaccountsecurity&utm_campaign=tsv-settings&rapt=AEjHL4N2bMRWO46VaMp_jP06zQK14BWNPv66l2o59iJ99CkO8BjYnmoRUe9dtSchkkbubHZMUhevkAnwVJRHb9ygO3afispNlw) or [google document](https://support.google.com/accounts/answer/185833?hl=en). 
