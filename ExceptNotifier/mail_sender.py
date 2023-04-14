@@ -12,7 +12,7 @@ class ExceptMail(BaseException):
 
     def __call__(etype, value, tb):
         excType = re.sub('(<(type|class \')|\'exceptions.|\'>|__main__.)', '', str(etype)).strip()
-        exceptNotifier = {'TO':gmail_receiver, 'FROM':gmail_sender, 'SUBJECT':'[Except Notifier] Error! Python Code Exception Detected', 'BODY':f'Important: Python Exception Detected in Your Code. \n\n hi there, \nThis is an exception catch notifier.\n\n{excType}: %{etype.__doc__}\n\n {value} \n\n'}
+        exceptNotifier = {'TO':gmail_receiver, 'FROM':gmail_sender, 'SUBJECT':'[Except Notifier] Error! Python Code Exception Detected', 'BODY':f'IMPORTANT WARNING: \nPython Exception Detected in Your Code. \n\nHi there, \nThis is an exception catch notifier.\n\n{excType}: %{etype.__doc__}\n\n {value} \n\n'}
         SMTP_SERVER = 'smtp.gmail.com'
         for line in traceback.extract_tb(tb):
             exceptNotifier['BODY'] += '\tFile: "%s"\n\t\t%s %s: %s\n' % (line[0], line[2], line[1], line[3])
@@ -27,7 +27,7 @@ class ExceptMail(BaseException):
         stack.reverse()
         start_time = datetime.datetime.now()
         DATE_FORMAT = "%Y-%m-%d %H:%M:%S"
-        exceptNotifier['BODY'] += f'Time Stamp: {start_time.strftime(DATE_FORMAT)}'
+        exceptNotifier['BODY'] += f'\nTime Stamp: {start_time.strftime(DATE_FORMAT)}'
         exceptNotifier['BODY'] += '\nLocals by frame, innermost last:'
         for frame in stack:
             exceptNotifier['BODY'] += '\nFrame %s in %s at line %s' % (frame.f_code.co_name, frame.f_code.co_filename, frame.f_lineno)
@@ -58,7 +58,7 @@ class SuccessMail:
         start_time = datetime.datetime.now()
         DATE_FORMAT = "%Y-%m-%d %H:%M:%S"
         f'Time Stamp: {start_time.strftime(DATE_FORMAT)}'
-        message.set_content(f"Hi there, \nThis is a success notifier.\n - Time: {start_time.strftime(DATE_FORMAT)} \n\nI just wanted to let you know that your Python code has run successfully without any exceptions. \n\n - Python Code Status: Done. \n - Detail: Python Code Ran Without Exceptions. \n\nAll the best, \nCatchException https://github.com/dsdanielpark/CatchException")
+        message.set_content(f"Hi there, \nThis is a success notifier.\n\n - Time: {start_time.strftime(DATE_FORMAT)} \n - Code Status: Done. \n - Detail: Python Code Ran Without Exceptions. \n\nI just wanted to let you know that your Python code has run successfully without any exceptions. \n\nAll the best, \nExcept Notifier https://github.com/dsdanielpark/ExceptNotifier")
         message["Subject"] = "[Success Notifier] Success! Python Code Executed Successfully"
         message["From"] = gmail_sender
         message["To"] = gmail_receiver
@@ -80,7 +80,7 @@ class SendMail:
         start_time = datetime.datetime.now()
         DATE_FORMAT = "%Y-%m-%d %H:%M:%S"
         f'Time Stamp: {start_time.strftime(DATE_FORMAT)}'
-        message.set_content("Hi there, \nThis is a customized notifier.\n - Time: {start_time.strftime(DATE_FORMAT)} \n\nThe code has reached the line where you requested an email to be sent. As per your instruction, we are sending this email. \n\nAll the best, \nCatchException https://github.com/dsdanielpark/CatchException")
+        message.set_content(f"Hi there, \nThis is a customized notifier.\n\n - Time: {start_time.strftime(DATE_FORMAT)}\n - Code Status: Done. \n - Detail: Code Execution Reached Specified Line. \n\nThe code has reached the line where you requested an email to be sent. As per your instruction, we are sending this email. \n\nAll the best, \nExcept Notifier https://github.com/dsdanielpark/ExceptNotifier")
         message["Subject"] = "[Codeline Notifier] Notice! Code Execution Reached Specified Line"
         message["From"] = gmail_sender
         message["To"] = gmail_receiver
@@ -108,7 +108,7 @@ class SendMail:
 
 if __name__ == '__main__':
 
-    # 01. Set variable.
+    # Set global variables
     global gmail_receiver, gmail_sender, gmail_app_password_of_sender
     gmail_receiver = 'parkminwoo1991@gmail.com'
     gmail_sender = 'heydudenotice@gmail.com'
@@ -116,16 +116,13 @@ if __name__ == '__main__':
     sys.excepthook = ExceptMail.__call__
 
     try:
-        # 02. Locate your code.
-        print(1/0)      
-        SuccessMail().__call__()          
+        print(1/20)      
+        SuccessMail().__call__() #1 success sender
 
 
-    # 03-a. Mail Sent: When strike exception
-    except ExceptMail as e:                    
+    except ExceptMail as e:      #2 except sender            
         sys.exit()
 
-    # 03-b. Mail Sent:  When code exit without exception
-    SuccessMail().__call__()                     
-    
+
+    SendMail().__call__()        #3 Any line sender
 
