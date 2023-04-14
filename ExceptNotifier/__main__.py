@@ -5,14 +5,14 @@ from ExceptNotifier import (chime_sender,
                         desktop_sender,
                         dingtalk_sender,
                         discord_sender,
-                        email_sender,
+                        mail_notifier,
                         matrix_sender,
                         rocketchat_sender,
-                        slack_sender,
                         sms_sender,
                         teams_sender,
                         telegram_sender,
-                        wechat_sender,)
+                        wechat_sender,
+                        slack_notifier)
 
 def main():
     parser = argparse.ArgumentParser(
@@ -32,4 +32,4 @@ def main():
         "--gmail_sender", type=str, required=False,
         help="The email adress to send the messages." +
         "(default: use the same address as the first email in `gmail_receiver`)")
-    email_parser.set_defaults(sender_func=email_sender)
+    email_parser.set_defaults(sender_func=mail_notifier)
