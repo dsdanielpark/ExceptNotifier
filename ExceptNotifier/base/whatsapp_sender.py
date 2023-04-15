@@ -17,7 +17,6 @@ def send_message(
                                     { "code": "en_US" }
                         } 
             }
-
     headers = {
             "Content-Type": "application/json",
             "Authorization": "Bearer {}".format(TOKEN),
