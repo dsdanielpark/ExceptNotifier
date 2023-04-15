@@ -105,12 +105,12 @@ if __name__ == "__main__":
     https://discord.com/developers/docs/resources/webhook"""
 
     global URL 
-    URL = "https://discordapp.com/api/webhooks/1096733073741193336/AX32bjqL1EYIEfLulwU6jaX4eBR1HZYzxq5UM9ADsCpUeePcF0YlFQnEGLD5geF65kyl"
+    URL = "https://discordapp.com/api/webhooks/1096742750508044349/E5vXTCtkdx_JZlJ9UfQI33jwUwJ4NgyrVYwO4z-qU_upKgKmDXc5e2j8TEr6VxqBPShQ"
     
     sys.excepthook = ExceptDiscord.__call__
 
     try:
-        print(1/0)  
+        print(1/20)  
         SuccessDiscord().__call__() #1 success sender          
 
     except ExceptDiscord as e:      #2 except sender            
