@@ -21,5 +21,5 @@ def send_message(
             "Content-Type": "application/json",
             "Authorization": "Bearer {}".format(TOKEN),
         }
-    res = requests.post(f"{url}", headers=headers, json=data)
-    return res
+    resp = requests.post(f"{url}", headers=headers, json=data)
+    return resp
