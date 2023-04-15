@@ -28,7 +28,7 @@ class ExceptSlack(BaseException):
         stack.reverse()
         
         
-        exceptNotifier['BODY'] += '\nLocals by frame, innermost last:'
+        exceptNotifier['BODY'] += '\nLocals by frame, innermost last::::'
         for frame in stack:
             exceptNotifier['BODY'] += '\nFrame %s in %s at line %s' % (frame.f_code.co_name, frame.f_code.co_filename, frame.f_lineno)
             for key, val in frame.f_locals.items():

@@ -4,10 +4,9 @@ import subprocess
 from ExceptNotifier import (
                         chime_notifier,
                         desktop_notifier,
-                        dingtalk_notifier,
                         discord_notifier,
                         mail_notifier,
-
+                        whatsapp_notifier,
                         sms_notifier,
                         teams_notifier,
                         telegram_notifier,
