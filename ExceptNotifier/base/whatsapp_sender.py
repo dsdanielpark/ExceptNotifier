@@ -2,7 +2,7 @@ import logging
 import requests
 
 
-def send_message(
+def send_whatsapp_msg(
     msg, sender_phone_number_id, TOKEN, receiver_number, recipient_type="individual"
 ):
     url =  f"https://graph.facebook.com/v16.0/{sender_phone_number_id}/messages"
