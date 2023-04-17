@@ -10,7 +10,7 @@ Development Status :: 3 - Alpha <br>
 ![](https://github.com/dsdanielpark/ExceptNotifier/blob/main/assets/imgs/main2.png)
 Python package `ExceptNotifier` can provides a more flexible way to receive notifications by overriding Python's try-except statement. You can receive alerts through various messaging platforms like email, Slack,Telegram, and Discord. This package offers an extensive range of notification options to suit your needs. 
 <br>
-Regardless of whether an exception occurs or not, with `ExceptNotifier`, you can send the entire detailed compile error to a messenger or email at a desired specific location. 
+Regardless of whether an exception occurs or not, with `ExceptNotifier`, you can send the entire detailed compile error to a messenger or email at a desired specific code line. 
 <br><br>
 
 ### Supporting Applications
