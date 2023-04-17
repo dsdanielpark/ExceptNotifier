@@ -129,7 +129,6 @@ gmail_app_password_of_sender = 'zzzzzzzzzz'
 sys.excepthook = ExceptMail.__call__
 
 try:
-    
     print(1/0) # 02.Locate your code      
     SuccessMail().__call__()   # Success Mail
 
