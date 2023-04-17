@@ -54,17 +54,17 @@ class ExceptSMS(BaseException):
 
         client = Client(_TWILIO_SID, _TWILIO_TOKEN)
         client.messages.create(
-                                to=_RECIPANT_PHONE_NUMBER,
+                                to=_RECIPIENT_PHONE_NUMBER,
                                 from_=_SENDER_PHONE_NUMBER,  
                                 body=data['text'][:1500]
                                 )
 
 
     @staticmethod
-    def send_sms_msg(_TWILIO_SID, _TWILIO_TOKEN, _SENDER_PHONE_NUMBER, _RECIPANT_PHONE_NUMBER, msg):
+    def send_sms_msg(_TWILIO_SID, _TWILIO_TOKEN, _SENDER_PHONE_NUMBER, _RECIPIENT_PHONE_NUMBER, msg):
         client = Client(_TWILIO_SID, _TWILIO_TOKEN)
         client.messages.create(
-            to=_RECIPANT_PHONE_NUMBER,
+            to=_RECIPIENT_PHONE_NUMBER,
             from_=_SENDER_PHONE_NUMBER,  
         body=msg
     )
@@ -86,7 +86,7 @@ class SuccessSMS:
         
         client = Client(_TWILIO_SID, _TWILIO_TOKEN)
         client.messages.create(
-                                to=_RECIPANT_PHONE_NUMBER,
+                                to=_RECIPIENT_PHONE_NUMBER,
                                 from_=_SENDER_PHONE_NUMBER,  
                                 body=data['text'][:1500]
                                 )
@@ -106,7 +106,7 @@ class SendSMS:
         
         client = Client(_TWILIO_SID, _TWILIO_TOKEN)
         client.messages.create(
-                                to=_RECIPANT_PHONE_NUMBER,
+                                to=_RECIPIENT_PHONE_NUMBER,
                                 from_=_SENDER_PHONE_NUMBER,  
                                 body=data['text'][:1500]
                                 )
@@ -115,12 +115,12 @@ if __name__ == "__main__":
     
     """https://www.twilio.com/en-us"""
 
-    global _TWILIO_SID, TWILIO_AUTH_TOKEN, _SENDER_PHONE_NUMBER, _RECIPANT_PHONE_NUMBER
+    global _TWILIO_SID, TWILIO_AUTH_TOKEN, _SENDER_PHONE_NUMBER, _RECIPIENT_PHONE_NUMBER
     _TWILIO_SID = 'xxxx'
     _TWILIO_TOKEN = 'yyyyyy'
     client = Client(_TWILIO_SID, _TWILIO_TOKEN)
 
-    _RECIPANT_PHONE_NUMBER="+aaaaaa",
+    _RECIPIENT_PHONE_NUMBER="+aaaaaa",
     _SENDER_PHONE_NUMBER="+bbbbbb",  
     
     sys.excepthook = ExceptSMS.__call__

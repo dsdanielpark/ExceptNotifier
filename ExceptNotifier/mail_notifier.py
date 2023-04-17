@@ -23,7 +23,7 @@ class ExceptMail(BaseException):
         :type tb: _type_
         """
         excType = re.sub('(<(type|class \')|\'exceptions.|\'>|__main__.)', '', str(etype)).strip()
-        exceptNotifier = {'TO':_GAMIL_RECEIPANT, 'FROM':_GMAIL_SENDER, 'SUBJECT':'[Except Notifier] Error! Python Code Exception Detected', 'BODY':f'IMPORTANT WARNING: \nPython Exception Detected in Your Code. \n\nHi there, \nThis is an exception catch notifier.\n\n{excType}: %{etype.__doc__}\n\n {value} \n\n'}
+        exceptNotifier = {'TO':_GAMIL_RECIPIENT_ADDR, 'FROM':_GMAIL_SENDER_ADDR, 'SUBJECT':'[Except Notifier] Error! Python Code Exception Detected', 'BODY':f'IMPORTANT WARNING: \nPython Exception Detected in Your Code. \n\nHi there, \nThis is an exception catch notifier.\n\n{excType}: %{etype.__doc__}\n\n {value} \n\n'}
         SMTP_SERVER = 'smtp.gmail.com'
         for line in traceback.extract_tb(tb):
             exceptNotifier['BODY'] += '\tFile: "%s"\n\t\t%s %s: %s\n' % (line[0], line[2], line[1], line[3])
@@ -51,7 +51,7 @@ class ExceptMail(BaseException):
                     
         exceptNotifier['ALL'] = 'From: %s\nTo: %s\nSubject: %s\n\n%s' % (exceptNotifier['FROM'], exceptNotifier['TO'], exceptNotifier['SUBJECT'], exceptNotifier['BODY'])
         smtp = smtplib.SMTP_SSL(SMTP_SERVER, 465)
-        smtp.login(_GMAIL_SENDER, _GMAIL_APP_PASSWORD_OF_SENDER)
+        smtp.login(_GMAIL_SENDER_ADDR, _GMAIL_APP_PASSWORD_OF_SENDER)
         smtp.sendmail(exceptNotifier['FROM'], exceptNotifier['TO'], exceptNotifier['ALL'])
         smtp.quit()
 
@@ -99,15 +99,15 @@ class SuccessMail:
         SMTP_SERVER = 'smtp.gmail.com'
         SMTP_PORT = 465
         smtp = smtplib.SMTP_SSL(SMTP_SERVER, SMTP_PORT)
-        smtp.login(_GMAIL_SENDER, _GMAIL_APP_PASSWORD_OF_SENDER)
+        smtp.login(_GMAIL_SENDER_ADDR, _GMAIL_APP_PASSWORD_OF_SENDER)
         message = EmailMessage()
         start_time = datetime.datetime.now()
         
         f'Time Stamp: {start_time.strftime(DATE_FORMAT)}'
         message.set_content(f"Hi there, \nThis is a success notifier.\n\n - Time: {start_time.strftime(DATE_FORMAT)} \n - Code Status: Done. \n - Detail: Python Code Ran Without Exceptions. \n\nI just wanted to let you know that your Python code has run successfully without any exceptions. \n\nAll the best, \nExcept Notifier https://github.com/dsdanielpark/ExceptNotifier")
         message["Subject"] = "[Success Notifier] Success! Python Code Executed Successfully"
-        message["From"] = _GMAIL_SENDER
-        message["To"] = _GAMIL_RECEIPANT
+        message["From"] = _GMAIL_SENDER_ADDR
+        message["To"] = _GAMIL_RECIPIENT_ADDR
         
         smtp.send_message(message)
         smtp.quit()
@@ -121,15 +121,15 @@ class SendMail:
         SMTP_SERVER = 'smtp.gmail.com'
         SMTP_PORT = 465
         smtp = smtplib.SMTP_SSL(SMTP_SERVER, SMTP_PORT)
-        smtp.login(_GMAIL_SENDER, _GMAIL_APP_PASSWORD_OF_SENDER)
+        smtp.login(_GMAIL_SENDER_ADDR, _GMAIL_APP_PASSWORD_OF_SENDER)
         message = EmailMessage()
         start_time = datetime.datetime.now()
         
         f'Time Stamp: {start_time.strftime(DATE_FORMAT)}'
         message.set_content(f"Hi there, \nThis is a customized notifier.\n\n - Time: {start_time.strftime(DATE_FORMAT)}\n - Code Status: Done. \n - Detail: Code Execution Reached Specified Line. \n\nThe code has reached the line where you requested an email to be sent. As per your instruction, we are sending this email. \n\nAll the best, \nExcept Notifier https://github.com/dsdanielpark/ExceptNotifier")
         message["Subject"] = "[Codeline Notifier] Notice! Code Execution Reached Specified Line"
-        message["From"] = _GMAIL_SENDER
-        message["To"] = _GAMIL_RECEIPANT
+        message["From"] = _GMAIL_SENDER_ADDR
+        message["To"] = _GAMIL_RECIPIENT_ADDR
         smtp.send_message(message)
         smtp.quit()
 
@@ -156,9 +156,9 @@ class SendMail:
 if __name__ == '__main__':
 
     # Set global variables
-    global _GAMIL_RECEIPANT, _GMAIL_SENDER, _GMAIL_APP_PASSWORD_OF_SENDER
-    _GAMIL_RECEIPANT = 'parkminwoo1991@gmail.com'
-    _GMAIL_SENDER = 'heydudenotice@gmail.com'
+    global _GAMIL_RECIPIENT_ADDR, _GMAIL_SENDER_ADDR, _GMAIL_APP_PASSWORD_OF_SENDER
+    _GAMIL_RECIPIENT_ADDR = 'parkminwoo1991@gmail.com'
+    _GMAIL_SENDER_ADDR = 'heydudenotice@gmail.com'
     _GMAIL_APP_PASSWORD_OF_SENDER = 'xxxxxxxxxxx'
     sys.excepthook = ExceptMail.__call__
 
