@@ -40,22 +40,22 @@ pip install ExceptNotifier
  ┣ 📜teams_notifier.py
  ┣ 📜telegram_notifier.py
  ┣ 📜__init__.py
- ┗ 📜__main__.py
+ ┣ 📜__main__.py
                                # Sending message methode
  ┣ 📂base
- ┃ ┣  📜chime_sender.py
- ┃ ┣  📜discord_sender.py
- ┃ ┣  📜kakao_sender.py
- ┃ ┣  📜line_sender.py
- ┃ ┣  📜mail_sender.py
- ┃ ┣  📜slack_sender.py
- ┃ ┣  📜sms_sender.py
- ┃ ┣  📜teams_sender.py
- ┃ ┣  📜telegram_sender.py
- ┃ ┗  📜whatsapp_sender.py
+ ┃ ┣ 📜chime_sender.py
+ ┃ ┣ 📜discord_sender.py
+ ┃ ┣ 📜kakao_sender.py
+ ┃ ┣ 📜line_sender.py
+ ┃ ┣ 📜mail_sender.py
+ ┃ ┣ 📜slack_sender.py
+ ┃ ┣ 📜sms_sender.py
+ ┃ ┣ 📜teams_sender.py
+ ┃ ┣ 📜telegram_sender.py
+ ┃ ┗ 📜whatsapp_sender.py
                                # Utility for setting
  ┣ 📂utils
-   ┗   📜kakao_token.py
+ ┗ ┗  📜kakao_token.py
 ```
 
 # Features
