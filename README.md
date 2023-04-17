@@ -95,7 +95,6 @@ SendTelegram().__call__()        #3. customized sender
 
 ![](https://github.com/dsdanielpark/ExceptNotifier/blob/main/assets/imgs/fig10.png)
 
-
 ### Mail Notifier
 In the except statement, an email is sent along with the error message. Additionally, you can send emails from any desired line. <br><br>
 a. Log in with the sender's email ID. <br>
