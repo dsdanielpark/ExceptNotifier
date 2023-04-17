@@ -25,6 +25,40 @@ pip install ExceptNotifier
 
 <br>
 
+# Package Structure
+
+
+```
+📦ExceptNotifier
+                               # Notifier
+ ┣ 📜chime_notifier.py
+ ┣ 📜discord_notifier.py
+ ┣ 📜kakao_notifier.py
+ ┣ 📜line_notifier.py
+ ┣ 📜mail_notifier.py
+ ┣ 📜slack_notifier.py
+ ┣ 📜sms_notifier.py
+ ┣ 📜teams_notifier.py
+ ┣ 📜telegram_notifier.py
+ ┣ 📜__init__.py
+ ┗ 📜__main__.py
+                               # Sending message methode
+ ┣ 📂base
+ ┃ ┣  📜chime_sender.py
+ ┃ ┣  📜discord_sender.py
+ ┃ ┣  📜kakao_sender.py
+ ┃ ┣  📜line_sender.py
+ ┃ ┣  📜mail_sender.py
+ ┃ ┣  📜slack_sender.py
+ ┃ ┣  📜sms_sender.py
+ ┃ ┣  📜teams_sender.py
+ ┃ ┣  📜telegram_sender.py
+ ┃ ┗  📜whatsapp_sender.py
+                               # Utility for setting
+ ┣ 📂utils
+   ┗   📜kakao_token.py
+```
+
 # Features
 ## `Mail Notifier`
 In the except statement, an email is sent along with the error message. Additionally, you can send emails from any desired line. <br><br>
