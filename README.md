@@ -186,7 +186,7 @@ SendMail().__call__()
 ### Contacts
 - Maintainer [Daniel Park, South Korea](https://github.com/DSDanielPark) <br>
 - Email parkminwoo1991@gmail.com
-<br>
+
   
 #### Could you kindly add this badge to your repository?
   ```
