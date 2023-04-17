@@ -29,7 +29,7 @@ pip install ExceptNotifier
 
 ```
 📦ExceptNotifier
-                               # Notifier
+                               # Notifiers
  ┣ 📜chime_notifier.py
  ┣ 📜discord_notifier.py
  ┣ 📜kakao_notifier.py
@@ -41,7 +41,7 @@ pip install ExceptNotifier
  ┣ 📜telegram_notifier.py
  ┣ 📜__init__.py
  ┣ 📜__main__.py
-                               # Sending message methode
+                               # Sending message methods
  ┣ 📂base
  ┃ ┣ 📜chime_sender.py
  ┃ ┣ 📜discord_sender.py
@@ -53,7 +53,7 @@ pip install ExceptNotifier
  ┃ ┣ 📜teams_sender.py
  ┃ ┣ 📜telegram_sender.py
  ┃ ┗ 📜whatsapp_sender.py
-                               # Utility for setting
+                               # Utilities for setting
  ┣ 📂utils
  ┗ ┗  📜kakao_token.py
 ```
