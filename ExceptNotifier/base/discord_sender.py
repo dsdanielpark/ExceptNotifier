@@ -2,25 +2,25 @@
 from discord import Webhook, RequestsWebhookAdapter
 
 
-def send_discord_msg(URL: str, msg: str) -> dict:
+def send_discord_msg(_DISCORD_WEBHOOK_URL: str, msg: str) -> dict:
     """Send message to chat room through discord app's webhook url.
 
-    :param URL: Webhook url from discord app
-    :type URL: str
+    :param _DISCORD_WEBHOOK_URL: Webhook url from discord app
+    :type _DISCORD_WEBHOOK_URL: str
     :param msg: Message text
     :type msg: str
     :return: Response according to REST API request
     :rtype: dict
     """
 
-    webhook = Webhook.from_url(URL, adapter=RequestsWebhookAdapter())
+    webhook = Webhook.from_url(_DISCORD_WEBHOOK_URL, adapter=RequestsWebhookAdapter())
     resp = webhook.send(msg)
     return resp
 
 
 
 if __name__ =="__main__":
-    URL = "https://discordapp.com/api/webhooks/1096733073741193336/AX32bjqL1EYIEfLulwU6jaX4eBR1HZYzxq5UM9ADsCpUeePcF0YlFQnEGLD5geF65kyl"
+    _DISCORD_WEBHOOK_URL = "https://discordapp.com/api/webhooks/1096733073741193336/AX32bjqL1EYIEfLulwU6jaX4eBR1HZYzxq5UM9ADsCpUeePcF0YlFQnEGLD5geF65kyl"
     msg = "Sending Test"
 
-    send_discord_msg(URL, msg)
+    send_discord_msg(_DISCORD_WEBHOOK_URL, msg)

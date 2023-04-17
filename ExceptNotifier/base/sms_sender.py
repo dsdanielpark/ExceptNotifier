@@ -1,28 +1,28 @@
 
 from twilio.rest import Client
 
-def send_sms_msg(SID: str, TOKEN: str, FROM: str, TO: str, msg: str)->dict:
+def send_sms_msg(_TWILIO_SID: str, _TWILIO_TOKEN: str, _SENDER_PHONE_NUMBER: str, _RECIPIENT_PHONE_NUMBER: str, msg: str)->dict:
     """Send SMS through twilio platform.
     https://www.twilio.com/en-us
 
-    :param SID: Twilio personal SID
-    :type SID: str
-    :param TOKEN: Twilio personal TOKEN
-    :type TOKEN: str
-    :param FROM: Sender phone number
-    :type FROM: str
-    :param TO: Recipient phone number
-    :type TO: str
+    :param _TWILIO_SID: Twilio personal _TWILIO_SID
+    :type _TWILIO_SID: str
+    :param _TWILIO_TOKEN: Twilio personal _TWILIO_TOKEN
+    :type _TWILIO_TOKEN: str
+    :param _SENDER_PHONE_NUMBER: Sender phone number
+    :type _SENDER_PHONE_NUMBER: str
+    :param _RECIPIENT_PHONE_NUMBER: Recipient phone number
+    :type _RECIPIENT_PHONE_NUMBER: str
     :param msg: SMS content
     :type msg: str
     :return: Response dict
     :rtype: dict
     """
     
-    client = Client(SID, TOKEN)
+    client = Client(_TWILIO_SID, _TWILIO_TOKEN)
     resp = client.messages.create(
-        to=TO,
-        from_=FROM,  
+        to=_RECIPIENT_PHONE_NUMBER,
+        from_=_SENDER_PHONE_NUMBER,  
         body=msg
     )
     return resp
@@ -31,11 +31,11 @@ def send_sms_msg(SID: str, TOKEN: str, FROM: str, TO: str, msg: str)->dict:
 if __name__ == "__main__":
     """https://www.twilio.com/en-us"""
 
-    SID = 'xxxxx'
-    TOKEN = 'yyyyy'
-    client = Client(SID, TOKEN)
-    FROM = "+zzzzz"
-    TO = "+aaaaa"
+    _TWILIO_SID = 'xxxxx'
+    _TWILIO_TOKEN = 'yyyyy'
+    client = Client(_TWILIO_SID, _TWILIO_TOKEN)
+    _SENDER_PHONE_NUMBER = "+aaaaa"
+    _RECIPIENT_PHONE_NUMBER = "+bbbbb"
     msg="ExceptNotifier Test"
 
-    send_sms_msg(SID, TOKEN, FROM, TO, msg)
+    send_sms_msg(_TWILIO_SID, _TWILIO_TOKEN, _SENDER_PHONE_NUMBER, _RECIPIENT_PHONE_NUMBER, msg)

@@ -1,10 +1,10 @@
 import requests   
 
-def send_line_msg(TOKEN: str, msg: str) -> dict:
+def send_line_msg(_LINE_NOTIFY_API_TOKEN: str, msg: str) -> dict:
     """Send message to chat room through Line app's REST API.
 
-    :param TOKEN: Line notify API token
-    :type TOKEN: str
+    :param _LINE_NOTIFY_API_TOKEN: Line notify API token
+    :type _LINE_NOTIFY_API_TOKEN: str
     :param msg: Message text
     :type msg: str
     :return: Response according to REST API request
@@ -12,7 +12,7 @@ def send_line_msg(TOKEN: str, msg: str) -> dict:
     """
 
     api_url = "https://notify-api.line.me/api/notify"
-    headers = {'Authorization':'Bearer '+ TOKEN}
+    headers = {'Authorization':'Bearer '+ _LINE_NOTIFY_API_TOKEN}
     message = {
         "message" : msg
     }
@@ -22,7 +22,7 @@ def send_line_msg(TOKEN: str, msg: str) -> dict:
 
 
 if __name__ == "__main__": 
-    global TOKEN
-    TOKEN = "XXXXXXXXX"
+    global _LINE_NOTIFY_API_TOKEN
+    _LINE_NOTIFY_API_TOKEN = "XXXXXXXXX"
     msg = "Test Message"
-    send_line_msg(TOKEN, msg)
+    send_line_msg(_LINE_NOTIFY_API_TOKEN, msg)
