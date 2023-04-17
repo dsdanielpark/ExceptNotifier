@@ -11,8 +11,8 @@ It introduces how to obtain APIs for communication by each application. Since it
 
 ## 1. Google Mail - App password
 1. Get your 'app password'
-- [direct link](https://myaccount.google.com/u/3/apppasswords?utm_source=google-account&utm_medium=myaccountsecurity&utm_campaign=tsv-settings&rapt=AEjHL4N2bMRWO46VaMp_jP06zQK14BWNPv66l2o59iJ99CkO8BjYnmoRUe9dtSchkkbubHZMUhevkAnwVJRHb9ygO3afispNlw) 
-- [google document](https://support.google.com/accounts/answer/185833?hl=en). 
+    - [direct link](https://myaccount.google.com/u/3/apppasswords?utm_source=google-account&utm_medium=myaccountsecurity&utm_campaign=tsv-settings&rapt=AEjHL4N2bMRWO46VaMp_jP06zQK14BWNPv66l2o59iJ99CkO8BjYnmoRUe9dtSchkkbubHZMUhevkAnwVJRHb9ygO3afispNlw) 
+    - [google document](https://support.google.com/accounts/answer/185833?hl=en). 
 2. Enter app password to `EMAIL_PASSWORD` variable and enter your email.
 
 <br>
