@@ -5,7 +5,7 @@ Development Status :: 3 - Alpha <br>
 # Python Package: ExceptNotifier
 ![Except-Notifier](https://img.shields.io/badge/pypi-ExceptNotifier-orange)
 ![Pypi Version](https://img.shields.io/pypi/v/ExceptNotifier.svg)
-[![Python Version](https://img.shields.io/badge/python-3.6%2C3.7%2C3.8-black.svg)](code_of_conduct.md)
+[![Python Version](https://img.shields.io/badge/python-3.6%20to%203.9-black)](code_of_conduct.md)
 ![Code convention](https://img.shields.io/badge/code%20convention-pep8-black)
 ![](https://github.com/dsdanielpark/ExceptNotifier/blob/main/assets/imgs/main2.png)
 Python package `ExceptNotifier` can provides a more flexible way to receive notifications by overriding Python's try-except statement. You can receive alerts through various messaging platforms like email, Slack,Telegram, and Discord. This package offers an extensive range of notification options to suit your needs. 
