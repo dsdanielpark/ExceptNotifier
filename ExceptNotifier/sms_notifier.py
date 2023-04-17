@@ -54,10 +54,13 @@ class ExceptSMS(BaseException):
 
 
     @staticmethod
-    def send_slack_message(URL, msg):
-        data = {'text':msg}
-        resp = requests.post(url=URL, json=data)
-        return resp
+    def send_sms_msg(SID, TOKEN, FROM, TO, msg):
+        client = Client(SID, TOKEN)
+        client.messages.create(
+            to=TO,
+            from_=FROM,  
+        body=msg
+    )
 
 
 
