@@ -13,6 +13,7 @@ from ExceptNotifier.base.line_sender import send_line_msg
 from ExceptNotifier.base.teams_sender import send_teams_msg
 from ExceptNotifier.base.whatsapp_sender import send_whatsapp_msg
 from ExceptNotifier.base.sms_sender import send_sms_msg
+from ExceptNotifier.base.beep_sender import beep
 
 from ExceptNotifier.mail_notifier import SuccessMail, ExceptMail, SendMail
 from ExceptNotifier.slack_notifier import SuccessSlcak, ExceptSlack, SendSlack
@@ -23,7 +24,7 @@ from ExceptNotifier.kakao_notifier import SuccessKakao, ExceptKakao, SendKakao
 from ExceptNotifier.line_notifier import SuccessLine, ExceptLINE, SendLine
 from ExceptNotifier.teams_notifier import SuccessTeams, ExceptTeams, SendTeams
 from ExceptNotifier.sms_notifier import SuccessSMS, ExceptSMS, SendSMS
-
+from ExceptNotifier.beep_notifier import SuccessBeep, ExceptBeep, SendBeep
 
 
 
