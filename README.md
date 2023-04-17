@@ -10,7 +10,7 @@ Development Status :: 3 - Alpha <br>
 
 
 
-![](https://github.com/dsdanielpark/ExceptNotifier/blob/main/assets/imgs/exceptnotifier.png)
+![](https://github.com/dsdanielpark/ExceptNotifier/blob/main/assets/imgs/readme4.png)
 
 
 
@@ -92,7 +92,7 @@ except ExceptTelegram as e:      #2. except sender
 SendTelegram().__call__()        #3. customized sender     
 ```
 
-![](https://github.com/dsdanielpark/ExceptNotifier/blob/main/assets/imgs/fig6.png)
+![](https://github.com/dsdanielpark/ExceptNotifier/blob/main/assets/imgs/fig9.png)
 
 
 ### Mail Notifier

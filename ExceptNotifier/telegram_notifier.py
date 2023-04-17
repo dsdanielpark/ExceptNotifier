@@ -49,30 +49,30 @@ class ExceptTelegram(BaseException):
                     
         
         data = {'text':exceptNotifier['SUBJECT']+exceptNotifier['BODY']}
-        url = f"https://api.telegram.org/bot{TOKEN}/getUpdates"
+        url = f"https://api.telegram.org/bot{_TELEGRAM_TOKEN}/getUpdates"
         req_dict = requests.get(url).json()
         bot_id = dict(dict(dict(list(dict(req_dict).values())[1][0])['message'])['from'])['id']
-        bot_url = f"https://api.telegram.org/bot{TOKEN}/sendMessage?chat_id={bot_id}&text={data['text']}"
+        bot_url = f"https://api.telegram.org/bot{_TELEGRAM_TOKEN}/sendMessage?chat_id={bot_id}&text={data['text']}"
 
         requests.get(bot_url).json()
 
 
     @staticmethod
 
-    def send_telegram_msg(TOKEN: str, msg: str) -> dict:
+    def send_telegram_msg(_TELEGRAM_TOKEN: str, msg: str) -> dict:
         """Send message via telegram bot.
 
-        :param TOKEN: Telegram secure bot Token
-        :type TOKEN: str
+        :param _TELEGRAM_TOKEN: Telegram secure bot Token
+        :type _TELEGRAM_TOKEN: str
         :param msg: Message content
         :type msg: str
         :return: Response dict
         :rtype: dict
         """
-        url = f"https://api.telegram.org/bot{TOKEN}/getUpdates"
+        url = f"https://api.telegram.org/bot{_TELEGRAM_TOKEN}/getUpdates"
         req_dict = requests.get(url).json()
         bot_id = dict(dict(dict(list(dict(req_dict).values())[1][0])['message'])['from'])['id']
-        bot_url = f"https://api.telegram.org/bot{TOKEN}/sendMessage?chat_id={bot_id}&text={msg}"
+        bot_url = f"https://api.telegram.org/bot{_TELEGRAM_TOKEN}/sendMessage?chat_id={bot_id}&text={msg}"
         resp = requests.get(bot_url).json()
 
         return resp
@@ -92,10 +92,10 @@ class SuccessTelegram:
         
         data = {'text':exceptNotifier['SUBJECT']+exceptNotifier["BODY"]}
         
-        url = f"https://api.telegram.org/bot{TOKEN}/getUpdates"
+        url = f"https://api.telegram.org/bot{_TELEGRAM_TOKEN}/getUpdates"
         req_dict = requests.get(url).json()
         bot_id = dict(dict(dict(list(dict(req_dict).values())[1][0])['message'])['from'])['id']
-        bot_url = f"https://api.telegram.org/bot{TOKEN}/sendMessage?chat_id={bot_id}&text={data['text']}"
+        bot_url = f"https://api.telegram.org/bot{_TELEGRAM_TOKEN}/sendMessage?chat_id={bot_id}&text={data['text']}"
 
         requests.get(bot_url).json()
 
@@ -113,10 +113,10 @@ class SendTelegram:
         
         data = {'text':exceptNotifier['SUBJECT']+exceptNotifier["BODY"]}
         
-        url = f"https://api.telegram.org/bot{TOKEN}/getUpdates"
+        url = f"https://api.telegram.org/bot{_TELEGRAM_TOKEN}/getUpdates"
         req_dict = requests.get(url).json()
         bot_id = dict(dict(dict(list(dict(req_dict).values())[1][0])['message'])['from'])['id']
-        bot_url = f"https://api.telegram.org/bot{TOKEN}/sendMessage?chat_id={bot_id}&text={data['text']}"
+        bot_url = f"https://api.telegram.org/bot{_TELEGRAM_TOKEN}/sendMessage?chat_id={bot_id}&text={data['text']}"
 
         requests.get(bot_url).json()
 
@@ -136,9 +136,9 @@ if __name__ == "__main__":
     """Get your bot from botfather. 
     https://core.telegram.org/bots/tutorial"""
 
-    global TOKEN 
-    TOKEN = "5946449950:AAGOH5M0_q6z16A3KbtzS0Phjyi-zJ86QPk"
-    
+    global _TELEGRAM_TOKEN 
+    _TELEGRAM_TOKEN = "5946449950:AAGOH5M0_q6z16A3KbtzS0Phjyi-zJ86QPk"
+
     sys.excepthook = ExceptTelegram.__call__
 
     try:
