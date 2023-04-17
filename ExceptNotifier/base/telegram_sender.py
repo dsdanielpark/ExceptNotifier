@@ -1,7 +1,7 @@
 import requests
 
 
-def send_telegram_msg(TOKEN, msg):
+def send_telegram_msg(TOKEN: str, msg: str) -> dict:
     url = f"https://api.telegram.org/bot{TOKEN}/getUpdates"
     req_dict = requests.get(url).json()
     bot_id = dict(dict(dict(list(dict(req_dict).values())[1][0])['message'])['from'])['id']

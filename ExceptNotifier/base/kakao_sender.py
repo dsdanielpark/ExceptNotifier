@@ -2,7 +2,17 @@ import requests
 import json
 
 
-def send_kakao_msg(token_path, msg):
+def send_kakao_msg(token_path: str, msg: str) -> dict:
+    """Send message to chat room through kakaotalk app's REST API.
+
+    :param token_path: Kakaotalk token path
+    :type token_path: str
+    :param msg: Message text
+    :type msg: str
+    :return: Response according to REST API request
+    :rtype: dict
+    """
+
     with open(token_path,"r") as kakao:
         tokens = json.load(kakao)
 
@@ -21,9 +31,8 @@ def send_kakao_msg(token_path, msg):
     
     data = {'template_object': json.dumps(data)}
     resp = requests.post(url, headers=headers, data=data)
-    resp_status = resp.status_code
 
-    return resp_status
+    return resp
 
 
 if __name__ == "__main__":
