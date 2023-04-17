@@ -10,8 +10,8 @@ Development Status :: 3 - Alpha <br>
 
 
 
-![](https://github.com/dsdanielpark/ExceptNotifier/blob/main/assets/imgs/fig1.png)
-![](https://github.com/dsdanielpark/ExceptNotifier/blob/main/assets/imgs/fig33.png)
+![](https://github.com/dsdanielpark/ExceptNotifier/blob/main/assets/imgs/main1.png)
+
 
 
 
