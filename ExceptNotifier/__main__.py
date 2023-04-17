@@ -29,10 +29,10 @@ def main():
         name="email", description="Send an email before and after function " +
         "execution, with start and end status (sucessfully or crashed).")
     email_parser.add_argument(
-        "--gmail_receiver", type=str, required=True,
+        "--recipient_addr", type=str, required=True,
         help="The email addresses to notify")
     email_parser.add_argument(
         "--gmail_sender", type=str, required=False,
         help="The email adress to send the messages." +
-        "(default: use the same address as the first email in `gmail_receiver`)")
+        "(default: use the same address as the first email in `recipient_addr`)")
     email_parser.set_defaults(sender_func=mail_notifier)
