@@ -137,15 +137,24 @@ if __name__ == "__main__":
     https://core.telegram.org/bots/tutorial"""
 
     global TOKEN 
-    TOKEN = "xxxxxxxxxxxx"
+    TOKEN = "5946449950:AAGOH5M0_q6z16A3KbtzS0Phjyi-zJ86QPk"
     
     sys.excepthook = ExceptTelegram.__call__
 
     try:
-        print(1/0)  
+        print(1/20)  
         SuccessTelegram().__call__() #1 success sender          
 
     except ExceptTelegram as e:      #2 except sender            
         sys.exit()
 
     SendTelegram().__call__()        #3 customized sender          
+
+
+
+
+
+
+
+    send = SendTelegram()            # You can use it like this, too.
+    send()
