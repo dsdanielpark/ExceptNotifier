@@ -3,6 +3,7 @@ Development Status :: 3 - Alpha <br>
 <br>
 
 # Python Package: ExceptNotifier
+![](https://github.com/dsdanielpark/ExceptNotifier/blob/main/assets/imgs/readme1.jpg)
 ![Corpus-Show](https://img.shields.io/badge/pypi-ExceptNotifier-orange)
 ![Pypi Version](https://img.shields.io/pypi/v/ExceptNotifier.svg)
 [![Python Version](https://img.shields.io/badge/python-3.6%2C3.7%2C3.8-black.svg)](code_of_conduct.md)
