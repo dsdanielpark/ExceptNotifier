@@ -92,7 +92,7 @@ class SuccessKakao:
         headers={
             "Authorization" : "Bearer " + tokens["access_token"]
         }
-        data = {
+        kakao_data = {
             'object_type': 'text',
             'text': data['text'],
             'link': {
@@ -101,8 +101,8 @@ class SuccessKakao:
             }
         }
         
-        data = {'template_object': json.dumps(data)}
-        response = requests.post(url, headers=headers, data=data)
+        kakao_data = {'template_object': json.dumps(kakao_data)}
+        response = requests.post(url, headers=headers, data=kakao_data)
         response.status_code
 
 
@@ -126,7 +126,7 @@ class SendKakao:
         headers={
             "Authorization" : "Bearer " + tokens["access_token"]
         }
-        data = {
+        kakao_data = {
             'object_type': 'text',
             'text': data['text'],
             'link': {
@@ -135,8 +135,8 @@ class SendKakao:
             }
         }
         
-        data = {'template_object': json.dumps(data)}
-        response = requests.post(url, headers=headers, data=data)
+        kakao_data = {'template_object': json.dumps(kakao_data)}
+        response = requests.post(url, headers=headers, data=kakao_data)
         response.status_code
 
 
@@ -151,7 +151,7 @@ if __name__ == "__main__":
     """Follow next notebooks"""
 
     global token_path 
-    token_path = r'C:\Users\parkm\Desktop\git\ExceptionNotifier\notebooks\kakao\token.json'
+    token_path = r'C:\Users\parkm\Desktop\git\ExceptionNotifier\tutorials\token.json'
     
     sys.excepthook = ExceptKakao.__call__
 

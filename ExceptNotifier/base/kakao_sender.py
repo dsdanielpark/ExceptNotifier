@@ -20,13 +20,16 @@ def send_kakao_msg(token_path, msg):
     }
     
     data = {'template_object': json.dumps(data)}
-    response = requests.post(url, headers=headers, data=data)
-    response.status_code
+    resp = requests.post(url, headers=headers, data=data)
+    resp_status = resp.status_code
+
+    return resp_status
 
 
 if __name__ == "__main__":
     global token_path
-    token_path = r'C:\Users\parkm\Desktop\git\ExceptionNotifier\notebooks\kakao\token.json'
+    token_path = r'C:\Users\parkm\Desktop\git\ExceptionNotifier\tutorials\token.json'
     
     msg = "Sending Message Test"
-    send_kakao_msg(token_path, msg)
+    resp_status = send_kakao_msg(token_path, msg)
+    print(resp_status)

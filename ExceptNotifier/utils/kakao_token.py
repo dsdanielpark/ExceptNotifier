@@ -2,7 +2,6 @@ import requests
 import json
 
 def get_authorize_code(rest_api_key):
-    rest_api_key = '44bae6e1a82b322885e2e8f614677c75'
     redirect_uri = 'https://example.com/oauth'
     print()
     print(f'\n\nhttps://kauth.kakao.com/oauth/authorize?client_id={rest_api_key}&redirect_uri={redirect_uri}&response_type=code')
