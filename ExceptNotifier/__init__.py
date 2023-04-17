@@ -34,4 +34,4 @@ __all__ = ['SuccessMail', 'ExceptMail', 'SendMail', 'SuccessSlcak', 'ExceptSlack
            ]
 
 __version__ = "0.1.3"
-__author__ = "MinWoo Park <parkminwoo1991@gmail.com>"
+__author__ = "daniel park <parkminwoo1991@gmail.com>"

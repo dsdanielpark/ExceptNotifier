@@ -11,6 +11,15 @@ class ExceptTelegram(BaseException):
         super().__init__(*args)
 
     def __call__(etype, value, tb):
+        """Override excepthook to send error message to Telegram.
+
+        :param etype: Error Type
+        :type etype: _type_
+        :param value: Error Value
+        :type value: _type_
+        :param tb: Traceback Information
+        :type tb: _type_
+        """
         excType = re.sub('(<(type|class \')|\'exceptions.|\'>|__main__.)', '', str(etype)).strip()
         start_time = datetime.datetime.now()
         

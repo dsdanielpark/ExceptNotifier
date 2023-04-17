@@ -6,11 +6,11 @@ from ExceptNotifier import (
                         desktop_notifier,
                         discord_notifier,
                         mail_notifier,
-                        whatsapp_notifier,
+                        whatsapp_notifier,    # Whatsapp is excluded because it requires complex settings to send personalized messages. However, you can refer to whatsapp_sender for further work.
                         sms_notifier,
                         teams_notifier,
                         telegram_notifier,
-                        wechat_notifier,
+                        wechat_notifier,      # WeChat requests information that is not accessible to people in other countries, such as residence outside of China, so it is excluded.
                         slack_notifier,
                         discord_notifier,
                         kakao_notifier,
@@ -19,7 +19,7 @@ from ExceptNotifier import (
 
 def main():
     parser = argparse.ArgumentParser(
-        description="ExceptCatch: Use Python's try-except statement to receive notifications more flexibly.")
+        description="ExceptNotifier: Use Python's try-except statement to receive notifications more flexibly.")
     parser.add_argument("--verbose", required=False, action="store_true",
                         help="Show All Commands")
     subparsers = parser.add_subparsers()

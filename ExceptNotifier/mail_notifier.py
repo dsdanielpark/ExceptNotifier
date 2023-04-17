@@ -13,6 +13,15 @@ class ExceptMail(BaseException):
         super().__init__(*args)
 
     def __call__(etype, value, tb):
+        """Override excepthook to send error message to Gmail.
+
+        :param etype: Error Type
+        :type etype: _type_
+        :param value: Error Value
+        :type value: _type_
+        :param tb: Traceback Information
+        :type tb: _type_
+        """
         excType = re.sub('(<(type|class \')|\'exceptions.|\'>|__main__.)', '', str(etype)).strip()
         exceptNotifier = {'TO':gmail_receiver, 'FROM':gmail_sender, 'SUBJECT':'[Except Notifier] Error! Python Code Exception Detected', 'BODY':f'IMPORTANT WARNING: \nPython Exception Detected in Your Code. \n\nHi there, \nThis is an exception catch notifier.\n\n{excType}: %{etype.__doc__}\n\n {value} \n\n'}
         SMTP_SERVER = 'smtp.gmail.com'
