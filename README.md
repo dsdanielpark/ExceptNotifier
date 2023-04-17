@@ -11,7 +11,7 @@ Development Status :: 3 - Alpha <br>
 
 
 ![](https://github.com/dsdanielpark/ExceptNotifier/blob/main/assets/imgs/main1.png)
-
+![](https://github.com/dsdanielpark/ExceptNotifier/blob/main/assets/imgs/fig44.png)
 
 
 
@@ -93,7 +93,7 @@ except ExceptTelegram as e:      #2. except sender
 SendTelegram().__call__()        #3. customized sender     
 ```
 
-![](https://github.com/dsdanielpark/ExceptNotifier/blob/main/assets/imgs/fig11.png)
+![](https://github.com/dsdanielpark/ExceptNotifier/blob/main/assets/imgs/fig10.png)
 
 ### Mail Notifier
 In the except statement, an email is sent along with the error message. Additionally, you can send emails from any desired line. <br><br>
