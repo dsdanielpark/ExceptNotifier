@@ -1,5 +1,5 @@
 Development Status :: 3 - Alpha <br>
-*Copyright (c) 2023 MinWoo Park*
+*Copyright (c) 2023 MinWoo Park, South Korea*
 <br>
 
 # Python Package: ExceptNotifier
@@ -18,52 +18,31 @@ Development Status :: 3 - Alpha <br>
 Python package `ExceptNotifier` can provides a more flexible way to receive notifications by overriding Python's try-except statement. You can receive alerts through various messaging platforms like email, Slack,Telegram, and Discord. This package offers an extensive range of notification options to suit your needs. 
 <br>
 Regardless of whether an exception occurs or not, with `ExceptNotifier`, you can send the entire detailed compile error to a messenger or email at a desired specific location. 
+<br><br>
+
+### Supporting Applications
+- [Telegram](https://telegram.org/)
+- [Discord](https://discord.com/)
+- [Slack](https://slack.com/)
+- [Google Mail](https://mail.google.com/)
+- SMS Sending using [Twilio](https://www.twilio.com/en-us)
+- Desktop Notification using [Plyer](https://github.com/kivy/plyer)
+- [Line](https://line.me/en/)
+- [AWS Chime](https://aws.amazon.com/ko/chime/download-chime/)
+- [Microsoft Teams](https://www.microsoft.com/en/microsoft-teams/download-app)
+- [Kakao Talk](https://www.kakaocorp.com/page/service/service/KakaoTalk?lang=en)
 
 
-
-<br>
+<br><br>
 
 # Quick Start
-ExceptNotifier installation
+Except Notifier installation
 ```
 pip install ExceptNotifier
 ```
 
 
 <br>
-
-# Package Structure
-
-```
-📦ExceptNotifier
-                               # Notifiers
- ┣ 📜chime_notifier.py
- ┣ 📜discord_notifier.py
- ┣ 📜kakao_notifier.py
- ┣ 📜line_notifier.py
- ┣ 📜mail_notifier.py
- ┣ 📜slack_notifier.py
- ┣ 📜sms_notifier.py
- ┣ 📜teams_notifier.py
- ┣ 📜telegram_notifier.py
- ┣ 📜__init__.py
- ┣ 📜__main__.py
-                               # Sending message methods
- ┣ 📂base
- ┃ ┣ 📜chime_sender.py
- ┃ ┣ 📜discord_sender.py
- ┃ ┣ 📜kakao_sender.py
- ┃ ┣ 📜line_sender.py
- ┃ ┣ 📜mail_sender.py
- ┃ ┣ 📜slack_sender.py
- ┃ ┣ 📜sms_sender.py
- ┃ ┣ 📜teams_sender.py
- ┃ ┣ 📜telegram_sender.py
- ┃ ┗ 📜whatsapp_sender.py
-                               # Utilities for setting
- ┣ 📂utils
- ┗ ┗  📜kakao_token.py
-```
 
 # Features
 ### Telegram Notifier
@@ -167,6 +146,39 @@ SendMail().__call__()
 </details>
 
 
+# Package Structure
+
+```
+📦ExceptNotifier
+                               # Notifiers
+ ┣ 📜chime_notifier.py
+ ┣ 📜discord_notifier.py
+ ┣ 📜kakao_notifier.py
+ ┣ 📜line_notifier.py
+ ┣ 📜mail_notifier.py
+ ┣ 📜slack_notifier.py
+ ┣ 📜sms_notifier.py
+ ┣ 📜teams_notifier.py
+ ┣ 📜telegram_notifier.py
+ ┣ 📜__init__.py
+ ┣ 📜__main__.py
+                               # Sending message methods
+ ┣ 📂base
+ ┃ ┣ 📜chime_sender.py
+ ┃ ┣ 📜discord_sender.py
+ ┃ ┣ 📜kakao_sender.py
+ ┃ ┣ 📜line_sender.py
+ ┃ ┣ 📜mail_sender.py
+ ┃ ┣ 📜slack_sender.py
+ ┃ ┣ 📜sms_sender.py
+ ┃ ┣ 📜teams_sender.py
+ ┃ ┣ 📜telegram_sender.py
+ ┃ ┗ 📜whatsapp_sender.py
+                               # Utilities for setting
+ ┣ 📂utils
+ ┗ ┗  📜kakao_token.py
+```
+
 
 <br><br><br>
 ### Contacts
@@ -178,3 +190,5 @@ E-mail parkminwoo1991@gmail.com
   ```
 ![Except-Notifier](https://img.shields.io/badge/pypi-ExceptNotifier-orange)
   ```
+
+
