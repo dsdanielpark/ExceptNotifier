@@ -74,7 +74,6 @@ class ExceptKakao(BaseException):
 
 
     @staticmethod
-
     def send_kakao_msg(token_path: str, msg: str) -> dict:
         """Send message to chat room through kakaotalk app's REST API.
 

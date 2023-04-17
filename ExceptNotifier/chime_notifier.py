@@ -60,7 +60,17 @@ class ExceptChime(BaseException):
 
 
     @staticmethod
-    def send_chime_msg(URL, msg):
+    def send_chime_msg(URL: str, msg: str) -> dict:
+        """Send message to chat room through chime app's webhook url.
+
+        :param URL: Webhook url from chime app
+        :type URL: str
+        :param msg: Message text
+        :type msg: str
+        :return: Response according to REST API request
+        :rtype: dict
+        """
+
         url = URL
         message = {"Content": msg}
         encoded_msg = json.dumps(message).encode("utf-8")

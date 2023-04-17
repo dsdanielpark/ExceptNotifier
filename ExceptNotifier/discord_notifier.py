@@ -55,10 +55,21 @@ class ExceptDiscord(BaseException):
 
 
     @staticmethod
-    def send_discord_msg(URL, msg):
+    def send_discord_msg(URL: str, msg: str) -> dict:
+        """Send message to chat room through discord app's webhook url.
+
+        :param URL: Webhook url from discord app
+        :type URL: str
+        :param msg: Message text
+        :type msg: str
+        :return: Response according to REST API request
+        :rtype: dict
+        """
+
         webhook = Webhook.from_url(URL, adapter=RequestsWebhookAdapter())
         resp = webhook.send(msg)
         return resp
+
 
 
 

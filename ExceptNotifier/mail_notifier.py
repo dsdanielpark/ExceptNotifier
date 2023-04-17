@@ -55,6 +55,41 @@ class ExceptMail(BaseException):
         smtp.sendmail(exceptNotifier['FROM'], exceptNotifier['TO'], exceptNotifier['ALL'])
         smtp.quit()
 
+    @staticmethod
+    def send_gmail(from_email_addr: str, to_email_addr: str, from_email_app_password: str, subject_msg: str, body_msg: str) -> dict:
+        """Send mail through gmail smtp server
+
+        :param from_email_addr: Gmail address who send message
+        :type from_email_addr: str
+        :param to_email_addr: Gmail address who receive message
+        :type to_email_addr: str
+        :param from_email_app_password: Google app password
+        :type from_email_app_password: str
+        :param subject_msg: Mail title
+        :type subject_msg: str
+        :param body_msg: Mail body
+        :type body_msg: str
+        :return: Response according to sending request
+        :rtype: dict
+        """
+        
+        SMTP_SERVER = 'smtp.gmail.com'
+        SMTP_PORT = 465
+        smtp = smtplib.SMTP_SSL(SMTP_SERVER, SMTP_PORT)
+        EMAIL_ADDR = from_email_addr
+        EMAIL_PASSWORD = from_email_app_password
+        smtp.login(EMAIL_ADDR, EMAIL_PASSWORD)
+        message = EmailMessage()
+        message.set_content(body_msg)
+        message["Subject"] = subject_msg
+        message["From"] = EMAIL_ADDR
+        message["To"] = to_email_addr
+        resp = smtp.send_message(message)
+        smtp.quit()
+
+        return resp
+
+
 
 class SuccessMail:
     def __init__(self) -> None:
@@ -97,6 +132,7 @@ class SendMail:
         message["To"] = gmail_receiver
         smtp.send_message(message)
         smtp.quit()
+
 
 
 
