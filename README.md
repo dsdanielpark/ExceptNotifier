@@ -3,11 +3,16 @@ Development Status :: 3 - Alpha <br>
 <br>
 
 # Python Package: ExceptNotifier
-![](https://github.com/dsdanielpark/ExceptNotifier/blob/main/assets/imgs/readme1.jpg)
 ![Corpus-Show](https://img.shields.io/badge/pypi-ExceptNotifier-orange)
 ![Pypi Version](https://img.shields.io/pypi/v/ExceptNotifier.svg)
 [![Python Version](https://img.shields.io/badge/python-3.6%2C3.7%2C3.8-black.svg)](code_of_conduct.md)
 ![Code convention](https://img.shields.io/badge/code%20convention-pep8-black)
+
+
+<center>
+<img src="https://github.com/dsdanielpark/ExceptNotifier/blob/main/assets/imgs/readme1.jpg" width="600">
+</center>
+
 
 Python package `ExceptNotifier` can provides a more flexible way to receive notifications by overriding Python's try-except statement. You can receive alerts through various messaging platforms like email, Slack,Telegram, and Discord. This package offers an extensive range of notification options to suit your needs. 
 <br>
@@ -131,3 +136,17 @@ except ExceptMail:
 SendMail().__call__() 
 ```
 </details>
+
+
+
+
+### Contacts
+Maintainers: [Daniel Park, South Korea](https://github.com/DSDanielPark) 
+e-mail parkminwoo1991@gmail.com
+  
+<br><br><br>
+  
+### Could you kindly add this badge to your repository? Thank you!
+  ```
+![Quick-Show](https://img.shields.io/badge/pypi-exceptnotifier-orange)
+  ```
