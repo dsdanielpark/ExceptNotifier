@@ -11,7 +11,7 @@ Development Status :: 3 - Alpha <br>
 
 
 <center>
-<img src="https://github.com/dsdanielpark/ExceptNotifier/blob/main/assets/imgs/readme1.jpg" width="600">
+<img src="https://github.com/dsdanielpark/ExceptNotifier/blob/main/assets/imgs/exceptnotifier.png" width="800">
 </center>
 
 
