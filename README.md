@@ -92,9 +92,8 @@ except ExceptTelegram as e:      #2. except sender
 SendTelegram().__call__()        #3. customized sender     
 ```
 
-<center>
-<img src="https://github.com/dsdanielpark/ExceptNotifier/blob/main/assets/imgs/fig6.png" width="800">
-</center>
+[](https://github.com/dsdanielpark/ExceptNotifier/blob/main/assets/imgs/fig6.png)
+
 
 ### Mail Notifier
 In the except statement, an email is sent along with the error message. Additionally, you can send emails from any desired line. <br><br>
