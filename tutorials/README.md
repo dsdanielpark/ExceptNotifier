@@ -1,13 +1,13 @@
 
-# How to get API
+# How to get READY for ExceptNotifier
 It introduces how to obtain APIs for communication by each application. Since it is based on April 2023, there are some changes after that, and if there is a change, it will be updated through a minor patch.
+
+- Author: MinWoo Park
+- Date: April 18, 2023
 
 <br><br>
 
 # Contents
-
-<br>
-
 
 ## 1. Google Mail - App password
 1. Get your 'app password'
@@ -19,8 +19,8 @@ It introduces how to obtain APIs for communication by each application. Since it
 
 ## 2. Slack - API
 1. visit https://api.slack.com/
-2. `Create an app` - `From scratch` -> `Create App`
+2. `Create an app` - `From scratch` - `Create App`
 3. Add webhook
 Click `Incoming Webhooks` - Activate Incomming `On` - Add New Webhook to Workspace
-4. Copy `Webhook URL
+4. Copy `Webhook URL`
 
