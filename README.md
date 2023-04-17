@@ -184,7 +184,7 @@ SendMail().__call__()
 
 <br><br><br>
 ### Contacts
-- Maintainer: [Daniel Park, South Korea](https://github.com/DSDanielPark) <br>
+- Maintainer [Daniel Park, South Korea](https://github.com/DSDanielPark) <br>
 - Email parkminwoo1991@gmail.com
 <br>
   
