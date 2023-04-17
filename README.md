@@ -67,11 +67,14 @@ pip install ExceptNotifier
 # Features
 ### Telegram Notifier
 
-a. Open your telegram app and search for BotFather. (A built-in Telegram bot that helps users create custom Telegram bots)
-b. Type /newbot to create a new bot
-c. Give your bot a name & a username
-d. Copy your new Telegram bot’s token
+a. Open your telegram app and search for BotFather. (A built-in Telegram bot that helps users create custom Telegram bots) <br>
+b. Type /newbot to create a new bot <br>
+c. Give your bot a name & a username <br>
+d. Copy your new Telegram bot’s token <br>
+For more infomation, visit [Telegram Bot Father API](https://core.telegram.org/bots/api)
+<br><br>
 
+ 
 ```python
 from ExceptNotifier import ExceptTelegram, SuccessTelegram, SendTelegram
 import sys
