@@ -93,7 +93,7 @@ SendTelegram().__call__()        #3. customized sender
 ```
 
 <center>
-<img src="https://github.com/dsdanielpark/ExceptNotifier/blob/main/assets/imgs/telegram_notifier.png" width="800">
+<img src="https://github.com/dsdanielpark/ExceptNotifier/blob/main/assets/imgs/fig6.png" width="800">
 </center>
 
 ### Mail Notifier
