@@ -65,7 +65,35 @@ pip install ExceptNotifier
 ```
 
 # Features
-## `Mail Notifier`
+### Telegram Notifier
+
+a. Open your telegram app and search for BotFather. (A built-in Telegram bot that helps users create custom Telegram bots)
+b. Type /newbot to create a new bot
+c. Give your bot a name & a username
+d. Copy your new Telegram bot’s token
+
+```python
+from ExceptNotifier import ExceptTelegram, SuccessTelegram, SendTelegram
+import sys
+sys.excepthook = ExceptTelegram.__call__
+
+TELEGRAM_TOKEN = "xxxx"
+
+try:
+    print(1/0)  
+    SuccessTelegram().__call__() #1. success sender          
+
+except ExceptTelegram as e:      #2. except sender            
+    sys.exit()
+
+SendTelegram().__call__()        #3. customized sender     
+```
+
+<center>
+<img src="https://github.com/dsdanielpark/ExceptNotifier/blob/main/assets/imgs/telegram_notifier.png" width="800">
+</center>
+
+### Mail Notifier
 In the except statement, an email is sent along with the error message. Additionally, you can send emails from any desired line. <br><br>
 a. Log in with the sender's email ID. <br>
 b. Obtain an app password for sending Google Mail at the following [link](https://myaccount.google.com/u/3/apppasswords?utm_source=google-account&utm_medium=myaccountsecurity&utm_campaign=tsv-settings&rapt=AEjHL4N2bMRWO46VaMp_jP06zQK14BWNPv66l2o59iJ99CkO8BjYnmoRUe9dtSchkkbubHZMUhevkAnwVJRHb9ygO3afispNlw) or [google document](https://support.google.com/accounts/answer/185833?hl=en). 
