@@ -44,12 +44,13 @@ pip install ExceptNotifier
 <br>
 
 # Features
-### Telegram Notifier
+### *Telegram Notifier*
 
-a. Open your telegram app and search for BotFather. (A built-in Telegram bot that helps users create custom Telegram bots) <br>
-b. Type /newbot to create a new bot <br>
-c. Give your bot a name & a username <br>
-d. Copy your new Telegram bot’s token <br>
+- a. Open your telegram app and search for BotFather. (A built-in Telegram bot that helps users create custom Telegram bots) <br>
+- b. Type /newbot to create a new bot <br>
+- c. Give your bot a name & a username <br>
+- d. Copy your new Telegram bot’s token <br>
+
 For more infomation, visit [Telegram Bot Father API](https://core.telegram.org/bots/api)
 <br><br>
 
@@ -59,7 +60,7 @@ from ExceptNotifier import ExceptTelegram, SuccessTelegram, SendTelegram
 import sys
 sys.excepthook = ExceptTelegram.__call__
 
-TELEGRAM_TOKEN = "xxxx"
+_TELEGRAM_TOKEN = "xxxx"
 
 try:
     print(1/0)  
@@ -73,10 +74,12 @@ SendTelegram().__call__()        #3. customized sender
 
 ![](https://github.com/dsdanielpark/ExceptNotifier/blob/main/assets/imgs/fig44.png)
 
-### Mail Notifier
+<br>
+
+### *Mail Notifier*
 In the except statement, an email is sent along with the error message. Additionally, you can send emails from any desired line. <br><br>
-a. Log in with the sender's email ID. <br>
-b. Obtain an app password for sending Google Mail at the following [link](https://myaccount.google.com/u/3/apppasswords?utm_source=google-account&utm_medium=myaccountsecurity&utm_campaign=tsv-settings&rapt=AEjHL4N2bMRWO46VaMp_jP06zQK14BWNPv66l2o59iJ99CkO8BjYnmoRUe9dtSchkkbubHZMUhevkAnwVJRHb9ygO3afispNlw) or [google document](https://support.google.com/accounts/answer/185833?hl=en). 
+- a. Log in with the sender's email ID. <br>
+- b. Obtain an app password for sending Google Mail at the following [link](https://myaccount.google.com/u/3/apppasswords?utm_source=google-account&utm_medium=myaccountsecurity&utm_campaign=tsv-settings&rapt=AEjHL4N2bMRWO46VaMp_jP06zQK14BWNPv66l2o59iJ99CkO8BjYnmoRUe9dtSchkkbubHZMUhevkAnwVJRHb9ygO3afispNlw) or [google document](https://support.google.com/accounts/answer/185833?hl=en). 
 
 ```python
 from ExceptNotifier import ExceptMail, SuccessMail, SendMail
@@ -99,14 +102,15 @@ import sys
 from ExceptNotifier import ExceptMail, SuccessMail, SendMail
 
 # 01. Set variable
-global gmail_receiver, gmail_sender, gmail_app_password_of_sender
-gmail_receiver = 'xxxxxx@gmail.com'
-gmail_sender = 'yyyyyy@gmail.com'
-gmail_app_password_of_sender = 'zzzzzzzzzz'
+_gmail_receiver = 'xxxxx@gmail.com'
+_gmail_sender = 'xxxxx@gmail.com'
+_gmail_app_password_of_sender = 'xxxxx'
+
 sys.excepthook = ExceptMail.__call__
 
 try:
-    print(1/0) # 02.Locate your code      
+    # 02.Locate your code
+    print(1/0)   
     SuccessMail().__call__()   # Success Mail
 
 except ExceptMail as e:        # Exception Mail       
@@ -114,9 +118,6 @@ except ExceptMail as e:        # Exception Mail
     print(e)
 
 SendMail().__call__()          # Put Any Line: Sending mail
-
-
-
 ```
 </details>
 
@@ -127,12 +128,11 @@ SendMail().__call__()          # Put Any Line: Sending mail
 import sys
 from ExceptNotifier import ExceptMail, SuccessMail, SendMail
 
-global gmail_receiver, gmail_sender, gmail_app_password_of_sender
-gmail_receiver = 'xxxxxxx@gmail.com'
-gmail_sender = 'yyyyyy@gmail.com'
-gmail_app_password_of_sender = 'zzzzzz'
+global _gmail_receiver, _gmail_sender, _gmail_app_password_of_sender
+_gmail_receiver = 'xxxxxxx@gmail.com'
+_gmail_sender = 'yyyyyy@gmail.com'
+_gmail_app_password_of_sender = 'zzzzzz'
 sys.excepthook = ExceptMail.__call__
-
 
 try:
     'your code'
@@ -144,6 +144,9 @@ SendMail().__call__()
 ```
 </details>
 
+
+
+<br><br>
 
 # Package Structure
 
