@@ -27,7 +27,6 @@ pip install ExceptNotifier
 
 # Package Structure
 
-
 ```
 📦ExceptNotifier
                                # Notifier
