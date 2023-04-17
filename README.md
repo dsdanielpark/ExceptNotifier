@@ -36,7 +36,6 @@ Regardless of whether an exception occurs or not, with `ExceptNotifier`, you can
 <br><br>
 
 # Quick Start
-Except Notifier installation
 ```
 pip install ExceptNotifier
 ```
