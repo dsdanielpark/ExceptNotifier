@@ -170,14 +170,13 @@ SendMail().__call__()
 
 
 
-
-### Contacts
-Maintainers: [Daniel Park, South Korea](https://github.com/DSDanielPark) 
-e-mail parkminwoo1991@gmail.com
-  
 <br><br><br>
+### Contacts
+Maintainer: [Daniel Park, South Korea](https://github.com/DSDanielPark) <br>
+E-mail parkminwoo1991@gmail.com
+<br><br>
   
-### Could you kindly add this badge to your repository? Thank you!
+#### Could you kindly add this badge to your repository?
   ```
 ![Except-Notifier](https://img.shields.io/badge/pypi-ExceptNotifier-orange)
   ```
