@@ -3,8 +3,7 @@ Development Status :: 3 - Alpha <br>
 <br>
 
 # Python Package: ExceptNotifier
-![](https://github.com/dsdanielpark/ExceptNotifier/blob/main/assets/imgs/exceptnotifier.png)
-![Corpus-Show](https://img.shields.io/badge/pypi-ExceptNotifier-orange)
+![Except-Notifier](https://img.shields.io/badge/pypi-ExceptNotifier-orange)
 ![Pypi Version](https://img.shields.io/pypi/v/ExceptNotifier.svg)
 [![Python Version](https://img.shields.io/badge/python-3.6%2C3.7%2C3.8-black.svg)](code_of_conduct.md)
 ![Code convention](https://img.shields.io/badge/code%20convention-pep8-black)
@@ -149,5 +148,5 @@ e-mail parkminwoo1991@gmail.com
   
 ### Could you kindly add this badge to your repository? Thank you!
   ```
-![Quick-Show](https://img.shields.io/badge/pypi-exceptnotifier-orange)
+![Except-Notifier](https://img.shields.io/badge/pypi-ExceptNotifier-orange)
   ```
