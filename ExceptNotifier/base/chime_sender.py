@@ -1,4 +1,3 @@
-import json
 import urllib3
 import json
 
@@ -10,11 +9,11 @@ def send_chime_msg(URL, msg):
     message = {"Content": msg}
     encoded_msg = json.dumps(message).encode("utf-8")
     resp = http.request("POST", url, body=encoded_msg)
-    print(
-        {
-            "message": msg,
-            "status_code": resp.status,
-            "response": resp.data,
-        }
-    )
+
     return resp
+
+
+if __name__ == "__main__":
+    URL = "https://hooks.chime.aws/incomingwebhooks/72970d5c-7ed1-4e05-bf39-305b860e7e13?token=VWxFRm1IOVh8MXxzQ2VWZVBjQ3EzNE1Oa29Wa0doeDRBWFNEZWJYdkZnSHdjbnlkRDV0TW40"
+    
+    send_chime_msg(URL, "Test")
