@@ -6,6 +6,7 @@ from email.message import EmailMessage
 import sys
 DATE_FORMAT = "%Y-%m-%d %H:%M:%S"
 
+
 class ExceptTelegram(BaseException):
     def __init__(self, *args: object) -> None:
         super().__init__(*args)
@@ -137,7 +138,7 @@ if __name__ == "__main__":
     https://core.telegram.org/bots/tutorial"""
 
     global _TELEGRAM_TOKEN 
-    _TELEGRAM_TOKEN = "5946449950:AAGOH5M0_q6z16A3KbtzS0Phjyi-zJ86QPk"
+    _TELEGRAM_TOKEN = "xxxxxxxxxxxx"
 
     sys.excepthook = ExceptTelegram.__call__
 

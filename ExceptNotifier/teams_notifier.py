@@ -53,16 +53,16 @@ class ExceptTeams(BaseException):
         headers = {
             'Content-Type': 'application/json'
         }
-        resp = requests.post(URL, headers=headers, data=data['text'])
+        resp = requests.post(_TEAMS_WEBHOOK_URL, headers=headers, data=data['text'])
 
 
 
     @staticmethod
-    def send_teams_msg(URL, msg):
+    def send_teams_msg(_TEAMS_WEBHOOK_URL, msg):
         """Send message to chat room through microsoft teams app's webhook url.
 
-        :param URL: URL from teams app
-        :type URL: str
+        :param _TEAMS_WEBHOOK_URL: _TEAMS_WEBHOOK_URL from teams app
+        :type _TEAMS_WEBHOOK_URL: str
         :param msg: Message text
         :type msg: str
         :return: Response according to REST API request
@@ -75,7 +75,7 @@ class ExceptTeams(BaseException):
         headers = {
             'Content-Type': 'application/json'
         }
-        resp = requests.post(URL, headers=headers, data=json.dumps(payload))
+        resp = requests.post(_TEAMS_WEBHOOK_URL, headers=headers, data=json.dumps(payload))
 
         return resp
 
@@ -97,7 +97,7 @@ class SuccessTeams:
         headers = {
             'Content-Type': 'application/json'
         }
-        resp = requests.post(URL, headers=headers, data=data['text'])
+        resp = requests.post(_TEAMS_WEBHOOK_URL, headers=headers, data=data['text'])
 
 
 class SendTeams:
@@ -116,7 +116,7 @@ class SendTeams:
         headers = {
             'Content-Type': 'application/json'
         }
-        resp = requests.post(URL, headers=headers, data=data['text'])
+        resp = requests.post(_TEAMS_WEBHOOK_URL, headers=headers, data=data['text'])
 
 
 
@@ -133,8 +133,8 @@ if __name__ == "__main__":
     
     """Follow next page"""
 
-    global URL 
-    URL = 'microsoft webhook URL'
+    global _TEAMS_WEBHOOK_URL 
+    _TEAMS_WEBHOOK_URL = 'microsoft webhook _TEAMS_WEBHOOK_URL'
     
     sys.excepthook = ExceptTeams.__call__
 

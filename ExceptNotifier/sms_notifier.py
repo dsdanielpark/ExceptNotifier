@@ -1,4 +1,3 @@
-import requests
 import traceback
 import re
 import datetime
@@ -6,7 +5,6 @@ from email.message import EmailMessage
 import sys
 import pickle
 from twilio.rest import Client
-
 DATE_FORMAT = "%Y-%m-%d %H:%M:%S"
 
 
@@ -54,20 +52,20 @@ class ExceptSMS(BaseException):
         
         data = {'text':exceptNotifier['SUBJECT']+exceptNotifier['BODY']}
 
-        client = Client(SID, TOKEN)
+        client = Client(_TWILIO_SID, _TWILIO_TOKEN)
         client.messages.create(
-                                to=TO,
-                                from_=FROM,  
+                                to=_RECIPANT_PHONE_NUMBER,
+                                from_=_SENDER_PHONE_NUMBER,  
                                 body=data['text'][:1500]
                                 )
 
 
     @staticmethod
-    def send_sms_msg(SID, TOKEN, FROM, TO, msg):
-        client = Client(SID, TOKEN)
+    def send_sms_msg(_TWILIO_SID, _TWILIO_TOKEN, _SENDER_PHONE_NUMBER, _RECIPANT_PHONE_NUMBER, msg):
+        client = Client(_TWILIO_SID, _TWILIO_TOKEN)
         client.messages.create(
-            to=TO,
-            from_=FROM,  
+            to=_RECIPANT_PHONE_NUMBER,
+            from_=_SENDER_PHONE_NUMBER,  
         body=msg
     )
 
@@ -86,10 +84,10 @@ class SuccessSMS:
         
         data = {'text':exceptNotifier['SUBJECT']+exceptNotifier["BODY"]}
         
-        client = Client(SID, TOKEN)
+        client = Client(_TWILIO_SID, _TWILIO_TOKEN)
         client.messages.create(
-                                to=TO,
-                                from_=FROM,  
+                                to=_RECIPANT_PHONE_NUMBER,
+                                from_=_SENDER_PHONE_NUMBER,  
                                 body=data['text'][:1500]
                                 )
 
@@ -106,10 +104,10 @@ class SendSMS:
         
         data = {'text':exceptNotifier['SUBJECT']+exceptNotifier["BODY"]}
         
-        client = Client(SID, TOKEN)
+        client = Client(_TWILIO_SID, _TWILIO_TOKEN)
         client.messages.create(
-                                to=TO,
-                                from_=FROM,  
+                                to=_RECIPANT_PHONE_NUMBER,
+                                from_=_SENDER_PHONE_NUMBER,  
                                 body=data['text'][:1500]
                                 )
 
@@ -117,13 +115,13 @@ if __name__ == "__main__":
     
     """https://www.twilio.com/en-us"""
 
-    global SID, TWILIO_AUTH_TOKEN, FROM, TO
-    SID = 'xxxx'
-    TOKEN = 'yyyy'
-    client = Client(SID, TOKEN)
+    global _TWILIO_SID, TWILIO_AUTH_TOKEN, _SENDER_PHONE_NUMBER, _RECIPANT_PHONE_NUMBER
+    _TWILIO_SID = 'xxxx'
+    _TWILIO_TOKEN = 'yyyyyy'
+    client = Client(_TWILIO_SID, _TWILIO_TOKEN)
 
-    TO="+zzzz",
-    FROM="+aaaa",  
+    _RECIPANT_PHONE_NUMBER="+aaaaaa",
+    _SENDER_PHONE_NUMBER="+bbbbbb",  
     
     sys.excepthook = ExceptSMS.__call__
 

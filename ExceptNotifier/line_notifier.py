@@ -50,7 +50,7 @@ class ExceptLINE(BaseException):
         data = {'text':exceptNotifier['SUBJECT']+exceptNotifier['BODY']}
 
         api_url = "https://notify-api.line.me/api/notify"
-        headers = {'Authorization':'Bearer '+ TOKEN}
+        headers = {'Authorization':'Bearer '+ _LINE_NOTIFY_API_TOKEN}
         message = {
             "message" : data['text']
         }
@@ -58,11 +58,11 @@ class ExceptLINE(BaseException):
 
 
     @staticmethod
-    def send_line_msg(TOKEN: str, msg: str) -> dict:
+    def send_line_msg(_LINE_NOTIFY_API_TOKEN: str, msg: str) -> dict:
         """Send message to chat room through Line app's REST API.
 
-        :param TOKEN: Line notify API token
-        :type TOKEN: str
+        :param _LINE_NOTIFY_API_TOKEN: Line notify API token
+        :type _LINE_NOTIFY_API_TOKEN: str
         :param msg: Message text
         :type msg: str
         :return: Response according to REST API request
@@ -70,7 +70,7 @@ class ExceptLINE(BaseException):
         """
 
         api_url = "https://notify-api.line.me/api/notify"
-        headers = {'Authorization':'Bearer '+ TOKEN}
+        headers = {'Authorization':'Bearer '+ _LINE_NOTIFY_API_TOKEN}
         message = {
             "message" : msg
         }
@@ -94,7 +94,7 @@ class SuccessLine:
         data = {'text':exceptNotifier['SUBJECT']+exceptNotifier["BODY"]}
 
         api_url = "https://notify-api.line.me/api/notify"
-        headers = {'Authorization':'Bearer '+ TOKEN}
+        headers = {'Authorization':'Bearer '+ _LINE_NOTIFY_API_TOKEN}
         message = {
             "message" : data['text']
         }
@@ -115,7 +115,7 @@ class SendLine:
         data = {'text':exceptNotifier['SUBJECT']+exceptNotifier["BODY"]}
 
         api_url = "https://notify-api.line.me/api/notify"
-        headers = {'Authorization':'Bearer '+ TOKEN}
+        headers = {'Authorization':'Bearer '+ _LINE_NOTIFY_API_TOKEN}
         message = {
             "message" : data['text']
         }
@@ -138,8 +138,8 @@ if __name__ == "__main__":
     """Get your URL from HERE. 
     https://notify-bot.line.me/my/"""
 
-    global TOKEN 
-    TOKEN = 'XN7rNI2bGzKY9KsQCM8eJ5m2S51u2EXxx6MHDSBd1fq'
+    global _LINE_NOTIFY_API_TOKEN 
+    _LINE_NOTIFY_API_TOKEN = 'XN7rNI2bGzKY9KsQCM8eJ5m2S51u2EXxx6MHDSBd1fq'
     
     sys.excepthook = ExceptLINE.__call__
 

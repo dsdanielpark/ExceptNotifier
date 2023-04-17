@@ -50,23 +50,23 @@ class ExceptDiscord(BaseException):
         
         data = {'text':exceptNotifier['SUBJECT']+exceptNotifier['BODY']}
 
-        webhook = Webhook.from_url(URL, adapter=RequestsWebhookAdapter())
+        webhook = Webhook.from_url(_DISCORD_WEBHOOK_URL, adapter=RequestsWebhookAdapter())
         webhook.send(data['text'][:2000])
 
 
     @staticmethod
-    def send_discord_msg(URL: str, msg: str) -> dict:
+    def send_discord_msg(_DISCORD_WEBHOOK_URL: str, msg: str) -> dict:
         """Send message to chat room through discord app's webhook url.
 
-        :param URL: Webhook url from discord app
-        :type URL: str
+        :param _DISCORD_WEBHOOK_URL: Webhook url from discord app
+        :type _DISCORD_WEBHOOK_URL: str
         :param msg: Message text
         :type msg: str
         :return: Response according to REST API request
         :rtype: dict
         """
 
-        webhook = Webhook.from_url(URL, adapter=RequestsWebhookAdapter())
+        webhook = Webhook.from_url(_DISCORD_WEBHOOK_URL, adapter=RequestsWebhookAdapter())
         resp = webhook.send(msg)
         return resp
 
@@ -85,7 +85,7 @@ class SuccessDiscord:
         exceptNotifier["BODY"]=f"\n\nHi there, \nThis is a success notifier.\n\n - :white_check_mark: Code Status: Success. \n - :white_check_mark: Detail: Python Code Ran Without Exceptions. \n - :clock2: Time: {start_time.strftime(DATE_FORMAT)} \n\nI just wanted to let you know that your Python code has run successfully without any exceptions. \n\nAll the best, \nExcept Notifier https://github.com/dsdanielpark/ExceptNotifier"
         
         data = {'text':exceptNotifier['SUBJECT']+exceptNotifier["BODY"]}
-        webhook = Webhook.from_url(URL, adapter=RequestsWebhookAdapter())
+        webhook = Webhook.from_url(_DISCORD_WEBHOOK_URL, adapter=RequestsWebhookAdapter())
         webhook.send(data['text'])
 
 
@@ -103,7 +103,7 @@ class SendDiscord:
         
         data = {'text':exceptNotifier['SUBJECT']+exceptNotifier["BODY"]}
         
-        webhook = Webhook.from_url(URL, adapter=RequestsWebhookAdapter())
+        webhook = Webhook.from_url(_DISCORD_WEBHOOK_URL, adapter=RequestsWebhookAdapter())
         webhook.send(data['text'])
 
 
@@ -120,12 +120,12 @@ class SendDiscord:
 
 if __name__ == "__main__":
     
-    # Get your slcak bot and enter URL
-    """Get your URL from HERE. 
+    # Get your slcak bot and enter _DISCORD_WEBHOOK_URL
+    """Get your _DISCORD_WEBHOOK_URL from HERE. 
     https://discord.com/developers/docs/resources/webhook"""
 
-    global URL 
-    URL = "https://discordapp.com/api/webhooks/1096742750508044349/E5vXTCtkdx_JZlJ9UfQI33jwUwJ4NgyrVYwO4z-qU_upKgKmDXc5e2j8TEr6VxqBPShQ"
+    global _DISCORD_WEBHOOK_URL 
+    _DISCORD_WEBHOOK_URL = "https://discordapp.com/api/webhooks/1096742750508044349/E5vXTCtkdx_JZlJ9UfQI33jwUwJ4NgyrVYwO4z-qU_upKgKmDXc5e2j8TEr6VxqBPShQ"
     
     sys.excepthook = ExceptDiscord.__call__
 
