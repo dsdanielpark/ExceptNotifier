@@ -33,7 +33,7 @@ With `ExceptNotifier`, you can obtain detailed compilation errors, including deb
 <Br>
 
 ### AI Debugging
-If you have Openai's model name and API key in any application, you can get information and *examples* for debugging OpenAI ChatGPT.
+If you have Openai's model name and API key in any application, you can get information and *debugging examples* for debugging OpenAI ChatGPT.
 - [OPEN AI API](https://platform.openai.com/docs/introduction)
 
 
@@ -51,7 +51,25 @@ pip install exceptnotifier
 <br>
 
 
-# 1 Key Features
+## App Setup Overview
+You can receive debugging information from ChatGPT via OpenAI's API when using the Except statement. The syntax remains the same, but you'll need to configure these two variables:
+`_OPEN_AI_MODEL`,`_OPEN_AI_API`
+
+| App | Required Variables | Free or Paid | Ease of Setup | Time Required for Setup|Guide Tutorial Link|
+|:--:|:--|:--:|:--:|:--:|:---:|
+|Beep|None|Free|N/A|0 min|[ExceptBeep](https://github.com/dsdanielpark/ExceptNotifier/blob/main/documents/ExceptBeep/GUIDE.md)|
+|Desktop|None|Free|N/A|0 min|-|[ExceptDesktop](https://github.com/dsdanielpark/ExceptNotifier/blob/main/documents/ExceptDesktop/GUIDE.md)
+|Telegram|`_TELEGRAM_TOKEN`|Freemium|Easy|2min|[ExceptTelegram](https://github.com/dsdanielpark/ExceptNotifier/blob/main/documents/ExceptTelegram/GUIDE.md)|
+|Discord|`_DISCORD_WEBHOOK_URL`|Freemium|Easy|1min|[ExceptDiscord](https://github.com/dsdanielpark/ExceptNotifier/blob/main/documents/ExceptTelegram/GUIDE.md)|
+|AWS Chime|`_CHIME_WEBHOOK_URL`|Freemium|Easy|1min|[ExceptChime](https://github.com/dsdanielpark/ExceptNotifier/blob/main/documents/ExceptChime/GUIDE.md)|
+|Slack|`_SLACK_WEBHOOK_URL`|Freemium|Easy|3min|[ExceptSlack](https://github.com/dsdanielpark/ExceptNotifier/blob/main/documents/ExceptSlack/GUIDE.md)|
+|Google Mail|`_GAMIL_RECIPIENT_ADDR`, `_GMAIL_SENDER_ADDR`, `_GMAIL_APP_PASSWORD_OF_SENDER` |Partially free|Medium|3min|[ExceptMail](https://github.com/dsdanielpark/ExceptNotifier/blob/main/documents/ExceptMail/GUIDE.md)|
+|Line|`_LINE_NOTIFY_API_TOKEN`|Freemium|Medium|4min|[ExceptLine](https://github.com/dsdanielpark/ExceptNotifier/blob/main/documents/ExceptLine/GUIDE.md)|
+|SMS|`_TWILIO_SID`, `_TWILIO_TOKEN`, `_RECIPIENT_PHONE_NUMBER`, `_SENDER_PHONE_NUMBER`|Restricted free|Medium|5min|[ExceptSMS](https://github.com/dsdanielpark/ExceptNotifier/blob/main/documents/ExceptSMS/GUIDE.md)|
+|Microsoft Team|`_TEAMS_WEBHOOK_URL`|Restricted free|Medium|5min|[ExceptTeams](https://github.com/dsdanielpark/ExceptNotifier/blob/main/documents/ExceptTeams/GUIDE.md)|
+|KakaoTalk|`_KAKAO_TOKEN_PATH`|Restricted free|Hell|>=10min|[ExceptKakao](https://github.com/dsdanielpark/ExceptNotifier/blob/main/documents/ExceptKakao/GUIDE.md)|
+
+# 1. Key Features
 To use the desired application, you must define the necessary variables. Ensure that the variable names remain unchanged, and you can use either local or global variables.
 
 ## 1-1. Except`[Application Name]`
@@ -134,6 +152,9 @@ noti()                    # sending message to telegram
 # 2. Features
 You can receive debugging information from ChatGPT via OpenAI's API when using the Except statement. The syntax remains the same, but you'll need to configure these two variables:
 `_OPEN_AI_MODEL`,`_OPEN_AI_API`
+
+
+
 ## 2-1. *Telegram Notifier*
 
 - a. Open your telegram app and search for BotFather. (A built-in Telegram bot that helps users create custom Telegram bots) <br>
