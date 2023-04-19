@@ -1,2 +1,5 @@
 # Code of Conduct
-ExceptNotifier follows the [CNCF Code of Conduct](https://github.com/cncf/foundation/blob/main/code-of-conduct.md).
+Everyone participating in the _EXcenptNotifier_ project, and in particular in the issue tracker,
+pull requests, and social media activity, is expected to treat other people with respect
+and more generally to follow the guidelines articulated in the
+[Python Community Code of Conduct](https://www.python.org/psf/codeofconduct/).

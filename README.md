@@ -19,6 +19,15 @@ Development Status :: 3 - Alpha <br>
 <Br><br>
 With `ExceptNotifier`, you can obtain detailed compilation errors, including debug information, sent directly to your preferred messaging platform or email. By integrating OpenAI's ChatGPT, you can receive additional error code information as long as you provide the required API model name and key. This feature ensures that error handling and notifications are more informative and accessible, streamlining your debugging process.
 
+<Br>
+
+#### Could you kindly add this badge to your repository?
+
+```
+![Except-Notifier](https://img.shields.io/badge/pypi-ExceptNotifier-orange)
+```
+
+
 <br><br>
 
 ### Supporting Applications
@@ -563,16 +572,17 @@ SendDesktop().__call__()        #3 customized sender
 
 <Br><br><br>
 
-### Contacts
-- Core Maintainer [Daniel Park, South Korea](https://github.com/DSDanielPark) <br>
-- Email parkminwoo1991@gmail.com
+# License
+MIT
+
+<br>
+
+# Code of Conduct
+Everyone participating in the `ExceptNotifier` project, and in particular in the issue tracker, pull requests, and social media activity, is expected to treat other people with respect and more generally to follow the guidelines articulated in [the Python Community Code of Conduct](https://www.python.org/psf/conduct/).
+
+<br>
+
 
 ##### The package is currently in the development and QA stages, and the development stage will be updated at the top of this page. If it is determined that the product is stable through feature improvement, addition, and issue resolution, the development stage will reach stage 5. If no new updates or issues arise, it will be adjusted upward to stage 6 or higher.
-
-#### Could you kindly add this badge to your repository?
-
-```
-![Except-Notifier](https://img.shields.io/badge/pypi-ExceptNotifier-orange)
-```
 
 
