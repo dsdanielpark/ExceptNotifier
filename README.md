@@ -558,9 +558,6 @@ SendDesktop().__call__()        #3 customized sender
 
 <Br><br><br>
 
-### Inspiring
-- Thanks to [Myunghak Lee](https://github.com/myeonghak) for providing great ideas on providing debugging information through open ai API.
-
 ### Contacts
 - Core Maintainer [Daniel Park, South Korea](https://github.com/DSDanielPark) <br>
 - Email parkminwoo1991@gmail.com
