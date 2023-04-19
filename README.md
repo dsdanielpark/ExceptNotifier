@@ -181,10 +181,7 @@ SendMail().__call__()
 
 <br>
 
-# Inspiring
-- Thanks to [Myunghak Lee](https://github.com/myeonghak) for providing great ideas on providing debugging information through open ai API.
-
-<br><br><br>
+<br>
 ### Contacts
 - Maintainer [Daniel Park, South Korea](https://github.com/DSDanielPark) <br>
 - Email parkminwoo1991@gmail.com
@@ -196,3 +193,5 @@ SendMail().__call__()
   ```
 
 
+# Inspiring
+- Thanks to [Myunghak Lee](https://github.com/myeonghak) for providing great ideas on providing debugging information through open ai API.
