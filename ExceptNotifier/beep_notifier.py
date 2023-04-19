@@ -4,7 +4,7 @@ import os
 import platform
 import winsound
 from ExceptNotifier import beep 
- 
+
 
 class ExceptBeep(BaseException):
     def __init__(self, *args: object) -> None:
@@ -20,6 +20,10 @@ class ExceptBeep(BaseException):
         :param tb: Traceback Information
         :type tb: _type_
         """
+        beep(BEEP_TIME)
+        beep(BEEP_TIME)
+        beep(BEEP_TIME)
+        beep(BEEP_TIME)
         beep(BEEP_TIME)
 
 
@@ -48,6 +52,7 @@ class SuccessBeep:
         pass
         
     def __call__(self, *args, **kwds) -> None:
+        beep(BEEP_TIME)
         beep(BEEP_TIME)
 
 

@@ -1,7 +1,7 @@
 import smtplib
 from email.message import EmailMessage
 
-def send_gmail(_GMAIL_SENDER_ADDR: str, _GAMIL_RECIPIENT_ADDR: str, _GMAIL_APP_PASSWORD_OF_SENDER: str, subject_msg: str, body_msg: str) -> dict:
+def send_gmail_msg(_GMAIL_SENDER_ADDR: str, _GAMIL_RECIPIENT_ADDR: str, _GMAIL_APP_PASSWORD_OF_SENDER: str, subject_msg: str, body_msg: str) -> dict:
     """Send mail through gmail smtp server
 
     :param _GMAIL_SENDER_ADDR: Gmail address who send message
@@ -42,4 +42,4 @@ if __name__ == "__main__": #No-QA
     subject_msg = "Python Code Alarm: Process End."
     body_msg = "Python Code Notice: \nA notification has arrived from your code."
     
-    send_gmail(_GMAIL_SENDER_ADDR, _GAMIL_RECIPIENT_ADDR, _GMAIL_APP_PASSWORD_OF_SENDER, subject_msg, body_msg)
+    send_gmail_msg(_GMAIL_SENDER_ADDR, _GAMIL_RECIPIENT_ADDR, _GMAIL_APP_PASSWORD_OF_SENDER, subject_msg, body_msg)

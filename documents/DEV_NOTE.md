@@ -24,7 +24,10 @@ The ExceptNotifier offers Gmail as the primary email service. Due to varying com
 
 <br>
 
+# Thank To
+- Thanks to [Myunghak Lee](https://github.com/myeonghak) for providing great ideas on providing debugging information through open ai API.
 
+<br>
 
 # Release note
 |Version|Description|

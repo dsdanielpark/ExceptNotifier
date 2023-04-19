@@ -4,6 +4,7 @@ import re
 import datetime
 from email.message import EmailMessage
 import sys
+from ExceptNotifier import send_telegram_msg
 DATE_FORMAT = "%Y-%m-%d %H:%M:%S"
 
 
@@ -36,8 +37,6 @@ class ExceptTelegram(BaseException):
             stack.append(f)
             f = f.f_back
         stack.reverse()
-        
-        
         exceptNotifier['BODY'] += '\nLocals by frame, innermost last::::'
         for frame in stack:
             exceptNotifier['BODY'] += '\nFrame %s in %s at line %s' % (frame.f_code.co_name, frame.f_code.co_filename, frame.f_lineno)
@@ -48,18 +47,11 @@ class ExceptTelegram(BaseException):
                 except:
                     exceptNotifier['BODY'] += '<ERROR WHILE PRINTING VALUE>'
                     
-        
         data = {'text':exceptNotifier['SUBJECT']+exceptNotifier['BODY']}
-        url = f"https://api.telegram.org/bot{_TELEGRAM_TOKEN}/getUpdates"
-        req_dict = requests.get(url).json()
-        bot_id = dict(dict(dict(list(dict(req_dict).values())[1][0])['message'])['from'])['id']
-        bot_url = f"https://api.telegram.org/bot{_TELEGRAM_TOKEN}/sendMessage?chat_id={bot_id}&text={data['text']}"
-
-        requests.get(bot_url).json()
+        send_telegram_msg(_TELEGRAM_TOKEN, data['text'])
 
 
     @staticmethod
-
     def send_telegram_msg(_TELEGRAM_TOKEN: str, msg: str) -> dict:
         """Send message via telegram bot.
 
@@ -93,12 +85,7 @@ class SuccessTelegram:
         
         data = {'text':exceptNotifier['SUBJECT']+exceptNotifier["BODY"]}
         
-        url = f"https://api.telegram.org/bot{_TELEGRAM_TOKEN}/getUpdates"
-        req_dict = requests.get(url).json()
-        bot_id = dict(dict(dict(list(dict(req_dict).values())[1][0])['message'])['from'])['id']
-        bot_url = f"https://api.telegram.org/bot{_TELEGRAM_TOKEN}/sendMessage?chat_id={bot_id}&text={data['text']}"
-
-        requests.get(bot_url).json()
+        send_telegram_msg(_TELEGRAM_TOKEN, data['text'])
 
 
 class SendTelegram:
@@ -114,14 +101,7 @@ class SendTelegram:
         
         data = {'text':exceptNotifier['SUBJECT']+exceptNotifier["BODY"]}
         
-        url = f"https://api.telegram.org/bot{_TELEGRAM_TOKEN}/getUpdates"
-        req_dict = requests.get(url).json()
-        bot_id = dict(dict(dict(list(dict(req_dict).values())[1][0])['message'])['from'])['id']
-        bot_url = f"https://api.telegram.org/bot{_TELEGRAM_TOKEN}/sendMessage?chat_id={bot_id}&text={data['text']}"
-
-        requests.get(bot_url).json()
-
-
+        send_telegram_msg(_TELEGRAM_TOKEN, data['text'])
 
 
 

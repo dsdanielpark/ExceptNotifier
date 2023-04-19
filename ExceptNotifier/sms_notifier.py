@@ -5,6 +5,7 @@ from email.message import EmailMessage
 import sys
 import pickle
 from twilio.rest import Client
+from ExceptNotifier import send_sms_msg
 DATE_FORMAT = "%Y-%m-%d %H:%M:%S"
 
 
@@ -52,12 +53,7 @@ class ExceptSMS(BaseException):
         
         data = {'text':exceptNotifier['SUBJECT']+exceptNotifier['BODY']}
 
-        client = Client(_TWILIO_SID, _TWILIO_TOKEN)
-        client.messages.create(
-                                to=_RECIPIENT_PHONE_NUMBER,
-                                from_=_SENDER_PHONE_NUMBER,  
-                                body=data['text'][:1500]
-                                )
+        send_sms_msg(_TWILIO_SID, _TWILIO_TOKEN, _SENDER_PHONE_NUMBER, _RECIPIENT_PHONE_NUMBER, data['text'])
 
 
     @staticmethod
@@ -84,12 +80,7 @@ class SuccessSMS:
         
         data = {'text':exceptNotifier['SUBJECT']+exceptNotifier["BODY"]}
         
-        client = Client(_TWILIO_SID, _TWILIO_TOKEN)
-        client.messages.create(
-                                to=_RECIPIENT_PHONE_NUMBER,
-                                from_=_SENDER_PHONE_NUMBER,  
-                                body=data['text'][:1500]
-                                )
+        send_sms_msg(_TWILIO_SID, _TWILIO_TOKEN, _SENDER_PHONE_NUMBER, _RECIPIENT_PHONE_NUMBER, data['text'])
 
 class SendSMS:
     def __init__(self) -> None:
@@ -104,12 +95,7 @@ class SendSMS:
         
         data = {'text':exceptNotifier['SUBJECT']+exceptNotifier["BODY"]}
         
-        client = Client(_TWILIO_SID, _TWILIO_TOKEN)
-        client.messages.create(
-                                to=_RECIPIENT_PHONE_NUMBER,
-                                from_=_SENDER_PHONE_NUMBER,  
-                                body=data['text'][:1500]
-                                )
+        send_sms_msg(_TWILIO_SID, _TWILIO_TOKEN, _SENDER_PHONE_NUMBER, _RECIPIENT_PHONE_NUMBER, data['text'])
 
 if __name__ == "__main__":
     

@@ -5,6 +5,7 @@ import datetime
 from email.message import EmailMessage
 import sys
 import json
+from ExceptNotifier import send_kakao_msg
 DATE_FORMAT = "%Y-%m-%d %H:%M:%S"
 
 
@@ -52,25 +53,8 @@ class ExceptKakao(BaseException):
         
         data = {'text':exceptNotifier['SUBJECT']+exceptNotifier['BODY']}
         
-        with open(_KAKAO_TOKEN_PATH,"r") as kakao:
-            tokens = json.load(kakao)
+        send_kakao_msg(_KAKAO_TOKEN_PATH, data['text'])
 
-        url="https://kapi.kakao.com/v2/api/talk/memo/default/send"
-        headers={
-            "Authorization" : "Bearer " + tokens["access_token"]
-        }
-        data = {
-            'object_type': 'text',
-            'text': data['text'],
-            'link': {
-                'web_url': 'https://developers.kakao.com',
-                'mobile_web_url': 'https://developers.kakao.com'
-            }
-        }
-        
-        data = {'template_object': json.dumps(data)}
-        response = requests.post(url, headers=headers, data=data)
-        response.status_code
 
 
     @staticmethod
@@ -121,25 +105,7 @@ class SuccessKakao:
         
         data = {'text':exceptNotifier['SUBJECT']+exceptNotifier["BODY"]}
         
-        with open(_KAKAO_TOKEN_PATH,"r") as kakao:
-            tokens = json.load(kakao)
-
-        url="https://kapi.kakao.com/v2/api/talk/memo/default/send"
-        headers={
-            "Authorization" : "Bearer " + tokens["access_token"]
-        }
-        kakao_data = {
-            'object_type': 'text',
-            'text': data['text'],
-            'link': {
-                'web_url': 'https://developers.kakao.com',
-                'mobile_web_url': 'https://developers.kakao.com'
-            }
-        }
-        
-        kakao_data = {'template_object': json.dumps(kakao_data)}
-        response = requests.post(url, headers=headers, data=kakao_data)
-        response.status_code
+        send_kakao_msg(_KAKAO_TOKEN_PATH, data['text'])
 
 
 class SendKakao:
@@ -158,22 +124,7 @@ class SendKakao:
         with open(_KAKAO_TOKEN_PATH,"r") as kakao:
             tokens = json.load(kakao)
 
-        url="https://kapi.kakao.com/v2/api/talk/memo/default/send"
-        headers={
-            "Authorization" : "Bearer " + tokens["access_token"]
-        }
-        kakao_data = {
-            'object_type': 'text',
-            'text': data['text'],
-            'link': {
-                'web_url': 'https://developers.kakao.com',
-                'mobile_web_url': 'https://developers.kakao.com'
-            }
-        }
-        
-        kakao_data = {'template_object': json.dumps(kakao_data)}
-        response = requests.post(url, headers=headers, data=kakao_data)
-        response.status_code
+        send_kakao_msg(_KAKAO_TOKEN_PATH, data['text'])
 
 
 

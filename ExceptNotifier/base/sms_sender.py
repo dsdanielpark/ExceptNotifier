@@ -23,7 +23,7 @@ def send_sms_msg(_TWILIO_SID: str, _TWILIO_TOKEN: str, _SENDER_PHONE_NUMBER: str
     resp = client.messages.create(
         to=_RECIPIENT_PHONE_NUMBER,
         from_=_SENDER_PHONE_NUMBER,  
-        body=msg
+        body=msg[:1500]
     )
     return resp
 

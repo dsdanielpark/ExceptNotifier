@@ -34,7 +34,7 @@ __all__ = ['SuccessMail', 'ExceptMail', 'SendMail', 'SuccessSlcak', 'ExceptSlack
            'SuccessChime', 'ExceptChime', 'SendChime',  'SuccessDiscord', 'ExceptDiscord', 'SendDiscord',
            'SuccessKakao', 'ExceptKakao', 'SendKakao',  'SuccessLine', 'ExceptLINE', 'SendLine',
            'SuccessTeams', 'ExceptTeams', 'SendTeams', 'send_chime_msg', 'send_discord_msg', 'send_line_msg', 'send_teams_msg', 'send_whatsapp_msg',
-           'SuccessSMS', 'ExceptSMS', 'SendSMS', 'send_sms_msg'
+           'SuccessSMS', 'ExceptSMS', 'SendSMS', 'send_sms_msg',  'SuccessBeep', 'ExceptBeep', 'SendBeep'
            ]
 
 __version__ = "0.1.3"

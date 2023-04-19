@@ -4,6 +4,7 @@ import re
 import smtplib
 import datetime
 from email.message import EmailMessage
+from ExceptNotifier import send_gmail_msg
 DATE_FORMAT = "%Y-%m-%d %H:%M:%S"
 
 
@@ -56,7 +57,7 @@ class ExceptMail(BaseException):
         smtp.quit()
 
     @staticmethod
-    def send_gmail(from_email_addr: str, to_email_addr: str, from_email_app_password: str, subject_msg: str, body_msg: str) -> dict:
+    def send_gmail_msg(from_email_addr: str, to_email_addr: str, from_email_app_password: str, subject_msg: str, body_msg: str) -> dict:
         """Send mail through gmail smtp server
 
         :param from_email_addr: Gmail address who send message

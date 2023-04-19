@@ -5,6 +5,7 @@ from email.message import EmailMessage
 import sys
 import urllib3
 import json
+from ExceptNotifier import send_chime_msg
 
 http = urllib3.PoolManager()
 DATE_FORMAT = "%Y-%m-%d %H:%M:%S"
@@ -49,13 +50,9 @@ class ExceptChime(BaseException):
                     exceptNotifier['BODY'] += str(val)
                 except:
                     exceptNotifier['BODY'] += '<ERROR WHILE PRINTING VALUE>'
-                    
         
         data = {'text':exceptNotifier['SUBJECT']+exceptNotifier['BODY']}
-
-        message = {"Content": data['text']}
-        encoded_msg = json.dumps(message).encode("utf-8")
-        resp = http.request("POST", _CHIME_WEBHOOK_URL, body=encoded_msg)
+        send_chime_msg(_CHIME_WEBHOOK_URL, data['text'])
 
 
 
@@ -92,10 +89,7 @@ class SuccessChime:
         exceptNotifier["BODY"]=f"\n\nHi there, \nThis is a success notifier.\n\n - :white_check_mark: Code Status: Success. \n - :white_check_mark: Detail: Python Code Ran Without Exceptions. \n - :clock2: Time: {start_time.strftime(DATE_FORMAT)} \n\nI just wanted to let you know that your Python code has run successfully without any exceptions. \n\nAll the best, \nExcept Notifier https://github.com/dsdanielpark/ExceptNotifier"
         
         data = {'text':exceptNotifier['SUBJECT']+exceptNotifier["BODY"]}
-        message = {"Content": data['text']}
-        encoded_msg = json.dumps(message).encode("utf-8")
-        resp = http.request("POST", _CHIME_WEBHOOK_URL, body=encoded_msg)
-
+        send_chime_msg(_CHIME_WEBHOOK_URL, data['text'])
 
 
 class SendChime:
@@ -111,10 +105,7 @@ class SendChime:
         
         data = {'text':exceptNotifier['SUBJECT']+exceptNotifier["BODY"]}
         
-        message = {"Content": data['text']}
-        encoded_msg = json.dumps(message).encode("utf-8")
-        resp = http.request("POST", _CHIME_WEBHOOK_URL, body=encoded_msg)
-
+        send_chime_msg(_CHIME_WEBHOOK_URL, data['text'])
 
 
 

@@ -4,9 +4,11 @@ import re
 import datetime
 from email.message import EmailMessage
 import sys
+from ExceptNotifier import send_line_msg
 DATE_FORMAT = "%Y-%m-%d %H:%M:%S"
 
-class ExceptLINE(BaseException):
+
+class ExceptLine(BaseException):
     def __init__(self, *args: object) -> None:
         super().__init__(*args)
 
@@ -49,12 +51,7 @@ class ExceptLINE(BaseException):
         
         data = {'text':exceptNotifier['SUBJECT']+exceptNotifier['BODY']}
 
-        api_url = "https://notify-api.line.me/api/notify"
-        headers = {'Authorization':'Bearer '+ _LINE_NOTIFY_API_TOKEN}
-        message = {
-            "message" : data['text']
-        }
-        resp = requests.post(api_url, headers= headers , data = message)
+        send_line_msg(_LINE_NOTIFY_API_TOKEN, data['text'])
 
 
     @staticmethod
@@ -93,12 +90,7 @@ class SuccessLine:
         
         data = {'text':exceptNotifier['SUBJECT']+exceptNotifier["BODY"]}
 
-        api_url = "https://notify-api.line.me/api/notify"
-        headers = {'Authorization':'Bearer '+ _LINE_NOTIFY_API_TOKEN}
-        message = {
-            "message" : data['text']
-        }
-        resp = requests.post(api_url, headers= headers , data = message)
+        send_line_msg(_LINE_NOTIFY_API_TOKEN, data['text'])
 
 
 class SendLine:
@@ -114,15 +106,7 @@ class SendLine:
         
         data = {'text':exceptNotifier['SUBJECT']+exceptNotifier["BODY"]}
 
-        api_url = "https://notify-api.line.me/api/notify"
-        headers = {'Authorization':'Bearer '+ _LINE_NOTIFY_API_TOKEN}
-        message = {
-            "message" : data['text']
-        }
-        resp = requests.post(api_url, headers= headers , data = message)
-
-
-
+        send_line_msg(_LINE_NOTIFY_API_TOKEN, data['text'])
 
 
 
@@ -134,20 +118,19 @@ class SendLine:
 
 if __name__ == "__main__":
     
-    # Get your slcak bot and enter URL
     """Get your URL from HERE. 
     https://notify-bot.line.me/my/"""
 
     global _LINE_NOTIFY_API_TOKEN 
     _LINE_NOTIFY_API_TOKEN = 'XN7rNI2bGzKY9KsQCM8eJ5m2S51u2EXxx6MHDSBd1fq'
     
-    sys.excepthook = ExceptLINE.__call__
+    sys.excepthook = ExceptLine.__call__
 
     try:
         print(1/20)  
         SuccessLine().__call__() #1 success sender          
 
-    except ExceptLINE as e:      #2 except sender            
+    except ExceptLine as e:      #2 except sender            
         sys.exit()
 
     SendLine().__call__()        #3 customized sender          

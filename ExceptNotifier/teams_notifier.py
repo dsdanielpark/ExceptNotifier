@@ -5,8 +5,10 @@ import datetime
 from email.message import EmailMessage
 import sys
 import json
+from ExceptNotifier import send_teams_msg
 
 DATE_FORMAT = "%Y-%m-%d %H:%M:%S"
+
 
 class ExceptTeams(BaseException):
     def __init__(self, *args: object) -> None:
@@ -51,10 +53,7 @@ class ExceptTeams(BaseException):
         
         data = {'text':exceptNotifier['SUBJECT']+exceptNotifier['BODY']}
 
-        headers = {
-            'Content-Type': 'application/json'
-        }
-        resp = requests.post(_TEAMS_WEBHOOK_URL, headers=headers, data=data['text'])
+        send_teams_msg(_TEAMS_WEBHOOK_URL, data['text'])
 
 
 
@@ -95,10 +94,7 @@ class SuccessTeams:
         
         data = {'text':exceptNotifier['SUBJECT']+exceptNotifier["BODY"]}
 
-        headers = {
-            'Content-Type': 'application/json'
-        }
-        resp = requests.post(_TEAMS_WEBHOOK_URL, headers=headers, data=data['text'])
+        send_teams_msg(_TEAMS_WEBHOOK_URL, data['text'])
 
 
 class SendTeams:
@@ -114,12 +110,7 @@ class SendTeams:
         
         data = {'text':exceptNotifier['SUBJECT']+exceptNotifier["BODY"]}
 
-        headers = {
-            'Content-Type': 'application/json'
-        }
-        resp = requests.post(_TEAMS_WEBHOOK_URL, headers=headers, data=data['text'])
-
-
+        send_teams_msg(_TEAMS_WEBHOOK_URL, data['text'])
 
 
 

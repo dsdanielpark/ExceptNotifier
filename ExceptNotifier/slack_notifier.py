@@ -4,6 +4,7 @@ import re
 import datetime
 from email.message import EmailMessage
 import sys
+from ExceptNotifier import send_slack_msg
 DATE_FORMAT = "%Y-%m-%d %H:%M:%S"
 
 class ExceptSlack(BaseException):
@@ -49,8 +50,7 @@ class ExceptSlack(BaseException):
                     
         
         data = {'text':exceptNotifier['SUBJECT']+exceptNotifier['BODY']}
-        resp = requests.post(url=_SLACK_WEBHOOK_URL, json=data)
-
+        send_slack_msg(_SLACK_WEBHOOK_URL, data)
 
     @staticmethod
     def send_slack_msg(_SLACK_WEBHOOK_URL: str, msg: str) -> dict:
@@ -83,7 +83,7 @@ class SuccessSlcak:
         exceptNotifier["BODY"]=f"\n\nHi there, \nThis is a success notifier.\n\n - :white_check_mark: Code Status: Success. \n - :white_check_mark: Detail: Python Code Ran Without Exceptions. \n - :clock2: Time: {start_time.strftime(DATE_FORMAT)} \n\nI just wanted to let you know that your Python code has run successfully without any exceptions. \n\nAll the best, \nExcept Notifier https://github.com/dsdanielpark/ExceptNotifier"
         
         data = {'text':exceptNotifier['SUBJECT']+exceptNotifier["BODY"]}
-        resp = requests.post(url=_SLACK_WEBHOOK_URL, json=data)
+        send_slack_msg(_SLACK_WEBHOOK_URL, data)
 
 
 class SendSlack:
@@ -98,7 +98,7 @@ class SendSlack:
         exceptNotifier["BODY"] = f"\n\nHi there, \nThis is a customized notifier.\n\n- :white_check_mark: Code Status: Done. \n- :white_check_mark: Detail: Code Execution Reached Specified Line.  \n- :clock2: Time: {start_time.strftime(DATE_FORMAT)} \n\nThe code has reached the line where you requested an email to be sent. As per your instruction, we are sending this email. \n\nAll the best, \nExcept Notifier https://github.com/dsdanielpark/ExceptNotifier"
         
         data = {'text':exceptNotifier['SUBJECT']+exceptNotifier["BODY"]}
-        resp = requests.post(url=_SLACK_WEBHOOK_URL, json=data)
+        send_slack_msg(_SLACK_WEBHOOK_URL, data)
 
 
 

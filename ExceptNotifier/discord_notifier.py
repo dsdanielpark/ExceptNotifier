@@ -4,6 +4,7 @@ import datetime
 from email.message import EmailMessage
 import sys
 from discord import Webhook, RequestsWebhookAdapter
+from ExceptNotifier import send_discord_msg
 DATE_FORMAT = "%Y-%m-%d %H:%M:%S"
 
 class ExceptDiscord(BaseException):
@@ -49,9 +50,8 @@ class ExceptDiscord(BaseException):
                     
         
         data = {'text':exceptNotifier['SUBJECT']+exceptNotifier['BODY']}
+        send_discord_msg(_DISCORD_WEBHOOK_URL, data['text'][:2000])
 
-        webhook = Webhook.from_url(_DISCORD_WEBHOOK_URL, adapter=RequestsWebhookAdapter())
-        webhook.send(data['text'][:2000])
 
 
     @staticmethod
@@ -85,8 +85,9 @@ class SuccessDiscord:
         exceptNotifier["BODY"]=f"\n\nHi there, \nThis is a success notifier.\n\n - :white_check_mark: Code Status: Success. \n - :white_check_mark: Detail: Python Code Ran Without Exceptions. \n - :clock2: Time: {start_time.strftime(DATE_FORMAT)} \n\nI just wanted to let you know that your Python code has run successfully without any exceptions. \n\nAll the best, \nExcept Notifier https://github.com/dsdanielpark/ExceptNotifier"
         
         data = {'text':exceptNotifier['SUBJECT']+exceptNotifier["BODY"]}
-        webhook = Webhook.from_url(_DISCORD_WEBHOOK_URL, adapter=RequestsWebhookAdapter())
-        webhook.send(data['text'])
+        send_discord_msg(_DISCORD_WEBHOOK_URL, data['text'][:2000])
+
+
 
 
 
@@ -103,8 +104,8 @@ class SendDiscord:
         
         data = {'text':exceptNotifier['SUBJECT']+exceptNotifier["BODY"]}
         
-        webhook = Webhook.from_url(_DISCORD_WEBHOOK_URL, adapter=RequestsWebhookAdapter())
-        webhook.send(data['text'])
+        send_discord_msg(_DISCORD_WEBHOOK_URL, data['text'][:2000])
+
 
 
 
