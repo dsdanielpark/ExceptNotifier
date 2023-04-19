@@ -229,7 +229,7 @@ except ExceptTelegram as e:      #2. except sender
 SendTelegram().__call__()        #3. customized sender     
 
 ```
-
+<br>
 
 ## 2-2. *Mail Notifier*
 In the except statement, an email is sent along with the error message. Additionally, you can send emails from any desired line. <br>
@@ -446,8 +446,6 @@ SendTeams().__call__()        #3 customized sender
 
 <Br>
 
-<Br>
-
 ## 2-9. *Kakaotalk Notifier*
 - a. Sign up at the following site: [https://developers.kakao.com/](https://developers.kakao.com/).
 - b. Click "My Application" on the top bar.
@@ -479,6 +477,7 @@ except ExceptKakao as e:      #2 except sender
 SendKakao().__call__()        #3 customized sender         
 ```
 
+<Br>
 
 ## 2-10. *Beep Notifier*
 No setup is required. Use as follows.
@@ -500,6 +499,7 @@ SendBeep().__call__()        #3 customized beep-beep
 beep()
 
 ```
+
 <Br>
 
 
@@ -525,16 +525,13 @@ SendDesktop().__call__()        #3 customized sender
 ### Inspiring
 - Thanks to [Myunghak Lee](https://github.com/myeonghak) for providing great ideas on providing debugging information through open ai API.
 
-<br>
-
 ### Contacts
 - Maintainer [Daniel Park, South Korea](https://github.com/DSDanielPark) <br>
 - Email parkminwoo1991@gmail.com
 
-  
-#### Could you kindly add this badge to your repository?
+#### **Could you kindly add this badge to your repository?
   ```
 ![Except-Notifier](https://img.shields.io/badge/pypi-ExceptNotifier-orange)
   ```
 
-##### The package is currently in the development and QA stages, and the development stage will be updated at the top of this page. If it is determined that the product is stable through feature improvement, addition, and issue resolution, the development stage will reach stage 5. If no new updates or issues arise, it will be adjusted upward to stage 6 or higher.
+##### The package is currently in the development and QA stages, and the development stage will be updated at the top of this page. If it is determined that the product is stable through feature improvement, addition, and issue resolution, the development stage will reach stage 5. If no new updates or issues arise, it will be adjusted upward to stage 6 or higher.**
