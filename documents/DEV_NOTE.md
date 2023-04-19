@@ -50,5 +50,4 @@ Typically, in Python, variable names are mangled by adding a double underscore p
 |Version|Description|
 |:--|:--|
 |0.1.1|Package blueprint|
-|0.1.2|Package Structure testing|
-|0.1.3|Proceed with the first commit by working with scalable messengers or e-mails with high usage. All 0.1.x versions are pre-alpha versions and are used for debugging and usability improvement.|
+|0.1.2|Proceed with the first commit by working with scalable messengers or e-mails with high usage. All 0.1.x versions are pre-alpha versions and are used for debugging and usability improvement. with out OPEN AI API|

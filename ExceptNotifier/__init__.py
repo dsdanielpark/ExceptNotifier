@@ -37,5 +37,5 @@ __all__ = ['SuccessMail', 'ExceptMail', 'SendMail', 'SuccessSlcak', 'ExceptSlack
            'SuccessSMS', 'ExceptSMS', 'SendSMS', 'send_sms_msg',  'SuccessBeep', 'ExceptBeep', 'SendBeep', 'receive_openai_advice', 'beep', 'send_gmail_msg'
            ]
 
-__version__ = "0.1.3"
+__version__ = "0.1.2"
 __author__ = "daniel park <parkminwoo1991@gmail.com>"
