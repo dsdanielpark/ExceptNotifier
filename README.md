@@ -28,6 +28,13 @@ With `ExceptNotifier`, you can obtain detailed compilation errors, including deb
 - [AWS Chime](https://aws.amazon.com/ko/chime/download-chime/)
 - [Microsoft Teams](https://www.microsoft.com/en/microsoft-teams/download-app)
 - [Kakao Talk](https://www.kakaocorp.com/page/service/service/KakaoTalk?lang=en)
+- Beep Sound from [system](https://docs.python.org/3/library/winsound.html)
+
+<Br>
+
+### AI Debugging
+If you have Openai's model name and API key in any application, you can get information and examples for debugging OpenAI ChatGPT.
+- [OPEN AI API](https://platform.openai.com/docs/introduction)
 
 
 <br><br>
@@ -43,6 +50,84 @@ pip install exceptnotifier
 
 <br>
 
+
+# Key Features
+o use the desired application, you must define the necessary variables. Ensure that the variable names remain unchanged, and you can use either local or global variables.
+
+## 1. Except`[Application Name]`
+If you use Python's try except statement as it is, but change except as follows, you can receive notifications through your application.
+```javascript
+ExceptChime, ExceptTelegram, ExceptDiscord, ExceptSMS, ExceptMail, ExceptKakao, ExceptLine, ExceptSlack, ExceptTeams, ExceptDesktope, ExceptBeep
+```
+
+Example
+```python
+from ExceptNotifier import ExceptTelgeram
+
+try:
+    print(1/0)
+except ExceptTelegram:
+    # sending except message to telegram
+    sys.exit()
+```
+
+<br>
+
+## AI Debbugging Infomation Notification
+You can receive debugging information from ChatGPT via OpenAI's API when using the Except statement. The syntax remains the same, but you'll need to configure these two variables:
+`_OPEN_AI_MODEL`,`_OPEN_AI_API`
+
+Example
+```python
+from ExceptNotifier import ExceptTelgeram
+_OPEN_AI_MODEL="gpt-3.5-turbo"
+_OPEN_AI_API="sk-xxxxxx"
+
+try:
+    print(1/0)
+except ExceptTelegram: 
+    # sending except message WITH AI DEBUGGING INFO to telegram
+    sys.exit()
+```
+
+## 2. Success`[Application Name]`
+By placing the try except in python at the end of the try statement, applications can be notified that the try statement worked normally.
+```javascript
+SuccessChime, SuccessTelegram, SuccessDiscord, SuccessSMS, SuccessMail, SuccessKakao, SuccessLine, SuccessSlack, SuccessTeams, SuccessDesktope, SuccessBeep
+```
+Example
+
+```python
+from ExceptNotifier import SuccessTelgeram
+
+try:
+    print(1/20)
+    SuccessTelgeram().__call__()  # sending success message to telegram
+except:
+    sys.exit()
+```
+
+## 3. Send`[Application Name]`
+Place it anywhere on the line of code you want, and you'll be notified when that line of code is reached.
+```javascript
+SendChime, SendTelegram, SendDiscord, SendSMS, SendMail, SendKakao, SendLine, SendSlack, SendTeams, SendDesktope, SendBeep
+```
+Example
+
+```python
+from ExceptNotifier import SendTelgeram
+
+SendTelegram().__call__() # sending message to telegram
+
+noti = SendTelegram()
+
+noti()                    # sending message to telegram
+
+```
+
+
+<br><br>
+
 # Features
 ### *Telegram Notifier*
 
@@ -53,7 +138,6 @@ pip install exceptnotifier
 
 For more infomation, visit [Telegram Bot Father API](https://core.telegram.org/bots/api)
 <br><br>
-
  
 ```python
 from ExceptNotifier import ExceptTelegram, SuccessTelegram, SendTelegram
@@ -74,7 +158,6 @@ SendTelegram().__call__()        #3. customized sender
 
 ![](https://github.com/dsdanielpark/ExceptNotifier/blob/main/assets/imgs/fig44.png)
 
-<br>
 
 ### *Mail Notifier*
 In the except statement, an email is sent along with the error message. Additionally, you can send emails from any desired line. <br>
