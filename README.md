@@ -181,7 +181,12 @@ SendMail().__call__()
 
 <br>
 
+
+### Inspiring
+- Thanks to [Myunghak Lee](https://github.com/myeonghak) for providing great ideas on providing debugging information through open ai API.
+
 <br>
+
 ### Contacts
 - Maintainer [Daniel Park, South Korea](https://github.com/DSDanielPark) <br>
 - Email parkminwoo1991@gmail.com
@@ -192,6 +197,3 @@ SendMail().__call__()
 ![Except-Notifier](https://img.shields.io/badge/pypi-ExceptNotifier-orange)
   ```
 
-
-# Inspiring
-- Thanks to [Myunghak Lee](https://github.com/myeonghak) for providing great ideas on providing debugging information through open ai API.
