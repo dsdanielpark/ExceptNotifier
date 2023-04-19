@@ -94,6 +94,7 @@ ExceptChime, ExceptTelegram, ExceptDiscord, ExceptSMS, ExceptMail, ExceptKakao, 
 *Example*
 ```python
 from ExceptNotifier import ExceptTelgeram
+_TELEGRAM_TOKEN = "xxxx"
 
 try:
     print(1/0)
@@ -111,6 +112,7 @@ You can receive debugging information from ChatGPT via OpenAI's API when using t
 *Example*
 ```python
 from ExceptNotifier import ExceptTelgeram
+_TELEGRAM_TOKEN = "xxxx"
 _OPEN_AI_MODEL="gpt-3.5-turbo"
 _OPEN_AI_API="sk-xxxxxx"
 
@@ -133,6 +135,7 @@ SuccessChime, SuccessTelegram, SuccessDiscord, SuccessSMS, SuccessMail, SuccessK
 
 ```python
 from ExceptNotifier import SuccessTelgeram
+_TELEGRAM_TOKEN = "xxxx"
 
 try:
     print(1/20)
@@ -154,13 +157,12 @@ SendChime, SendTelegram, SendDiscord, SendSMS, SendMail, SendKakao, SendLine, Se
 
 ```python
 from ExceptNotifier import SendTelgeram
+_TELEGRAM_TOKEN = "xxxx"
 
 SendTelegram().__call__() # sending message to telegram
 
 noti = SendTelegram()
-
 noti()                    # sending message to telegram
-
 ```
 
 ![](https://github.com/dsdanielpark/ExceptNotifier/blob/main/assets/imgs/ex4.png)
