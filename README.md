@@ -3,7 +3,7 @@ Development Status :: 3 - Alpha <br>
 <br>
 ![](https://github.com/dsdanielpark/ExceptNotifier/blob/main/assets/imgs/ExceptNotifier_logo.png)
 
-<h3 align="center">Integrates AI-assisted debugging notifications into Python try-except statements for various messaging applications. </h3>
+<h5 align="center">Integrates AI-assisted debugging notifications into Python try-except statements for various messaging applications. </h5>
 
 <p align="center">
 <a href="(https://img.shields.io/badge/pypi-ExceptNotifier-orange"></a>
