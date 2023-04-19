@@ -117,6 +117,8 @@ I will update tutorial ASAP.
 To use the desired application, you must define the necessary variables. Ensure that the variable names remain unchanged, and you can use either local or global variables. If you are using `Telegram`, an example is attached as an image.
 
 ## 1-1. Except`Notifier`
+![](https://github.com/dsdanielpark/ExceptNotifier/blob/main/assets/imgs/ex1.png)
+
 If you use Python's try except statement as it is, but change except as follows, you can receive notifications through your application.
 - Format: Except`[appName]` <Br>
 *ExampleClass*
@@ -134,9 +136,11 @@ try:
 except ExceptTelegram:    # sending except message to telegram
     sys.exit()
 ```
-![](https://github.com/dsdanielpark/ExceptNotifier/blob/main/assets/imgs/ex1.png)
+
 
 ## 1-2. AI Debbugging Infomation Notification
+![](https://github.com/dsdanielpark/ExceptNotifier/blob/main/assets/imgs/ex2.png)
+
 You can receive debugging information from ChatGPT via OpenAI's API when using the Except statement. The syntax remains the same, but you'll need to configure these two variables:
 `_OPEN_AI_MODEL`,`_OPEN_AI_API`
 
@@ -153,11 +157,12 @@ except ExceptTelegram: # sending msg WITH AI DEBUGGING to telegram
     sys.exit()
 ```
 
-![](https://github.com/dsdanielpark/ExceptNotifier/blob/main/assets/imgs/ex2.png)
 
 <br>
 
 ## 1-3. Success`Notifier`
+![](https://github.com/dsdanielpark/ExceptNotifier/blob/main/assets/imgs/ex3.png)
+
 - Format: Success`[appName]` <br>
 *ExampleClass*
 By placing the try except in python at the end of the try statement, applications can be notified that the try statement worked normally.
@@ -177,10 +182,9 @@ except:
     sys.exit()
 ```
 
-![](https://github.com/dsdanielpark/ExceptNotifier/blob/main/assets/imgs/ex3.png)
-
 
 ## 1-4. Send`Notifier`
+![](https://github.com/dsdanielpark/ExceptNotifier/blob/main/assets/imgs/ex4.png)
 - Format: Send`[appName]` <Br>
 *ExampleClass*
 Place it anywhere on the line of code you want, and you'll be notified when that line of code is reached.
@@ -198,9 +202,6 @@ SendTelegram().__call__() # sending message to telegram
 noti = SendTelegram()
 noti()                    # sending message to telegram
 ```
-
-![](https://github.com/dsdanielpark/ExceptNotifier/blob/main/assets/imgs/ex4.png)
-
 
 <br><br><br>
 
