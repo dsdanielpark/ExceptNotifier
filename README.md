@@ -231,7 +231,8 @@ You can receive debugging information from ChatGPT via OpenAI's API when using t
 
 
 ### 2-1. *Telegram Notifier*
-
+As all classes function the same, the example will only use one image, like in Telegram.
+![](https://github.com/dsdanielpark/ExceptNotifier/blob/main/assets/imgs/fig44.png)
 - a. Open your telegram app and search for BotFather. (A built-in Telegram bot that helps users create custom Telegram bots) <br>
 - b. Type /newbot to create a new bot <br>
 - c. Give your bot a name & a username <br>
@@ -241,6 +242,7 @@ For more infomation, visit [Telegram Bot Father API](https://core.telegram.org/b
 <br><br>
  
 #### a. Without OpenAI API
+
 
 ```python
 from ExceptNotifier import ExceptTelegram, SuccessTelegram, SendTelegram
@@ -258,9 +260,6 @@ except ExceptTelegram as e:      #2. except sender
 
 SendTelegram().__call__()        #3. customized sender     
 ```
-
-
-![](https://github.com/dsdanielpark/ExceptNotifier/blob/main/assets/imgs/fig44.png)
 
 
 #### b. With OpenAI API
