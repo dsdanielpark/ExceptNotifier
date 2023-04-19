@@ -132,6 +132,8 @@ noti()                    # sending message to telegram
 <br><br>
 
 # 2. Features
+You can receive debugging information from ChatGPT via OpenAI's API when using the Except statement. The syntax remains the same, but you'll need to configure these two variables:
+`_OPEN_AI_MODEL`,`_OPEN_AI_API`
 ## 2-1. *Telegram Notifier*
 
 - a. Open your telegram app and search for BotFather. (A built-in Telegram bot that helps users create custom Telegram bots) <br>
