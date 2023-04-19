@@ -33,7 +33,7 @@ With `ExceptNotifier`, you can obtain detailed compilation errors, including deb
 <Br>
 
 ### AI Debugging
-If you have Openai's model name and API key in any application, you can get information and *examples* for debugging from OpenAI ChatGPT.
+If you have OpenAI API Key and model name, you can get information and code examples for debugging in any application.
 - [OPEN AI API](https://platform.openai.com/docs/introduction)
 
 
