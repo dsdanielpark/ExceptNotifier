@@ -1,6 +1,6 @@
-Development Status :: 3 - Alpha <br>
-*Copyright (c) 2023 MinWoo Park, South Korea*
-<br><br>
+Development Status :: 2 - Pre-Alpha <br>
+*Copyright (c) 2023 MinWoo Park, South Korea*<br>
+Before QA<br> 
 
 ![](https://github.com/dsdanielpark/ExceptNotifier/blob/main/assets/imgs/logo2.png)
 
