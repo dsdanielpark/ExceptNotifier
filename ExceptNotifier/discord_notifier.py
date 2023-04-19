@@ -5,7 +5,6 @@ import re
 import datetime
 from email.message import EmailMessage
 import sys
-from discord import Webhook, RequestsWebhookAdapter
 from ExceptNotifier import send_discord_msg, receive_openai_advice
 DATE_FORMAT = "%Y-%m-%d %H:%M:%S"
 
@@ -67,9 +66,14 @@ class ExceptDiscord(BaseException):
         :return: Response according to REST API request
         :rtype: dict
         """
-
-        webhook = Webhook.from_url(_DISCORD_WEBHOOK_URL, adapter=RequestsWebhookAdapter())
-        resp = webhook.send(msg)
+        try: 
+            from discord import Webhook, RequestsWebhookAdapter
+            webhook = Webhook.from_url(_DISCORD_WEBHOOK_URL, adapter=RequestsWebhookAdapter())
+            resp = webhook.send(msg)
+        except:
+            from discord import SyncWebhook
+            webhook = SyncWebhook.from_url(_DISCORD_WEBHOOK_URL) # Initializing webhook
+            webhook.send(content=msg) 
         return resp
 
 

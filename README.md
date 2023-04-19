@@ -40,7 +40,6 @@ or
 ```
 pip install exceptnotifier
 ```
-Due to the dependency of the discord package, Python 3.6 and 3.7 are officially provided, but for other applications, versions 3.6 to 3.9 can be applied.
 
 <br>
 

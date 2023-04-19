@@ -1,6 +1,5 @@
 #-*- coding: utf-8 -*- 
 # Copyright 2023 parkminwoo
-from discord import Webhook, RequestsWebhookAdapter
 
 
 def send_discord_msg(_DISCORD_WEBHOOK_URL: str, msg: str) -> dict:
@@ -13,9 +12,14 @@ def send_discord_msg(_DISCORD_WEBHOOK_URL: str, msg: str) -> dict:
     :return: Response according to REST API request
     :rtype: dict
     """
-
-    webhook = Webhook.from_url(_DISCORD_WEBHOOK_URL, adapter=RequestsWebhookAdapter())
-    resp = webhook.send(msg)
+    try: 
+        from discord import Webhook, RequestsWebhookAdapter
+        webhook = Webhook.from_url(_DISCORD_WEBHOOK_URL, adapter=RequestsWebhookAdapter())
+        resp = webhook.send(msg)
+    except:
+        from discord import SyncWebhook
+        webhook = SyncWebhook.from_url(_DISCORD_WEBHOOK_URL) # Initializing webhook
+        webhook.send(content=msg) 
     return resp
 
 
