@@ -41,7 +41,7 @@ With `ExceptNotifier`, you can obtain detailed compilation errors, including deb
 - [Code of Conduct](#code-of-conduct)
 - [Contacts](#contacts)
 
-<br><br>
+<br>
 
 # Supporting Applications
 - [Telegram](https://telegram.org/)
@@ -105,10 +105,12 @@ If you add the following two variables to the required variables for each applic
 <br>
 
 # Tutorial
+I will update tutorial ASAP.
+
 1. Main-tutorials: [Notebook](https://github.com/DSDanielPark/ExceptNotifier/blob/main/tutorial/ExceptNotifier.ipynb)
 2. Sub-tutorial-folder: Tutorials for each function can be found in this [folder](https://github.com/DSDanielPark/ExceptNotifier/tree/main/tutorial). The tutorial is synchronized with the Python file name provided by ExceptNotifier.
 
-I will update tutorial ASAP.
+
 <br>
 
 # 1. Key Features
@@ -133,8 +135,6 @@ except ExceptTelegram:    # sending except message to telegram
     sys.exit()
 ```
 ![](https://github.com/dsdanielpark/ExceptNotifier/blob/main/assets/imgs/ex1.png)
-
-<br>
 
 ## 1-2. AI Debbugging Infomation Notification
 You can receive debugging information from ChatGPT via OpenAI's API when using the Except statement. The syntax remains the same, but you'll need to configure these two variables:
@@ -179,7 +179,6 @@ except:
 
 ![](https://github.com/dsdanielpark/ExceptNotifier/blob/main/assets/imgs/ex3.png)
 
-<Br>
 
 ## 1-4. Send`Notifier`
 - Format: Send`[appName]` <Br>
@@ -203,7 +202,7 @@ noti()                    # sending message to telegram
 ![](https://github.com/dsdanielpark/ExceptNotifier/blob/main/assets/imgs/ex4.png)
 
 
-<br><br>
+<br><br><br>
 
 
 # Features
@@ -229,7 +228,6 @@ You can receive debugging information from ChatGPT via OpenAI's API when using t
 - [2-11. *Beep Notifier*](#2-11--beep-notifier-)
 - [2-12. *Desktop Notifier*](#2-12--desktop-notifier-)
 
-<br>
 
 ### 2-1. *Telegram Notifier*
 
