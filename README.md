@@ -32,7 +32,7 @@ With `ExceptNotifier`, you can obtain detailed compilation errors, including deb
 
 <Br>
 
-### AI Debugging
+### AI Debugging using OpenAI API
 If you have OpenAI API Key and model name, you can get information and code examples for debugging in any application.
 - [OPEN AI API](https://platform.openai.com/docs/introduction)
 
