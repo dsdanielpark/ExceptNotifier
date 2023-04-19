@@ -412,7 +412,7 @@ _SENDER_PHONE_NUMBER="+bbbbbb",
 try:
     print(1/10)  
     SuccessSMS().__call__() #1 success sender          
-except ExceptSMS as e:      #2 except "wb") as f:
+except ExceptSMS as e:      #2 except sender
     sys.exit()
 
 SendSMS().__call__()        #3 customized sender        
