@@ -51,9 +51,10 @@ pip install exceptnotifier
 <br>
 
 
-## App Setup Overview
+# App Setup Overview
 
-
+- The variables in the following table must not be contaminated.
+- Depending on the situation, consider designating them as global variables for use.
 
 | App | Required Variables | Free or Paid | Ease of Setup | Time Required for Setup|Guide Tutorial Link|
 |:--:|:--|:--:|:--:|:--:|:---:|
@@ -76,6 +77,8 @@ If you add the following two variables to the required variables for each applic
 |:--:|:--|:--:|:--:|:--:|:---:|
 | OpenAI API |`Required variables for each application`+ `_OPEN_AI_MODEL`,`_OPEN_AI_API`|Not free|Easy|2min|[APIOpenAI](https://github.com/dsdanielpark/ExceptNotifier/blob/main/documents/APIOpenAI/GUIDE.md)|
 
+
+<br><br>
 
 # 1. Key Features
 To use the desired application, you must define the necessary variables. Ensure that the variable names remain unchanged, and you can use either local or global variables.
@@ -173,6 +176,8 @@ You can receive debugging information from ChatGPT via OpenAI's API when using t
 For more infomation, visit [Telegram Bot Father API](https://core.telegram.org/bots/api)
 <br><br>
  
+### a. Without OpenAI API
+
 ```python
 from ExceptNotifier import ExceptTelegram, SuccessTelegram, SendTelegram
 import sys
@@ -190,7 +195,12 @@ except ExceptTelegram as e:      #2. except sender
 SendTelegram().__call__()        #3. customized sender     
 ```
 
+
 ![](https://github.com/dsdanielpark/ExceptNotifier/blob/main/assets/imgs/fig44.png)
+
+
+### b. With OpenAI API
+
 
 
 ## 2-2. *Mail Notifier*
