@@ -33,7 +33,7 @@ With `ExceptNotifier`, you can obtain detailed compilation errors, including deb
 <Br>
 
 ### AI Debugging
-If you have Openai's model name and API key in any application, you can get information and examples for debugging OpenAI ChatGPT.
+If you have Openai's model name and API key in any application, you can get information and *examples* for debugging OpenAI ChatGPT.
 - [OPEN AI API](https://platform.openai.com/docs/introduction)
 
 
@@ -51,16 +51,16 @@ pip install exceptnotifier
 <br>
 
 
-# Key Features
-o use the desired application, you must define the necessary variables. Ensure that the variable names remain unchanged, and you can use either local or global variables.
+# 1 Key Features
+To use the desired application, you must define the necessary variables. Ensure that the variable names remain unchanged, and you can use either local or global variables.
 
-## 1. Except`[Application Name]`
+## 1-1. Except`[Application Name]`
 If you use Python's try except statement as it is, but change except as follows, you can receive notifications through your application.
 ```
 ExceptChime, ExceptTelegram, ExceptDiscord, ExceptSMS, ExceptMail, ExceptKakao, ExceptLine, ExceptSlack, ExceptTeams, ExceptDesktope, ExceptBeep
 ```
 
-Example
+*Example*
 ```python
 from ExceptNotifier import ExceptTelgeram
 
@@ -73,11 +73,11 @@ except ExceptTelegram:
 
 <br>
 
-## 2. AI Debbugging Infomation Notification
+## 1-2. AI Debbugging Infomation Notification
 You can receive debugging information from ChatGPT via OpenAI's API when using the Except statement. The syntax remains the same, but you'll need to configure these two variables:
 `_OPEN_AI_MODEL`,`_OPEN_AI_API`
 
-Example
+*Example*
 ```python
 from ExceptNotifier import ExceptTelgeram
 _OPEN_AI_MODEL="gpt-3.5-turbo"
@@ -89,13 +89,14 @@ except ExceptTelegram:
     # sending except message WITH AI DEBUGGING INFO to telegram
     sys.exit()
 ```
+<br>
 
-## 3. Success`[Application Name]`
+## 1-3. Success`[Application Name]`
 By placing the try except in python at the end of the try statement, applications can be notified that the try statement worked normally.
 ```
 SuccessChime, SuccessTelegram, SuccessDiscord, SuccessSMS, SuccessMail, SuccessKakao, SuccessLine, SuccessSlack, SuccessTeams, SuccessDesktope, SuccessBeep
 ```
-Example
+*Example*
 
 ```python
 from ExceptNotifier import SuccessTelgeram
@@ -107,12 +108,14 @@ except:
     sys.exit()
 ```
 
-## 4. Send`[Application Name]`
+<Br>
+
+## 1-4. Send`[Application Name]`
 Place it anywhere on the line of code you want, and you'll be notified when that line of code is reached.
 ```
 SendChime, SendTelegram, SendDiscord, SendSMS, SendMail, SendKakao, SendLine, SendSlack, SendTeams, SendDesktope, SendBeep
 ```
-Example
+*Example*
 
 ```python
 from ExceptNotifier import SendTelgeram
@@ -128,8 +131,8 @@ noti()                    # sending message to telegram
 
 <br><br>
 
-# Features
-### *Telegram Notifier*
+# 2. Features
+## 2-1. *Telegram Notifier*
 
 - a. Open your telegram app and search for BotFather. (A built-in Telegram bot that helps users create custom Telegram bots) <br>
 - b. Type /newbot to create a new bot <br>
@@ -159,7 +162,7 @@ SendTelegram().__call__()        #3. customized sender
 ![](https://github.com/dsdanielpark/ExceptNotifier/blob/main/assets/imgs/fig44.png)
 
 
-### *Mail Notifier*
+## 2-2. *Mail Notifier*
 In the except statement, an email is sent along with the error message. Additionally, you can send emails from any desired line. <br>
 - a. Log in with the sender's email ID. <br>
 - b. Obtain an app password for sending Google Mail at the following [link](https://myaccount.google.com/u/3/apppasswords?utm_source=google-account&utm_medium=myaccountsecurity&utm_campaign=tsv-settings&rapt=AEjHL4N2bMRWO46VaMp_jP06zQK14BWNPv66l2o59iJ99CkO8BjYnmoRUe9dtSchkkbubHZMUhevkAnwVJRHb9ygO3afispNlw) or [google document](https://support.google.com/accounts/answer/185833?hl=en). 
@@ -178,7 +181,7 @@ SendMail().__call__()           # When Process Ended -> Any Line mail.
 ```
 
 <details>
-<summary> See Example...</summary>
+<summary> See *Example*...</summary>
 
 ```python
 import sys
