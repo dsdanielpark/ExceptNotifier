@@ -1,9 +1,9 @@
 package:
   name: "exceptnotifier"
-  version: "0.1.6"
+  version: "0.1.7"
 
 source:
-  git_rev: v0.1.6
+  git_rev: v0.1.7
   git_url: https://github.com/dsdanielpark/ExceptNotifier
 
 requirements:
@@ -14,10 +14,10 @@ requirements:
     - python
   run:
     - python
-    - twilio
-    - plyer
-    - openai
-    - discord
+    - jupyter
+    - ipykernel
+    - requests
+
 
 
 about:
