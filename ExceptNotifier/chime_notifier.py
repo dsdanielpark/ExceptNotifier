@@ -66,9 +66,9 @@ class ExceptChime(BaseException):
             advice_msg = '\tFile: "%s"\n\t\t%s %s: %s\n' % (line[0], line[2], line[1], line[3])
             advice_msg += receive_openai_advice(_OPEN_AI_MODEL, _OPEN_AI_API, error_message[:150])
             send_chime_msg(_CHIME_WEBHOOK_URL, advice_msg)
-        except:
+        except Exception as e:
+            print(e)
             pass
-
 
 
     @staticmethod
@@ -140,8 +140,8 @@ if __name__ == "__main__":
     https://docs.aws.amazon.com/chime/latest/ag/webhooks.html"""
 
     global _CHIME_WEBHOOK_URL 
-    _CHIME_WEBHOOK_URL = "https://hooks.chime.aws/incomingwebhooks/72970d5c-7ed1-4e05-bf39-305b860e7e13?token=VWxFRm1IOVh8MXxzQ2VWZVBjQ3EzNE1Oa29Wa0doeDRBWFNEZWJYdkZnSHdjbnlkRDV0TW40"
-    _OPEN_AI_API = "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"
+    _CHIME_WEBHOOK_URL = "xxxxxxxxxxxxxxxxxx"
+    _OPEN_AI_API = "xxxxxxxxxxxxx"
     _OPEN_AI_MODEL = "gpt-3.5-turbo"
     sys.excepthook = ExceptChime.__call__
 

@@ -7,7 +7,7 @@ from email.message import EmailMessage
 import sys
 import pickle
 from twilio.rest import Client
-from ExceptNotifier import send_sms_msg
+from ExceptNotifier import send_sms_msg, receive_openai_advice
 DATE_FORMAT = "%Y-%m-%d %H:%M:%S"
 
 
@@ -57,6 +57,14 @@ class ExceptSMS(BaseException):
 
         send_sms_msg(_TWILIO_SID, _TWILIO_TOKEN, _SENDER_PHONE_NUMBER, _RECIPIENT_PHONE_NUMBER, data['text'])
 
+        try:
+            error_message = f'error_type=={excType} error_type_document=={etype.__doc__} error_value=={value} stack infomation=={stack} code name=={frame.f_code.co_name}file name=={frame.f_code.co_filename} file_number=={frame.f_lineno}'
+            advice_msg = '\tFile: "%s"\n\t\t%s %s: %s\n' % (line[0], line[2], line[1], line[3])
+            advice_msg += receive_openai_advice(_OPEN_AI_MODEL, _OPEN_AI_API, error_message)
+            send_sms_msg(_TWILIO_SID, _TWILIO_TOKEN, _SENDER_PHONE_NUMBER, _RECIPIENT_PHONE_NUMBER, advice_msg)
+        except Exception as e:
+            print(e)
+            pass
 
     @staticmethod
     def send_sms_msg(_TWILIO_SID, _TWILIO_TOKEN, _SENDER_PHONE_NUMBER, _RECIPIENT_PHONE_NUMBER, msg):

@@ -1,6 +1,5 @@
 # Copyright 2023 parkminwoo Authors.
 
-import requests
 import traceback
 import re
 import datetime
@@ -57,9 +56,16 @@ class ExceptDesktop(BaseException):
         
         print(exceptNotifier['BODY'])
                     
-        send_desktop_msg(title = exceptNotifier['SUBJECT'][:20], message=exceptNotifier['BODY'][:200])
+        send_desktop_msg(title = exceptNotifier['SUBJECT'], message=exceptNotifier['BODY'])
 
-        
+        try:
+            error_message = f'error_type=={excType} error_type_document=={etype.__doc__} error_value=={value} stack infomation=={stack} code name=={frame.f_code.co_name}file name=={frame.f_code.co_filename} file_number=={frame.f_lineno}'
+            advice_msg = '\tFile: "%s"\n\t\t%s %s: %s\n' % (line[0], line[2], line[1], line[3])
+            advice_msg += receive_openai_advice(_OPEN_AI_MODEL, _OPEN_AI_API, error_message)
+            send_desktop_msg(title = "chatGPT: How to Debug your code.", message=advice_msg)
+        except Exception as e:
+            print(e)
+            pass
         
         
 
