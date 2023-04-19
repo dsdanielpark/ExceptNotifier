@@ -527,9 +527,9 @@ SendDesktop().__call__()        #3 customized sender
 - Maintainer [Daniel Park, South Korea](https://github.com/DSDanielPark) <br>
 - Email parkminwoo1991@gmail.com
 
-##### The package is currently in the development and QA stages, and the development stage will be updated at the top of this page. If it is determined that the product is stable through feature improvement, addition, and issue resolution, the development stage will reach stage 5. If no new updates or issues arise, it will be adjusted upward to stage 6 or higher.**
+##### The package is currently in the development and QA stages, and the development stage will be updated at the top of this page. If it is determined that the product is stable through feature improvement, addition, and issue resolution, the development stage will reach stage 5. If no new updates or issues arise, it will be adjusted upward to stage 6 or higher.
 
-#### **Could you kindly add this badge to your repository?
+#### Could you kindly add this badge to your repository?
 
 ```
 ![Except-Notifier](https://img.shields.io/badge/pypi-ExceptNotifier-orange)
