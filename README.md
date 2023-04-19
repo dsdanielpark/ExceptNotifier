@@ -47,8 +47,10 @@ With `ExceptNotifier`, you can obtain detailed compilation errors, including deb
   * [1-2. AI Debbugging Infomation Notification](#1-2-ai-debbugging-infomation-notification)
   * [1-3. Success`[appName]`](#1-3-success--appname--)
   * [1-4. Send`[appName]`](#1-4-send--appname--)
+
 <details>
 <summary> See more...</summary>
+
 - [Feature](#feature)
   * [2. Notifier](#2-notifier)
     + [2-1. *Telegram Notifier*](#2-1--telegram-notifier-)
@@ -136,6 +138,11 @@ If you add the following two variables to the required variables for each applic
 
 <br><br>
 
+# Tutorial
+# Tutorial
+1. Main-tutorials: https://github.com/DSDanielPark/quick-show/blob/main/tutorial/tutorial.ipynb
+2. Sub-tutorial-folder: Tutorials for each function can be found in [this folder](https://github.com/DSDanielPark/quick-show/tree/main/tutorial). The tutorial is synchronized with the Python file name provided by QuickShow.
+ 
 
 
 # 1. Key Features
@@ -642,15 +649,24 @@ SendDesktop().__call__()        #3 customized sender
 
 ## 3. Sender
 
-
-
 <Br><br><br>
+
+
+# Contributing Guide
+
+
+
 
 # License
 MIT
 
 # Code of Conduct
 Everyone participating in the `ExceptNotifier` project, and in particular in the issue tracker, pull requests, and social media activity, is expected to treat other people with respect and more generally to follow the guidelines articulated in [the Python Community Code of Conduct](https://www.python.org/psf/conduct/).
+
+# Contacts
+Core maintainers: [Daniel Park, South Korea](https://github.com/DSDanielPark) <br>
+Email parkminwoo1991@gmail.com <br>
+- Developer note: [Link](https://github.com/dsdanielpark/ExceptNotifier/blob/main/documents/DEV_NOTE.md)
 
 ##### The package is currently in the development and QA stages, and the development stage will be updated at the top of this page. If it is determined that the product is stable through feature improvement, addition, and issue resolution, the development stage will reach stage 5. If no new updates or issues arise, it will be adjusted upward to stage 6 or higher.
 
