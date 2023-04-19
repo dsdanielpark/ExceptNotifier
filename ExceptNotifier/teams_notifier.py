@@ -1,5 +1,5 @@
-# Copyright 2023 parkminwoo Authors.
-
+# -*- coding: utf-8 -*-
+# Copyright 2023 parkminwoo
 import requests
 import traceback
 import re
