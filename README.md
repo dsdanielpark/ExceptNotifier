@@ -22,12 +22,12 @@ With `ExceptNotifier`, you can obtain detailed compilation errors, including deb
 - [Discord](https://discord.com/)
 - [Slack](https://slack.com/)
 - [Google Mail](https://mail.google.com/)
-- SMS Sending using [Twilio](https://www.twilio.com/en-us)
-- Desktop Notification using [Plyer](https://github.com/kivy/plyer)
 - [Line](https://line.me/en/)
 - [AWS Chime](https://aws.amazon.com/ko/chime/download-chime/)
 - [Microsoft Teams](https://www.microsoft.com/en/microsoft-teams/download-app)
 - [Kakao Talk](https://www.kakaocorp.com/page/service/service/KakaoTalk?lang=en)
+- SMS Sending using [Twilio](https://www.twilio.com/en-us)
+- Desktop Notification using [Plyer](https://github.com/kivy/plyer)
 - Beep Sound from [system](https://docs.python.org/3/library/winsound.html)
 
 <Br>
