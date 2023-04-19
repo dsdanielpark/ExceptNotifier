@@ -212,7 +212,24 @@ noti()                    # sending message to telegram
 You can receive debugging information from ChatGPT via OpenAI's API when using the Except statement. The syntax remains the same, but you'll need to configure these two variables:
 `_OPEN_AI_MODEL`,`_OPEN_AI_API`
 
+## Contents
 
+- [2-1. *Telegram Notifier*](#2-1--telegram-notifier-)
+  * [a. Without OpenAI API](#a-without-openai-api)
+  * [b. With OpenAI API](#b-with-openai-api)
+- [2-2. *Mail Notifier*](#2-2--mail-notifier-)
+- [2-3. *Discord Notifier*](#2-3--discord-notifier-)
+- [2-4. *Chime Notifier*](#2-4--chime-notifier-)
+- [2-5. *Slack Notifier*](#2-5--slack-notifier-)
+- [2-6. *Line Notifier*](#2-6--line-notifier-)
+- [2-7. *SMS Notifier*](#2-7--sms-notifier-)
+- [2-8. *Teams Notifier*](#2-8--teams-notifier-)
+- [2-9. *Kakaotalk Notifier*](#2-9--kakaotalk-notifier-)
+- [2-10. *Wechat Notifier*](#2-10--wechat-notifier-)
+- [2-11. *Beep Notifier*](#2-11--beep-notifier-)
+- [2-12. *Desktop Notifier*](#2-12--desktop-notifier-)
+
+<br>
 
 ### 2-1. *Telegram Notifier*
 
