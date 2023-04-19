@@ -1,6 +1,7 @@
 Development Status :: 3 - Alpha <br>
 *Copyright (c) 2023 MinWoo Park, South Korea*
-<br>
+<br><br>
+
 ![](https://github.com/dsdanielpark/ExceptNotifier/blob/main/assets/imgs/logo2.png)
 
 <h5 align="center">Integrates AI-assisted debugging notifications into Python try-except statements for various messaging applications. </h5>
