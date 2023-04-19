@@ -80,7 +80,7 @@ If you add the following two variables to the required variables for each applic
 # 1. Key Features
 To use the desired application, you must define the necessary variables. Ensure that the variable names remain unchanged, and you can use either local or global variables.
 
-## 1-1. Except`[Application Name]`
+## 1-1. Except`[appName]`
 If you use Python's try except statement as it is, but change except as follows, you can receive notifications through your application.
 ```
 ExceptChime, ExceptTelegram, ExceptDiscord, ExceptSMS, ExceptMail, ExceptKakao, ExceptLine, ExceptSlack, ExceptTeams, ExceptDesktope, ExceptBeep
@@ -117,7 +117,7 @@ except ExceptTelegram:
 ```
 <br>
 
-## 1-3. Success`[Application Name]`
+## 1-3. Success`[appName]`
 By placing the try except in python at the end of the try statement, applications can be notified that the try statement worked normally.
 ```
 SuccessChime, SuccessTelegram, SuccessDiscord, SuccessSMS, SuccessMail, SuccessKakao, SuccessLine, SuccessSlack, SuccessTeams, SuccessDesktope, SuccessBeep
@@ -136,7 +136,7 @@ except:
 
 <Br>
 
-## 1-4. Send`[Application Name]`
+## 1-4. Send`[appName]`
 Place it anywhere on the line of code you want, and you'll be notified when that line of code is reached.
 ```
 SendChime, SendTelegram, SendDiscord, SendSMS, SendMail, SendKakao, SendLine, SendSlack, SendTeams, SendDesktope, SendBeep
