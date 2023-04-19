@@ -20,6 +20,7 @@ class ExceptBeep(BaseException):
         :param tb: Traceback Information
         :type tb: _type_
         """
+        
         beep(BEEP_TIME)
         beep(BEEP_TIME)
         beep(BEEP_TIME)
