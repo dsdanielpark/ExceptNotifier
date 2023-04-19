@@ -129,12 +129,13 @@ if __name__ == "__main__":
     https://core.telegram.org/bots/tutorial"""
 
     global _TELEGRAM_TOKEN 
-    _TELEGRAM_TOKEN = "xxxxxxxxxxxx"
-
+    _TELEGRAM_TOKEN = "xxxxxxxxxxx"
+    _OPEN_AI_MODEL="gpt-3.5-turbo"
+    _OPEN_AI_API="sk-xxxxxxxxx"
     sys.excepthook = ExceptTelegram.__call__
 
     try:
-        print(1/20)  
+        print(1/0)  
         SuccessTelegram().__call__() #1 success sender          
 
     except ExceptTelegram as e:      #2 except sender            

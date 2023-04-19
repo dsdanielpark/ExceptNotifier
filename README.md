@@ -95,8 +95,7 @@ from ExceptNotifier import ExceptTelgeram
 
 try:
     print(1/0)
-except ExceptTelegram:
-    # sending except message to telegram
+except ExceptTelegram:    # sending except message to telegram
     sys.exit()
 ```
 
@@ -114,8 +113,7 @@ _OPEN_AI_API="sk-xxxxxx"
 
 try:
     print(1/0)
-except ExceptTelegram: 
-    # sending except message WITH AI DEBUGGING INFO to telegram
+except ExceptTelegram: # sending msg WITH AI DEBUGGING to telegram
     sys.exit()
 ```
 <br>
