@@ -116,7 +116,7 @@ To use the desired application, you must define the necessary variables. Ensure 
 
 ## 1-1. Except`Notifier`
 If you use Python's try except statement as it is, but change except as follows, you can receive notifications through your application.
-- Format: Except`[appName]`
+- Format: Except`[appName]` <Br>
 *ExampleClass*
 ```
 ExceptChime, ExceptTelegram, ExceptDiscord, ExceptSMS, ExceptMail, ExceptKakao, ExceptLine, ExceptSlack, ExceptTeams, ExceptDesktope, ExceptBeep
@@ -158,7 +158,7 @@ except ExceptTelegram: # sending msg WITH AI DEBUGGING to telegram
 <br>
 
 ## 1-3. Success`Notifier`
-- Format: Success`[appName]`
+- Format: Success`[appName]` <br>
 *ExampleClass*
 By placing the try except in python at the end of the try statement, applications can be notified that the try statement worked normally.
 ```
@@ -182,7 +182,7 @@ except:
 <Br>
 
 ## 1-4. Send`Notifier`
-- Format: Send`[appName]`
+- Format: Send`[appName]` <Br>
 *ExampleClass*
 Place it anywhere on the line of code you want, and you'll be notified when that line of code is reached.
 ```
