@@ -40,12 +40,12 @@ If you have Openai's model name and API key in any application, you can get info
 <br><br>
 
 # Quick Start
-```
+```bash
 pip install ExceptNotifier
-```
-or
-```
 pip install exceptnotifier
+
+conda install ExceptNotifier
+conda install exceptnotifier
 ```
 
 <br>
@@ -98,6 +98,7 @@ try:
 except ExceptTelegram:    # sending except message to telegram
     sys.exit()
 ```
+![](https://github.com/dsdanielpark/ExceptNotifier/blob/main/assets/imgs/ex1.png)
 
 <br>
 
@@ -116,6 +117,9 @@ try:
 except ExceptTelegram: # sending msg WITH AI DEBUGGING to telegram
     sys.exit()
 ```
+
+![](https://github.com/dsdanielpark/ExceptNotifier/blob/main/assets/imgs/ex2.png)
+
 <br>
 
 ## 1-3. Success`[appName]`
@@ -134,6 +138,8 @@ try:
 except:
     sys.exit()
 ```
+
+![](https://github.com/dsdanielpark/ExceptNotifier/blob/main/assets/imgs/ex3.png)
 
 <Br>
 
@@ -154,6 +160,8 @@ noti = SendTelegram()
 noti()                    # sending message to telegram
 
 ```
+
+![](https://github.com/dsdanielpark/ExceptNotifier/blob/main/assets/imgs/ex4.png)
 
 
 <br><br>
