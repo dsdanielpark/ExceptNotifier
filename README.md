@@ -247,6 +247,14 @@ As all classes function the same, the example will only use one image, like in T
 - b. Type /newbot to create a new bot <br>
 - c. Give your bot a name & a username <br>
 - d. Copy your new Telegram bot’s token <br>
+- e. You have to click `Start_bot` and enter anything to your bot.
+   - Before use Notifier, Please use this to check if you follow guide.
+```
+from ExceptNotifier import send_telegram_msg
+
+_TELEGRAM_TOKEN = "xxxxx:xxxxx-xxxx"
+send_telegram_msg(_TELEGRAM_TOKEN, 'msg')
+```
 
 For more infomation, visit [Telegram Bot Father API](https://core.telegram.org/bots/api)
 <br><br>
