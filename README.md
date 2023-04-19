@@ -394,9 +394,9 @@ SendSlack().__call__()        #3 customized sender
 <Br>
 
 ## 2-6. *Line Notifier*
-- a. Register [https://notify-bot.line.me/](https://notify-bot.line.me/).
-- b. Go to mypage [https://notify-bot.line.me/my/](https://notify-bot.line.me/my/).
-- c. Click `Generate Token`, enter Service Name and click `1-on-1 chat with LINE` (anything you like).
+- a. Register [https://notify-bot.line.me/](https://notify-bot.line.me/)
+- b. Go to mypage [https://notify-bot.line.me/my/](https://notify-bot.line.me/my/)
+- c. Click `Generate Token`, enter Service Name and click `1-on-1 chat with LINE` (anything you like)
 - d. Copy Token.
 
 ```python
@@ -421,7 +421,7 @@ SendLine().__call__()        #3 customized sender
 <Br>
 
 ## 2-7. *SMS Notifier*
-- a. Sign up for Twilio. [https://www.twilio.com/en-us](https://www.twilio.com/en-us).
+- a. Sign up for Twilio. [https://www.twilio.com/en-us](https://www.twilio.com/en-us)
 - b. Click Console in the upper right corner.
 - c. Copy the variables provided in the console.
 
@@ -450,7 +450,7 @@ SendSMS().__call__()        #3 customized sender
 
 ## 2-8. *Teams Notifier*
 - a. Create the channel that you want to notify.
-- b. App - Search: webhook - Incoming Webhook [https://teams.microsoft.com/l/app/203a1e2c-26cc-47ca-83ae-be98f960b6b2?source=app-details-dialog](https://teams.microsoft.com/l/app/203a1e2c-26cc-47ca-83ae-be98f960b6b2?source=app-details-dialog).
+- b. App - Search: webhook - Incoming Webhook [https://teams.microsoft.com/l/app/203a1e2c-26cc-47ca-83ae-be98f960b6b2?source=app-details-dialog](https://teams.microsoft.com/l/app/203a1e2c-26cc-47ca-83ae-be98f960b6b2?source=app-details-dialog)
 - c. Click `Request Approval` <br>
 After you can use webhook incomming. Proceed to next steps.
 Microsoft Teams allows limited application access per organization, so it can only be used if the webhook incoming application is available.
@@ -479,11 +479,11 @@ SendTeams().__call__()        #3 customized sender
 <Br>
 
 ## 2-9. *Kakaotalk Notifier*
-- a. Sign up at the following site: [https://developers.kakao.com/](https://developers.kakao.com/).
+- a. Sign up at the following site: [https://developers.kakao.com/](https://developers.kakao.com/)
 - b. Click "My Application" on the top bar.
 - c. Click "Add an application," set a name, and create it.
 - d. Click "Kakao Login" in the left menu, then change the State of "Kakao Login Activation" to ON on the resulting page.
-- e. In My Application > Product Settings > Kakao Login, be sure to set Redirect URI as follows: [https://example.com/oauth](https://example.com/oauth).
+- e. In My Application > Product Settings > Kakao Login, be sure to set Redirect URI as follows: [https://example.com/oauth](https://example.com/oauth)
 - f. In the left Consent Items menu, set "Send message in KakaoTalk" to selective agreement.
 - g. Copy the REST API Key in My Application > App Settings > Summary, and go to the following document.
 - h. If you have successfully completed all of the above steps, go to the following document and follow the instructions:
