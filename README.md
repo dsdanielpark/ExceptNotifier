@@ -64,7 +64,10 @@ With `ExceptNotifier`, you can obtain detailed compilation errors, including deb
 
 # Quick Start
 ```bash
-$ pip install ExceptNotifier    #pip install exceptnotifier
+$ pip install ExceptNotifier
+```
+```bash
+$ pip install exceptnotifier
 ```
 
 <br>
@@ -104,14 +107,17 @@ If you add the following two variables to the required variables for each applic
 # Tutorial
 1. Main-tutorials: [Notebook](https://github.com/DSDanielPark/ExceptNotifier/blob/main/tutorial/ExceptNotifier.ipynb)
 2. Sub-tutorial-folder: Tutorials for each function can be found in this [folder](https://github.com/DSDanielPark/ExceptNotifier/tree/main/tutorial). The tutorial is synchronized with the Python file name provided by ExceptNotifier.
- 
 
+I will update tutorial ASAP.
+<br>
 
 # 1. Key Features
 To use the desired application, you must define the necessary variables. Ensure that the variable names remain unchanged, and you can use either local or global variables. If you are using `Telegram`, an example is attached as an image.
 
-## 1-1. Except`[appName]`
+## 1-1. Except`Notifier`
 If you use Python's try except statement as it is, but change except as follows, you can receive notifications through your application.
+- Format: Except`[appName]`
+- Examples
 ```
 ExceptChime, ExceptTelegram, ExceptDiscord, ExceptSMS, ExceptMail, ExceptKakao, ExceptLine, ExceptSlack, ExceptTeams, ExceptDesktope, ExceptBeep
 ```
