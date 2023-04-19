@@ -9,7 +9,7 @@ import sys
 DATE_FORMAT = "%Y-%m-%d %H:%M:%S"
 
 from plyer import notification
-from ExceptNotifier import send_desktop_msg
+from ExceptNotifier import send_desktop_msg, receive_openai_advice
  
 
 
@@ -58,6 +58,8 @@ class ExceptDesktop(BaseException):
         print(exceptNotifier['BODY'])
                     
         send_desktop_msg(title = exceptNotifier['SUBJECT'][:20], message=exceptNotifier['BODY'][:200])
+
+        
         
         
 

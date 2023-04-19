@@ -6,7 +6,7 @@ def receive_openai_advice(_OPEN_AI_MODEL, _OPEN_AI_API, error_message):
     openai.api_key = _OPEN_AI_API
     model_engine = _OPEN_AI_MODEL
 
-    input_text = f"How can I fix this error? Give me short infomation about next error. error== {error_message}"
+    input_text = f"How can I fix this error? Give me short infomation about next error. Let me know which code line and which code is incorrect. and try to make it fix or fix exampel. error== {error_message}"
     response = openai.ChatCompletion.create(
                                             model=model_engine,
                                             messages=[{"role": "user", "content": input_text }]

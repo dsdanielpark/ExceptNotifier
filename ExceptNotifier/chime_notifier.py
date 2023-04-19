@@ -7,7 +7,9 @@ from email.message import EmailMessage
 import sys
 import urllib3
 import json
-from ExceptNotifier import send_chime_msg, receive_openai_advice
+from ExceptNotifier.base.chime_sender import send_chime_msg
+from ExceptNotifier.base.openai_receiver import receive_openai_advice
+
 
 
 http = urllib3.PoolManager()
@@ -58,11 +60,14 @@ class ExceptChime(BaseException):
         
         data = {'text':exceptNotifier['SUBJECT']+exceptNotifier['BODY']}
         send_chime_msg(_CHIME_WEBHOOK_URL, data['text'])
-        _OPEN_AI_MODEL, _OPEN_AI_API = None, None
-        if _OPEN_AI_API is not None and _OPEN_AI_API is not None:
-            advice_msg = receive_openai_advice(_OPEN_AI_MODEL, _OPEN_AI_API, exceptNotifier['BODY'][:100])
-        send_chime_msg(_CHIME_WEBHOOK_URL, advice_msg)
-        
+
+        try:
+            error_message = f'error_type=={excType} error_type_document=={etype.__doc__} error_value=={value} stack infomation=={stack} code name=={frame.f_code.co_name}file name=={frame.f_code.co_filename} file_number=={frame.f_lineno}'
+            advice_msg = '\tFile: "%s"\n\t\t%s %s: %s\n' % (line[0], line[2], line[1], line[3])
+            advice_msg += receive_openai_advice(_OPEN_AI_MODEL, _OPEN_AI_API, error_message[:150])
+            send_chime_msg(_CHIME_WEBHOOK_URL, advice_msg)
+        except:
+            pass
 
 
 
@@ -136,7 +141,8 @@ if __name__ == "__main__":
 
     global _CHIME_WEBHOOK_URL 
     _CHIME_WEBHOOK_URL = "https://hooks.chime.aws/incomingwebhooks/72970d5c-7ed1-4e05-bf39-305b860e7e13?token=VWxFRm1IOVh8MXxzQ2VWZVBjQ3EzNE1Oa29Wa0doeDRBWFNEZWJYdkZnSHdjbnlkRDV0TW40"
-    
+    _OPEN_AI_API = "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"
+    _OPEN_AI_MODEL = "gpt-3.5-turbo"
     sys.excepthook = ExceptChime.__call__
 
     try:

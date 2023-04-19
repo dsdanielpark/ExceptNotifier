@@ -7,7 +7,7 @@ import datetime
 from email.message import EmailMessage
 import sys
 import json
-from ExceptNotifier import send_kakao_msg
+from ExceptNotifier import send_kakao_msg, receive_openai_advice
 DATE_FORMAT = "%Y-%m-%d %H:%M:%S"
 
 
