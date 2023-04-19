@@ -53,3 +53,7 @@ Typically, in Python, variable names are mangled by adding a double underscore p
 |0.1.2|Proceed with the first commit by working with scalable messengers or e-mails with high usage. All 0.1.x versions are pre-alpha versions and are used for debugging and usability improvement. with out OPEN AI API|
 |0.1.3|Fix package structure|
 |0.1.4|Check python or other dependencies version range|
+|0.1.5|Simply connected openAI's API through try except. If you enter two arguments, debugging information by AI is automatically sent.|
+|0.1.6|Release for QA Testing in Windows and Mac.|
+
+# QA Note
