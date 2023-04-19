@@ -61,7 +61,7 @@ class ExceptMail(BaseException):
         try:
             error_message = f'error_type=={excType} error_type_document=={etype.__doc__} error_value=={value} stack infomation=={stack} code name=={frame.f_code.co_name}file name=={frame.f_code.co_filename} file_number=={frame.f_lineno}'
             advice_msg = '\tFile: "%s"\n\t\t%s %s: %s\n' % (line[0], line[2], line[1], line[3])
-            advice_msg += receive_openai_advice(_OPEN_AI_MODEL, _OPEN_AI_API, error_message[:150])
+            advice_msg += receive_openai_advice(_OPEN_AI_MODEL, _OPEN_AI_API, error_message[:150]) #NO-QA
             exceptNotifier = {'TO':_GAMIL_RECIPIENT_ADDR, 'FROM':_GMAIL_SENDER_ADDR, 'SUBJECT':'[Except AI Debugging] Error! chatGPT Debugging guide.', 'BODY':f'IMPORTANT WARNING: \nPython Exception Detected in Your Code. \n\nHi there, \nThis is advice from OpenAI ChatGPT \n\n {advice_msg}'}
             smtp.sendmail(exceptNotifier['FROM'], exceptNotifier['TO'], exceptNotifier['ALL'])
         except Exception as e:
