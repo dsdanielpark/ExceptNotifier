@@ -34,9 +34,7 @@ Regardless of whether an exception occurs or not, with `ExceptNotifier`, you can
 ```
 pip install ExceptNotifier
 ```
-```
-pip install exceptnotifier
-```
+
 
 
 <br>
