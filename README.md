@@ -210,7 +210,25 @@ SendTelegram().__call__()        #3. customized sender
 
 
 ### b. With OpenAI API
+```python
+from ExceptNotifier import ExceptTelegram, SuccessTelegram, SendTelegram
+import sys
+sys.excepthook = ExceptTelegram.__call__
 
+_TELEGRAM_TOKEN = "xxxx"
+_OPEN_AI_MODEL="gpt-3.5-turbo"
+_OPEN_AI_API="sk-xxxxxx"
+
+try:
+    print(1/0)  
+    SuccessTelegram().__call__() #1. success sender          
+
+except ExceptTelegram as e:      #2. except sender            
+    sys.exit()
+
+SendTelegram().__call__()        #3. customized sender     
+
+```
 
 
 ## 2-2. *Mail Notifier*
@@ -264,12 +282,11 @@ SendMail().__call__()          # Put Any Line: Sending mail
 ```python
 import sys
 from ExceptNotifier import ExceptMail, SuccessMail, SendMail
-
-global _gmail_receiver, _gmail_sender, _gmail_app_password_of_sender
-_gmail_receiver = 'xxxxxxx@gmail.com'
-_gmail_sender = 'yyyyyy@gmail.com'
-_gmail_app_password_of_sender = 'zzzzzz'
 sys.excepthook = ExceptMail.__call__
+
+_GAMIL_RECIPIENT_ADDR = 'xxxxxxx@gmail.com'
+_GMAIL_SENDER_ADDR = 'yyyyyy@gmail.com'
+_GMAIL_APP_PASSWORD_OF_SENDER = 'zzzzzz'
 
 try:
     'your code'
@@ -281,13 +298,229 @@ SendMail().__call__()
 ```
 </details>
 
+<br>
 
+## 2-3. *Discord Notifier*
+- a. Select the channel to receive notifications.
+- b. Click "Edit Channel" in the upper right corner of the chat window.
+- c. Click Integrations - Webhook - New Webhook.
+- d. Then click Copy Webhook.
 
-<br><br>
+```python
+import sys
+from ExceptNotifier import ExceptDiscord, SuccessDiscord, SendDiscord
+global _DISCORD_WEBHOOK_URL 
+_DISCORD_WEBHOOK_URL = "xxxxxxxxxxxxxxxxx"
+sys.excepthook = ExceptDiscord.__call__
 
+try:
+    print(1/20)  
+    SuccessDiscord().__call__() #1 success sender          
+except ExceptDiscord as e:      #2 except sender            
+    sys.exit()
+
+SendDiscord().__call__()        #3 customized sender       
+```
 
 <br>
 
+## 2-4. *Chime Notifier*
+- a. Select the Chat room to receive notifications.
+- b. Click "Room Setting" in the upper right corner.
+- c. Click "Manage Webhook and bot."
+- d. Create Add Webhook, set it up, then click Copy Webhook.
+```python
+import sys
+from ExceptNotifier import SuccessChime, ExceptChime, SendChime
+_CHIME_WEBHOOK_URL = "xxxxxxxxxxxxxxxxxx"
+_OPEN_AI_API = "xxxxxxxxxxxxx"
+_OPEN_AI_MODEL = "gpt-3.5-turbo"
+sys.excepthook = ExceptChime.__call__
+
+try:
+    print(1/0)  
+    SuccessChime().__call__() #1 success sender          
+except ExceptChime as e:      #2 except sender            
+    sys.exit()
+
+SendChime().__call__()        #3 customized sender       
+```
+<br>
+
+## 2-5. *Slack Notifier*
+- a. visit https://api.slack.com/
+- b. `Create an app` - `From scratch` - `Create App`
+- c. Add webhook: Click `Incoming Webhooks` - Activate Incomming `On` - Add New Webhook to Workspace
+- d. Copy `Webhook URL`
+
+```python
+import sys
+from ExceptNotifier import ExceptSlack, SuccessSlcak, SendSlack
+sys.excepthook = ExceptSlack.__call__
+
+_SLACK_WEBHOOK_URL = 'https://hooks.slack.com/services/xxxxxxxxxxxxxxxxxxx'
+
+try:
+    print(1/0)  
+    SuccessSlcak().__call__() #1 success sender          
+except ExceptSlack as e:      #2 except sender            
+    sys.exit()
+
+SendSlack().__call__()        #3 customized sender     
+```
+<Br>
+
+## 2-6. *Line Notifier*
+- a. Register [https://notify-bot.line.me/](https://notify-bot.line.me/).
+- b. Go to mypage [https://notify-bot.line.me/my/](https://notify-bot.line.me/my/).
+- c. Click `Generate Token`, enter Service Name and click `1-on-1 chat with LINE` (anything you like).
+- d. Copy Token.
+
+```python
+import sys
+from ExceptNotifier import ExceptLine, SuccessLine, SendLine
+sys.excepthook = ExceptLine.__call__
+
+_LINE_NOTIFY_API_TOKEN = 'xxxxxxxxxxx'
+
+try:
+    print(1/20)  
+    SuccessLine().__call__() #1 success sender          
+except ExceptLine as e:      #2 except sender            
+    sys.exit()
+
+SendLine().__call__()        #3 customized sender          
+```
+
+<Br>
+
+## 2-7. *SMS Notifier*
+- a. Sign up for Twilio. [https://www.twilio.com/en-us](https://www.twilio.com/en-us).
+- b. Click Console in the upper right corner.
+- c. Copy the variables provided in the console.
+
+```python
+import sys
+from ExceptNotifier import ExceptSMS, SuccessSMS, SendSMS
+sys.excepthook = ExceptSMS.__call__
+
+_TWILIO_SID = 'xxxx'
+_TWILIO_TOKEN = 'yyyyyy'
+_RECIPIENT_PHONE_NUMBER="+aaaaaa",
+_SENDER_PHONE_NUMBER="+bbbbbb",  
+
+try:
+    print(1/10)  
+    SuccessSMS().__call__() #1 success sender          
+except ExceptSMS as e:      #2 except "wb") as f:
+    sys.exit()
+
+SendSMS().__call__()        #3 customized sender        
+```
+<Br>
+
+## 2-8. *Teams Notifier*
+- a. Create the channel that you want to notify.
+- b. App - Search: webhook - Incoming Webhook [https://teams.microsoft.com/l/app/203a1e2c-26cc-47ca-83ae-be98f960b6b2?source=app-details-dialog](https://teams.microsoft.com/l/app/203a1e2c-26cc-47ca-83ae-be98f960b6b2?source=app-details-dialog).
+- c. Click `Request Approval` <br>
+After you can use webhook incomming. Proceed to next steps.
+Microsoft Teams allows limited application access per organization, so it can only be used if the webhook incoming application is available.
+- c. Go to the team channel to receive notifications, and click `Connectors` in Settings.
+- d. `Connectors` After configuring webhook incoming in Connector, copy the webhook URL.
+
+```python
+import sys
+from ExceptNotifier import ExceptTeams, SuccessTeams, SendTeams
+sys.excepthook = ExceptTeams.__call__
+
+_TEAMS_WEBHOOK_URL = 'microsoft webhook _TEAMS_WEBHOOK_URL'
+
+try:
+    print(1/20)  
+    SuccessTeams().__call__() #1 success sender          
+except ExceptTeams as e:      #2 except sender            
+    sys.exit()
+
+SendTeams().__call__()        #3 customized sender        
+```
+
+<Br>
+
+<Br>
+
+## 2-9. *Kakaotalk Notifier*
+- a. Sign up at the following site: [https://developers.kakao.com/](https://developers.kakao.com/).
+- b. Click "My Application" on the top bar.
+- c. Click "Add an application," set a name, and create it.
+- d. Click "Kakao Login" in the left menu, then change the State of "Kakao Login Activation" to ON on the resulting page.
+- e. In My Application > Product Settings > Kakao Login, be sure to set Redirect URI as follows: [https://example.com/oauth](https://example.com/oauth).
+- f. In the left Consent Items menu, set "Send message in KakaoTalk" to selective agreement.
+- g. Copy the REST API Key in My Application > App Settings > Summary, and go to the following document.
+
+**In this example, some API keys were exposed by creating and removing a test application, but for security reasons, your API key should not be exposed to the outside world.**
+
+- h. If you have successfully completed all of the above steps, go to the following document and follow the instructions:
+ https://github.com/dsdanielpark/ExceptNotifier/blob/main/tutorials/kakao_token_generator.ipynb
+<Br>
+
+```python
+import sys
+from ExceptNotifier import ExceptKakao, SuccessKakao, SendKakao
+sys.excepthook = ExceptKakao.__call__
+
+_KAKAO_TOKEN_PATH = 'xxxx/xxx/xxx.json''
+
+try:
+    print(1/0)  
+    SuccessKakao().__call__() #1 success sender          
+except ExceptKakao as e:      #2 except sender            
+    sys.exit()
+
+SendKakao().__call__()        #3 customized sender         
+```
+
+
+## 2-10. *Beep Notifier*
+No setup is required. Use as follows.
+
+```python
+from Exceptnotifier import ExceptBeep, SuccessBeep, SendBeep(), beep()
+BEEP_TIME = 1
+sys.excepthook = ExceptBeep.__call__
+
+try:
+    print(1/20)  
+    SuccessBeep().__call__() #1 success beep-beep          
+
+except ExceptBeep as e:      #2 except beep-beep                
+    sys.exit()
+
+SendBeep().__call__()        #3 customized beep-beep      
+
+beep()
+
+```
+<Br>
+
+
+## 2-11. *Desktop Notifier*
+No setup is required. Use as follows.
+
+```python
+from ExceptNotifier import ExceptDesktop, SuccessDesktop, SendDesktop
+sys.excepthook = ExceptDesktop.__call__
+
+try:
+    print(1/0)  
+    SuccessDesktop().__call__() #1 success sender          
+
+except ExceptDesktop as e:      #2 except sender            
+    sys.exit()
+
+SendDesktop().__call__()        #3 customized sender         
+```
+
+<Br><br><br>
 
 ### Inspiring
 - Thanks to [Myunghak Lee](https://github.com/myeonghak) for providing great ideas on providing debugging information through open ai API.

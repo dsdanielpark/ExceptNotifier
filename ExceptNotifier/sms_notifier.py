@@ -114,8 +114,6 @@ if __name__ == "__main__":
     global _TWILIO_SID, TWILIO_AUTH_TOKEN, _SENDER_PHONE_NUMBER, _RECIPIENT_PHONE_NUMBER
     _TWILIO_SID = 'xxxx'
     _TWILIO_TOKEN = 'yyyyyy'
-    client = Client(_TWILIO_SID, _TWILIO_TOKEN)
-
     _RECIPIENT_PHONE_NUMBER="+aaaaaa",
     _SENDER_PHONE_NUMBER="+bbbbbb",  
     
