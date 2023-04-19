@@ -294,3 +294,4 @@ SendMail().__call__()
 ![Except-Notifier](https://img.shields.io/badge/pypi-ExceptNotifier-orange)
   ```
 
+##### The package is currently in the development and QA stages, and the development stage will be updated at the top of this page. If it is determined that the product is stable through feature improvement, addition, and issue resolution, the development stage will reach stage 5. If no new updates or issues arise, it will be adjusted upward to stage 6 or higher.
