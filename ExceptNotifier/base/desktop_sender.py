@@ -1,7 +1,5 @@
-
-# coding=utf-8
-# Copyright 2023 parkminwoo Authors.
-
+#-*- coding: utf-8 -*- 
+# Copyright 2023 parkminwoo
 import time
 from plyer import notification
 

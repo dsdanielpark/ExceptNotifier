@@ -1,6 +1,5 @@
-# coding=utf-8
-# Copyright 2023 parkminwoo Authors.
-
+#-*- coding: utf-8 -*- 
+# Copyright 2023 parkminwoo
 import openai
 
 def receive_openai_advice(_OPEN_AI_MODEL, _OPEN_AI_API, error_message):

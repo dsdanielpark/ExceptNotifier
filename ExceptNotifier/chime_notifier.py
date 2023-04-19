@@ -1,6 +1,5 @@
-# coding=utf-8
-# Copyright 2023 parkminwoo Authors.
-
+#-*- coding: utf-8 -*- 
+# Copyright 2023 parkminwoo
 import traceback
 import re
 import datetime
@@ -59,7 +58,10 @@ class ExceptChime(BaseException):
         
         data = {'text':exceptNotifier['SUBJECT']+exceptNotifier['BODY']}
         send_chime_msg(_CHIME_WEBHOOK_URL, data['text'])
-
+        _OPEN_AI_MODEL, _OPEN_AI_API = None, None
+        if _OPEN_AI_API is not None and _OPEN_AI_API is not None:
+            advice_msg = receive_openai_advice(_OPEN_AI_MODEL, _OPEN_AI_API, exceptNotifier['BODY'][:100])
+        send_chime_msg(_CHIME_WEBHOOK_URL, advice_msg)
         
 
 
@@ -138,7 +140,7 @@ if __name__ == "__main__":
     sys.excepthook = ExceptChime.__call__
 
     try:
-        print(1/20)  
+        print(1/0)  
         SuccessChime().__call__() #1 success sender          
 
     except ExceptChime as e:      #2 except sender            

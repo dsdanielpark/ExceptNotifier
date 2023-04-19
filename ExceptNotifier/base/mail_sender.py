@@ -1,6 +1,5 @@
-# coding=utf-8
-# Copyright 2023 parkminwoo Authors.
-
+#-*- coding: utf-8 -*- 
+# Copyright 2023 parkminwoo
 import smtplib
 from email.message import EmailMessage
 

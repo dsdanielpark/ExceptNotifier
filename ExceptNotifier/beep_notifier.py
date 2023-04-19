@@ -1,4 +1,5 @@
-
+#-*- coding: utf-8 -*- 
+# Copyright 2023 parkminwoo
 import sys
 import os
 import platform

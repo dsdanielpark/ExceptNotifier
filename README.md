@@ -16,6 +16,7 @@ Regardless of whether an exception occurs or not, with `ExceptNotifier`, you can
 <br><br>
 
 ### Supporting Applications
+
 - [Telegram](https://telegram.org/)
 - [Discord](https://discord.com/)
 - [Slack](https://slack.com/)
@@ -144,38 +145,6 @@ SendMail().__call__()
 
 <br><br>
 
-# Package Structure
-
-```
-📦ExceptNotifier
-                               # Notifiers
- ┣ 📜chime_notifier.py
- ┣ 📜discord_notifier.py
- ┣ 📜kakao_notifier.py
- ┣ 📜line_notifier.py
- ┣ 📜mail_notifier.py
- ┣ 📜slack_notifier.py
- ┣ 📜sms_notifier.py
- ┣ 📜teams_notifier.py
- ┣ 📜telegram_notifier.py
- ┣ 📜__init__.py
- ┣ 📜__main__.py
-                               # Sending message methods
- ┣ 📂base
- ┃ ┣ 📜chime_sender.py
- ┃ ┣ 📜discord_sender.py
- ┃ ┣ 📜kakao_sender.py
- ┃ ┣ 📜line_sender.py
- ┃ ┣ 📜mail_sender.py
- ┃ ┣ 📜slack_sender.py
- ┃ ┣ 📜sms_sender.py
- ┃ ┣ 📜teams_sender.py
- ┃ ┣ 📜telegram_sender.py
- ┃ ┗ 📜whatsapp_sender.py
-                               # Utilities for setting
- ┣ 📂utils
- ┗ ┗  📜kakao_token.py
-```
 
 <br>
 
