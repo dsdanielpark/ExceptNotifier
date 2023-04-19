@@ -124,7 +124,7 @@ if __name__ == "__main__":
     https://notify-bot.line.me/my/"""
 
     global _LINE_NOTIFY_API_TOKEN 
-    _LINE_NOTIFY_API_TOKEN = 'XN7rNI2bGzKY9KsQCM8eJ5m2S51u2EXxx6MHDSBd1fq'
+    _LINE_NOTIFY_API_TOKEN = 'xxxxxxxxxxx'
     
     sys.excepthook = ExceptLine.__call__
 

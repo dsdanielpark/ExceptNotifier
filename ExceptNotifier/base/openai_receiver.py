@@ -16,7 +16,7 @@ def receive_openai_advice(_OPEN_AI_MODEL, _OPEN_AI_API, error_message):
 
 
 if __name__ == "__main__":
-    _OPEN_AI_API = "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"
+    _OPEN_AI_API = "sk-xxxxx"
     _OPEN_AI_MODEL = "gpt-3.5-turbo"
     error_message = ' Cell 3 in ()----> 1 1/0 ZeroDivisionError: division by zero'
     advice_msg = receive_openai_advice(_OPEN_AI_MODEL, _OPEN_AI_API, error_message)

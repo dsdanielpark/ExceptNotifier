@@ -26,6 +26,6 @@ def send_chime_msg(_CHIME_WEBHOOK_URL: str, msg: str) -> dict:
 
 
 if __name__ == "__main__":
-    _CHIME_WEBHOOK_URL = "https://hooks.chime.aws/incomingwebhooks/72970d5c-7ed1-4e05-bf39-305b860e7e13?token=VWxFRm1IOVh8MXxzQ2VWZVBjQ3EzNE1Oa29Wa0doeDRBWFNEZWJYdkZnSHdjbnlkRDV0TW40"
+    _CHIME_WEBHOOK_URL = "xxxxx"
     
     send_chime_msg(_CHIME_WEBHOOK_URL, "Test")

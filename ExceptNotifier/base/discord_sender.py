@@ -21,7 +21,7 @@ def send_discord_msg(_DISCORD_WEBHOOK_URL: str, msg: str) -> dict:
 
 
 if __name__ =="__main__":
-    _DISCORD_WEBHOOK_URL = "https://discordapp.com/api/webhooks/1096733073741193336/AX32bjqL1EYIEfLulwU6jaX4eBR1HZYzxq5UM9ADsCpUeePcF0YlFQnEGLD5geF65kyl"
+    _DISCORD_WEBHOOK_URL = "xxxxx"
     msg = "Sending Test"
 
     send_discord_msg(_DISCORD_WEBHOOK_URL, msg)

@@ -5,13 +5,13 @@ from plyer import notification
 
 
 def send_desktop_msg(title_msg: str, body_msg: str, DISP_TIME=5) -> None:
-    """Send notification to your desktop
+    """Sending notification to desktop
 
-    :param title_msg: Notificatrion Title
+    :param title_msg: Title of message
     :type title_msg: str
-    :param body_msg: _description_
+    :param body_msg: Body of message
     :type body_msg: str
-    :param DISP_TIME: _description_, defaults to 5
+    :param DISP_TIME: Time duration, defaults to 5
     :type DISP_TIME: int, optional
     """
     notification.notify(

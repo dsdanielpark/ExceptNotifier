@@ -128,7 +128,7 @@ if __name__ == "__main__":
     https://discord.com/developers/docs/resources/webhook"""
 
     global _DISCORD_WEBHOOK_URL 
-    _DISCORD_WEBHOOK_URL = "https://discordapp.com/api/webhooks/1096742750508044349/E5vXTCtkdx_JZlJ9UfQI33jwUwJ4NgyrVYwO4z-qU_upKgKmDXc5e2j8TEr6VxqBPShQ"
+    _DISCORD_WEBHOOK_URL = "xxxxxxxxxxxxxxxxx"
     
     sys.excepthook = ExceptDiscord.__call__
 
