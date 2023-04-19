@@ -20,64 +20,30 @@ Development Status :: 3 - Alpha <br>
  The `ExceptNotifier` Python package offers a flexible approach to receiving notifications by enhancing Python's try-except statement. This package enables you to receive alerts through various messaging applications or emails.
 <Br><br>
 With `ExceptNotifier`, you can obtain detailed compilation errors, including debug information, sent directly to your preferred messaging platform or email. By integrating OpenAI's ChatGPT, you can receive additional error code information as long as you provide the required API model name and key. This feature ensures that error handling and notifications are more informative and accessible, streamlining your debugging process.
-
 <Br>
 
-#### Could you kindly add this badge to your repository?
-
-```
-![Except-Notifier](https://img.shields.io/badge/pypi-ExceptNotifier-orange)
-```
-
-
-<br><br>
-
-
-
-
 # Contents
-
-- [OPEN AI API](https://platform.openai.com/docs/introduction)
 - [Python Package: ExceptNotifier](#python-package--exceptnotifier)
 - [Supporting Applications](#supporting-applications)
-  * [AI Debugging using OpenAI API](#ai-debugging-using-openai-api)
 - [Quick Start](#quick-start)
 - [App Setup Overview](#app-setup-overview)
+- [Tutorial](#tutorial)
 - [1. Key Features](#1-key-features)
   * [1-1. Except`[appName]`](#1-1-except--appname--)
   * [1-2. AI Debbugging Infomation Notification](#1-2-ai-debbugging-infomation-notification)
   * [1-3. Success`[appName]`](#1-3-success--appname--)
   * [1-4. Send`[appName]`](#1-4-send--appname--)
-
-<details>
-<summary> See more...</summary>
-
-- [Feature](#feature)
+- [Features](#features)
   * [2. Notifier](#2-notifier)
-    + [2-1. *Telegram Notifier*](#2-1--telegram-notifier-)
-      - [a. Without OpenAI API](#a-without-openai-api)
-      - [b. With OpenAI API](#b-with-openai-api)
-    + [2-2. *Mail Notifier*](#2-2--mail-notifier-)
-    + [2-3. *Discord Notifier*](#2-3--discord-notifier-)
-    + [2-4. *Chime Notifier*](#2-4--chime-notifier-)
-    + [2-5. *Slack Notifier*](#2-5--slack-notifier-)
-    + [2-6. *Line Notifier*](#2-6--line-notifier-)
-    + [2-7. *SMS Notifier*](#2-7--sms-notifier-)
-    + [2-8. *Teams Notifier*](#2-8--teams-notifier-)
-    + [2-9. *Kakaotalk Notifier*](#2-9--kakaotalk-notifier-)
-    + [2-10. *Wechat Notifier*](#2-10--wechat-notifier-)
-    + [2-11. *Beep Notifier*](#2-11--beep-notifier-)
-    + [2-12. *Desktop Notifier*](#2-12--desktop-notifier-)
   * [3. Sender](#3-sender)
+- [Contributing Guide](#contributing-guide)
 - [License](#license)
 - [Code of Conduct](#code-of-conduct)
-
-</details>
+- [Contacts](#contacts)
 
 <br><br>
 
 # Supporting Applications
-
 - [Telegram](https://telegram.org/)
 - [Discord](https://discord.com/)
 - [Slack](https://slack.com/)
@@ -90,12 +56,8 @@ With `ExceptNotifier`, you can obtain detailed compilation errors, including deb
 - SMS Sending using [Twilio](https://www.twilio.com/en-us)
 - Desktop Notification using [Plyer](https://github.com/kivy/plyer)
 - Beep Sound from [system](https://docs.python.org/3/library/winsound.html)
-
-<Br>
-
-### AI Debugging using OpenAI API
-If you have OpenAI API Key and model name, you can get information and code examples for debugging in any application.
--  [Opea AI API](https://openai.com/blog/openai-api)
+- [Opea AI API](https://openai.com/blog/openai-api)
+        - If you have OpenAI API Key and model name, you can get information and code examples for debugging in any application.
 
 
 <br>
@@ -137,12 +99,11 @@ If you add the following two variables to the required variables for each applic
 | OpenAI API |`Required variables for each application`+ `_OPEN_AI_MODEL`,`_OPEN_AI_API`|Not free|Easy|2min|[APIOpenAI](https://github.com/dsdanielpark/ExceptNotifier/blob/main/documents/APIOpenAI/GUIDE.md)|
 
 
-<br><br>
+<br>
 
 # Tutorial
-# Tutorial
-1. Main-tutorials: https://github.com/DSDanielPark/quick-show/blob/main/tutorial/tutorial.ipynb
-2. Sub-tutorial-folder: Tutorials for each function can be found in [this folder](https://github.com/DSDanielPark/quick-show/tree/main/tutorial). The tutorial is synchronized with the Python file name provided by QuickShow.
+1. Main-tutorials: [Notebook](https://github.com/DSDanielPark/ExceptNotifier/blob/main/tutorial/ExceptNotifier.ipynb)
+2. Sub-tutorial-folder: Tutorials for each function can be found in this [folder](https://github.com/DSDanielPark/ExceptNotifier/tree/main/tutorial). The tutorial is synchronized with the Python file name provided by ExceptNotifier.
  
 
 
@@ -654,9 +615,7 @@ SendDesktop().__call__()        #3 customized sender
 
 
 # Contributing Guide
-
-
-
+I will announce contributing rules when the code development status changes to beta soon. Until then, please create an issue for feature requests and bug reports.
 
 # License
 MIT
@@ -669,6 +628,10 @@ Core maintainers: [Daniel Park, South Korea](https://github.com/DSDanielPark) <b
 Email parkminwoo1991@gmail.com <br>
 - Developer note: [Link](https://github.com/dsdanielpark/ExceptNotifier/blob/main/documents/DEV_NOTE.md)
 
-##### The package is currently in the development and QA stages, and the development stage will be updated at the top of this page. If it is determined that the product is stable through feature improvement, addition, and issue resolution, the development stage will reach stage 5. If no new updates or issues arise, it will be adjusted upward to stage 6 or higher.
+#### Could you kindly add this badge to your repository?
+```
+![Except-Notifier](https://img.shields.io/badge/pypi-ExceptNotifier-orange)
+```
 
+##### The package is currently in the development and QA stages, and the development stage will be updated at the top of this page. If it is determined that the product is stable through feature improvement, addition, and issue resolution, the development stage will reach stage 5. If no new updates or issues arise, it will be adjusted upward to stage 6 or higher.
 
