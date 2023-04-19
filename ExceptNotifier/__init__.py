@@ -84,5 +84,5 @@ __all__ = [
     "SendWechat",
 ]
 
-__version__ = "0.1.7"
+__version__ = "0.1.9"
 __author__ = "daniel park <parkminwoo1991@gmail.com>"
