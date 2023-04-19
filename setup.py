@@ -25,7 +25,7 @@ version = get_version()
 
 setup(
     name="ExceptNotifier",
-    version="0.1.6",
+    version="0.1.7",
     author="daniel park",
     author_email="parkminwoo1991@gmail.com",
     description="With Python's try-except to receive notifications about Errors or Successes in your code through messenger app or email.",

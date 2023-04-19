@@ -55,5 +55,6 @@ Typically, in Python, variable names are mangled by adding a double underscore p
 |0.1.4|Check python or other dependencies version range|
 |0.1.5|Simply connected openAI's API through try except. If you enter two arguments, debugging information by AI is automatically sent.|
 |0.1.6|Release for QA Testing in Windows and Mac.|
+|0.1.7|Sync version of pypin with conda-forge.|
 
 # QA Note

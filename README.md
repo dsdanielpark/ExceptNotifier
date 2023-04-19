@@ -14,6 +14,8 @@ Development Status :: 3 - Alpha <br>
 </p>
 
 ![](https://github.com/dsdanielpark/ExceptNotifier/blob/main/assets/imgs/main2.png)
+
+# Python Package: ExceptNotifier
 ##### Provides a notification from the application shown in the captured screen.
  The `ExceptNotifier` Python package offers a flexible approach to receiving notifications by enhancing Python's try-except statement. This package enables you to receive alerts through various messaging applications or emails.
 <Br><br>

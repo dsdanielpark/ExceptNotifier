@@ -27,7 +27,7 @@ from ExceptNotifier.line_notifier import SuccessLine, ExceptLine, SendLine
 from ExceptNotifier.teams_notifier import SuccessTeams, ExceptTeams, SendTeams
 from ExceptNotifier.sms_notifier import SuccessSMS, ExceptSMS, SendSMS
 from ExceptNotifier.beep_notifier import SuccessBeep, ExceptBeep, SendBeep
-
+from ExceptNotifier.wechat_notifier import SuccessWechat, ExceptWechat, SendWechat 
 
 __all__ = ['SuccessMail', 'ExceptMail', 'SendMail', 'SuccessSlcak', 'ExceptSlack', 'SendSlack', 
            'SuccessTelegram', 'ExceptTelegram', 'SendTelegram', 'get_authorize_code', 'save_token', 
@@ -35,8 +35,9 @@ __all__ = ['SuccessMail', 'ExceptMail', 'SendMail', 'SuccessSlcak', 'ExceptSlack
            'SuccessChime', 'ExceptChime', 'SendChime',  'SuccessDiscord', 'ExceptDiscord', 'SendDiscord',
            'SuccessKakao', 'ExceptKakao', 'SendKakao',  'SuccessLine', 'ExceptLine', 'SendLine',
            'SuccessTeams', 'ExceptTeams', 'SendTeams', 'send_chime_msg', 'send_discord_msg', 'send_line_msg', 'send_teams_msg', 'send_whatsapp_msg',
-           'SuccessSMS', 'ExceptSMS', 'SendSMS', 'send_sms_msg',  'SuccessBeep', 'ExceptBeep', 'SendBeep', 'receive_openai_advice', 'beep', 'send_gmail_msg'
+           'SuccessSMS', 'ExceptSMS', 'SendSMS', 'send_sms_msg',  'SuccessBeep', 'ExceptBeep', 'SendBeep', 'receive_openai_advice', 'beep', 'send_gmail_msg',
+           'SuccessWechat', 'ExceptWechat', 'SendWechat' 
            ]
 
-__version__ = "0.1.6"
+__version__ = "0.1.7"
 __author__ = "daniel park <parkminwoo1991@gmail.com>"
