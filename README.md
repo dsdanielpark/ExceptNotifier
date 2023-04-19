@@ -56,7 +56,7 @@ o use the desired application, you must define the necessary variables. Ensure t
 
 ## 1. Except`[Application Name]`
 If you use Python's try except statement as it is, but change except as follows, you can receive notifications through your application.
-```javascript
+```
 ExceptChime, ExceptTelegram, ExceptDiscord, ExceptSMS, ExceptMail, ExceptKakao, ExceptLine, ExceptSlack, ExceptTeams, ExceptDesktope, ExceptBeep
 ```
 
@@ -92,7 +92,7 @@ except ExceptTelegram:
 
 ## 3. Success`[Application Name]`
 By placing the try except in python at the end of the try statement, applications can be notified that the try statement worked normally.
-```javascript
+```
 SuccessChime, SuccessTelegram, SuccessDiscord, SuccessSMS, SuccessMail, SuccessKakao, SuccessLine, SuccessSlack, SuccessTeams, SuccessDesktope, SuccessBeep
 ```
 Example
@@ -109,7 +109,7 @@ except:
 
 ## 4. Send`[Application Name]`
 Place it anywhere on the line of code you want, and you'll be notified when that line of code is reached.
-```javascript
+```
 SendChime, SendTelegram, SendDiscord, SendSMS, SendMail, SendKakao, SendLine, SendSlack, SendTeams, SendDesktope, SendBeep
 ```
 Example
