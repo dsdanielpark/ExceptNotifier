@@ -1,7 +1,7 @@
 Development Status :: 3 - Alpha <br>
 *Copyright (c) 2023 MinWoo Park, South Korea*
 <br>
-![](https://github.com/dsdanielpark/ExceptNotifier/blob/main/assets/imgs/ExceptNotifier_logo.png)
+![](https://github.com/dsdanielpark/ExceptNotifier/blob/main/assets/imgs/logo2.png)
 
 <h5 align="center">Integrates AI-assisted debugging notifications into Python try-except statements for various messaging applications. </h5>
 
@@ -12,7 +12,7 @@ Development Status :: 3 - Alpha <br>
 <a href="https://github.com/psf/black"><img alt="Code style: black" src="https://img.shields.io/badge/code%20style-black-000000.svg"></a>
 </p>
 
-![](https://github.com/dsdanielpark/ExceptNotifier/blob/main/assets/imgs/main2.png)
+![](https://github.com/dsdanielpark/ExceptNotifier/blob/main/assets/imgs/main3.png)
 ##### Provides a notification from the application shown in the captured screen.
 
 # Python Package: ExceptNotifier
