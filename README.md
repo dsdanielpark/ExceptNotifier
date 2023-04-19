@@ -212,7 +212,7 @@ SendMail().__call__()           # When Process Ended -> Any Line mail.
 ```
 
 <details>
-<summary> See *Example*...</summary>
+<summary> See Example...</summary>
 
 ```python
 import sys
