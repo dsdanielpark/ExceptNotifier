@@ -2,7 +2,7 @@ Development Status :: 3 - Alpha <br>
 *Copyright (c) 2023 MinWoo Park, South Korea*
 <br>
 
-# Python Package: ExceptNotifier
+![](https://github.com/dsdanielpark/ExceptNotifier/blob/main/assets/imgs/ExceptNotifier_logo.png)
 ![Except-Notifier](https://img.shields.io/badge/pypi-ExceptNotifier-orange)
 ![Pypi Version](https://img.shields.io/pypi/v/ExceptNotifier.svg)
 [![Python Version](https://img.shields.io/badge/python-3.6%20to%203.7-black)](code_of_conduct.md)
