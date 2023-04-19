@@ -73,7 +73,7 @@ except ExceptTelegram:
 
 <br>
 
-## AI Debbugging Infomation Notification
+## 2. AI Debbugging Infomation Notification
 You can receive debugging information from ChatGPT via OpenAI's API when using the Except statement. The syntax remains the same, but you'll need to configure these two variables:
 `_OPEN_AI_MODEL`,`_OPEN_AI_API`
 
@@ -90,7 +90,7 @@ except ExceptTelegram:
     sys.exit()
 ```
 
-## 2. Success`[Application Name]`
+## 3. Success`[Application Name]`
 By placing the try except in python at the end of the try statement, applications can be notified that the try statement worked normally.
 ```javascript
 SuccessChime, SuccessTelegram, SuccessDiscord, SuccessSMS, SuccessMail, SuccessKakao, SuccessLine, SuccessSlack, SuccessTeams, SuccessDesktope, SuccessBeep
@@ -107,7 +107,7 @@ except:
     sys.exit()
 ```
 
-## 3. Send`[Application Name]`
+## 4. Send`[Application Name]`
 Place it anywhere on the line of code you want, and you'll be notified when that line of code is reached.
 ```javascript
 SendChime, SendTelegram, SendDiscord, SendSMS, SendMail, SendKakao, SendLine, SendSlack, SendTeams, SendDesktope, SendBeep
