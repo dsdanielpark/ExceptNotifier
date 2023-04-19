@@ -1,4 +1,8 @@
 # Developer Note
+This package was carried out in a very short time (within 7 days) from the idea to the pre-alpha version to documentation and simple QA testing by myself. Therefore, rather than sufficiently clean code, I tried to implement functions and create an initial interface. Therefore, I appreciate your contributions at any time.
+
+###### Since all API keys and URLs generated during the test phase are destroyed, all URLs and APIs in legacy code cannot be used.
+
 ## Dependencies
 This package communicates using the REST API or WEBHOOK URL of mobile messengers and applications. It inevitably depends on the interface and API policy of each application. To maintain a simple structure and flexibility, configure methods to communicate with each application in the base folder of ExceptNotifier. If an application's API policy or interface changes, ExceptNotifier will be addressed by updating the major version.
 
@@ -24,10 +28,23 @@ The ExceptNotifier offers Gmail as the primary email service. Due to varying com
 
 <br>
 
+## Variable and Class naming
+In principle, all variable and class names are intuitive, and I keep them easy to refactor until major version 1. Various decorators and package structures are discussed after development stage 5 or higher.
+This principle is so that different people can easily refactor, contribute, and react quickly to interface changes in different applications. However, while maintaining these principles, if you have any good ideas, please feel free to suggest them.
+
+In this class, I inherit from Python's exceptionBase and override the excepthook method to create a custom exception handler. To avoid using args, double inheritance, or complicating the structure, I define and use internal variables (declaring them as global variables if necessary). 
+
+Typically, in Python, variable names are mangled by adding a double underscore prefix (__). However, in this case, I chose to use capital letters for internal variables to emphasize their constant-like usage. If you have suggestions for improving class names, method names, or variable names, please feel free to contribute.
+##### In this package, a variable name prefixed with an _ signifies that it is used only within a function. Naming focused on function rather than mangling. If a particular method is only used within a class, it is used as the _method name.
+
+
+<br><br>
+
 # Thank To
 - Thanks to [Myunghak Lee](https://github.com/myeonghak) for providing great ideas on providing debugging information through open ai API.
 
 <br>
+
 
 # Release note
 |Version|Description|
