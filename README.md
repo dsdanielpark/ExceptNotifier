@@ -56,6 +56,7 @@ conda install exceptnotifier
 - The variables in the following table must not be contaminated.
 - Depending on the situation, consider designating them as global variables for use.
 - If you are using Telegram, an example is attached as an image.
+- As you already know, API Keys or security tokens must be secured. Note that the key values which exposured in github will be expired after insecured.
 
 | App | Required Variables | Free or Paid | Ease of Setup | Time Required for Setup|Guide Tutorial Link|
 |:--:|:--|:--:|:--:|:--:|:---:|
