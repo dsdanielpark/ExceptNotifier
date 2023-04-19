@@ -454,11 +454,9 @@ SendTeams().__call__()        #3 customized sender
 - e. In My Application > Product Settings > Kakao Login, be sure to set Redirect URI as follows: [https://example.com/oauth](https://example.com/oauth).
 - f. In the left Consent Items menu, set "Send message in KakaoTalk" to selective agreement.
 - g. Copy the REST API Key in My Application > App Settings > Summary, and go to the following document.
-
-**In this example, some API keys were exposed by creating and removing a test application, but for security reasons, your API key should not be exposed to the outside world.**
-
 - h. If you have successfully completed all of the above steps, go to the following document and follow the instructions:
  https://github.com/dsdanielpark/ExceptNotifier/blob/main/tutorials/kakao_token_generator.ipynb
+ **In this example, some API keys were exposed by creating and removing a test application, but for security reasons, your API key should not be exposed to the outside world.**
 <Br>
 
 ```python
