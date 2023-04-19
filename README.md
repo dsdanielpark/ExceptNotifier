@@ -178,8 +178,9 @@ SendMail().__call__()
  ┗ ┗  📜kakao_token.py
 ```
 
+<br>
 
-# Thank To
+# Inspiring
 - Thanks to [Myunghak Lee](https://github.com/myeonghak) for providing great ideas on providing debugging information through open ai API.
 
 <br><br><br>
