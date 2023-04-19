@@ -1,3 +1,6 @@
+# coding=utf-8
+# Copyright 2023 parkminwoo Authors.
+
 import traceback
 import re
 import datetime

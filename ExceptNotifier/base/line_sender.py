@@ -1,3 +1,6 @@
+# coding=utf-8
+# Copyright 2023 parkminwoo Authors.
+
 import requests   
 
 def send_line_msg(_LINE_NOTIFY_API_TOKEN: str, msg: str) -> dict:

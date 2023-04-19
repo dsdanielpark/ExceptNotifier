@@ -1,3 +1,6 @@
+# coding=utf-8
+# Copyright 2023 parkminwoo Authors.
+
 import requests
 import traceback
 import re
@@ -51,6 +54,9 @@ class ExceptDesktop(BaseException):
                     exceptNotifier['BODY'] += str(val)
                 except:
                     exceptNotifier['BODY'] += '<ERROR WHILE PRINTING VALUE>'
+
+        
+        print(exceptNotifier['BODY'])
                     
         send_desktop_msg(title = exceptNotifier['SUBJECT'][:20], message=exceptNotifier['BODY'][:200])
         

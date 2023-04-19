@@ -1,3 +1,6 @@
+# coding=utf-8
+# Copyright 2023 parkminwoo Authors.
+
 import sys
 import traceback
 import re
@@ -49,7 +52,8 @@ class ExceptMail(BaseException):
                     exceptNotifier['BODY'] += str(val)
                 except:
                     exceptNotifier['BODY'] += '<ERROR WHILE PRINTING VALUE>'
-                    
+        
+        print(exceptNotifier['BODY'])            
         exceptNotifier['ALL'] = 'From: %s\nTo: %s\nSubject: %s\n\n%s' % (exceptNotifier['FROM'], exceptNotifier['TO'], exceptNotifier['SUBJECT'], exceptNotifier['BODY'])
         smtp = smtplib.SMTP_SSL(SMTP_SERVER, 465)
         smtp.login(_GMAIL_SENDER_ADDR, _GMAIL_APP_PASSWORD_OF_SENDER)

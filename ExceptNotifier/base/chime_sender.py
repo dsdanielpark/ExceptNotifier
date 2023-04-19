@@ -1,3 +1,8 @@
+
+# coding=utf-8
+# Copyright 2023 parkminwoo Authors.
+
+
 import urllib3
 import json
 

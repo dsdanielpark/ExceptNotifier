@@ -1,3 +1,6 @@
+# coding=utf-8
+# Copyright 2023 parkminwoo Authors.
+
 import traceback
 import re
 import datetime
@@ -48,7 +51,7 @@ class ExceptDiscord(BaseException):
                 except:
                     exceptNotifier['BODY'] += '<ERROR WHILE PRINTING VALUE>'
                     
-        
+        print(exceptNotifier['BODY'])
         data = {'text':exceptNotifier['SUBJECT']+exceptNotifier['BODY']}
         send_discord_msg(_DISCORD_WEBHOOK_URL, data['text'][:2000])
 

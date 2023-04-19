@@ -1,3 +1,6 @@
+# coding=utf-8
+# Copyright 2023 parkminwoo Authors.
+
 import traceback
 import re
 import datetime
@@ -5,7 +8,8 @@ from email.message import EmailMessage
 import sys
 import urllib3
 import json
-from ExceptNotifier import send_chime_msg
+from ExceptNotifier import send_chime_msg, receive_openai_advice
+
 
 http = urllib3.PoolManager()
 DATE_FORMAT = "%Y-%m-%d %H:%M:%S"
@@ -50,9 +54,13 @@ class ExceptChime(BaseException):
                     exceptNotifier['BODY'] += str(val)
                 except:
                     exceptNotifier['BODY'] += '<ERROR WHILE PRINTING VALUE>'
+
+        print(exceptNotifier['BODY'])
         
         data = {'text':exceptNotifier['SUBJECT']+exceptNotifier['BODY']}
         send_chime_msg(_CHIME_WEBHOOK_URL, data['text'])
+
+        
 
 
 

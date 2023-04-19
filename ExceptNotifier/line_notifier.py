@@ -1,3 +1,6 @@
+# coding=utf-8
+# Copyright 2023 parkminwoo Authors.
+
 import requests
 import traceback
 import re
@@ -48,7 +51,7 @@ class ExceptLine(BaseException):
                 except:
                     exceptNotifier['BODY'] += '<ERROR WHILE PRINTING VALUE>'
                     
-        
+        print(exceptNotifier['BODY'])
         data = {'text':exceptNotifier['SUBJECT']+exceptNotifier['BODY']}
 
         send_line_msg(_LINE_NOTIFY_API_TOKEN, data['text'])
