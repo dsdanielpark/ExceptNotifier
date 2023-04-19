@@ -1,16 +1,14 @@
 # Copyright 2023 parkminwoo Authors.
 
-import traceback
 import re
-import datetime
-from email.message import EmailMessage
 import sys
-DATE_FORMAT = "%Y-%m-%d %H:%M:%S"
-
+import datetime
+import traceback
 from plyer import notification
+from email.message import EmailMessage
 from ExceptNotifier import send_desktop_msg, receive_openai_advice
- 
 
+DATE_FORMAT = "%Y-%m-%d %H:%M:%S"
 
 
 class ExceptDesktop(BaseException):
@@ -85,9 +83,6 @@ class ExceptDesktop(BaseException):
                 title = title_msg,
                 message=body_msg ,
                 timeout=DISP_TIME)
-        
-
-
 
 
 class SuccessDesktop:
@@ -100,7 +95,6 @@ class SuccessDesktop:
         f'Time Stamp: {start_time.strftime(DATE_FORMAT)}'
         exceptNotifier = {"SUBJECT":"[Success Notifier] 🎉 Success! Python Code Executed Successfully"}
         exceptNotifier["BODY"]=f"\n\nHi there, \nThis is a success notifier.\n\n - ✅ Code Status: Success. \n - ✅ Detail: Python Code Ran Without Exceptions. \n - 🕐 Time: {start_time.strftime(DATE_FORMAT)} \n\nI just wanted to let you know that your Python code has run successfully without any exceptions. \n\nAll the best, \nExcept Notifier https://github.com/dsdanielpark/ExceptNotifier"
-        
 
         send_desktop_msg(
             title = exceptNotifier['SUBJECT'][:20],
@@ -127,14 +121,10 @@ class SendDesktop:
 
 
 if __name__ == "__main__":
-    
     sys.excepthook = ExceptDesktop.__call__
-
     try:
         print(1/0)  
         SuccessDesktop().__call__() #1 success sender          
-
     except ExceptDesktop as e:      #2 except sender            
         sys.exit()
-
     SendDesktop().__call__()        #3 customized sender          

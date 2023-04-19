@@ -237,11 +237,19 @@ In the except statement, an email is sent along with the error message. Addition
 - b. Obtain an app password for sending Google Mail at the following [link](https://myaccount.google.com/u/3/apppasswords?utm_source=google-account&utm_medium=myaccountsecurity&utm_campaign=tsv-settings&rapt=AEjHL4N2bMRWO46VaMp_jP06zQK14BWNPv66l2o59iJ99CkO8BjYnmoRUe9dtSchkkbubHZMUhevkAnwVJRHb9ygO3afispNlw) or [google document](https://support.google.com/accounts/answer/185833?hl=en). 
 
 ```python
+import sys
 from ExceptNotifier import ExceptMail, SuccessMail, SendMail
 sys.excepthook = ExceptMail.__call__
 
+# Define the next two variables optionally when using OpenAI's API.
+# _OPEN_AI_MODEL="gpt-3.5-turbo"    
+# _OPEN_AI_API="sk-xxxxxx"
+_GAMIL_RECIPIENT_ADDR = 'xxxxxxx@gmail.com'
+_GMAIL_SENDER_ADDR = 'yyyyyy@gmail.com'
+_GMAIL_APP_PASSWORD_OF_SENDER = 'zzzzzz'
+
 try:
-    main() # Your Code Here
+    main()                      # Your Code Here
     SuccessMail().__call__()    # No Exception -> Send Success mail.
 except ExceptMail:              # Exception -> Send Fail mail.
     pass
@@ -256,10 +264,12 @@ SendMail().__call__()           # When Process Ended -> Any Line mail.
 import sys
 from ExceptNotifier import ExceptMail, SuccessMail, SendMail
 
-# 01. Set variable
-_gmail_receiver = 'xxxxx@gmail.com'
-_gmail_sender = 'xxxxx@gmail.com'
-_gmail_app_password_of_sender = 'xxxxx'
+# Define the next two variables optionally when using OpenAI's API.
+# _OPEN_AI_MODEL="gpt-3.5-turbo"    
+# _OPEN_AI_API="sk-xxxxxx"
+_GAMIL_RECIPIENT_ADDR = 'xxxxxxx@gmail.com'
+_GMAIL_SENDER_ADDR = 'yyyyyy@gmail.com'
+_GMAIL_APP_PASSWORD_OF_SENDER = 'zzzzzz'
 
 sys.excepthook = ExceptMail.__call__
 
@@ -284,6 +294,9 @@ import sys
 from ExceptNotifier import ExceptMail, SuccessMail, SendMail
 sys.excepthook = ExceptMail.__call__
 
+# Define the next two variables optionally when using OpenAI's API.
+# _OPEN_AI_MODEL="gpt-3.5-turbo"    
+# _OPEN_AI_API="sk-xxxxxx"
 _GAMIL_RECIPIENT_ADDR = 'xxxxxxx@gmail.com'
 _GMAIL_SENDER_ADDR = 'yyyyyy@gmail.com'
 _GMAIL_APP_PASSWORD_OF_SENDER = 'zzzzzz'
@@ -309,9 +322,13 @@ SendMail().__call__()
 ```python
 import sys
 from ExceptNotifier import ExceptDiscord, SuccessDiscord, SendDiscord
-global _DISCORD_WEBHOOK_URL 
-_DISCORD_WEBHOOK_URL = "xxxxxxxxxxxxxxxxx"
 sys.excepthook = ExceptDiscord.__call__
+
+# Define the next two variables optionally when using OpenAI's API.
+# _OPEN_AI_MODEL="gpt-3.5-turbo"    
+# _OPEN_AI_API="sk-xxxxxx"
+_DISCORD_WEBHOOK_URL = "xxxxxxxxxxxxxxxxx"
+
 
 try:
     print(1/20)  
@@ -332,10 +349,13 @@ SendDiscord().__call__()        #3 customized sender
 ```python
 import sys
 from ExceptNotifier import SuccessChime, ExceptChime, SendChime
-_CHIME_WEBHOOK_URL = "xxxxxxxxxxxxxxxxxx"
-_OPEN_AI_API = "xxxxxxxxxxxxx"
-_OPEN_AI_MODEL = "gpt-3.5-turbo"
 sys.excepthook = ExceptChime.__call__
+
+# Define the next two variables optionally when using OpenAI's API.
+# _OPEN_AI_MODEL="gpt-3.5-turbo"    
+# _OPEN_AI_API="sk-xxxxxx"
+_CHIME_WEBHOOK_URL = "xxxxxxxxxxxxxxxxxx"
+
 
 try:
     print(1/0)  
@@ -358,6 +378,9 @@ import sys
 from ExceptNotifier import ExceptSlack, SuccessSlcak, SendSlack
 sys.excepthook = ExceptSlack.__call__
 
+# Define the next two variables optionally when using OpenAI's API.
+# _OPEN_AI_MODEL="gpt-3.5-turbo"    
+# _OPEN_AI_API="sk-xxxxxx"
 _SLACK_WEBHOOK_URL = 'https://hooks.slack.com/services/xxxxxxxxxxxxxxxxxxx'
 
 try:
@@ -381,6 +404,9 @@ import sys
 from ExceptNotifier import ExceptLine, SuccessLine, SendLine
 sys.excepthook = ExceptLine.__call__
 
+# Define the next two variables optionally when using OpenAI's API.
+# _OPEN_AI_MODEL="gpt-3.5-turbo"    
+# _OPEN_AI_API="sk-xxxxxx"
 _LINE_NOTIFY_API_TOKEN = 'xxxxxxxxxxx'
 
 try:
@@ -404,6 +430,9 @@ import sys
 from ExceptNotifier import ExceptSMS, SuccessSMS, SendSMS
 sys.excepthook = ExceptSMS.__call__
 
+# Define the next two variables optionally when using OpenAI's API.
+# _OPEN_AI_MODEL="gpt-3.5-turbo"    
+# _OPEN_AI_API="sk-xxxxxx"
 _TWILIO_SID = 'xxxx'
 _TWILIO_TOKEN = 'yyyyyy'
 _RECIPIENT_PHONE_NUMBER="+aaaaaa",
@@ -433,6 +462,9 @@ import sys
 from ExceptNotifier import ExceptTeams, SuccessTeams, SendTeams
 sys.excepthook = ExceptTeams.__call__
 
+# Define the next two variables optionally when using OpenAI's API.
+# _OPEN_AI_MODEL="gpt-3.5-turbo"    
+# _OPEN_AI_API="sk-xxxxxx"
 _TEAMS_WEBHOOK_URL = 'microsoft webhook _TEAMS_WEBHOOK_URL'
 
 try:
@@ -464,6 +496,9 @@ import sys
 from ExceptNotifier import ExceptKakao, SuccessKakao, SendKakao
 sys.excepthook = ExceptKakao.__call__
 
+# Define the next two variables optionally when using OpenAI's API.
+# _OPEN_AI_MODEL="gpt-3.5-turbo"    
+# _OPEN_AI_API="sk-xxxxxx"
 _KAKAO_TOKEN_PATH = 'xxxx/xxx/xxx.json''
 
 try:
@@ -507,6 +542,9 @@ No setup is required. Use as follows.
 ```python
 from ExceptNotifier import ExceptDesktop, SuccessDesktop, SendDesktop
 sys.excepthook = ExceptDesktop.__call__
+# Define the next two variables optionally when using OpenAI's API.
+# _OPEN_AI_MODEL="gpt-3.5-turbo"    
+# _OPEN_AI_API="sk-xxxxxx"
 
 try:
     print(1/0)  
