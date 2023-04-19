@@ -31,6 +31,48 @@ With `ExceptNotifier`, you can obtain detailed compilation errors, including deb
 
 <br><br>
 
+
+
+
+# Contents
+
+- [OPEN AI API](https://platform.openai.com/docs/introduction)
+- [Python Package: ExceptNotifier](#python-package--exceptnotifier)
+- [Supporting Applications](#supporting-applications)
+  * [AI Debugging using OpenAI API](#ai-debugging-using-openai-api)
+- [Quick Start](#quick-start)
+- [App Setup Overview](#app-setup-overview)
+- [1. Key Features](#1-key-features)
+  * [1-1. Except`[appName]`](#1-1-except--appname--)
+  * [1-2. AI Debbugging Infomation Notification](#1-2-ai-debbugging-infomation-notification)
+  * [1-3. Success`[appName]`](#1-3-success--appname--)
+  * [1-4. Send`[appName]`](#1-4-send--appname--)
+<details>
+<summary> See more...</summary>
+- [Feature](#feature)
+  * [2. Notifier](#2-notifier)
+    + [2-1. *Telegram Notifier*](#2-1--telegram-notifier-)
+      - [a. Without OpenAI API](#a-without-openai-api)
+      - [b. With OpenAI API](#b-with-openai-api)
+    + [2-2. *Mail Notifier*](#2-2--mail-notifier-)
+    + [2-3. *Discord Notifier*](#2-3--discord-notifier-)
+    + [2-4. *Chime Notifier*](#2-4--chime-notifier-)
+    + [2-5. *Slack Notifier*](#2-5--slack-notifier-)
+    + [2-6. *Line Notifier*](#2-6--line-notifier-)
+    + [2-7. *SMS Notifier*](#2-7--sms-notifier-)
+    + [2-8. *Teams Notifier*](#2-8--teams-notifier-)
+    + [2-9. *Kakaotalk Notifier*](#2-9--kakaotalk-notifier-)
+    + [2-10. *Wechat Notifier*](#2-10--wechat-notifier-)
+    + [2-11. *Beep Notifier*](#2-11--beep-notifier-)
+    + [2-12. *Desktop Notifier*](#2-12--desktop-notifier-)
+  * [3. Sender](#3-sender)
+- [License](#license)
+- [Code of Conduct](#code-of-conduct)
+
+</details>
+
+<br><br>
+
 # Supporting Applications
 
 - [Telegram](https://telegram.org/)
@@ -48,17 +90,16 @@ With `ExceptNotifier`, you can obtain detailed compilation errors, including deb
 
 <Br>
 
-## AI Debugging using OpenAI API
+### AI Debugging using OpenAI API
 If you have OpenAI API Key and model name, you can get information and code examples for debugging in any application.
-
+-  [Opea AI API](https://openai.com/blog/openai-api)
 
 
 <br>
 
 # Quick Start
 ```bash
-pip install ExceptNotifier
-pip install exceptnotifier
+$ pip install ExceptNotifier    #pip install exceptnotifier
 ```
 
 <br>
@@ -186,47 +227,7 @@ noti()                    # sending message to telegram
 <br><br>
 
 
-
-# Contents
-
-- [OPEN AI API](https://platform.openai.com/docs/introduction)
-- [Python Package: ExceptNotifier](#python-package--exceptnotifier)
-- [Supporting Applications](#supporting-applications)
-  * [AI Debugging using OpenAI API](#ai-debugging-using-openai-api)
-- [Quick Start](#quick-start)
-- [App Setup Overview](#app-setup-overview)
-- [1. Key Features](#1-key-features)
-  * [1-1. Except`[appName]`](#1-1-except--appname--)
-  * [1-2. AI Debbugging Infomation Notification](#1-2-ai-debbugging-infomation-notification)
-  * [1-3. Success`[appName]`](#1-3-success--appname--)
-  * [1-4. Send`[appName]`](#1-4-send--appname--)
-- [Feature](#feature)
-  * [2. Notifier](#2-notifier)
-    + [2-1. *Telegram Notifier*](#2-1--telegram-notifier-)
-      - [a. Without OpenAI API](#a-without-openai-api)
-      - [b. With OpenAI API](#b-with-openai-api)
-    + [2-2. *Mail Notifier*](#2-2--mail-notifier-)
-    + [2-3. *Discord Notifier*](#2-3--discord-notifier-)
-    + [2-4. *Chime Notifier*](#2-4--chime-notifier-)
-    + [2-5. *Slack Notifier*](#2-5--slack-notifier-)
-    + [2-6. *Line Notifier*](#2-6--line-notifier-)
-    + [2-7. *SMS Notifier*](#2-7--sms-notifier-)
-    + [2-8. *Teams Notifier*](#2-8--teams-notifier-)
-    + [2-9. *Kakaotalk Notifier*](#2-9--kakaotalk-notifier-)
-    + [2-10. *Wechat Notifier*](#2-10--wechat-notifier-)
-    + [2-11. *Beep Notifier*](#2-11--beep-notifier-)
-    + [2-12. *Desktop Notifier*](#2-12--desktop-notifier-)
-  * [3. Sender](#3-sender)
-- [License](#license)
-- [Code of Conduct](#code-of-conduct)
-
-<br><br>
-
-
-
-
-
-# Feature
+# Features
 
 ## 2. Notifier
 You can receive debugging information from ChatGPT via OpenAI's API when using the Except statement. The syntax remains the same, but you'll need to configure these two variables:
