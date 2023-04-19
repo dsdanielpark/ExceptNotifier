@@ -178,6 +178,9 @@ SendMail().__call__()
 ```
 
 
+# Thank To
+- Thanks to [Myunghak Lee](https://github.com/myeonghak) for providing great ideas on providing debugging information through open ai API.
+
 <br><br><br>
 ### Contacts
 - Maintainer [Daniel Park, South Korea](https://github.com/DSDanielPark) <br>
