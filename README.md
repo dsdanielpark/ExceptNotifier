@@ -10,9 +10,10 @@ Development Status :: 3 - Alpha <br>
 ##### Provides a notification from the application shown in the following screen,
 
 ![](https://github.com/dsdanielpark/ExceptNotifier/blob/main/assets/imgs/main2.png)
-Python package `ExceptNotifier` can provides a more flexible way to receive notifications by overriding Python's try-except statement. You can receive alerts through various messaging platforms like email, Slack,Telegram, and Discord. This package offers an extensive range of notification options to suit your needs. 
-<br>
-Regardless of whether an exception occurs or not, with `ExceptNotifier`, you can send the entire detailed compile error to a messenger or email at a desired specific code line. 
+ The `ExceptNotifier` Python package offers a flexible approach to receiving notifications by enhancing Python's try-except statement. This package enables you to receive alerts through various messaging applications or emails.
+<Br><br>
+With `ExceptNotifier`, you can obtain detailed compilation errors, including debug information, sent directly to your preferred messaging platform or email. By integrating OpenAI's ChatGPT, you can receive additional error code information as long as you provide the required API model name and key. This feature ensures that error handling and notifications are more informative and accessible, streamlining your debugging process.
+
 <br><br>
 
 ### Supporting Applications
