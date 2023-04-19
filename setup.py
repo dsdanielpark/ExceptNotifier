@@ -15,7 +15,7 @@ def get_version():
 
 
 def get_long_description():
-    with open("README.md", encoding='UTF-8') as f:
+    with open("README.md", encoding="UTF-8") as f:
         long_description = f.read()
         return long_description
 
@@ -34,7 +34,7 @@ setup(
     url="https://github.com/dsdanielpark/ExceptNotifier",
     packages=find_packages(exclude=[]),
     python_requires=">=3.6",
-    install_requires=['twilio', 'plyer', 'openai', 'discord'],
+    install_requires=["twilio", "plyer", "openai", "discord"],
     keywords="Exception, Python, Python Exception Alarm, Error notifications, Customizable notifications, Traceback management, Single line alarm",
     classifiers=[
         "Development Status :: 3 - Alpha",
@@ -44,9 +44,9 @@ setup(
         "Programming Language :: Python :: 3.6",
         "Programming Language :: Python :: 3.7",
         "Programming Language :: Python :: 3.8",
-        'License :: OSI Approved :: MIT License',
-        'Programming Language :: Python :: 3.6',
-        'Topic :: Scientific/Engineering :: Artificial Intelligence',
+        "License :: OSI Approved :: MIT License",
+        "Programming Language :: Python :: 3.6",
+        "Topic :: Scientific/Engineering :: Artificial Intelligence",
     ],
     entry_points={"console_scripts": ["ExceptNotifier=ExceptNotifier.cli:main"]},
 )

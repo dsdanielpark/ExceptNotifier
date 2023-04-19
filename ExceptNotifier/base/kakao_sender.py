@@ -1,4 +1,4 @@
-#-*- coding: utf-8 -*- 
+# -*- coding: utf-8 -*-
 # Copyright 2023 parkminwoo
 import requests
 import json
@@ -15,23 +15,21 @@ def send_kakao_msg(_KAKAO_TOKEN_PATH: str, msg: str) -> dict:
     :rtype: dict
     """
 
-    with open(_KAKAO_TOKEN_PATH,"r") as kakao:
+    with open(_KAKAO_TOKEN_PATH, "r") as kakao:
         tokens = json.load(kakao)
 
-    url="https://kapi.kakao.com/v2/api/talk/memo/default/send"
-    headers={
-        "Authorization" : "Bearer " + tokens["access_token"]
-    }
+    url = "https://kapi.kakao.com/v2/api/talk/memo/default/send"
+    headers = {"Authorization": "Bearer " + tokens["access_token"]}
     data = {
-        'object_type': 'text',
-        'text': msg,
-        'link': {
-            'web_url': 'https://developers.kakao.com',
-            'mobile_web_url': 'https://developers.kakao.com'
-        }
+        "object_type": "text",
+        "text": msg,
+        "link": {
+            "web_url": "https://developers.kakao.com",
+            "mobile_web_url": "https://developers.kakao.com",
+        },
     }
-    
-    data = {'template_object': json.dumps(data)}
+
+    data = {"template_object": json.dumps(data)}
     resp = requests.post(url, headers=headers, data=data)
 
     return resp
@@ -39,8 +37,10 @@ def send_kakao_msg(_KAKAO_TOKEN_PATH: str, msg: str) -> dict:
 
 if __name__ == "__main__":
     global _KAKAO_TOKEN_PATH
-    _KAKAO_TOKEN_PATH = r'C:\Users\parkm\Desktop\git\ExceptionNotifier\tutorials\token.json'
-    
+    _KAKAO_TOKEN_PATH = (
+        r"C:\Users\parkm\Desktop\git\ExceptionNotifier\tutorials\token.json"
+    )
+
     msg = "Sending Message Test"
     resp_status = send_kakao_msg(_KAKAO_TOKEN_PATH, msg)
     print(resp_status)

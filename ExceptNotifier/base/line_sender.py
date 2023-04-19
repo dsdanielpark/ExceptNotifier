@@ -1,6 +1,7 @@
-#-*- coding: utf-8 -*- 
+# -*- coding: utf-8 -*-
 # Copyright 2023 parkminwoo
-import requests   
+import requests
+
 
 def send_line_msg(_LINE_NOTIFY_API_TOKEN: str, msg: str) -> dict:
     """Send message to chat room through Line app's REST API.
@@ -14,16 +15,13 @@ def send_line_msg(_LINE_NOTIFY_API_TOKEN: str, msg: str) -> dict:
     """
 
     api_url = "https://notify-api.line.me/api/notify"
-    headers = {'Authorization':'Bearer '+ _LINE_NOTIFY_API_TOKEN}
-    message = {
-        "message" : msg
-    }
-    resp = requests.post(api_url, headers= headers , data = message)
+    headers = {"Authorization": "Bearer " + _LINE_NOTIFY_API_TOKEN}
+    message = {"message": msg}
+    resp = requests.post(api_url, headers=headers, data=message)
     return resp
 
 
-
-if __name__ == "__main__": 
+if __name__ == "__main__":
     global _LINE_NOTIFY_API_TOKEN
     _LINE_NOTIFY_API_TOKEN = "XXXXXXXXX"
     msg = "Test Message"

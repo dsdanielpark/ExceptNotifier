@@ -1,10 +1,11 @@
-#-*- coding: utf-8 -*- 
+# -*- coding: utf-8 -*-
 # Copyright 2023 parkminwoo
 
 import urllib3
 import json
 
 http = urllib3.PoolManager()
+
 
 def send_chime_msg(_CHIME_WEBHOOK_URL: str, msg: str) -> dict:
     """Send message to chat room through chime app's webhook url.
@@ -27,5 +28,5 @@ def send_chime_msg(_CHIME_WEBHOOK_URL: str, msg: str) -> dict:
 
 if __name__ == "__main__":
     _CHIME_WEBHOOK_URL = "xxxxx"
-    
+
     send_chime_msg(_CHIME_WEBHOOK_URL, "Test")

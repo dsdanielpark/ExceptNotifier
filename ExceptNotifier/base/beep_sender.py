@@ -1,8 +1,9 @@
-#-*- coding: utf-8 -*- 
+# -*- coding: utf-8 -*-
 # Copyright 2023 parkminwoo
 import os
 import platform
 import winsound
+
 
 def beep(sec=1, freq=1000) -> None:
     """Make beep sound
@@ -16,6 +17,6 @@ def beep(sec=1, freq=1000) -> None:
     sys = platform.system()
 
     if sys == "Windows":
-        winsound.Beep(int(1000*sec), freq)
+        winsound.Beep(int(1000 * sec), freq)
     else:
-        os.system('play -nq -t alsa synth {} sine {}'.format(sec, freq))
+        os.system("play -nq -t alsa synth {} sine {}".format(sec, freq))

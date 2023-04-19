@@ -1,4 +1,4 @@
-#-*- coding: utf-8 -*- 
+# -*- coding: utf-8 -*-
 # Copyright 2023 parkminwoo
 
 
@@ -12,19 +12,22 @@ def send_discord_msg(_DISCORD_WEBHOOK_URL: str, msg: str) -> dict:
     :return: Response according to REST API request
     :rtype: dict
     """
-    try: 
+    try:
         from discord import Webhook, RequestsWebhookAdapter
-        webhook = Webhook.from_url(_DISCORD_WEBHOOK_URL, adapter=RequestsWebhookAdapter())
+
+        webhook = Webhook.from_url(
+            _DISCORD_WEBHOOK_URL, adapter=RequestsWebhookAdapter()
+        )
         resp = webhook.send(msg[:150])
     except:
         from discord import SyncWebhook
-        webhook = SyncWebhook.from_url(_DISCORD_WEBHOOK_URL) # Initializing webhook
-        webhook.send(content=msg[:150]) 
+
+        webhook = SyncWebhook.from_url(_DISCORD_WEBHOOK_URL)  # Initializing webhook
+        webhook.send(content=msg[:150])
     return resp
 
 
-
-if __name__ =="__main__":
+if __name__ == "__main__":
     _DISCORD_WEBHOOK_URL = "xxxxx"
     msg = "Sending Test"
 

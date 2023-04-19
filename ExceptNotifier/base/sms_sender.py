@@ -1,9 +1,16 @@
-#-*- coding: utf-8 -*- 
+# -*- coding: utf-8 -*-
 # Copyright 2023 parkminwoo
 
 from twilio.rest import Client
 
-def send_sms_msg(_TWILIO_SID: str, _TWILIO_TOKEN: str, _SENDER_PHONE_NUMBER: str, _RECIPIENT_PHONE_NUMBER: str, msg: str)->dict:
+
+def send_sms_msg(
+    _TWILIO_SID: str,
+    _TWILIO_TOKEN: str,
+    _SENDER_PHONE_NUMBER: str,
+    _RECIPIENT_PHONE_NUMBER: str,
+    msg: str,
+) -> dict:
     """Send SMS through twilio platform.
     https://www.twilio.com/en-us
 
@@ -20,12 +27,10 @@ def send_sms_msg(_TWILIO_SID: str, _TWILIO_TOKEN: str, _SENDER_PHONE_NUMBER: str
     :return: Response dict
     :rtype: dict
     """
-    
+
     client = Client(_TWILIO_SID, _TWILIO_TOKEN)
     resp = client.messages.create(
-        to=_RECIPIENT_PHONE_NUMBER,
-        from_=_SENDER_PHONE_NUMBER,  
-        body=msg[:1500]
+        to=_RECIPIENT_PHONE_NUMBER, from_=_SENDER_PHONE_NUMBER, body=msg[:1500]
     )
     return resp
 
@@ -33,11 +38,13 @@ def send_sms_msg(_TWILIO_SID: str, _TWILIO_TOKEN: str, _SENDER_PHONE_NUMBER: str
 if __name__ == "__main__":
     """https://www.twilio.com/en-us"""
 
-    _TWILIO_SID = 'xxxxx'
-    _TWILIO_TOKEN = 'yyyyy'
+    _TWILIO_SID = "xxxxx"
+    _TWILIO_TOKEN = "yyyyy"
     client = Client(_TWILIO_SID, _TWILIO_TOKEN)
     _SENDER_PHONE_NUMBER = "+aaaaa"
     _RECIPIENT_PHONE_NUMBER = "+bbbbb"
-    msg="ExceptNotifier Test"
+    msg = "ExceptNotifier Test"
 
-    send_sms_msg(_TWILIO_SID, _TWILIO_TOKEN, _SENDER_PHONE_NUMBER, _RECIPIENT_PHONE_NUMBER, msg)
+    send_sms_msg(
+        _TWILIO_SID, _TWILIO_TOKEN, _SENDER_PHONE_NUMBER, _RECIPIENT_PHONE_NUMBER, msg
+    )

@@ -1,11 +1,15 @@
-#-*- coding: utf-8 -*- 
+# -*- coding: utf-8 -*-
 # Copyright 2023 parkminwoo
 import logging
 import requests
 
 
 def send_whatsapp_msg(
-    msg: str, sender_phone_number_id: str, TOKEN: str, receiver_number: str, recipient_type:str="individual"
+    msg: str,
+    sender_phone_number_id: str,
+    TOKEN: str,
+    receiver_number: str,
+    recipient_type: str = "individual",
 ) -> dict:
     """Send me a message via whatsapp.
     However, from v16 api, it seems to have been changed so that templates that have passed deliberation can be sent. 
@@ -25,20 +29,17 @@ def send_whatsapp_msg(
     :rtype: dict
     """
 
-    url =  f"https://graph.facebook.com/v16.0/{sender_phone_number_id}/messages"
-    
-    data = { "messaging_product": "whatsapp", 
-            "to": receiver_number, 
-            "type": "template", 
-            "template": 
-                        { "name": "hello_world", 
-                          "language": 
-                                    { "code": "en_US" }
-                        } 
-            }
+    url = f"https://graph.facebook.com/v16.0/{sender_phone_number_id}/messages"
+
+    data = {
+        "messaging_product": "whatsapp",
+        "to": receiver_number,
+        "type": "template",
+        "template": {"name": "hello_world", "language": {"code": "en_US"}},
+    }
     headers = {
-            "Content-Type": "application/json",
-            "Authorization": "Bearer {}".format(TOKEN),
-        }
+        "Content-Type": "application/json",
+        "Authorization": "Bearer {}".format(TOKEN),
+    }
     resp = requests.post(f"{url}", headers=headers, json=data)
     return resp

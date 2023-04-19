@@ -1,10 +1,10 @@
-#-*- coding: utf-8 -*- 
+# -*- coding: utf-8 -*-
 # Copyright 2023 parkminwoo
 import sys
 import os
 import platform
 import winsound
-from ExceptNotifier import beep 
+from ExceptNotifier import beep
 
 
 class ExceptBeep(BaseException):
@@ -21,13 +21,12 @@ class ExceptBeep(BaseException):
         :param tb: Traceback Information
         :type tb: _type_
         """
-        
-        beep(BEEP_TIME)
-        beep(BEEP_TIME)
-        beep(BEEP_TIME)
-        beep(BEEP_TIME)
-        beep(BEEP_TIME)
 
+        beep(BEEP_TIME)
+        beep(BEEP_TIME)
+        beep(BEEP_TIME)
+        beep(BEEP_TIME)
+        beep(BEEP_TIME)
 
     @staticmethod
     def beep(sec=1, freq=1000) -> None:
@@ -42,30 +41,26 @@ class ExceptBeep(BaseException):
         sys = platform.system()
 
         if sys == "Windows":
-            winsound.Beep(int(1000*sec), freq)
+            winsound.Beep(int(1000 * sec), freq)
         else:
-            os.system('play -nq -t alsa synth {} sine {}'.format(sec, freq))
-
-
+            os.system("play -nq -t alsa synth {} sine {}".format(sec, freq))
 
 
 class SuccessBeep:
     def __init__(self) -> None:
         pass
-        
+
     def __call__(self, *args, **kwds) -> None:
         beep(BEEP_TIME)
         beep(BEEP_TIME)
-
 
 
 class SendBeep:
     def __init__(self) -> None:
         pass
-        
+
     def __call__(self, *args, **kwds) -> None:
         beep(BEEP_TIME)
-
 
 
 if __name__ == "__main__":
@@ -73,10 +68,10 @@ if __name__ == "__main__":
     sys.excepthook = ExceptBeep.__call__
 
     try:
-        print(1/20)  
-        SuccessBeep().__call__() #1 success beep-beep          
+        print(1 / 20)
+        SuccessBeep().__call__()  # 1 success beep-beep
 
-    except ExceptBeep as e:      #2 except beep-beep                
+    except ExceptBeep as e:  # 2 except beep-beep
         sys.exit()
 
-    SendBeep().__call__()        #3 customized beep-beep              
+    SendBeep().__call__()  # 3 customized beep-beep

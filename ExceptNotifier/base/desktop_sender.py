@@ -1,4 +1,4 @@
-#-*- coding: utf-8 -*- 
+# -*- coding: utf-8 -*-
 # Copyright 2023 parkminwoo
 import time
 from plyer import notification
@@ -14,8 +14,4 @@ def send_desktop_msg(title_msg: str, body_msg: str, DISP_TIME=5) -> None:
     :param DISP_TIME: Time duration, defaults to 5
     :type DISP_TIME: int, optional
     """
-    notification.notify(
-            title = title_msg[:20],
-            message=body_msg[:200] ,
-            timeout=DISP_TIME)
-    
+    notification.notify(title=title_msg[:20], message=body_msg[:200], timeout=DISP_TIME)

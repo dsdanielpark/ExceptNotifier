@@ -1,4 +1,4 @@
-#-*- coding: utf-8 -*- 
+# -*- coding: utf-8 -*-
 # Copyright 2023 parkminwoo
 
 import json
@@ -15,13 +15,9 @@ def send_teams_msg(_TEAMS_WEBHOOK_URL, msg):
     :return: Response according to REST API request
     :rtype: dict
     """
-    
-    payload = {
-        "text": msg
-    }
-    headers = {
-        'Content-Type': 'application/json'
-    }
+
+    payload = {"text": msg}
+    headers = {"Content-Type": "application/json"}
     resp = requests.post(_TEAMS_WEBHOOK_URL, headers=headers, data=json.dumps(payload))
 
     return resp

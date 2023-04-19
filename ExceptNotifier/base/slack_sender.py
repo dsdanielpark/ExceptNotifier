@@ -1,4 +1,4 @@
-#-*- coding: utf-8 -*- 
+# -*- coding: utf-8 -*-
 # Copyright 2023 parkminwoo
 
 import requests
@@ -14,13 +14,13 @@ def send_slack_msg(_SLACK_WEBHOOK_URL: str, msg: str) -> dict:
     :return: Response according to REST API request
     :rtype: dict
     """
-    
-    data = {'text':msg}
+
+    data = {"text": msg}
     resp = requests.post(url=_SLACK_WEBHOOK_URL, json=data)
     return resp
 
 
-if __name__ == "__main__": 
+if __name__ == "__main__":
     _SLACK_WEBHOOK_URL = "xxxxx"
     msg = "Test Message"
     send_slack_msg(_SLACK_WEBHOOK_URL, msg)
