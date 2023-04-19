@@ -5,7 +5,7 @@ Development Status :: 3 - Alpha <br>
 # Python Package: ExceptNotifier
 ![Except-Notifier](https://img.shields.io/badge/pypi-ExceptNotifier-orange)
 ![Pypi Version](https://img.shields.io/pypi/v/ExceptNotifier.svg)
-[![Python Version](https://img.shields.io/badge/python-3.6%20to%203.9-black)](code_of_conduct.md)
+[![Python Version](https://img.shields.io/badge/python-3.6%20to%203.7-black)](code_of_conduct.md)
 ![Code convention](https://img.shields.io/badge/code%20convention-pep8-black)
 ##### Provides a notification from the application shown in the following screen,
 
@@ -36,8 +36,11 @@ With `ExceptNotifier`, you can obtain detailed compilation errors, including deb
 ```
 pip install ExceptNotifier
 ```
-
-
+or
+```
+pip install exceptnotifier
+```
+Due to the dependency of the discord package, Python 3.6 and 3.7 are officially provided, but for other applications, versions 3.6 to 3.9 can be applied.
 
 <br>
 

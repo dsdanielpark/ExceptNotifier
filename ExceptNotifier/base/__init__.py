@@ -19,5 +19,5 @@ __all__ = ['send_kakao_msg', 'send_gmail_msg', 'send_slack_msg', 'send_telegram_
            'send_line_msg', 'send_line_msg', 'send_teams_msg', 'send_whatsapp_msg', 'send_sms_msg', 'beep', 'receive_openai_advice'
            ]
 
-__version__ = "0.1.3"
+__version__ = "0.1.4"
 __author__ = "daniel park <parkminwoo1991@gmail.com>"
