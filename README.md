@@ -70,7 +70,7 @@ conda install exceptnotifier
 |Line|`_LINE_NOTIFY_API_TOKEN`|Freemium|Medium|4min|[ExceptLine](https://github.com/dsdanielpark/ExceptNotifier/blob/main/documents/ExceptLine/GUIDE.md)|
 |SMS|`_TWILIO_SID`, `_TWILIO_TOKEN`, `_RECIPIENT_PHONE_NUMBER`, `_SENDER_PHONE_NUMBER`|Not free|Medium|5min|[ExceptSMS](https://github.com/dsdanielpark/ExceptNotifier/blob/main/documents/ExceptSMS/GUIDE.md)|
 |Microsoft Teams|`_TEAMS_WEBHOOK_URL`|Not Free|Medium|5min|[ExceptTeams](https://github.com/dsdanielpark/ExceptNotifier/blob/main/documents/ExceptTeams/GUIDE.md)|
-|KakaoTalk|`_KAKAO_TOKEN_PATH`|Freemium|Hell|>=10min(Token refreshes daily.)|[ExceptKakao](https://github.com/dsdanielpark/ExceptNotifier/blob/main/documents/ExceptKakao/GUIDE.md)|
+|KakaoTalk|`_KAKAO_TOKEN_PATH`|Freemium|Hell|>=10min(Token refreshes daily)|[ExceptKakao](https://github.com/dsdanielpark/ExceptNotifier/blob/main/documents/ExceptKakao/GUIDE.md)|
 
 
 If you add the following two variables to the required variables for each application in the table above, you can receive error location and explanation, as well as examples, from OpenAI's model
