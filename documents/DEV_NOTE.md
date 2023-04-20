@@ -59,5 +59,7 @@ Typically, in Python, variable names are mangled by adding a double underscore p
 |0.1.9|Alpha Released|
 |0.1.10|Debugging for wechat|
 |0.1.11, 0.1.12, 0.1.13|Change Os.environ to use|
+|0.1.14|Fixing winsound import in linux |
+|0.1.15|Fixing os import typo|
 
 # QA Note
