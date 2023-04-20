@@ -6,10 +6,10 @@ import datetime
 from email.message import EmailMessage
 import sys
 from ExceptNotifier import send_discord_msg, receive_openai_advice
-
-DATE_FORMAT = "%Y-%m-%d %H:%M:%S"
-os.environ['_DISCORD_WEBHOOK_URL']
 import os
+DATE_FORMAT = "%Y-%m-%d %H:%M:%S"
+
+
 
 class ExceptDiscord(BaseException):
     def __init__(self, *args: object) -> None:

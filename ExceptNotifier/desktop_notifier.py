@@ -7,7 +7,7 @@ import traceback
 from plyer import notification
 from email.message import EmailMessage
 from ExceptNotifier import send_desktop_msg, receive_openai_advice
-
+import os
 DATE_FORMAT = "%Y-%m-%d %H:%M:%S"
 
 
