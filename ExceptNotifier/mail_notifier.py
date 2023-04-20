@@ -28,8 +28,8 @@ class ExceptMail(BaseException):
             "(<(type|class ')|'exceptions.|'>|__main__.)", "", str(etype)
         ).strip()
         exceptNotifier = {
-            "TO": os.environ['_GAMIL_RECIPIENT_ADDR'],
-            "FROM": os.environ['_GMAIL_SENDER_ADDR'],
+            "TO": os.environ["_GAMIL_RECIPIENT_ADDR"],
+            "FROM": os.environ["_GMAIL_SENDER_ADDR"],
             "SUBJECT": "[Except Notifier] Error! Python Code Exception Detected",
             "BODY": f"IMPORTANT WARNING: \nPython Exception Detected in Your Code. \n\nHi there, \nThis is an exception catch notifier.\n\n{excType}: %{etype.__doc__}\n\n {value} \n\n",
         }
@@ -76,7 +76,10 @@ class ExceptMail(BaseException):
             exceptNotifier["BODY"],
         )
         smtp = smtplib.SMTP_SSL(SMTP_SERVER, 465)
-        smtp.login(os.environ['_GMAIL_SENDER_ADDR'], os.environ['_GMAIL_APP_PASSWORD_OF_SENDER'])
+        smtp.login(
+            os.environ["_GMAIL_SENDER_ADDR"],
+            os.environ["_GMAIL_APP_PASSWORD_OF_SENDER"],
+        )
         smtp.sendmail(
             exceptNotifier["FROM"], exceptNotifier["TO"], exceptNotifier["ALL"]
         )
@@ -90,11 +93,13 @@ class ExceptMail(BaseException):
                 line[3],
             )
             advice_msg += receive_openai_advice(
-                os.environ['_OPEN_AI_MODEL'], os.environ['_OPEN_AI_API'], error_message[:150]
+                os.environ["_OPEN_AI_MODEL"],
+                os.environ["_OPEN_AI_API"],
+                error_message[:150],
             )  # NO-QA
             exceptNotifier = {
-                "TO": os.environ['_GAMIL_RECIPIENT_ADDR'],
-                "FROM": os.environ['_GMAIL_SENDER_ADDR'],
+                "TO": os.environ["_GAMIL_RECIPIENT_ADDR"],
+                "FROM": os.environ["_GMAIL_SENDER_ADDR"],
                 "SUBJECT": "[Except AI Debugging] Error! chatGPT Debugging guide.",
                 "BODY": f"IMPORTANT WARNING: \nPython Exception Detected in Your Code. \n\nHi there, \nThis is advice from OpenAI ChatGPT \n\n {advice_msg}",
             }
@@ -155,7 +160,10 @@ class SuccessMail:
         SMTP_SERVER = "smtp.gmail.com"
         SMTP_PORT = 465
         smtp = smtplib.SMTP_SSL(SMTP_SERVER, SMTP_PORT)
-        smtp.login(os.environ['_GMAIL_SENDER_ADDR'], os.environ['_GMAIL_APP_PASSWORD_OF_SENDER'])
+        smtp.login(
+            os.environ["_GMAIL_SENDER_ADDR"],
+            os.environ["_GMAIL_APP_PASSWORD_OF_SENDER"],
+        )
         message = EmailMessage()
         start_time = datetime.datetime.now()
 
@@ -166,8 +174,8 @@ class SuccessMail:
         message[
             "Subject"
         ] = "[Success Notifier] Success! Python Code Executed Successfully"
-        message["From"] = os.environ['_GMAIL_SENDER_ADDR']
-        message["To"] = os.environ['_GAMIL_RECIPIENT_ADDR']
+        message["From"] = os.environ["_GMAIL_SENDER_ADDR"]
+        message["To"] = os.environ["_GAMIL_RECIPIENT_ADDR"]
 
         smtp.send_message(message)
         smtp.quit()
@@ -181,7 +189,10 @@ class SendMail:
         SMTP_SERVER = "smtp.gmail.com"
         SMTP_PORT = 465
         smtp = smtplib.SMTP_SSL(SMTP_SERVER, SMTP_PORT)
-        smtp.login(os.environ['_GMAIL_SENDER_ADDR'], os.environ['_GMAIL_APP_PASSWORD_OF_SENDER'])
+        smtp.login(
+            os.environ["_GMAIL_SENDER_ADDR"],
+            os.environ["_GMAIL_APP_PASSWORD_OF_SENDER"],
+        )
         message = EmailMessage()
         start_time = datetime.datetime.now()
 
@@ -192,8 +203,8 @@ class SendMail:
         message[
             "Subject"
         ] = "[Codeline Notifier] Notice! Code Execution Reached Specified Line"
-        message["From"] = os.environ['_GMAIL_SENDER_ADDR']
-        message["To"] = os.environ['_GAMIL_RECIPIENT_ADDR']
+        message["From"] = os.environ["_GMAIL_SENDER_ADDR"]
+        message["To"] = os.environ["_GAMIL_RECIPIENT_ADDR"]
         smtp.send_message(message)
         smtp.quit()
 

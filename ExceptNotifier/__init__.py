@@ -83,8 +83,8 @@ __all__ = [
     "SuccessWechat",
     "ExceptWechat",
     "SendWechat",
-    "send_wechat_msg"
+    "send_wechat_msg",
 ]
 
-__version__ = "0.1.13"
+__version__ = "0.1.17"
 __author__ = "daniel park <parkminwoo1991@gmail.com>"

@@ -21,11 +21,11 @@ class ExceptBeep(BaseException):
         :type tb: _type_
         """
 
-        beep(os.environ['BEEP_TIME'])
-        beep(os.environ['BEEP_TIME'])
-        beep(os.environ['BEEP_TIME'])
-        beep(os.environ['BEEP_TIME'])
-        beep(os.environ['BEEP_TIME'])
+        beep(os.environ["BEEP_TIME"])
+        beep(os.environ["BEEP_TIME"])
+        beep(os.environ["BEEP_TIME"])
+        beep(os.environ["BEEP_TIME"])
+        beep(os.environ["BEEP_TIME"])
 
     @staticmethod
     def beep(sec=1, freq=1000) -> None:
@@ -41,6 +41,7 @@ class ExceptBeep(BaseException):
 
         if sys == "Windows":
             import winsound
+
             winsound.Beep(int(1000 * sec), freq)
         else:
             os.system("play -nq -t alsa synth {} sine {}".format(sec, freq))
@@ -51,8 +52,8 @@ class SuccessBeep:
         pass
 
     def __call__(self, *args, **kwds) -> None:
-        beep(os.environ['BEEP_TIME'])
-        beep(os.environ['BEEP_TIME'])
+        beep(os.environ["BEEP_TIME"])
+        beep(os.environ["BEEP_TIME"])
 
 
 class SendBeep:
@@ -60,7 +61,7 @@ class SendBeep:
         pass
 
     def __call__(self, *args, **kwds) -> None:
-        beep(os.environ['BEEP_TIME'])
+        beep(os.environ["BEEP_TIME"])
 
 
 # if __name__ == "__main__":

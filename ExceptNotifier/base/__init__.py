@@ -33,5 +33,5 @@ __all__ = [
     "receive_openai_advice",
 ]
 
-__version__ = "0.1.13"
+__version__ = "0.1.17"
 __author__ = "daniel park <parkminwoo1991@gmail.com>"

@@ -12,7 +12,6 @@ from ExceptNotifier import send_telegram_msg, receive_openai_advice
 DATE_FORMAT = "%Y-%m-%d %H:%M:%S"
 
 
-
 class ExceptTelegram(BaseException):
     def __init__(self, *args: object) -> None:
         super().__init__(*args)
@@ -27,7 +26,7 @@ class ExceptTelegram(BaseException):
         :param tb: Traceback Information
         :type tb: _type_
         """
-        print(os.environ['_TELEGRAM_TOKEN'])
+        print(os.environ["_TELEGRAM_TOKEN"])
         excType = re.sub(
             "(<(type|class ')|'exceptions.|'>|__main__.)", "", str(etype)
         ).strip()
@@ -68,7 +67,7 @@ class ExceptTelegram(BaseException):
                 except:
                     exceptNotifier["BODY"] += "<ERROR WHILE PRINTING VALUE>"
         data = {"text": exceptNotifier["SUBJECT"] + exceptNotifier["BODY"]}
-        send_telegram_msg(os.environ['_TELEGRAM_TOKEN'], data['text'])
+        send_telegram_msg(os.environ["_TELEGRAM_TOKEN"], data["text"])
 
         try:
             error_message = f"error_type=={excType} error_type_document=={etype.__doc__} error_value=={value} stack infomation=={stack} code name=={frame.f_code.co_name}file name=={frame.f_code.co_filename} file_number=={frame.f_lineno}"
@@ -79,9 +78,9 @@ class ExceptTelegram(BaseException):
                 line[3],
             )
             advice_msg += receive_openai_advice(
-                os.environ['_OPEN_AI_MODEL'], os.environ['_OPEN_AI_API'], error_message
+                os.environ["_OPEN_AI_MODEL"], os.environ["_OPEN_AI_API"], error_message
             )  # NO-QA
-            send_telegram_msg(os.environ['_TELEGRAM_TOKEN'], advice_msg)
+            send_telegram_msg(os.environ["_TELEGRAM_TOKEN"], advice_msg)
 
         except Exception as e:
             print(e)
@@ -126,7 +125,7 @@ class SuccessTelegram:
 
         data = {"text": exceptNotifier["SUBJECT"] + exceptNotifier["BODY"]}
 
-        send_telegram_msg(os.environ['_TELEGRAM_TOKEN'], data['text'])
+        send_telegram_msg(os.environ["_TELEGRAM_TOKEN"], data["text"])
 
 
 class SendTelegram:
@@ -146,15 +145,15 @@ class SendTelegram:
 
         data = {"text": exceptNotifier["SUBJECT"] + exceptNotifier["BODY"]}
 
-        send_telegram_msg(os.environ['_TELEGRAM_TOKEN'], data['text'])
+        send_telegram_msg(os.environ["_TELEGRAM_TOKEN"], data["text"])
 
 
 # if __name__ == "__main__":
 
-#     """Get your bot from botfather. 
+#     """Get your bot from botfather.
 #     https://core.telegram.org/bots/tutorial"""
 
-    
+
 #     os.environ['_TELEGRAM_TOKEN'] = "xxxxxxxxx"
 #     # _OPEN_AI_MODEL = "gpt-3.5-turbo"
 #     # _OPEN_AI_API = "sk-xxxxxxxxx"

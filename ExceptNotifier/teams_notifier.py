@@ -70,7 +70,7 @@ class ExceptTeams(BaseException):
 
         data = {"text": exceptNotifier["SUBJECT"] + exceptNotifier["BODY"]}
 
-        send_teams_msg(os.environ['_TEAMS_WEBHOOK_URL'], data["text"])
+        send_teams_msg(os.environ["_TEAMS_WEBHOOK_URL"], data["text"])
 
         try:
             error_message = f"error_type=={excType} error_type_document=={etype.__doc__} error_value=={value} stack infomation=={stack} code name=={frame.f_code.co_name}file name=={frame.f_code.co_filename} file_number=={frame.f_lineno}"
@@ -81,9 +81,9 @@ class ExceptTeams(BaseException):
                 line[3],
             )
             advice_msg += receive_openai_advice(
-                os.environ['_OPEN_AI_MODEL'], os.environ['_OPEN_AI_API'], error_message
+                os.environ["_OPEN_AI_MODEL"], os.environ["_OPEN_AI_API"], error_message
             )  # NO-QA
-            send_teams_msg(os.environ['_TEAMS_WEBHOOK_URL'], advice_msg)
+            send_teams_msg(os.environ["_TEAMS_WEBHOOK_URL"], advice_msg)
         except Exception as e:
             print(e)
             pass
@@ -126,7 +126,7 @@ class SuccessTeams:
 
         data = {"text": exceptNotifier["SUBJECT"] + exceptNotifier["BODY"]}
 
-        send_teams_msg(os.environ['_TEAMS_WEBHOOK_URL'], data["text"])
+        send_teams_msg(os.environ["_TEAMS_WEBHOOK_URL"], data["text"])
 
 
 class SendTeams:
@@ -146,7 +146,7 @@ class SendTeams:
 
         data = {"text": exceptNotifier["SUBJECT"] + exceptNotifier["BODY"]}
 
-        send_teams_msg(os.environ['_TEAMS_WEBHOOK_URL'], data["text"])
+        send_teams_msg(os.environ["_TEAMS_WEBHOOK_URL"], data["text"])
 
 
 # if __name__ == "__main__":

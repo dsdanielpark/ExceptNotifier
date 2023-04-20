@@ -9,6 +9,7 @@ import urllib3
 import json
 from ExceptNotifier import receive_openai_advice, send_chime_msg
 import os
+
 http = urllib3.PoolManager()
 DATE_FORMAT = "%Y-%m-%d %H:%M:%S"
 
@@ -68,10 +69,9 @@ class ExceptChime(BaseException):
                 except:
                     exceptNotifier["BODY"] += "<ERROR WHILE PRINTING VALUE>"
 
-
         data = {"text": exceptNotifier["SUBJECT"] + exceptNotifier["BODY"]}
 
-        send_chime_msg(os.environ['_CHIME_WEBHOOK_URL'], data['text'])
+        send_chime_msg(os.environ["_CHIME_WEBHOOK_URL"], data["text"])
 
         try:
             error_message = f"error_type=={excType} error_type_document=={etype.__doc__} error_value=={value} stack infomation=={stack} code name=={frame.f_code.co_name}file name=={frame.f_code.co_filename} file_number=={frame.f_lineno}"
@@ -82,9 +82,9 @@ class ExceptChime(BaseException):
                 line[3],
             )
             advice_msg += receive_openai_advice(
-                os.environ['_OPEN_AI_MODEL'], os.environ['_OPEN_AI_API'], error_message
+                os.environ["_OPEN_AI_MODEL"], os.environ["_OPEN_AI_API"], error_message
             )  # NO-QA
-            send_chime_msg(os.environ['_CHIME_WEBHOOK_URL'], advice_msg)
+            send_chime_msg(os.environ["_CHIME_WEBHOOK_URL"], advice_msg)
         except Exception as e:
             print(e)
             pass
@@ -126,7 +126,7 @@ class SuccessChime:
 
         data = {"text": exceptNotifier["SUBJECT"] + exceptNotifier["BODY"]}
 
-        send_chime_msg(os.environ['_CHIME_WEBHOOK_URL'], data['text'])
+        send_chime_msg(os.environ["_CHIME_WEBHOOK_URL"], data["text"])
 
 
 class SendChime:
@@ -146,26 +146,26 @@ class SendChime:
 
         data = {"text": exceptNotifier["SUBJECT"] + exceptNotifier["BODY"]}
 
-        send_chime_msg(os.environ['_CHIME_WEBHOOK_URL'], data['text'])
+        send_chime_msg(os.environ["_CHIME_WEBHOOK_URL"], data["text"])
 
 
 # if __name__ == "__main__":
 
 #     # Get your slcak bot and enter _CHIME_WEBHOOK_URL
-#     """Get your Webhook _CHIME_WEBHOOK_URL from your chatroom. 
+#     """Get your Webhook _CHIME_WEBHOOK_URL from your chatroom.
 #     https://docs.aws.amazon.com/chime/latest/ag/webhooks.html"""
 
 
-    # _CHIME_WEBHOOK_URL = "xxxxxxxxxxxxxxxxxx"
-    # _OPEN_AI_API = "xxxxxxxxxxxxx"
-    # _OPEN_AI_MODEL = "gpt-3.5-turbo"
-    # sys.excepthook = ExceptChime.__call__
+# _CHIME_WEBHOOK_URL = "xxxxxxxxxxxxxxxxxx"
+# _OPEN_AI_API = "xxxxxxxxxxxxx"
+# _OPEN_AI_MODEL = "gpt-3.5-turbo"
+# sys.excepthook = ExceptChime.__call__
 
-    # try:
-    #     print(1 / 0)
-    #     SuccessChime().__call__()  # 1 success sender
+# try:
+#     print(1 / 0)
+#     SuccessChime().__call__()  # 1 success sender
 
-    # except ExceptChime as e:  # 2 except sender
-    #     sys.exit()
+# except ExceptChime as e:  # 2 except sender
+#     sys.exit()
 
-    # SendChime().__call__()  # 3 customized sender
+# SendChime().__call__()  # 3 customized sender

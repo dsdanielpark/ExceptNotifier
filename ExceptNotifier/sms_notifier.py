@@ -71,10 +71,10 @@ class ExceptSMS(BaseException):
         data = {"text": exceptNotifier["SUBJECT"] + exceptNotifier["BODY"]}
 
         send_sms_msg(
-            os.environ['_TWILIO_SID'],
-            os.environ['_TWILIO_TOKEN'],
-            os.environ['_SENDER_PHONE_NUMBER'],
-            os.environ['_RECIPIENT_PHONE_NUMBER'],
+            os.environ["_TWILIO_SID"],
+            os.environ["_TWILIO_TOKEN"],
+            os.environ["_SENDER_PHONE_NUMBER"],
+            os.environ["_RECIPIENT_PHONE_NUMBER"],
             data["text"],
         )
 
@@ -87,13 +87,13 @@ class ExceptSMS(BaseException):
                 line[3],
             )
             advice_msg += receive_openai_advice(
-                os.environ['_OPEN_AI_MODEL'], os.environ['_OPEN_AI_API'], error_message
+                os.environ["_OPEN_AI_MODEL"], os.environ["_OPEN_AI_API"], error_message
             )  # NO-QA
             send_sms_msg(
-                os.environ['_TWILIO_SID'],
-                os.environ['_TWILIO_TOKEN'],
-                os.environ['_SENDER_PHONE_NUMBER'],
-                os.environ['_RECIPIENT_PHONE_NUMBER'],
+                os.environ["_TWILIO_SID"],
+                os.environ["_TWILIO_TOKEN"],
+                os.environ["_SENDER_PHONE_NUMBER"],
+                os.environ["_RECIPIENT_PHONE_NUMBER"],
                 advice_msg,
             )
         except Exception as e:
@@ -128,10 +128,10 @@ class SuccessSMS:
         data = {"text": exceptNotifier["SUBJECT"] + exceptNotifier["BODY"]}
 
         send_sms_msg(
-            os.environ['_TWILIO_SID'],
-            os.environ['_TWILIO_TOKEN'],
-            os.environ['_SENDER_PHONE_NUMBER'],
-            os.environ['_RECIPIENT_PHONE_NUMBER'],
+            os.environ["_TWILIO_SID"],
+            os.environ["_TWILIO_TOKEN"],
+            os.environ["_SENDER_PHONE_NUMBER"],
+            os.environ["_RECIPIENT_PHONE_NUMBER"],
             data["text"],
         )
 
@@ -154,10 +154,10 @@ class SendSMS:
         data = {"text": exceptNotifier["SUBJECT"] + exceptNotifier["BODY"]}
 
         send_sms_msg(
-            os.environ['_TWILIO_SID'],
-            os.environ['_TWILIO_TOKEN'],
-            os.environ['_SENDER_PHONE_NUMBER'],
-            os.environ['_RECIPIENT_PHONE_NUMBER'],
+            os.environ["_TWILIO_SID"],
+            os.environ["_TWILIO_TOKEN"],
+            os.environ["_SENDER_PHONE_NUMBER"],
+            os.environ["_RECIPIENT_PHONE_NUMBER"],
             data["text"],
         )
 
@@ -166,7 +166,7 @@ class SendSMS:
 
 #     """https://www.twilio.com/en-us"""
 
-    
+
 #     _TWILIO_SID = "xxxx"
 #     _TWILIO_TOKEN = "yyyyyy"
 #     _RECIPIENT_PHONE_NUMBER = ("+aaaaaa",)

@@ -71,7 +71,7 @@ class ExceptKakao(BaseException):
         print(exceptNotifier["BODY"])
         data = {"text": exceptNotifier["SUBJECT"] + exceptNotifier["BODY"]}
 
-        send_kakao_msg(os.environ['_KAKAO_TOKEN_PATH'], data["text"])
+        send_kakao_msg(os.environ["_KAKAO_TOKEN_PATH"], data["text"])
 
         try:
             error_message = f"error_type=={excType} error_type_document=={etype.__doc__} error_value=={value} stack infomation=={stack} code name=={frame.f_code.co_name}file name=={frame.f_code.co_filename} file_number=={frame.f_lineno}"
@@ -82,9 +82,9 @@ class ExceptKakao(BaseException):
                 line[3],
             )
             advice_msg += receive_openai_advice(
-                os.environ['_OPEN_AI_MODEL'], os.environ['_OPEN_AI_API'], error_message
+                os.environ["_OPEN_AI_MODEL"], os.environ["_OPEN_AI_API"], error_message
             )  # NO-QA
-            send_kakao_msg(os.environ['_KAKAO_TOKEN_PATH'], advice_msg)
+            send_kakao_msg(os.environ["_KAKAO_TOKEN_PATH"], advice_msg)
         except Exception as e:
             print(e)
             pass
@@ -138,7 +138,7 @@ class SuccessKakao:
 
         data = {"text": exceptNotifier["SUBJECT"] + exceptNotifier["BODY"]}
 
-        send_kakao_msg(os.environ['_KAKAO_TOKEN_PATH'], data["text"])
+        send_kakao_msg(os.environ["_KAKAO_TOKEN_PATH"], data["text"])
 
 
 class SendKakao:
@@ -158,17 +158,17 @@ class SendKakao:
 
         data = {"text": exceptNotifier["SUBJECT"] + exceptNotifier["BODY"]}
 
-        with open(os.environ['_KAKAO_TOKEN_PATH'], "r") as kakao:
+        with open(os.environ["_KAKAO_TOKEN_PATH"], "r") as kakao:
             tokens = json.load(kakao)
 
-        send_kakao_msg(os.environ['_KAKAO_TOKEN_PATH'], data["text"])
+        send_kakao_msg(os.environ["_KAKAO_TOKEN_PATH"], data["text"])
 
 
 # if __name__ == "__main__":
 
 #     """Follow next notebooks"""
 
-    
+
 #     _KAKAO_TOKEN_PATH = (
 #         r"C:\Users\parkm\Desktop\git\ExceptionNotifier\tutorials\token.json"
 #     )
