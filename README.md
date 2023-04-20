@@ -128,11 +128,11 @@ ExceptChime, ExceptTelegram, ExceptDiscord, ExceptSMS, ExceptMail, ExceptKakao, 
 
 *Example*
 ```python
-import sys
+import sys, os
 from ExceptNotifier import ExceptTelegram
 sys.excepthook = ExceptTelegram.__call__
 
-_TELEGRAM_TOKEN = "xxxx"
+os.environ['_TELEGRAM_TOKEN'] = "xxxx"
 
 try:
     print(1/0)
@@ -149,13 +149,13 @@ You can receive debugging information from ChatGPT via OpenAI's API when using t
 
 *Example*
 ```python
-import sys
+import sys, os
 from ExceptNotifier import ExceptTelegram
 sys.excepthook = ExceptTelegram.__call__
 
-_TELEGRAM_TOKEN = "xxxx"
-_OPEN_AI_MODEL="gpt-3.5-turbo"
-_OPEN_AI_API="sk-xxxxxx"
+os.envirion['_TELEGRAM_TOKEN'] = "xxxx"
+os.envirion['_OPEN_AI_MODEL']="gpt-3.5-turbo"
+os.envirion['_OPEN_AI_API']="sk-xxxxxx"
 
 try:
     print(1/0)
@@ -178,10 +178,10 @@ SuccessChime, SuccessTelegram, SuccessDiscord, SuccessSMS, SuccessMail, SuccessK
 *Example*
 
 ```python
-import sys
+import sys, os
 from ExceptNotifier import SuccessTelgeram
 sys.excepthook = ExceptTelegram.__call__
-_TELEGRAM_TOKEN = "xxxx"
+os.environ['_TELEGRAM_TOKEN'] = "xxxx"
 
 try:
     print(1/20)
@@ -202,10 +202,10 @@ SendChime, SendTelegram, SendDiscord, SendSMS, SendMail, SendKakao, SendLine, Se
 *Example*
 
 ```python
-import sys
-from ExceptNotifier import SendTelgeram
+import sys, os
+from ExceptNotifier import SendTelegram
 sys.excepthook = ExceptTelegram.__call__
-_TELEGRAM_TOKEN = "xxxx"
+os.environ['_TELEGRAM_TOKEN'] = "xxxx"
 
 SendTelegram().__call__() # sending message to telegram
 
@@ -264,10 +264,10 @@ For more infomation, visit [Telegram Bot Father API](https://core.telegram.org/b
 
 ```python
 from ExceptNotifier import ExceptTelegram, SuccessTelegram, SendTelegram
-import sys
+import sys, os
 sys.excepthook = ExceptTelegram.__call__
+os.environ['_TELEGRAM_TOKEN'] = "xxxx"
 
-_TELEGRAM_TOKEN = "xxxx"
 
 try:
     print(1/0)  
@@ -283,12 +283,11 @@ SendTelegram().__call__()        #3. customized sender
 #### b. With OpenAI API
 ```python
 from ExceptNotifier import ExceptTelegram, SuccessTelegram, SendTelegram
-import sys
+import sys, os
 sys.excepthook = ExceptTelegram.__call__
-
-_TELEGRAM_TOKEN = "xxxx"
-_OPEN_AI_MODEL="gpt-3.5-turbo"
-_OPEN_AI_API="sk-xxxxxx"
+os.environ['_TELEGRAM_TOKEN'] = "xxxx"
+os.envirion['_OPEN_AI_MODEL']="gpt-3.5-turbo"
+os.envirion['_OPEN_AI_API']="sk-xxxxxx"
 
 try:
     print(1/0)  
@@ -308,16 +307,16 @@ In the except statement, an email is sent along with the error message. Addition
 - b. Obtain an app password for sending Google Mail at the following [link](https://myaccount.google.com/u/3/apppasswords?utm_source=google-account&utm_medium=myaccountsecurity&utm_campaign=tsv-settings&rapt=AEjHL4N2bMRWO46VaMp_jP06zQK14BWNPv66l2o59iJ99CkO8BjYnmoRUe9dtSchkkbubHZMUhevkAnwVJRHb9ygO3afispNlw) or [google document](https://support.google.com/accounts/answer/185833?hl=en). 
 
 ```python
-import sys
+import sys, os
 from ExceptNotifier import ExceptMail, SuccessMail, SendMail
 sys.excepthook = ExceptMail.__call__
 
 # Define the next two variables optionally when using OpenAI's API.
-# _OPEN_AI_MODEL="gpt-3.5-turbo"    
-# _OPEN_AI_API="sk-xxxxxx"
-_GAMIL_RECIPIENT_ADDR = 'xxxxxxx@gmail.com'
-_GMAIL_SENDER_ADDR = 'yyyyyy@gmail.com'
-_GMAIL_APP_PASSWORD_OF_SENDER = 'zzzzzz'
+# os.environ['_OPEN_AI_MODEL']="gpt-3.5-turbo"    
+# os.environ['_OPEN_AI_API']="sk-xxxxxx"
+os.environ['_GAMIL_RECIPIENT_ADDR'] = 'xxxxxxx@gmail.com'
+os.environ['_GMAIL_SENDER_ADDR'] = 'yyyyyy@gmail.com'
+os.environ['_GMAIL_APP_PASSWORD_OF_SENDER'] = 'zzzzzz'
 
 try:
     main()                      # Your Code Here
@@ -332,15 +331,15 @@ SendMail().__call__()           # When Process Ended -> Any Line mail.
 <summary> See Example...</summary>
 
 ```python
-import sys
+import sys, os
 from ExceptNotifier import ExceptMail, SuccessMail, SendMail
 
 # Define the next two variables optionally when using OpenAI's API.
-# _OPEN_AI_MODEL="gpt-3.5-turbo"    
-# _OPEN_AI_API="sk-xxxxxx"
-_GAMIL_RECIPIENT_ADDR = 'xxxxxxx@gmail.com'
-_GMAIL_SENDER_ADDR = 'yyyyyy@gmail.com'
-_GMAIL_APP_PASSWORD_OF_SENDER = 'zzzzzz'
+# os.environ['_OPEN_AI_MODEL']="gpt-3.5-turbo"    
+# os.environ['_OPEN_AI_API']="sk-xxxxxx"
+os.environ['_GAMIL_RECIPIENT_ADDR'] = 'xxxxxxx@gmail.com'
+os.environ['_GMAIL_SENDER_ADDR'] = 'yyyyyy@gmail.com'
+os.environ['_GMAIL_APP_PASSWORD_OF_SENDER'] = 'zzzzzz'
 
 sys.excepthook = ExceptMail.__call__
 
@@ -361,16 +360,16 @@ SendMail().__call__()          # Put Any Line: Sending mail
 <summary> Snippet for Python developers...</summary>
 
 ```python
-import sys
+import sys, os
 from ExceptNotifier import ExceptMail, SuccessMail, SendMail
 sys.excepthook = ExceptMail.__call__
 
 # Define the next two variables optionally when using OpenAI's API.
-# _OPEN_AI_MODEL="gpt-3.5-turbo"    
-# _OPEN_AI_API="sk-xxxxxx"
-_GAMIL_RECIPIENT_ADDR = 'xxxxxxx@gmail.com'
-_GMAIL_SENDER_ADDR = 'yyyyyy@gmail.com'
-_GMAIL_APP_PASSWORD_OF_SENDER = 'zzzzzz'
+# os.environ['_OPEN_AI_MODEL']="gpt-3.5-turbo"    
+# os.environ['_OPEN_AI_API']="sk-xxxxxx"
+os.environ['_GAMIL_RECIPIENT_ADDR'] = 'xxxxxxx@gmail.com'
+os.environ['_GMAIL_SENDER_ADDR'] = 'yyyyyy@gmail.com'
+os.environ['_GMAIL_APP_PASSWORD_OF_SENDER'] = 'zzzzzz'
 
 try:
     'your code'
@@ -391,14 +390,14 @@ SendMail().__call__()
 - d. Then click Copy Webhook.
 
 ```python
-import sys
+import sys, os
 from ExceptNotifier import ExceptDiscord, SuccessDiscord, SendDiscord
 sys.excepthook = ExceptDiscord.__call__
 
 # Define the next two variables optionally when using OpenAI's API.
-# _OPEN_AI_MODEL="gpt-3.5-turbo"    
-# _OPEN_AI_API="sk-xxxxxx"
-_DISCORD_WEBHOOK_URL = "xxxxxxxxxxxxxxxxx"
+# os.environ['_OPEN_AI_MODEL']="gpt-3.5-turbo"    
+# os.environ['_OPEN_AI_API']="sk-xxxxxx"
+os.environ['_DISCORD_WEBHOOK_URL'] = "xxxxxxxxxxxxxxxxx"
 
 
 try:
@@ -418,14 +417,14 @@ SendDiscord().__call__()        #3 customized sender
 - c. Click "Manage Webhook and bot."
 - d. Create Add Webhook, set it up, then click Copy Webhook.
 ```python
-import sys
+import sys, os
 from ExceptNotifier import SuccessChime, ExceptChime, SendChime
 sys.excepthook = ExceptChime.__call__
 
 # Define the next two variables optionally when using OpenAI's API.
-# _OPEN_AI_MODEL="gpt-3.5-turbo"    
-# _OPEN_AI_API="sk-xxxxxx"
-_CHIME_WEBHOOK_URL = "xxxxxxxxxxxxxxxxxx"
+# os.environ['_OPEN_AI_MODEL']="gpt-3.5-turbo"    
+# os.environ['_OPEN_AI_API']="sk-xxxxxx"
+os.environ['_CHIME_WEBHOOK_URL'] = "xxxxxxxxxxxxxxxxxx"
 
 
 try:
@@ -450,9 +449,9 @@ from ExceptNotifier import ExceptSlack, SuccessSlcak, SendSlack
 sys.excepthook = ExceptSlack.__call__
 
 # Define the next two variables optionally when using OpenAI's API.
-# _OPEN_AI_MODEL="gpt-3.5-turbo"    
-# _OPEN_AI_API="sk-xxxxxx"
-_SLACK_WEBHOOK_URL = 'https://hooks.slack.com/services/xxxxxxxxxxxxxxxxxxx'
+# os.environ['_OPEN_AI_MODEL']="gpt-3.5-turbo"    
+# os.environ['_OPEN_AI_API']="sk-xxxxxx"
+os.environ['_SLACK_WEBHOOK_URL'] = 'https://hooks.slack.com/services/xxxxxxxxxxxxxxxxxxx'
 
 try:
     print(1/0)  
@@ -476,9 +475,9 @@ from ExceptNotifier import ExceptLine, SuccessLine, SendLine
 sys.excepthook = ExceptLine.__call__
 
 # Define the next two variables optionally when using OpenAI's API.
-# _OPEN_AI_MODEL="gpt-3.5-turbo"    
-# _OPEN_AI_API="sk-xxxxxx"
-_LINE_NOTIFY_API_TOKEN = 'xxxxxxxxxxx'
+# os.environ['_OPEN_AI_MODEL']="gpt-3.5-turbo"    
+# os.environ['_OPEN_AI_API']="sk-xxxxxx"
+os.environ['_LINE_NOTIFY_API_TOKEN'] = 'xxxxxxxxxxx'
 
 try:
     print(1/20)  
@@ -502,12 +501,12 @@ from ExceptNotifier import ExceptSMS, SuccessSMS, SendSMS
 sys.excepthook = ExceptSMS.__call__
 
 # Define the next two variables optionally when using OpenAI's API.
-# _OPEN_AI_MODEL="gpt-3.5-turbo"    
-# _OPEN_AI_API="sk-xxxxxx"
-_TWILIO_SID = 'xxxx'
-_TWILIO_TOKEN = 'yyyyyy'
-_RECIPIENT_PHONE_NUMBER="+aaaaaa",
-_SENDER_PHONE_NUMBER="+bbbbbb",  
+# os.environ['_OPEN_AI_MODEL']="gpt-3.5-turbo"    
+# os.environ['_OPEN_AI_API']="sk-xxxxxx"
+os.environ['_TWILIO_SID'] = 'xxxx'
+os.environ['_TWILIO_TOKEN'] = 'yyyyyy'
+os.environ['_RECIPIENT_PHONE_NUMBER']="+aaaaaa",
+os.environ['_SENDER_PHONE_NUMBER']="+bbbbbb",  
 
 try:
     print(1/10)  
@@ -534,9 +533,9 @@ from ExceptNotifier import ExceptTeams, SuccessTeams, SendTeams
 sys.excepthook = ExceptTeams.__call__
 
 # Define the next two variables optionally when using OpenAI's API.
-# _OPEN_AI_MODEL="gpt-3.5-turbo"    
-# _OPEN_AI_API="sk-xxxxxx"
-_TEAMS_WEBHOOK_URL = 'microsoft webhook _TEAMS_WEBHOOK_URL'
+# os.environ['_OPEN_AI_MODEL']="gpt-3.5-turbo"    
+# os.environ['_OPEN_AI_API']="sk-xxxxxx"
+os.environ['_TEAMS_WEBHOOK_URL'] = 'microsoft webhook _TEAMS_WEBHOOK_URL'
 
 try:
     print(1/20)  
@@ -568,9 +567,9 @@ from ExceptNotifier import ExceptKakao, SuccessKakao, SendKakao
 sys.excepthook = ExceptKakao.__call__
 
 # Define the next two variables optionally when using OpenAI's API.
-# _OPEN_AI_MODEL="gpt-3.5-turbo"    
-# _OPEN_AI_API="sk-xxxxxx"
-_KAKAO_TOKEN_PATH = 'xxxx/xxx/xxx.json''
+# os.environ['_OPEN_AI_MODEL']="gpt-3.5-turbo"    
+# os.environ['_OPEN_AI_API']="sk-xxxxxx"
+os.environ['_KAKAO_TOKEN_PATH'] = 'xxxx/xxx/xxx.json''
 
 try:
     print(1/0)  
@@ -590,9 +589,9 @@ import sys
 from ExceptNotifier import ExceptWechat, SuccessWechat, SendWechat
 
 # Define the next two variables optionally when using OpenAI's API.
-# _OPEN_AI_MODEL="gpt-3.5-turbo"    
-# _OPEN_AI_API="sk-xxxxxx"
-_WECHAT_WEBHOOK_URL = "xxxxxxxxxxx"
+# os.environ['_OPEN_AI_MODEL']="gpt-3.5-turbo"    
+# os.environ['_OPEN_AI_API']="sk-xxxxxx"
+os.environ['_WECHAT_WEBHOOK_URL'] = "xxxxxxxxxxx"
 sys.excepthook = ExceptWechat.__call__
 
 try:
@@ -611,7 +610,7 @@ No setup is required. Use as follows.
 
 ```python
 from Exceptnotifier import ExceptBeep, SuccessBeep, SendBeep(), beep()
-BEEP_TIME = 1
+os.environ['BEEP_TIME'] = 1
 sys.excepthook = ExceptBeep.__call__
 
 try:
@@ -637,8 +636,8 @@ No setup is required. Use as follows.
 from ExceptNotifier import ExceptDesktop, SuccessDesktop, SendDesktop
 sys.excepthook = ExceptDesktop.__call__
 # Define the next two variables optionally when using OpenAI's API.
-# _OPEN_AI_MODEL="gpt-3.5-turbo"    
-# _OPEN_AI_API="sk-xxxxxx"
+# os.environ['_OPEN_AI_MODEL']="gpt-3.5-turbo"    
+# os.environ['_OPEN_AI_API']="sk-xxxxxx"
 
 try:
     print(1/0)  
