@@ -67,7 +67,8 @@ class ExceptSlack(BaseException):
                     exceptNotifier["BODY"] += "<ERROR WHILE PRINTING VALUE>"
 
         data = {"text": exceptNotifier["SUBJECT"] + exceptNotifier["BODY"]}
-        send_slack_msg(os.enviro['_SLACK_WEBHOOK_URL'], data)
+        send_slack_msg(os.environ['_SLACK_WEBHOOK_URL'], data)
+
         try:
             error_message = f"error_type=={excType} error_type_document=={etype.__doc__} error_value=={value} stack infomation=={stack} code name=={frame.f_code.co_name}file name=={frame.f_code.co_filename} file_number=={frame.f_lineno}"
             advice_msg = '\tFile: "%s"\n\t\t%s %s: %s\n' % (
