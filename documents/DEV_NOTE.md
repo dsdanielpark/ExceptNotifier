@@ -50,17 +50,17 @@ Typically, in Python, variable names are mangled by adding a double underscore p
 |Version|Description|
 |:--|:--|
 |0.1.1|Package blueprint|
-|0.1.2|Proceed with the first commit by working with scalable messengers or e-mails with high usage. All 0.1.x versions are pre-alpha versions and are used for debugging and usability improvement. with out OPEN AI API|
-|0.1.3|Fix package structure|
-|0.1.4|Check python or other dependencies version range|
-|0.1.5|Simply connected openAI's API through try except. If you enter two arguments, debugging information by AI is automatically sent.|
-|0.1.6|Release for QA Testing in Windows and Mac.|
-|0.1.8|Sync version of pypin with conda-forge.|
-|0.1.9|Alpha Released|
-|0.1.10|Debugging for wechat|
-|0.1.11, 0.1.12, 0.1.13|Change Os.environ to use|
-|0.1.14|Fixing winsound when importing in linux |
-|0.1.15|Fixing os import typo|
-|0.1.16|Fixing winsound in static method when importing in linux |
-
+|0.1.2|Started working on scalable messengers or e-mails with high usage. All 0.1.x versions are pre-alpha and primarily used for debugging and improving usability without the OpenAI API.|
+|0.1.3|Fixed the package structure.|
+|0.1.4|Checked the version range of Python and other dependencies.|
+|0.1.5|Connected OpenAI's API through try-except. If you enter two arguments, debugging information by AI is automatically sent.|
+|0.1.6|Released for QA testing on Windows and Mac.|
+|0.1.8|Synced the version of pypin with conda-forge.|
+|0.1.9|Alpha version released.|
+|0.1.10|Debugging for WeChat.|
+|0.1.11, 0.1.12, 0.1.13|Using Os.environ.|
+|0.1.14|Fixed the issue with winsound when importing on Linux.|
+|0.1.15|Fixed an os import typo.|
+|0.1.16|Fixed winsound in a static method when importing on Linux.|
+|0.1.17|Fixed some typos and added small unit tests. It still malfunctions in notebooks, but the Python file is functional.
 # QA Note
