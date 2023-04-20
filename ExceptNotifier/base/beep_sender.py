@@ -2,7 +2,7 @@
 # Copyright 2023 parkminwoo
 import os
 import platform
-import winsound
+
 
 
 def beep(sec=1, freq=1000) -> None:
@@ -17,6 +17,7 @@ def beep(sec=1, freq=1000) -> None:
     sys = platform.system()
 
     if sys == "Windows":
+        import winsound
         winsound.Beep(int(1000 * sec), freq)
     else:
         os.system("play -nq -t alsa synth {} sine {}".format(sec, freq))
