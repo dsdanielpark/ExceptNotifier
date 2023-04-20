@@ -21,8 +21,8 @@ def send_line_msg(_LINE_NOTIFY_API_TOKEN: str, msg: str) -> dict:
     return resp
 
 
-if __name__ == "__main__":
-    global _LINE_NOTIFY_API_TOKEN
-    _LINE_NOTIFY_API_TOKEN = "XXXXXXXXX"
-    msg = "Test Message"
-    send_line_msg(_LINE_NOTIFY_API_TOKEN, msg)
+# if __name__ == "__main__":
+#     global _LINE_NOTIFY_API_TOKEN
+#     _LINE_NOTIFY_API_TOKEN = "XXXXXXXXX"
+#     msg = "Test Message"
+#     send_line_msg(_LINE_NOTIFY_API_TOKEN, msg)

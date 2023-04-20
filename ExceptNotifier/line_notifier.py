@@ -6,8 +6,8 @@ import re
 import datetime
 from email.message import EmailMessage
 import sys
-from ExceptNotifier import send_line_msg
-
+from ExceptNotifier import send_line_msg, receive_openai_advice
+import os
 DATE_FORMAT = "%Y-%m-%d %H:%M:%S"
 
 
@@ -69,7 +69,7 @@ class ExceptLine(BaseException):
         print(exceptNotifier["BODY"])
         data = {"text": exceptNotifier["SUBJECT"] + exceptNotifier["BODY"]}
 
-        send_line_msg(_LINE_NOTIFY_API_TOKEN, data["text"])
+        send_line_msg(os.environ['_LINE_NOTIFY_API_TOKEN'], data["text"])
 
         try:
             error_message = f"error_type=={excType} error_type_document=={etype.__doc__} error_value=={value} stack infomation=={stack} code name=={frame.f_code.co_name}file name=={frame.f_code.co_filename} file_number=={frame.f_lineno}"
@@ -80,9 +80,9 @@ class ExceptLine(BaseException):
                 line[3],
             )
             advice_msg += receive_openai_advice(
-                _OPEN_AI_MODEL, _OPEN_AI_API, error_message
+                os.environ['_OPEN_AI_MODEL'], os.environ['_OPEN_AI_API'], error_message
             )  # NO-QA
-            send_line_msg(_LINE_NOTIFY_API_TOKEN, advice_msg)
+            send_line_msg(os.environ['_LINE_NOTIFY_API_TOKEN'], advice_msg)
         except Exception as e:
             pass
 
@@ -122,7 +122,7 @@ class SuccessLine:
 
         data = {"text": exceptNotifier["SUBJECT"] + exceptNotifier["BODY"]}
 
-        send_line_msg(_LINE_NOTIFY_API_TOKEN, data["text"])
+        send_line_msg(os.environ['_LINE_NOTIFY_API_TOKEN'], data["text"])
 
 
 class SendLine:
@@ -142,24 +142,24 @@ class SendLine:
 
         data = {"text": exceptNotifier["SUBJECT"] + exceptNotifier["BODY"]}
 
-        send_line_msg(_LINE_NOTIFY_API_TOKEN, data["text"])
+        send_line_msg(os.environ['_LINE_NOTIFY_API_TOKEN'], data["text"])
 
 
-if __name__ == "__main__":
+# if __name__ == "__main__":
 
-    """Get your URL from HERE. 
-    https://notify-bot.line.me/my/"""
+#     """Get your URL from HERE. 
+#     https://notify-bot.line.me/my/"""
 
-    global _LINE_NOTIFY_API_TOKEN
-    _LINE_NOTIFY_API_TOKEN = "xxxxxxxxxxx"
+    
+#     _LINE_NOTIFY_API_TOKEN = "xxxxxxxxxxx"
 
-    sys.excepthook = ExceptLine.__call__
+#     sys.excepthook = ExceptLine.__call__
 
-    try:
-        print(1 / 20)
-        SuccessLine().__call__()  # 1 success sender
+#     try:
+#         print(1 / 20)
+#         SuccessLine().__call__()  # 1 success sender
 
-    except ExceptLine as e:  # 2 except sender
-        sys.exit()
+#     except ExceptLine as e:  # 2 except sender
+#         sys.exit()
 
-    SendLine().__call__()  # 3 customized sender
+#     SendLine().__call__()  # 3 customized sender

@@ -640,7 +640,7 @@ SendDesktop().__call__()        #3 customized sender
 
 
 # Contributing Guide
-I will announce contributing rules when the code development status changes to beta soon. Until then, please create an issue for feature requests and bug reports.
+I will announce contributing rules when the code development status changes to beta soon. Until then, please create an issue for feature requests and bug reports. I would greatly appreciate it if you use it a lot and give your opinions generously. Thank you sincerely.
 
 # License
 MIT

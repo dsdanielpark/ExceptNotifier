@@ -22,11 +22,11 @@ class ExceptBeep(BaseException):
         :type tb: _type_
         """
 
-        beep(BEEP_TIME)
-        beep(BEEP_TIME)
-        beep(BEEP_TIME)
-        beep(BEEP_TIME)
-        beep(BEEP_TIME)
+        beep(os.environ['BEEP_TIME'])
+        beep(os.environ['BEEP_TIME'])
+        beep(os.environ['BEEP_TIME'])
+        beep(os.environ['BEEP_TIME'])
+        beep(os.environ['BEEP_TIME'])
 
     @staticmethod
     def beep(sec=1, freq=1000) -> None:
@@ -51,8 +51,8 @@ class SuccessBeep:
         pass
 
     def __call__(self, *args, **kwds) -> None:
-        beep(BEEP_TIME)
-        beep(BEEP_TIME)
+        beep(os.environ['BEEP_TIME'])
+        beep(os.environ['BEEP_TIME'])
 
 
 class SendBeep:
@@ -60,18 +60,18 @@ class SendBeep:
         pass
 
     def __call__(self, *args, **kwds) -> None:
-        beep(BEEP_TIME)
+        beep(os.environ['BEEP_TIME'])
 
 
-if __name__ == "__main__":
-    BEEP_TIME = 1
-    sys.excepthook = ExceptBeep.__call__
+# if __name__ == "__main__":
+#     BEEP_TIME = 1
+#     sys.excepthook = ExceptBeep.__call__
 
-    try:
-        print(1 / 20)
-        SuccessBeep().__call__()  # 1 success beep-beep
+#     try:
+#         print(1 / 20)
+#         SuccessBeep().__call__()  # 1 success beep-beep
 
-    except ExceptBeep as e:  # 2 except beep-beep
-        sys.exit()
+#     except ExceptBeep as e:  # 2 except beep-beep
+#         sys.exit()
 
-    SendBeep().__call__()  # 3 customized beep-beep
+#     SendBeep().__call__()  # 3 customized beep-beep

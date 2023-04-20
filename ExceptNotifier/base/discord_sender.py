@@ -27,8 +27,8 @@ def send_discord_msg(_DISCORD_WEBHOOK_URL: str, msg: str) -> dict:
     return resp
 
 
-if __name__ == "__main__":
-    _DISCORD_WEBHOOK_URL = "xxxxx"
-    msg = "Sending Test"
+# if __name__ == "__main__":
+#     _DISCORD_WEBHOOK_URL = "xxxxx"
+#     msg = "Sending Test"
 
-    send_discord_msg(_DISCORD_WEBHOOK_URL, msg)
+#     send_discord_msg(_DISCORD_WEBHOOK_URL, msg)

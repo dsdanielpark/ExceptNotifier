@@ -7,6 +7,7 @@ from email.message import EmailMessage
 import sys
 import pickle
 from twilio.rest import Client
+import os
 from ExceptNotifier import send_sms_msg, receive_openai_advice
 
 DATE_FORMAT = "%Y-%m-%d %H:%M:%S"
@@ -70,10 +71,10 @@ class ExceptSMS(BaseException):
         data = {"text": exceptNotifier["SUBJECT"] + exceptNotifier["BODY"]}
 
         send_sms_msg(
-            _TWILIO_SID,
-            _TWILIO_TOKEN,
-            _SENDER_PHONE_NUMBER,
-            _RECIPIENT_PHONE_NUMBER,
+            os.environ['_TWILIO_SID'],
+            os.environ['_TWILIO_TOKEN'],
+            os.environ['_SENDER_PHONE_NUMBER'],
+            os.environ['_RECIPIENT_PHONE_NUMBER'],
             data["text"],
         )
 
@@ -86,13 +87,13 @@ class ExceptSMS(BaseException):
                 line[3],
             )
             advice_msg += receive_openai_advice(
-                _OPEN_AI_MODEL, _OPEN_AI_API, error_message
+                os.environ['_OPEN_AI_MODEL'], os.environ['_OPEN_AI_API'], error_message
             )  # NO-QA
             send_sms_msg(
-                _TWILIO_SID,
-                _TWILIO_TOKEN,
-                _SENDER_PHONE_NUMBER,
-                _RECIPIENT_PHONE_NUMBER,
+                os.environ['_TWILIO_SID'],
+                os.environ['_TWILIO_TOKEN'],
+                os.environ['_SENDER_PHONE_NUMBER'],
+                os.environ['_RECIPIENT_PHONE_NUMBER'],
                 advice_msg,
             )
         except Exception as e:
@@ -127,10 +128,10 @@ class SuccessSMS:
         data = {"text": exceptNotifier["SUBJECT"] + exceptNotifier["BODY"]}
 
         send_sms_msg(
-            _TWILIO_SID,
-            _TWILIO_TOKEN,
-            _SENDER_PHONE_NUMBER,
-            _RECIPIENT_PHONE_NUMBER,
+            os.environ['_TWILIO_SID'],
+            os.environ['_TWILIO_TOKEN'],
+            os.environ['_SENDER_PHONE_NUMBER'],
+            os.environ['_RECIPIENT_PHONE_NUMBER'],
             data["text"],
         )
 
@@ -153,34 +154,34 @@ class SendSMS:
         data = {"text": exceptNotifier["SUBJECT"] + exceptNotifier["BODY"]}
 
         send_sms_msg(
-            _TWILIO_SID,
-            _TWILIO_TOKEN,
-            _SENDER_PHONE_NUMBER,
-            _RECIPIENT_PHONE_NUMBER,
+            os.environ['_TWILIO_SID'],
+            os.environ['_TWILIO_TOKEN'],
+            os.environ['_SENDER_PHONE_NUMBER'],
+            os.environ['_RECIPIENT_PHONE_NUMBER'],
             data["text"],
         )
 
 
-if __name__ == "__main__":
+# if __name__ == "__main__":
 
-    """https://www.twilio.com/en-us"""
+#     """https://www.twilio.com/en-us"""
 
-    global _TWILIO_SID, TWILIO_AUTH_TOKEN, _SENDER_PHONE_NUMBER, _RECIPIENT_PHONE_NUMBER
-    _TWILIO_SID = "xxxx"
-    _TWILIO_TOKEN = "yyyyyy"
-    _RECIPIENT_PHONE_NUMBER = ("+aaaaaa",)
-    _SENDER_PHONE_NUMBER = ("+bbbbbb",)
+    
+#     _TWILIO_SID = "xxxx"
+#     _TWILIO_TOKEN = "yyyyyy"
+#     _RECIPIENT_PHONE_NUMBER = ("+aaaaaa",)
+#     _SENDER_PHONE_NUMBER = ("+bbbbbb",)
 
-    sys.excepthook = ExceptSMS.__call__
+#     sys.excepthook = ExceptSMS.__call__
 
-    try:
-        print(1 / 10)
-        SuccessSMS().__call__()  # 1 success sender
+#     try:
+#         print(1 / 10)
+#         SuccessSMS().__call__()  # 1 success sender
 
-    except ExceptSMS as e:  # 2 except sender
-        with open("exceptError.pickle", "wb") as f:
-            pickle.dump(e, f)
-        raise pickle.load(f)
-        sys.exit()
+#     except ExceptSMS as e:  # 2 except sender
+#         with open("exceptError.pickle", "wb") as f:
+#             pickle.dump(e, f)
+#         raise pickle.load(f)
+#         sys.exit()
 
-    SendSMS().__call__()  # 3 customized sender
+#     SendSMS().__call__()  # 3 customized sender

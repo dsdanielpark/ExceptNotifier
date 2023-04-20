@@ -144,11 +144,11 @@ class SendDesktop:
         )
 
 
-if __name__ == "__main__":
-    sys.excepthook = ExceptDesktop.__call__
-    try:
-        print(1 / 0)
-        SuccessDesktop().__call__()  # 1 success sender
-    except ExceptDesktop as e:  # 2 except sender
-        sys.exit()
-    SendDesktop().__call__()  # 3 customized sender
+# if __name__ == "__main__":
+#     sys.excepthook = ExceptDesktop.__call__
+#     try:
+#         print(1 / 0)
+#         SuccessDesktop().__call__()  # 1 success sender
+#     except ExceptDesktop as e:  # 2 except sender
+#         sys.exit()
+#     SendDesktop().__call__()  # 3 customized sender

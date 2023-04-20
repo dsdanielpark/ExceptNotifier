@@ -20,7 +20,7 @@ def send_slack_msg(_SLACK_WEBHOOK_URL: str, msg: str) -> dict:
     return resp
 
 
-if __name__ == "__main__":
-    _SLACK_WEBHOOK_URL = "xxxxx"
-    msg = "Test Message"
-    send_slack_msg(_SLACK_WEBHOOK_URL, msg)
+# if __name__ == "__main__":
+#     _SLACK_WEBHOOK_URL = "xxxxx"
+#     msg = "Test Message"
+#     send_slack_msg(_SLACK_WEBHOOK_URL, msg)

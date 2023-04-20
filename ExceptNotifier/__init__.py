@@ -16,6 +16,7 @@ from ExceptNotifier.base.whatsapp_sender import send_whatsapp_msg
 from ExceptNotifier.base.sms_sender import send_sms_msg
 from ExceptNotifier.base.beep_sender import beep
 from ExceptNotifier.base.openai_receiver import receive_openai_advice
+from ExceptNotifier.base.wechat_sender import send_wechat_msg
 
 from ExceptNotifier.mail_notifier import SuccessMail, ExceptMail, SendMail
 from ExceptNotifier.slack_notifier import SuccessSlcak, ExceptSlack, SendSlack
@@ -82,6 +83,7 @@ __all__ = [
     "SuccessWechat",
     "ExceptWechat",
     "SendWechat",
+    "send_wechat_msg"
 ]
 
 __version__ = "0.1.9"

@@ -35,12 +35,12 @@ def send_kakao_msg(_KAKAO_TOKEN_PATH: str, msg: str) -> dict:
     return resp
 
 
-if __name__ == "__main__":
-    global _KAKAO_TOKEN_PATH
-    _KAKAO_TOKEN_PATH = (
-        r"C:\Users\parkm\Desktop\git\ExceptionNotifier\tutorials\token.json"
-    )
+# if __name__ == "__main__":
+#     global _KAKAO_TOKEN_PATH
+#     _KAKAO_TOKEN_PATH = (
+#         r"C:\Users\parkm\Desktop\git\ExceptionNotifier\tutorials\token.json"
+#     )
 
-    msg = "Sending Message Test"
-    resp_status = send_kakao_msg(_KAKAO_TOKEN_PATH, msg)
-    print(resp_status)
+#     msg = "Sending Message Test"
+#     resp_status = send_kakao_msg(_KAKAO_TOKEN_PATH, msg)
+#     print(resp_status)

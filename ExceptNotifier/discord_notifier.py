@@ -8,7 +8,8 @@ import sys
 from ExceptNotifier import send_discord_msg, receive_openai_advice
 
 DATE_FORMAT = "%Y-%m-%d %H:%M:%S"
-
+os.environ['_DISCORD_WEBHOOK_URL']
+import os
 
 class ExceptDiscord(BaseException):
     def __init__(self, *args: object) -> None:
@@ -67,7 +68,7 @@ class ExceptDiscord(BaseException):
 
         print(exceptNotifier["BODY"])
         data = {"text": exceptNotifier["SUBJECT"] + exceptNotifier["BODY"]}
-        send_discord_msg(_DISCORD_WEBHOOK_URL, data["text"])
+        send_discord_msg(os.environ['_DISCORD_WEBHOOK_URL'], data["text"])
 
         try:
             error_message = f"error_type=={excType} error_type_document=={etype.__doc__} error_value=={value} stack infomation=={stack} code name=={frame.f_code.co_name}file name=={frame.f_code.co_filename} file_number=={frame.f_lineno}"
@@ -78,9 +79,9 @@ class ExceptDiscord(BaseException):
                 line[3],
             )
             advice_msg += receive_openai_advice(
-                _OPEN_AI_MODEL, _OPEN_AI_API, error_message
+                os.environ['_OPEN_AI_MODEL'], os.environ['_OPEN_AI_API'], error_message
             )  # NO-QA
-            send_discord_msg(_DISCORD_WEBHOOK_URL, advice_msg)
+            send_discord_msg(os.environ['_DISCORD_WEBHOOK_URL'], advice_msg)
         except Exception as e:
             print(e)
             pass
@@ -127,7 +128,7 @@ class SuccessDiscord:
         ] = f"\n\nHi there, \nThis is a success notifier.\n\n - :white_check_mark: Code Status: Success. \n - :white_check_mark: Detail: Python Code Ran Without Exceptions. \n - :clock2: Time: {start_time.strftime(DATE_FORMAT)} \n\nI just wanted to let you know that your Python code has run successfully without any exceptions. \n\nAll the best, \nExcept Notifier https://github.com/dsdanielpark/ExceptNotifier"
 
         data = {"text": exceptNotifier["SUBJECT"] + exceptNotifier["BODY"]}
-        send_discord_msg(_DISCORD_WEBHOOK_URL, data["text"][:2000])
+        send_discord_msg(os.environ['_DISCORD_WEBHOOK_URL'], data["text"][:2000])
 
 
 class SendDiscord:
@@ -147,25 +148,25 @@ class SendDiscord:
 
         data = {"text": exceptNotifier["SUBJECT"] + exceptNotifier["BODY"]}
 
-        send_discord_msg(_DISCORD_WEBHOOK_URL, data["text"][:2000])
+        send_discord_msg(os.environ['_DISCORD_WEBHOOK_URL'], data["text"][:2000])
 
 
-if __name__ == "__main__":
+# if __name__ == "__main__":
 
-    # Get your slcak bot and enter _DISCORD_WEBHOOK_URL
-    """Get your _DISCORD_WEBHOOK_URL from HERE. 
-    https://discord.com/developers/docs/resources/webhook"""
+#     # Get your slcak bot and enter _DISCORD_WEBHOOK_URL
+#     """Get your _DISCORD_WEBHOOK_URL from HERE. 
+#     https://discord.com/developers/docs/resources/webhook"""
 
-    global _DISCORD_WEBHOOK_URL
-    _DISCORD_WEBHOOK_URL = "xxxxxxxxxxxxxxxxx"
+  
+#     _DISCORD_WEBHOOK_URL = "xxxxxxxxxxxxxxxxx"
 
-    sys.excepthook = ExceptDiscord.__call__
+#     sys.excepthook = ExceptDiscord.__call__
 
-    try:
-        print(1 / 20)
-        SuccessDiscord().__call__()  # 1 success sender
+#     try:
+#         print(1 / 20)
+#         SuccessDiscord().__call__()  # 1 success sender
 
-    except ExceptDiscord as e:  # 2 except sender
-        sys.exit()
+#     except ExceptDiscord as e:  # 2 except sender
+#         sys.exit()
 
-    SendDiscord().__call__()  # 3 customized sender
+#     SendDiscord().__call__()  # 3 customized sender
