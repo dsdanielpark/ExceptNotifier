@@ -1,6 +1,6 @@
-Development Status :: 3 - Alpha <br>
-*Copyright (c) 2023 MinWoo Park, South Korea*
-<br><br>
+Development Status :: 2 - Pre-Alpha <br>
+*Copyright (c) 2023 MinWoo Park, South Korea*<br>
+Before QA<br> 
 
 ![](https://github.com/dsdanielpark/ExceptNotifier/blob/main/assets/imgs/logo2.png)
 
@@ -128,7 +128,10 @@ ExceptChime, ExceptTelegram, ExceptDiscord, ExceptSMS, ExceptMail, ExceptKakao, 
 
 *Example*
 ```python
-from ExceptNotifier import ExceptTelgeram
+import sys
+from ExceptNotifier import ExceptTelegram
+sys.excepthook = ExceptTelegram.__call__
+
 _TELEGRAM_TOKEN = "xxxx"
 
 try:
@@ -146,7 +149,10 @@ You can receive debugging information from ChatGPT via OpenAI's API when using t
 
 *Example*
 ```python
-from ExceptNotifier import ExceptTelgeram
+import sys
+from ExceptNotifier import ExceptTelegram
+sys.excepthook = ExceptTelegram.__call__
+
 _TELEGRAM_TOKEN = "xxxx"
 _OPEN_AI_MODEL="gpt-3.5-turbo"
 _OPEN_AI_API="sk-xxxxxx"
@@ -172,7 +178,9 @@ SuccessChime, SuccessTelegram, SuccessDiscord, SuccessSMS, SuccessMail, SuccessK
 *Example*
 
 ```python
+import sys
 from ExceptNotifier import SuccessTelgeram
+sys.excepthook = ExceptTelegram.__call__
 _TELEGRAM_TOKEN = "xxxx"
 
 try:
@@ -194,7 +202,9 @@ SendChime, SendTelegram, SendDiscord, SendSMS, SendMail, SendKakao, SendLine, Se
 *Example*
 
 ```python
+import sys
 from ExceptNotifier import SendTelgeram
+sys.excepthook = ExceptTelegram.__call__
 _TELEGRAM_TOKEN = "xxxx"
 
 SendTelegram().__call__() # sending message to telegram
@@ -237,6 +247,14 @@ As all classes function the same, the example will only use one image, like in T
 - b. Type /newbot to create a new bot <br>
 - c. Give your bot a name & a username <br>
 - d. Copy your new Telegram bot’s token <br>
+- e. You have to click `Start_bot` and enter anything to your bot.
+   - Before use Notifier, Please use this to check if you follow guide.
+```
+from ExceptNotifier import send_telegram_msg
+
+_TELEGRAM_TOKEN = "xxxxx:xxxxx-xxxx"
+send_telegram_msg(_TELEGRAM_TOKEN, 'msg')
+```
 
 For more infomation, visit [Telegram Bot Father API](https://core.telegram.org/bots/api)
 <br><br>
