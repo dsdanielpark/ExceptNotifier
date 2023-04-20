@@ -3,7 +3,6 @@
 import sys
 import os
 import platform
-import winsound
 from ExceptNotifier import beep
 
 
@@ -41,6 +40,7 @@ class ExceptBeep(BaseException):
         sys = platform.system()
 
         if sys == "Windows":
+            import winsound
             winsound.Beep(int(1000 * sec), freq)
         else:
             os.system("play -nq -t alsa synth {} sine {}".format(sec, freq))
