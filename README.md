@@ -79,7 +79,7 @@ $ pip install exceptnotifier
 - Depending on the situation, consider designating them as global variables for use.
 - If you are using Telegram, an example is attached as an image.
 - As you already know, API Keys or security tokens must be secured. Note that the key values which exposured in github will be expired after insecured.
-- 
+- We are trying to maintain the current architecture as much as possible by considering various methods such as inheriting decorators and Execption. We set it as an environment variable as follows, and we are refactoring and testing for a better method.
 
 | App | Required Enviroment Variables | Free or Paid | Ease of Setup | Time Required for Setup|Guide Tutorial Link|
 |:--:|:--|:--:|:--:|:--:|:---:|
