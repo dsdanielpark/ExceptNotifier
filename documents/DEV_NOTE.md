@@ -38,11 +38,6 @@ Typically, in Python, variable names are mangled by adding a double underscore p
 ##### In this package, a variable name prefixed with an _ signifies that it is used only within a function. Naming focused on function rather than mangling. If a particular method is only used within a class, it is used as the _method name.
 
 
-<br><br>
-
-# Thank To
-- Thanks to [Myunghak Lee](https://github.com/myeonghak) for providing great ideas on providing debugging information through open ai API.
-
 <br>
 
 
@@ -63,4 +58,14 @@ Typically, in Python, variable names are mangled by adding a double underscore p
 |0.1.15|Fixed an os import typo.|
 |0.1.16|Fixed winsound in a static method when importing on Linux.|
 |0.1.17|Fixed some typos and added small unit tests. It still malfunctions in notebooks, but the Python file is functional.|
+
+
 # QA Note
+
+
+<br>
+
+# Thanks To
+- Thanks to [Myunghak Lee](https://github.com/myeonghak) for providing great ideas on providing debugging information through OpenAI API.
+
+<br>
