@@ -57,5 +57,7 @@ Typically, in Python, variable names are mangled by adding a double underscore p
 |0.1.6|Release for QA Testing in Windows and Mac.|
 |0.1.8|Sync version of pypin with conda-forge.|
 |0.1.9|Alpha Released|
+|0.1.10|Debugging for wechat|
+|0.1.11, 0.1.12, 0.1.13|Change Os.environ to use|
 
 # QA Note
