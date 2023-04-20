@@ -240,6 +240,9 @@ You can receive debugging information from ChatGPT via OpenAI's API when using t
 - [2-11. *Beep Notifier*](#2-11--beep-notifier-)
 - [2-12. *Desktop Notifier*](#2-12--desktop-notifier-)
 
+<small><i><a href='http://ecotrust-canada.github.io/markdown-toc/'>Table of contents generated with markdown-toc</a></i></small>
+
+
 
 ### 2-1. *Telegram Notifier*
 As all classes function the same, the example will only use one image, like in Telegram.
