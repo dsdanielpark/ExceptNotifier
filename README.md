@@ -79,8 +79,9 @@ $ pip install exceptnotifier
 - Depending on the situation, consider designating them as global variables for use.
 - If you are using Telegram, an example is attached as an image.
 - As you already know, API Keys or security tokens must be secured. Note that the key values which exposured in github will be expired after insecured.
+- 
 
-| App | Required Variables | Free or Paid | Ease of Setup | Time Required for Setup|Guide Tutorial Link|
+| App | Required Enviroment Variables | Free or Paid | Ease of Setup | Time Required for Setup|Guide Tutorial Link|
 |:--:|:--|:--:|:--:|:--:|:---:|
 |Beep|N/A|Free|N/A|0 min|[ExceptBeep](https://github.com/dsdanielpark/ExceptNotifier/blob/main/documents/ExceptBeep/GUIDE.md)|
 |Desktop|N/A|Free|N/A|0 min|[ExceptDesktop](https://github.com/dsdanielpark/ExceptNotifier/blob/main/documents/ExceptDesktop/GUIDE.md)|
