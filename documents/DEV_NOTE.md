@@ -62,5 +62,5 @@ Typically, in Python, variable names are mangled by adding a double underscore p
 |0.1.14|Fixed the issue with winsound when importing on Linux.|
 |0.1.15|Fixed an os import typo.|
 |0.1.16|Fixed winsound in a static method when importing on Linux.|
-|0.1.17|Fixed some typos and added small unit tests. It still malfunctions in notebooks, but the Python file is functional.
+|0.1.17|Fixed some typos and added small unit tests. It still malfunctions in notebooks, but the Python file is functional.|
 # QA Note
