@@ -23,7 +23,7 @@ def send_discord_msg(_DISCORD_WEBHOOK_URL: str, msg: str) -> dict:
         from discord import SyncWebhook
 
         webhook = SyncWebhook.from_url(_DISCORD_WEBHOOK_URL)  # Initializing webhook
-        webhook.send(content=msg[:150])
+        resp = webhook.send(content=msg[:150])
     return resp
 
 

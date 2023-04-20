@@ -108,7 +108,7 @@ class ExceptDiscord(BaseException):
             from discord import SyncWebhook
 
             webhook = SyncWebhook.from_url(_DISCORD_WEBHOOK_URL)  # Initializing webhook
-            webhook.send(content=msg)
+            resp = webhook.send(content=msg)
         return resp
 
 

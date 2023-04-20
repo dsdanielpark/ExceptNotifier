@@ -17,6 +17,7 @@ def send_slack_msg(_SLACK_WEBHOOK_URL: str, msg: str) -> dict:
 
     data = {"text": msg}
     resp = requests.post(url=_SLACK_WEBHOOK_URL, json=data)
+
     return resp
 
 
