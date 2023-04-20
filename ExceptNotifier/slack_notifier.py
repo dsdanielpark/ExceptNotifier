@@ -146,7 +146,7 @@ class SendSlack:
 #     https://api.slack.com/messaging/webhooks#create_a_webhook"""
 
     
-#     _SLACK_WEBHOOK_URL = "https://hooks.slack.com/services/xxxxxxxxxxxxxxxxxxx"
+#     os.environ['_SLACK_WEBHOOK_URL'] ='https://hooks.slack.com/services/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'
 
 #     sys.excepthook = ExceptSlack.__call__
 
