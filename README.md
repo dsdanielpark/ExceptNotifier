@@ -52,6 +52,46 @@ $ pip install ExceptNotifier
 $ pip install exceptnotifier
 ```
 
+<br><br><br>
+
+# Contents
+
+- [App Setup Overview](#app-setup-overview)
+- [Tutorial](#tutorial)
+- [Python Core](#python-core)
+  * [Except`Notifier`](#exceptnotifier)
+    + [AI Debbugging Infomation Notification](#ai-debbugging-infomation-notification)
+  * [Success`Notifier`](#successnotifier)
+  * [Send`Notifier`](#sendnotifier)
+  * [Sender](#sender)
+- [IPython Core](#ipython-core)
+  * [Except`Notifier` in Ipython](#exceptnotifier-in-ipython)
+  * [Success`Notifier` in Ipython](#successnotifier-in-ipython)
+  * [Send`Notifier` in Ipython](#sendnotifier-in-ipython)
+  * [Sender in Ipython](#sender-in-ipython)
+- [Applied in each application](#applied-in-each-application)
+  * [*Telegram*](#telegram)
+    + [a. Notifier without OpenAI API](#a-notifier-without-openai-api)
+    + [b. Notifier with OpenAI API](#b-notifier-with-openai-api)
+  * [*Mail*](#mail)
+  * [*Discord*](#discord)
+  * [*Chime*](#chime)
+  * [*Slack*](#slack)
+  * [*Line*](#line)
+  * [*SMS*](#sms)
+  * [*Teams*](#teams)
+  * [*Kakaotalk*](#kakaotalk)
+  * [*Wechat*](#wechat)
+  * [*Beep*](#beep)
+  * [*Desktop*](#desktop)
+- [Contributing Guide](#contributing-guide)
+- [License](#license)
+- [Code of Conduct](#code-of-conduct)
+- [Contacts](#contacts)
+
+<br><br><br>
+
+
 <br>
 
 # App Setup Overview
@@ -65,12 +105,12 @@ $ pip install exceptnotifier
 |:--:|:--|:--:|:--:|:--:|:---:|
 |Beep|N/A|Free|N/A|0min|[ExceptBeep](https://github.com/dsdanielpark/ExceptNotifier/blob/main/tutorials/ExceptBeep/GUIDE.md)|
 |Desktop|N/A|Free|N/A|0min|[ExceptDesktop](https://github.com/dsdanielpark/ExceptNotifier/blob/main/tutorials/ExceptDesktop/GUIDE.md)|
-|Telegram|`_TELEGRAM_TOKEN`|Freemium|Easy|2min|[ExceptTelegram](https://github.com/dsdanielpark/ExceptNotifier/blob/main/tutorials/ExceptTelegram/GUIDE.md)|
-|Discord|`_DISCORD_WEBHOOK_URL`|Freemium|Easy|1min|[ExceptDiscord](https://github.com/dsdanielpark/ExceptNotifier/blob/main/tutorials/ExceptTelegram/GUIDE.md)|
-|AWS Chime|`_CHIME_WEBHOOK_URL`|Freemium|Easy|1min|[ExceptChime](https://github.com/dsdanielpark/ExceptNotifier/blob/main/tutorials/ExceptChime/GUIDE.md)|
-|Slack|`_SLACK_WEBHOOK_URL`|Freemium|Easy|3min|[ExceptSlack](https://github.com/dsdanielpark/ExceptNotifier/blob/main/tutorials/ExceptSlack/GUIDE.md)|
+|Telegram|`_TELEGRAM_TOKEN`|Freemium|Easy|2min|[ExceptTelegram](https://github.com/dsdanielpark/ExceptNotifier/blob/main/tutorials/ExceptTelegram/GUIDE.md) [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/drive/1jwWGs7eCUJQvj_g7SEMqm3a4Kdrp9ZQP?usp=sharing) |
+|Discord|`_DISCORD_WEBHOOK_URL`|Freemium|Easy|1min|[ExceptDiscord](https://github.com/dsdanielpark/ExceptNotifier/blob/main/tutorials/ExceptTelegram/GUIDE.md) [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/drive/1lwsIBpql_1zgEdIWRw6O_jBOZKJdHqBh?usp=sharing) |
+|AWS Chime|`_CHIME_WEBHOOK_URL`|Freemium|Easy|1min|[ExceptChime](https://github.com/dsdanielpark/ExceptNotifier/blob/main/tutorials/ExceptChime/GUIDE.md) [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/drive/1hUMMQ6He9M4MlspZ88J9kO8juxvC5b3a?usp=sharing)|
+|Slack|`_SLACK_WEBHOOK_URL`|Freemium|Easy|3min|[ExceptSlack](https://github.com/dsdanielpark/ExceptNotifier/blob/main/tutorials/ExceptSlack/GUIDE.md) [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/drive/1-dAaKl_gwX481FxH424aCVFqsq-thGXK?usp=sharing) |
 |G-Mail|`_GAMIL_RECIPIENT_ADDR`, `_GMAIL_SENDER_ADDR`, `_GMAIL_APP_PASSWORD_OF_SENDER` |Restricted free|Medium|3min|[ExceptMail](https://github.com/dsdanielpark/ExceptNotifier/blob/main/tutorials/ExceptMail/GUIDE.md)|
-|Line|`_LINE_NOTIFY_API_TOKEN`|Freemium|Medium|4min|[ExceptLine](https://github.com/dsdanielpark/ExceptNotifier/blob/main/tutorials/ExceptLine/GUIDE.md)|
+|Line|`_LINE_NOTIFY_API_TOKEN`|Freemium|Medium|4min|[ExceptLine](https://github.com/dsdanielpark/ExceptNotifier/blob/main/tutorials/ExceptLine/GUIDE.md) [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/drive/1PDrJqxDq4NE6BRUrRkFvDBiMHQz0WbZh?usp=sharing) |
 |SMS|`_TWILIO_SID`, `_TWILIO_TOKEN`, `_RECIPIENT_PHONE_NUMBER`, `_SENDER_PHONE_NUMBER`|Not free|Medium|5min|[ExceptSMS](https://github.com/dsdanielpark/ExceptNotifier/blob/main/tutorials/ExceptSMS/GUIDE.md)|
 |Microsoft Teams|`_TEAMS_WEBHOOK_URL`|Not Free|Medium|5min|[ExceptTeams](https://github.com/dsdanielpark/ExceptNotifier/blob/main/tutorials/ExceptTeams/GUIDE.md)|
 |KakaoTalk|`_KAKAO_TOKEN_PATH`|Freemium|Hell|>=10min(Token refreshes daily)|[ExceptKakao](https://github.com/dsdanielpark/ExceptNotifier/blob/main/tutorials/ExceptKakao/GUIDE.md)|
