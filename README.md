@@ -20,30 +20,12 @@ Before QA<br>
  The `ExceptNotifier` Python package offers a flexible approach to receiving notifications by enhancing Python's try-except statement. This package enables you to receive alerts through various messaging applications or emails.
 <Br><br>
 With `ExceptNotifier`, you can obtain detailed compilation errors, including debug information, sent directly to your preferred messaging platform or email. By integrating OpenAI's ChatGPT, you can receive additional error code information as long as you provide the required API model name and key. This feature ensures that error handling and notifications are more informative and accessible, streamlining your debugging process.
+
 <Br>
 
-# Contents
-- [Python Package: ExceptNotifier](#python-package-exceptnotifier)
-- [Supporting Applications](#supporting-applications)
-- [Quick Start](#quick-start)
-- [App Setup Overview](#app-setup-overview)
-- [Tutorial](#tutorial)
-- [1. Key Features](#1-key-features)
-  * [1-1. Except`Notifier`](#1-1-exceptnotifier)
-  * [1-2. AI Debbugging Infomation Notification](#1-2-ai-debbugging-infomation-notification)
-  * [1-3. Success`Notifier`](#1-3-successnotifier)
-  * [1-4. Send`Notifier`](#1-4-sendnotifier)
-- [Features](#features)
-  * [2. Notifier](#2-notifier)
-  * [3. Sender](#3-sender)
-- [Contributing Guide](#contributing-guide)
-- [License](#license)
-- [Code of Conduct](#code-of-conduct)
-- [Contacts](#contacts)
-
-<br>
 
 # Supporting Applications
+Applicable to both [IPython](https://ipython.org/) and [Python](https://www.python.org/), but needs to be ported differently only in `ExceptNotifier`. Please refer to the detailed example. (`SuccessNotifier` and `SendNotifier` have the same syntax.)
 - [Telegram](https://telegram.org/)
 - [Discord](https://discord.com/)
 - [Slack](https://slack.com/)
@@ -71,7 +53,6 @@ $ pip install exceptnotifier
 ```
 
 <br>
-
 
 # App Setup Overview
 
@@ -101,7 +82,6 @@ If you add the following two variables to the required variables for each applic
 |:--:|:--|:--:|:--:|:--:|:---:|
 | OpenAI API |`Required variables for each application`+ `_OPEN_AI_MODEL`,`_OPEN_AI_API`|Not free|Easy|2min|[APIOpenAI](https://github.com/dsdanielpark/ExceptNotifier/blob/main/documents/APIOpenAI/GUIDE.md)|
 
-
 <br>
 
 # Tutorial
@@ -111,18 +91,17 @@ I will update tutorial ASAP.
 2. Sub-tutorial-folder: Tutorials for each function can be found in this [folder](https://github.com/DSDanielPark/ExceptNotifier/tree/main/tutorial). The tutorial is synchronized with the Python file name provided by ExceptNotifier.
 
  **In this example, some API keys were exposed by creating and removing a test application, but for security reasons, your API key should not be exposed to the outside world.**
+
 <Br>
 
-<br>
-
-# 1. Main Features
+# Python Core
 To use the desired application, you must define the necessary variables. Ensure that the variable names remain unchanged, and you can use either local or global variables. If you are using `Telegram`, an example is attached as an image.
 
-## 1-1. Except`Notifier`
+## Except`Notifier`
 ![](https://github.com/dsdanielpark/ExceptNotifier/blob/main/assets/imgs/ex1.png)
-
 If you use Python's try except statement as it is, but change except as follows, you can receive notifications through your application.
 - Format: Except`[appName]` <Br>
+- Type: class
 *ExampleClass*
 ```
 ExceptChime, ExceptTelegram, ExceptDiscord, ExceptSMS, ExceptMail, ExceptKakao, ExceptLine, ExceptSlack, ExceptTeams, ExceptDesktope, ExceptBeep
@@ -143,7 +122,7 @@ except ExceptTelegram:    # sending except message to telegram
 ```
 
 
-## 1-2. AI Debbugging Infomation Notification
+### AI Debbugging Infomation Notification
 ![](https://github.com/dsdanielpark/ExceptNotifier/blob/main/assets/imgs/ex2.png)
 
 You can receive debugging information from ChatGPT via OpenAI's API when using the Except statement. The syntax remains the same, but you'll need to configure these two variables:
@@ -168,10 +147,11 @@ except ExceptTelegram: # sending msg WITH AI DEBUGGING to telegram
 
 <br>
 
-## 1-3. Success`Notifier`
+## Success`Notifier`
 ![](https://github.com/dsdanielpark/ExceptNotifier/blob/main/assets/imgs/ex3.png)
 
-- Format: Success`[appName]` <br>
+- Format: Success`[appName]`
+- Type: Class <br>
 *ExampleClass* <br>
 By placing the try except in python at the end of the try statement, applications can be notified that the try statement worked normally.
 ```
@@ -193,9 +173,10 @@ except:
 ```
 
 
-## 1-4. Send`Notifier`
+## Send`Notifier`
 ![](https://github.com/dsdanielpark/ExceptNotifier/blob/main/assets/imgs/ex4.png)
-- Format: Send`[appName]` <Br>
+- Format: Send`[appName]` 
+- Type: class <br>
 *ExampleClass* <br>
 Place it anywhere on the line of code you want, and you'll be notified when that line of code is reached.
 ```
@@ -215,38 +196,54 @@ noti = SendTelegram()
 noti()                    # sending message to telegram
 ```
 
-<br><br><br>
+<br>
+
+## Sender
+It is recommended to conduct a simple message sending test through the `sender`. Assuming that you can communicate with REST API or WEBHOOK normally, `ExceptNotifier` can work normally.
+- Every application's ExceptNotifier uses the sender method.
+- Format: send_`[appName]`_msg 
+- Type: Function <br>
+*Example* <br>
+```
+send_chime_msg, send_telegram_msg, send_discord_msg, send_sms_msg, send_gmail_msg, send_kakao_msg, send_line_msg, send_slack_msg, send_teams_msg, send_desktop_msg, beep
+```
+*Example*
+```python
+from ExceptNotifier import send_telegram_msg
+
+send_telegram_msg(_TELEGRAM_TOKEN, "Any Test Message")
+```
 
 
-- [Features](#features)
-  * [2. Notifier](#2-notifier)
-    + [2-1. *Telegram Notifier*](#2-1-telegram-notifier)
-      - [a. Without OpenAI API](#a-without-openai-api)
-      - [b. With OpenAI API](#b-with-openai-api)
-    + [2-2. *Mail Notifier*](#2-2-mail-notifier)
-    + [2-3. *Discord Notifier*](#2-3-discord-notifier)
-    + [2-4. *Chime Notifier*](#2-4-chime-notifier)
-    + [2-5. *Slack Notifier*](#2-5-slack-notifier)
-    + [2-6. *Line Notifier*](#2-6-line-notifier)
-    + [2-7. *SMS Notifier*](#2-7-sms-notifier)
-    + [2-8. *Teams Notifier*](#2-8-teams-notifier)
-    + [2-9. *Kakaotalk Notifier*](#2-9-kakaotalk-notifier)
-    + [2-10. *Wechat Notifier*](#2-10-wechat-notifier)
-    + [2-11. *Beep Notifier*](#2-11-beep-notifier)
-    + [2-12. *Desktop Notifier*](#2-12-desktop-notifier)
+# IPython Core
+You can use all the same except for the python code and `ExceptNotifier` mentioned above. In other words, the `SuccesNotifier`, `SendNotifier`, and `Sender` functions can all be used same in IPython without any special processing. Only `ExceptNotifier` is need to be defined.
 
-# Features
+## Except`Notifier` in Ipython
+- Format: Except[appName]
+- Type: function <br>
+*Example*
 
-## 2. Notifier
+
+
+
+
+
+
+
+
+
+
+
+# Applied in each application
 You can receive debugging information from ChatGPT via OpenAI's API when using the Except statement. The syntax remains the same, but you'll need to configure these two variables:
 `_OPEN_AI_MODEL`,`_OPEN_AI_API`
 
 
 <small><i><a href='http://ecotrust-canada.github.io/markdown-toc/'>Table of contents generated with markdown-toc</a></i></small>
 
+<br>
 
-
-### 2-1. *Telegram Notifier*
+## *Telegram*
 As all classes function the same, the example will only use one image, like in Telegram.
 ![](https://github.com/dsdanielpark/ExceptNotifier/blob/main/assets/imgs/fig44.png)
 - a. Open your telegram app and search for BotFather. (A built-in Telegram bot that helps users create custom Telegram bots) <br>
@@ -255,7 +252,8 @@ As all classes function the same, the example will only use one image, like in T
 - d. Copy your new Telegram bot’s token <br>
 - e. You have to click `Start_bot` and must enter anything to your bot.
    - Before use Notifier, Please use this to check if you follow guide. The Telegram bot may have a slight delay and it responded within 2-3 minutes.
-```
+
+```python
 from ExceptNotifier import send_telegram_msg
 
 _TELEGRAM_TOKEN = "xxxxx:xxxxx-xxxx"
@@ -265,15 +263,13 @@ send_telegram_msg(_TELEGRAM_TOKEN, 'msg')
 For more infomation, visit [Telegram Bot Father API](https://core.telegram.org/bots/api)
 <br><br>
  
-#### a. Without OpenAI API
-
+### a. Notifier without OpenAI API
 
 ```python
 from ExceptNotifier import ExceptTelegram, SuccessTelegram, SendTelegram
 import sys, os
 sys.excepthook = ExceptTelegram.__call__
 os.environ['_TELEGRAM_TOKEN'] = "xxxx"
-
 
 try:
     print(1/0)  
@@ -286,7 +282,7 @@ SendTelegram().__call__()        #3. customized sender
 ```
 
 
-#### b. With OpenAI API
+### b. Notifier with OpenAI API
 - If you just set `_OPEN_AI_API` and `_OPEN_AI_MODEL` environment variables in all application use case, AI MODEL will automatically send debugging information as a message. Currently, it is mainly based on the `GPT-3.5-TURBO` model, but we plan to update it so that other models can be used later.
 ```python
 from ExceptNotifier import ExceptTelegram, SuccessTelegram, SendTelegram
@@ -308,7 +304,7 @@ SendTelegram().__call__()        #3. customized sender
 ```
 <br>
 
-### 2-2. *Mail Notifier*
+## *Mail*
 In the except statement, an email is sent along with the error message. Additionally, you can send emails from any desired line. <br>
 - a. Log in with the sender's email ID. <br>
 - b. Obtain an app password for sending Google Mail at the following [link](https://myaccount.google.com/u/3/apppasswords?utm_source=google-account&utm_medium=myaccountsecurity&utm_campaign=tsv-settings&rapt=AEjHL4N2bMRWO46VaMp_jP06zQK14BWNPv66l2o59iJ99CkO8BjYnmoRUe9dtSchkkbubHZMUhevkAnwVJRHb9ygO3afispNlw) or [google document](https://support.google.com/accounts/answer/185833?hl=en). 
@@ -390,7 +386,7 @@ SendMail().__call__()
 
 <br>
 
-### 2-3. *Discord Notifier*
+## *Discord Notifier*
 - a. Select the channel to receive notifications.
 - b. Click "Edit Channel" in the upper right corner of the chat window.
 - c. Click Integrations - Webhook - New Webhook.
@@ -418,7 +414,7 @@ SendDiscord().__call__()        #3 customized sender
 
 <br>
 
-### 2-4. *Chime Notifier*
+## *Chime Notifier*
 - a. Select the Chat room to receive notifications.
 - b. Click "Room Setting" in the upper right corner.
 - c. Click "Manage Webhook and bot."
@@ -444,7 +440,7 @@ SendChime().__call__()        #3 customized sender
 ```
 <br>
 
-### 2-5. *Slack Notifier*
+## *Slack Notifier*
 - a. visit https://api.slack.com/
 - b. `Create an app` - `From scratch` - `Create App`
 - c. Add webhook: Click `Incoming Webhooks` - Activate Incomming `On` - Add New Webhook to Workspace
@@ -470,7 +466,7 @@ SendSlack().__call__()        #3 customized sender
 ```
 <Br>
 
-### 2-6. *Line Notifier*
+## *Line Notifier*
 - a. Register [https://notify-bot.line.me/](https://notify-bot.line.me/)
 - b. Go to mypage [https://notify-bot.line.me/my/](https://notify-bot.line.me/my/)
 - c. Click `Generate Token`, enter Service Name and click `1-on-1 chat with LINE` (anything you like)
@@ -497,7 +493,7 @@ SendLine().__call__()        #3 customized sender
 
 <Br>
 
-### 2-7. *SMS Notifier*
+## *SMS Notifier*
 - a. Sign up for Twilio. [https://www.twilio.com/en-us](https://www.twilio.com/en-us)
 - b. Click Console in the upper right corner.
 - c. Copy the variables provided in the console.
@@ -525,7 +521,7 @@ SendSMS().__call__()        #3 customized sender
 ```
 <Br>
 
-### 2-8. *Teams Notifier*
+## *Teams Notifier*
 - a. Create the channel that you want to notify.
 - b. App - Search: webhook - Incoming Webhook [https://teams.microsoft.com/l/app/203a1e2c-26cc-47ca-83ae-be98f960b6b2?source=app-details-dialog](https://teams.microsoft.com/l/app/203a1e2c-26cc-47ca-83ae-be98f960b6b2?source=app-details-dialog)
 - c. Click `Request Approval` <br>
@@ -555,7 +551,7 @@ SendTeams().__call__()        #3 customized sender
 
 <Br>
 
-### 2-9. *Kakaotalk Notifier*
+## *Kakaotalk Notifier*
 - a. Sign up at the following site: [https://developers.kakao.com/](https://developers.kakao.com/)
 - b. Click `My Application` on the top bar.
 - c. Click `Add an application`, set a name, and create it.
@@ -587,7 +583,7 @@ SendKakao().__call__()        #3 customized sender
 ```
 
 
-### 2-10. *Wechat Notifier*
+## *Wechat Notifier*
 a. Get Webhook URL by visiting [here](https://work.weixin.qq.com/api/doc/90000/90136/91770)
 
 ```python
@@ -611,7 +607,7 @@ SendWechat().__call__()        #3 customized sender
 
 <Br>
 
-### 2-11. *Beep Notifier*
+## *Beep Notifier*
 No setup is required. Use as follows.
 
 ```python
@@ -635,7 +631,7 @@ beep()
 <Br>
 
 
-### 2-12. *Desktop Notifier*
+## *Desktop Notifier*
 No setup is required. Use as follows.
 
 ```python
@@ -657,17 +653,8 @@ SendDesktop().__call__()        #3 customized sender
 
 <br>
 
-## 3. Sender
-In order to emphasize ExceptNotifier, the sender is configured in Table of Contents No. 3, but in reality, it is recommended to conduct a simple message sending test through the sender. Assuming that you can communicate with API or WEBHOOK normally, ExceptNotifier can work normally.
-- Every application's ExceptNotifier uses the sender method.
-- Format: send_`[appName]`_msg
 
-### 3-1. *Telegram Sender*
-```python
-from ExceptNotifier import send_telegram_msg
 
-send_telegram_msg(_TELEGRAM_TOKEN, "Any Test Message")
-```
 
 ### 3-2. *Mail Sender*
 ```python
