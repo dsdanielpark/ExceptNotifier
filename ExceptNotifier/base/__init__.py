@@ -14,6 +14,7 @@ from ExceptNotifier.base.sms_sender import send_sms_msg
 from ExceptNotifier.base.beep_sender import beep
 from ExceptNotifier.base.openai_receiver import receive_openai_advice
 from ExceptNotifier.base.wechat_sender import send_wechat_msg
+from ExceptNotifier.base.openai_receiver import get_resp_openai_advice
 
 
 __all__ = [
@@ -30,7 +31,7 @@ __all__ = [
     "send_whatsapp_msg",
     "send_sms_msg",
     "beep",
-    "receive_openai_advice",
+    "receive_openai_advice", "get_resp_openai_advice"
 ]
 
 __version__ = "0.1.17"
