@@ -6,7 +6,7 @@ import datetime
 DATE_FORMAT = "%Y-%m-%d %H:%M:%S"
 
 
-def ExceptTelegramIpython(shell, etype, evalue, tb):
+def ExceptTelegramIpython(shell, etype, evalue, tb, tb_offset=1):
     """ExceptNotifier function for overriding custom execute in ipython
 
     :param shell: Excecuted shell 
@@ -18,8 +18,8 @@ def ExceptTelegramIpython(shell, etype, evalue, tb):
     :param tb: TraceBack
     :type tb: _type_
     """
-    itb = AutoFormattedTB(mode = 'Plain')
-    shell.showtraceback(etype, evalue, tb)
+    itb = AutoFormattedTB(mode = 'Plain', tb_offset = 1)
+    shell.showtraceback((etype, evalue, tb), tb_offset=tb_offset)
     stb = itb.structured_traceback(etype, evalue, tb)
     sstb = itb.stb2text(stb)
     start_time = datetime.datetime.now()

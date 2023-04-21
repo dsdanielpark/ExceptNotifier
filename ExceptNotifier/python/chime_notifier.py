@@ -151,6 +151,7 @@ class SendChime:
 
 # if __name__ == "__main__":
 
+#     # Get your slcak bot and enter _CHIME_WEBHOOK_URL
 #     """Get your Webhook _CHIME_WEBHOOK_URL from your chatroom.
 #     https://docs.aws.amazon.com/chime/latest/ag/webhooks.html"""
 
