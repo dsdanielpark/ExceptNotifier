@@ -265,8 +265,6 @@ You can receive debugging information from ChatGPT via OpenAI's API when using t
 `_OPEN_AI_MODEL`,`_OPEN_AI_API`
 
 
-<small><i><a href='http://ecotrust-canada.github.io/markdown-toc/'>Table of contents generated with markdown-toc</a></i></small>
-
 <br>
 
 ## *Telegram*
