@@ -40,6 +40,9 @@ Typically, in Python, variable names are mangled by adding a double underscore p
 
 <br>
 
+# Python and IPython
+I tried to keep the same structure for both Python and Ipython, but I noticed that the behavior of traceback and ExceptBase is slightly different. Significant development has already been carried out with a focus on operation in Python, and it was confirmed that some of the return values ​​are different because IPython's traceback message inevitably includes information about the cell. So we construct a new class to override in IPython. A brush that can be integrated for this
+
 
 # Release note
 |Version|Description|
@@ -61,7 +64,7 @@ Typically, in Python, variable names are mangled by adding a double underscore p
 
 
 # QA Note
-
+QA tests are carried out from Python 3.6 to Python 3.9 environments through Windows, MacBook m1, and Google Colab, focusing on Telegram, Discord, Slack, Line, and Chime applications. QA for the rest proceeds whenever there is a request or whenever I have time to spare, and replaces it with responding to bug reports. After the QA test is conducted, we plan to raise the development stage and recruit QA testers by promoting it.
 
 <br>
 
