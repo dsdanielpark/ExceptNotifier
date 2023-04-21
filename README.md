@@ -97,6 +97,7 @@ I will update tutorial ASAP.
 # Python Core
 To use the desired application, you must define the necessary variables. Ensure that the variable names remain unchanged, and you can use either local or global variables. If you are using `Telegram`, an example is attached as an image.
 
+
 ## Except`Notifier`
 ![](https://github.com/dsdanielpark/ExceptNotifier/blob/main/assets/imgs/ex1.png)
 If you use Python's try except statement as it is, but change except as follows, you can receive notifications through your application.
@@ -145,8 +146,6 @@ except ExceptTelegram: # sending msg WITH AI DEBUGGING to telegram
 ```
 
 
-<br>
-
 ## Success`Notifier`
 ![](https://github.com/dsdanielpark/ExceptNotifier/blob/main/assets/imgs/ex3.png)
 
@@ -172,8 +171,6 @@ except:
     sys.exit()
 ```
 
-<br>
-
 ## Send`Notifier`
 ![](https://github.com/dsdanielpark/ExceptNotifier/blob/main/assets/imgs/ex4.png)
 - Format: Send`[appName]` 
@@ -197,7 +194,6 @@ noti = SendTelegram()
 noti()                    # sending message to telegram
 ```
 
-<br>
 
 ## Sender
 It is recommended to conduct a simple message sending test through the `sender`. Assuming that you can communicate with REST API or WEBHOOK normally, `ExceptNotifier` can work normally.
@@ -220,8 +216,7 @@ send_telegram_msg(_TELEGRAM_TOKEN, "Any Test Message")
 
 # IPython Core
 You can use all the same except for the python code and `ExceptNotifier` mentioned above. In other words, the `SuccesNotifier`, `SendNotifier`, and `Sender` functions can all be used same in IPython without any special processing. Only `ExceptNotifier` is need to be defined.
-
-<br>
+- Example in Telegram [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/drive/1jwWGs7eCUJQvj_g7SEMqm3a4Kdrp9ZQP?usp=sharing) 
 
 ## Except`Notifier` in Ipython
 - Format: Except[appName]
@@ -275,6 +270,7 @@ You can receive debugging information from ChatGPT via OpenAI's API when using t
 <br>
 
 ## *Telegram*
+[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/drive/1jwWGs7eCUJQvj_g7SEMqm3a4Kdrp9ZQP?usp=sharing) 
 As all classes function the same, the example will only use one image, like in Telegram.
 ![](https://github.com/dsdanielpark/ExceptNotifier/blob/main/assets/imgs/fig44.png)
 - a. Open your telegram app and search for BotFather. (A built-in Telegram bot that helps users create custom Telegram bots) <br>

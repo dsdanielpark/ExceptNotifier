@@ -95,7 +95,7 @@ class ExceptMail(BaseException):
             advice_msg += receive_openai_advice(
                 os.environ["_OPEN_AI_MODEL"],
                 os.environ["_OPEN_AI_API"],
-                error_message[:150],
+                error_message,
             )  # NO-QA
             exceptNotifier = {
                 "TO": os.environ["_GAMIL_RECIPIENT_ADDR"],

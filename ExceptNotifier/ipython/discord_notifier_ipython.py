@@ -1,11 +1,11 @@
 from IPython.core.ultratb import AutoFormattedTB
-from ExceptNotifier import send_telegram_msg, receive_openai_advice
+from ExceptNotifier import send_discord_msg, receive_openai_advice
 import os
 import datetime
 DATE_FORMAT = "%Y-%m-%d %H:%M:%S"
 
 
-def ExceptTelegramIpython(shell, etype, evalue, tb, tb_offset=1):
+def ExceptDiscordIpython(shell, etype, evalue, tb, tb_offset=1):
     """ExceptNotifier function for overriding custom execute in ipython
 
     :param shell: Excecuted shell 
@@ -24,14 +24,14 @@ def ExceptTelegramIpython(shell, etype, evalue, tb, tb_offset=1):
     stb = itb.structured_traceback(etype, evalue, tb)
     sstb = itb.stb2text(stb)
     start_time = datetime.datetime.now()
-    data = {'text' : f"[Except Notifier] ⚠️ Error! Python Code Exception Detected \n \n\nIMPORTANT WARNING \nPython Exception Detected in Your Code. \n\nHi there, \nThis is an exception catch notifier. \n\n - ☑️ Code Status: Fail.🛠 \n - ☑️ Detail: Python Code Ran Exceptions. \n - 🕐 Time: {start_time.strftime(DATE_FORMAT)} \n\n ⛔️ {sstb}" }
+    data = {'text' : f"[Except Notifier] :warning: Error! Python Code Exception Detected \n\nIMPORTANT WARNING \nPython Exception Detected in Your Code. \n\nHi there, \nThis is an exception catch notifier. \n\n - :x: Code Status: Fail. \n - :x: Detail: Python Code Ran Exceptions. \n - :clock2: Time: {start_time.strftime(DATE_FORMAT)} \n\n :no_entry:  {sstb}" }
     
-    send_telegram_msg(os.environ['_TELEGRAM_TOKEN'], data['text'])
+    send_discord_msg(os.environ['_DISCORD_WEBHOOK_URL'], data['text'])
 
     try:
         error_message = f"error sheel=={shell}, error_type_document=={etype.__doc__}, error_value=={evalue}, error message in ipython cell=={sstb}"
         advice_msg = receive_openai_advice(os.environ["_OPEN_AI_MODEL"], os.environ["_OPEN_AI_API"], error_message)
-        send_telegram_msg(os.environ["_TELEGRAM_TOKEN"], advice_msg)
+        send_discord_msg(os.environ["_DISCORD_WEBHOOK_URL"], advice_msg)
 
     except Exception as e:
         print(e)
