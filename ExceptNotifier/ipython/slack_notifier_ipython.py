@@ -25,7 +25,7 @@ def ExceptSlackIpython(shell, etype, evalue, tb, tb_offset=1):
     stb = itb.structured_traceback(etype, evalue, tb)
     sstb = itb.stb2text(stb)
     start_time = datetime.datetime.now()
-    data = {'text' : f"[Except Notifier] :warning: Error! Python Code Exception Detected \n IMPORTANT WARNING \nPython Exception Detected in Your Code. \n\nHi there, \nThis is an exception catch notifier. \n\n - :x: Code Status: Fail. \n - :large_red_square: Detail: Python Code Ran Exceptions. \n - :clock2: Time: {start_time.strftime(DATE_FORMAT)} \n\n :no_entry:  {sstb}" }
+    data = {'text' : f"[Except Notifier] :warning: Error! Python Code Exception Detected \n IMPORTANT WARNING \nPython Exception Detected in Your Code. \n\nHi there, \nThis is an exception catch notifier. \n\n - :x: Code Status: Fail. \n - :x: Detail: Python Code Ran Exceptions. \n - :clock2: Time: {start_time.strftime(DATE_FORMAT)} \n\n :no_entry:  {sstb}" }
     
     send_slack_msg(os.environ["_SLACK_WEBHOOK_URL"], data["text"])
 

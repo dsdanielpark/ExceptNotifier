@@ -33,7 +33,7 @@ class ExceptSlack(BaseException):
 
         exceptNotifier = {
             "SUBJECT": "[Except Notifier] :warning: Error! Python Code Exception Detected",
-            "BODY": f"\n\nIMPORTANT WARNING \nPython Exception Detected in Your Code. \n\nHi there, \nThis is an exception catch notifier. \n\n - :x: Code Status: Fail. \n - :large_red_square: Detail: Python Code Ran Exceptions. \n - :clock2: Time: {start_time.strftime(DATE_FORMAT)} \n\n :no_entry: {excType}: %{etype.__doc__}\n\n {value} \n\n",
+            "BODY": f"\n\nIMPORTANT WARNING \nPython Exception Detected in Your Code. \n\nHi there, \nThis is an exception catch notifier. \n\n - :x: Code Status: Fail. \n - :x: Detail: Python Code Ran Exceptions. \n - :clock2: Time: {start_time.strftime(DATE_FORMAT)} \n\n :no_entry: {excType}: %{etype.__doc__}\n\n {value} \n\n",
         }
         for line in traceback.extract_tb(tb):
             exceptNotifier["BODY"] += '\tFile: "%s"\n\t\t%s %s: %s\n' % (
