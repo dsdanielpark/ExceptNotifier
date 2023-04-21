@@ -287,6 +287,7 @@ SendTelegram().__call__()        #3. customized sender
 
 
 #### b. With OpenAI API
+- If you just set `_OPEN_AI_API` and `_OPEN_AI_MODEL` environment variables in all application use case, AI MODEL will automatically send debugging information as a message. Currently, it is mainly based on the `GPT-3.5-TURBO` model, but we plan to update it so that other models can be used later.
 ```python
 from ExceptNotifier import ExceptTelegram, SuccessTelegram, SendTelegram
 import sys, os
