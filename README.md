@@ -99,7 +99,7 @@ To use the desired application, you must define the necessary variables. Ensure 
 
 
 ## Except`Notifier`
-![](https://github.com/dsdanielpark/ExceptNotifier/blob/main/assets/imgs/pyex1.png)
+![](https://github.com/dsdanielpark/ExceptNotifier/blob/main/assets/imgs/ex1.png)
 If you use Python's try except statement as it is, but change except as follows, you can receive notifications through your application.
 - Format: Except`[appName]` <Br>
 - Type: class
@@ -124,7 +124,7 @@ except ExceptTelegram:    # sending except message to telegram
 
 
 ### AI Debbugging Infomation Notification
-![](https://github.com/dsdanielpark/ExceptNotifier/blob/main/assets/imgs/pyex2.png)
+![](https://github.com/dsdanielpark/ExceptNotifier/blob/main/assets/imgs/ex2.png)
 
 You can receive debugging information from ChatGPT via OpenAI's API when using the Except statement. The syntax remains the same, but you'll need to configure these two variables:
 `_OPEN_AI_MODEL`,`_OPEN_AI_API`
@@ -147,7 +147,7 @@ except ExceptTelegram: # sending msg WITH AI DEBUGGING to telegram
 
 
 ## Success`Notifier`
-![](https://github.com/dsdanielpark/ExceptNotifier/blob/main/assets/imgs/pyex3.png)
+![](https://github.com/dsdanielpark/ExceptNotifier/blob/main/assets/imgs/ex3.png)
 
 - Format: Success`[appName]`
 - Type: Class <br>
@@ -172,7 +172,7 @@ except:
 ```
 
 ## Send`Notifier`
-![](https://github.com/dsdanielpark/ExceptNotifier/blob/main/assets/imgs/pyex4.png)
+![](https://github.com/dsdanielpark/ExceptNotifier/blob/main/assets/imgs/ex4.png)
 - Format: Send`[appName]` 
 - Type: class <br>
 *ExampleClass* <br>
@@ -196,6 +196,7 @@ noti()                    # sending message to telegram
 
 
 ## Sender
+![](https://github.com/dsdanielpark/ExceptNotifier/blob/main/assets/imgs/ex5.png)
 It is recommended to conduct a simple message sending test through the `sender`. Assuming that you can communicate with REST API or WEBHOOK normally, `ExceptNotifier` can work normally.
 - Every application's ExceptNotifier uses the sender method.
 - Format: send_`[appName]`_msg 
@@ -219,10 +220,12 @@ You can use all the same except for the python code and `ExceptNotifier` mention
 - Example in Telegram [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/drive/1jwWGs7eCUJQvj_g7SEMqm3a4Kdrp9ZQP?usp=sharing) 
 
 ## Except`Notifier` in Ipython
+You have to use `raise` in Ipython ExceptNotifier.
 - Format: Except[appName]
 - Type: function <br>
 
 *Example code without Open AI API*
+![](https://github.com/dsdanielpark/ExceptNotifier/blob/main/assets/imgs/ex1.png)
 ```python
 from ExceptNotifier import ExceptTelegramIpython
 import os
@@ -236,6 +239,7 @@ except:
 ```
 
 *Example code With Open AI API*
+![](https://github.com/dsdanielpark/ExceptNotifier/blob/main/assets/imgs/ex2.png)
 ```python
 from ExceptNotifier import ExceptTelegramIpython
 import os
@@ -252,11 +256,44 @@ except:
 ```
 
 ## Success`Notifier` in Ipython
+![](https://github.com/dsdanielpark/ExceptNotifier/blob/main/assets/imgs/ip3.png)
 - Same syntax in Python. See Python Core above.
+```python
+import sys
+import os
+from ExceptNotifier import SuccessTelegram
+os.environ['_TELEGRAM_TOKEN'] = "xxxxx"
+
+try:
+  print(1/20) # Your Code Here
+  SuccessTelegram().__call__()    # Sending Success message
+except:
+  raise
+```
+
+
 ## Send`Notifier` in Ipython
+![](https://github.com/dsdanielpark/ExceptNotifier/blob/main/assets/imgs/ip4.png)
 - Same syntax in Python. See Python Core above.
+```
+import sys
+import os
+from ExceptNotifier import SendTelegram 
+os.environ['_TELEGRAM_TOKEN'] = "xxxxx"
+
+SendTelegram().__call__()         # Sending telegram message
+```
+
 ## Sender in Ipython
+![](https://github.com/dsdanielpark/ExceptNotifier/blob/main/assets/imgs/ip5.png)
 - Same syntax in Python. See Python Core above.
+```python
+from ExceptNotifier import send_telegram_msg
+
+_TELEGRAM_TOKEN =  "xxxxx"
+
+send_telegram_msg(_TELEGRAM_TOKEN, "This is test message")
+```
 
 <br>
 
