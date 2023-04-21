@@ -14,4 +14,5 @@ def send_wechat_msg(_WECHAT_WEBHOOK_URL: str, msg: str) -> None:
     """
     msg_template = {"msgtype": "text", "text": {"content": ""}}
     msg_template["text"]["content"] = "\n".join(msg)
-    requests.post(_WECHAT_WEBHOOK_URL, json=msg_template)
+    resp = requests.post(_WECHAT_WEBHOOK_URL, json=msg_template)
+    return resp
