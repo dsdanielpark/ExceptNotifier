@@ -225,7 +225,9 @@ You have to use `raise` in Ipython ExceptNotifier.
 - Type: function <br>
 
 *Example code without Open AI API*
-![](https://github.com/dsdanielpark/ExceptNotifier/blob/main/assets/imgs/ipy1.png)
+
+![](https://github.com/dsdanielpark/ExceptNotifier/blob/main/assets/imgs/ipyex1.png)
+
 ```python
 from ExceptNotifier import ExceptTelegramIpython
 import os
@@ -239,7 +241,9 @@ except:
 ```
 
 *Example code With Open AI API*
-![](https://github.com/dsdanielpark/ExceptNotifier/blob/main/assets/imgs/ipy2.png)
+
+![](https://github.com/dsdanielpark/ExceptNotifier/blob/main/assets/imgs/ipyex2.png)
+
 ```python
 from ExceptNotifier import ExceptTelegramIpython
 import os
@@ -256,7 +260,7 @@ except:
 ```
 
 ## Success`Notifier` in Ipython
-![](https://github.com/dsdanielpark/ExceptNotifier/blob/main/assets/imgs/ipy3.png)
+![](https://github.com/dsdanielpark/ExceptNotifier/blob/main/assets/imgs/ipyex3.png)
 - Same syntax in Python. See Python Core above.
 ```python
 import sys
@@ -273,9 +277,11 @@ except:
 
 
 ## Send`Notifier` in Ipython
-![](https://github.com/dsdanielpark/ExceptNotifier/blob/main/assets/imgs/ipy4.png)
+
+![](https://github.com/dsdanielpark/ExceptNotifier/blob/main/assets/imgs/ipyex4.png)
+
 - Same syntax in Python. See Python Core above.
-```
+```python
 import sys
 import os
 from ExceptNotifier import SendTelegram 
@@ -285,7 +291,9 @@ SendTelegram().__call__()         # Sending telegram message
 ```
 
 ## Sender in Ipython
-![](https://github.com/dsdanielpark/ExceptNotifier/blob/main/assets/imgs/ipy5.png)
+
+![](https://github.com/dsdanielpark/ExceptNotifier/blob/main/assets/imgs/ipyex5.png)
+
 - Same syntax in Python. See Python Core above.
 ```python
 from ExceptNotifier import send_telegram_msg
