@@ -283,7 +283,7 @@ As all classes function the same, the example will only use one image, like in T
 - d. Copy your new Telegram bot’s token <br>
 - e. You have to click `Start_bot` and must enter anything to your bot.
    - Before use Notifier, Please use this to check if you follow guide. The Telegram bot may have a slight delay and it responded within 2-3 minutes.
-
+*API TEST*
 ```python
 from ExceptNotifier import send_telegram_msg
 
@@ -295,7 +295,7 @@ For more infomation, visit [Telegram Bot Father API](https://core.telegram.org/b
 <br><br>
  
 ### a. Notifier without OpenAI API
-
+*Notifier*
 ```python
 from ExceptNotifier import ExceptTelegram, SuccessTelegram, SendTelegram
 import sys, os
@@ -315,6 +315,7 @@ SendTelegram().__call__()        #3. customized sender
 
 ### b. Notifier with OpenAI API
 - If you just set `_OPEN_AI_API` and `_OPEN_AI_MODEL` environment variables in all application use case, AI MODEL will automatically send debugging information as a message. Currently, it is mainly based on the `GPT-3.5-TURBO` model, but we plan to update it so that other models can be used later.
+*Notifier*
 ```python
 from ExceptNotifier import ExceptTelegram, SuccessTelegram, SendTelegram
 import sys, os
@@ -340,7 +341,7 @@ In the except statement, an email is sent along with the error message. Addition
 - a. Log in with the sender's email ID. <br>
 - b. Obtain an app password for sending Google Mail at the following [link](https://myaccount.google.com/u/3/apppasswords?utm_source=google-account&utm_medium=myaccountsecurity&utm_campaign=tsv-settings&rapt=AEjHL4N2bMRWO46VaMp_jP06zQK14BWNPv66l2o59iJ99CkO8BjYnmoRUe9dtSchkkbubHZMUhevkAnwVJRHb9ygO3afispNlw) or [google document](https://support.google.com/accounts/answer/185833?hl=en). 
 
-
+*API TEST*
 ```python
 from ExceptNotifier import send_gmail_msg
 
@@ -357,7 +358,7 @@ send_gmail_msg(
     subject_msg,
     body_msg)
 ```
-
+*Notifier*
 ```python
 import sys, os
 from ExceptNotifier import ExceptMail, SuccessMail, SendMail
@@ -440,13 +441,13 @@ SendMail().__call__()
 - b. Click "Edit Channel" in the upper right corner of the chat window.
 - c. Click Integrations - Webhook - New Webhook.
 - d. Then click Copy Webhook.
-
+*API TEST*
 ```python
 from ExceptNotifier import send_discord_msg
 
 send_discord_msg(_DISCORD_WEBHOOK_URL, "Any Test Message") 
 ```
-
+*Notifier*
 ```python
 import sys, os
 from ExceptNotifier import ExceptDiscord, SuccessDiscord, SendDiscord
@@ -474,14 +475,14 @@ SendDiscord().__call__()        #3 customized sender
 - b. Click "Room Setting" in the upper right corner.
 - c. Click "Manage Webhook and bot."
 - d. Create Add Webhook, set it up, then click Copy Webhook.
-
+*API TEST*
 ```python
 from ExceptNotifier import send_chime_msg
 
 send_chime_msg(_CHIME_WEBHOOK_URL, "Any Test Message")
 
 ```
-
+*Notifier*
 ```python
 import sys, os
 from ExceptNotifier import SuccessChime, ExceptChime, SendChime
@@ -508,13 +509,13 @@ SendChime().__call__()        #3 customized sender
 - b. `Create an app` - `From scratch` - `Create App`
 - c. Add webhook: Click `Incoming Webhooks` - Activate Incomming `On` - Add New Webhook to Workspace
 - d. Copy `Webhook URL`
-
+*API TEST*
 ```python
 from ExceptNotifier import send_slack_msg
 
 send_slack_msg(_SLACK_WEBHOOK_URL, "Any Test Message")
 ```
-
+*Notifier*
 ```python
 import sys
 from ExceptNotifier import ExceptSlack, SuccessSlcak, SendSlack
@@ -541,14 +542,14 @@ SendSlack().__call__()        #3 customized sender
 - c. Click `Generate Token`, enter Service Name and click `1-on-1 chat with LINE` (anything you like)
 - d. Copy Token.
 
-
-### 3-6. *Line Sender*
+*API TEST*
 ```python
 from ExceptNotifier import send_line_msg
 
 send_line_msg(_LINE_NOTIFY_API_TOKEN:, "Any Test Message")
 ```
 
+*Notifier*
 ```python
 import sys
 from ExceptNotifier import ExceptLine, SuccessLine, SendLine
@@ -576,7 +577,7 @@ SendLine().__call__()        #3 customized sender
 - c. Copy the variables provided in the console.
 
 
-### 3-7. *SMS Sender*
+*API TEST*
 ```python
 from ExceptNotifier import send_sms_msg
 
@@ -593,7 +594,7 @@ send_sms_msg(
     "Any Test Message")
 ```
 
-
+*Notifier*
 ```python
 import sys
 from ExceptNotifier import ExceptSMS, SuccessSMS, SendSMS
@@ -627,7 +628,7 @@ Microsoft Teams allows limited application access per organization, so it can on
 - d. `Connectors` After configuring webhook incoming in Connector, copy the webhook URL.
 
 
-### 3-8. *Teams Sender*
+*API TEST*
 ```python
 from ExceptNotifier import send_teams_msg
 
@@ -636,7 +637,7 @@ _TEAMS_WEBHOOK_URL = 'xxxx'
 send_teams_msg(_TEAMS_WEBHOOK_URL, "Any Test Message")
 ```
 
-
+*Notifier*
 ```python
 import sys
 from ExceptNotifier import ExceptTeams, SuccessTeams, SendTeams
@@ -669,6 +670,7 @@ SendTeams().__call__()        #3 customized sender
 - h. If you have successfully completed all of the above steps, go to the following document and follow the instructions:
  https://github.com/dsdanielpark/ExceptNotifier/blob/main/tutorials/kakao_token_generator.ipynb
 
+*API TEST*
 ```python
 from ExceptNotifier import send_kakao_msg
 
@@ -676,7 +678,7 @@ _KAKAO_TOKEN_PATH = 'xxx/xx/xxx.json'
 
 send_kakao_msg(_KAKAO_TOKEN_PATH, msg)
 ```
-
+*Notifier*
 ```python
 import sys
 from ExceptNotifier import ExceptKakao, SuccessKakao, SendKakao
@@ -699,13 +701,13 @@ SendKakao().__call__()        #3 customized sender
 
 ## *Wechat*
 a. Get Webhook URL by visiting [here](https://work.weixin.qq.com/api/doc/90000/90136/91770)
-
+*API TEST*
 ```python
 from ExceptNotifier import send_wechat_msg
 
 send_wechat_msg(_WECHAT_WEBHOOK_URL, msg)
 ```
-
+*Notifier*
 ```python
 import sys
 from ExceptNotifier import ExceptWechat, SuccessWechat, SendWechat
@@ -729,13 +731,13 @@ SendWechat().__call__()        #3 customized sender
 
 ## *Beep*
 No setup is required. Use as follows.
-
+*TEST*
 ```python
 from ExceptNotifier import beep
 
 beep(sec=1, freq=1000) 
 ```
-
+*Notifier*
 ```python
 from Exceptnotifier import ExceptBeep, SuccessBeep, SendBeep(), beep()
 os.environ['BEEP_TIME'] = 1
@@ -759,7 +761,7 @@ beep()
 
 ## *Desktop*
 No setup is required. Use as follows.
-
+*TEST*
 ```python
 from ExceptNotifier import send_desktop_msg
 
@@ -769,7 +771,7 @@ DISP_TIME = 5
 
 send_desktop_msg(title_msg, body_msg, DISP_TIME)
 ```
-
+*Notifier*
 ```python
 from ExceptNotifier import ExceptDesktop, SuccessDesktop, SendDesktop
 sys.excepthook = ExceptDesktop.__call__
