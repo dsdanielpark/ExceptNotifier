@@ -1,5 +1,5 @@
 from ExceptNotifier.python.mail_notifier import SuccessMail, ExceptMail, SendMail
-from ExceptNotifier.python.slack_notifier import SuccessSlcak, ExceptSlack, SendSlack
+from ExceptNotifier.python.slack_notifier import SuccessSlack, ExceptSlack, SendSlack
 from ExceptNotifier.python.telegram_notifier import SuccessTelegram, ExceptTelegram, SendTelegram
 from ExceptNotifier.python.chime_notifier import SuccessChime, ExceptChime, SendChime
 from ExceptNotifier.python.discord_notifier import SuccessDiscord, ExceptDiscord, SendDiscord
@@ -15,7 +15,7 @@ __all__ = [
     "SuccessMail",
     "ExceptMail",
     "SendMail",
-    "SuccessSlcak",
+    "SuccessSlack",
     "ExceptSlack",
     "SendSlack",
     "SuccessTelegram",

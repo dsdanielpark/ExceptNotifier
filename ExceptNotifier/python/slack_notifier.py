@@ -103,7 +103,7 @@ class ExceptSlack(BaseException):
         return resp
 
 
-class SuccessSlcak:
+class SuccessSlack:
     def __init__(self) -> None:
         pass
 
@@ -143,7 +143,7 @@ class SendSlack:
 
 # if __name__ == "__main__":
 
-#     # Get your slcak bot and enter _SLACK_WEBHOOK_URL
+#     # Get your slack bot and enter _SLACK_WEBHOOK_URL
 #     """Get your _SLACK_WEBHOOK_URL from HERE.
 #     https://api.slack.com/messaging/webhooks#create_a_webhook"""
 
@@ -154,7 +154,7 @@ class SendSlack:
 
 #     try:
 #         print(1 / 0)
-#         SuccessSlcak().__call__()  # 1 success sender
+#         SuccessSlack().__call__()  # 1 success sender
 
 #     except ExceptSlack as e:  # 2 except sender
 #         sys.exit()
