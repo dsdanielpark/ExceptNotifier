@@ -119,7 +119,7 @@ class SuccessSlack:
         ] = f"\n\nHi there, \nThis is a success notifier.\n\n - :white_check_mark: Code Status: Success. \n - :white_check_mark: Detail: Python Code Ran Without Exceptions. \n - :clock2: Time: {start_time.strftime(DATE_FORMAT)} \n\nI just wanted to let you know that your Python code has run successfully without any exceptions. \n\nAll the best, \nExcept Notifier https://github.com/dsdanielpark/ExceptNotifier"
 
         data = {"text": exceptNotifier["SUBJECT"] + exceptNotifier["BODY"]}
-        send_slack_msg(os.environ["_SLACK_WEBHOOK_URL"], data)
+        send_slack_msg(os.environ["_SLACK_WEBHOOK_URL"], data['text'])
 
 
 class SendSlack:
