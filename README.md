@@ -557,12 +557,12 @@ SendTeams().__call__()        #3 customized sender
 
 ### 2-9. *Kakaotalk Notifier*
 - a. Sign up at the following site: [https://developers.kakao.com/](https://developers.kakao.com/)
-- b. Click "My Application" on the top bar.
-- c. Click "Add an application," set a name, and create it.
-- d. Click "Kakao Login" in the left menu, then change the State of "Kakao Login Activation" to ON on the resulting page.
-- e. In My Application > Product Settings > Kakao Login, be sure to set Redirect URI as follows: [https://example.com/oauth](https://example.com/oauth)
-- f. In the left Consent Items menu, set "Send message in KakaoTalk" to selective agreement.
-- g. Copy the REST API Key in My Application > App Settings > Summary, and go to the following document.
+- b. Click `My Application` on the top bar.
+- c. Click `Add an application`, set a name, and create it.
+- d. Click `Kakao Login` in the left menu, then change the State of `Kakao Login Activation` to ON on the resulting page.
+- e. In `My Application > Product Settings > Kakao Login`, be sure to set `Redirect URI` as follows: [https://example.com/oauth](https://example.com/oauth)
+- f. In the left Consent Items menu, set `Send message in KakaoTalk` to optional agreement.
+- g. Copy the `REST API Key` in `My Application > App Settings > Summary`.
 - h. If you have successfully completed all of the above steps, go to the following document and follow the instructions:
  https://github.com/dsdanielpark/ExceptNotifier/blob/main/tutorials/kakao_token_generator.ipynb
 
