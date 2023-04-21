@@ -40,11 +40,16 @@ Typically, in Python, variable names are mangled by adding a double underscore p
 
 <br>
 
-# Python and IPython
+## Python and IPython
 I tried to keep the same structure for both Python and Ipython, but I noticed that the behavior of traceback and ExceptBase is slightly different. Significant development has already been carried out with a focus on operation in Python, and it was confirmed that some of the return values ​​are different because IPython's traceback message inevitably includes information about the cell. So we construct a new class to override in IPython. A brush that can be integrated for this
 
+<br>
 
-# Release note
+## Naming in IPython Functions
+The ExceptNotifier functions in IPython follow the class naming conventions. This is done to override custom exceptions in IPython and minimize confusion for users. Therefore, unlike Python, it doesn't matter what goes into the except clause, but it's important to remember that the except statement must always contain a raise.
+
+
+## Release note
 |Version|Description|
 |:--|:--|
 |0.1.1|Package blueprint|
@@ -64,12 +69,12 @@ I tried to keep the same structure for both Python and Ipython, but I noticed th
 |0.1.18|For implementation in IPython, the package structure is separated into py and ipy. Adds a function for telegram in ipython as a test.|
 
 
-# QA Note
+## QA Note
 QA tests are carried out from Python 3.6 to Python 3.9 environments through Windows, MacBook m1, and Google Colab, focusing on Telegram, Discord, Slack, Line, and Chime applications. QA for the rest proceeds whenever there is a request or whenever I have time to spare, and replaces it with responding to bug reports. After the QA test is conducted, we plan to raise the development stage and recruit QA testers by promoting it.
 
 <br>
 
-# Thanks To
+## Thanks To
 - Thanks to [Myunghak Lee](https://github.com/myeonghak) for providing great ideas on providing debugging information through OpenAI API.
 
 <br>
