@@ -1,11 +1,11 @@
 # Copyright 2023 parkminwoo
-from ExceptNotifier import SendSlack, SuccessSlack, ExceptSlack
+from ExceptNotifier import SendSlack, SuccessSlcak, ExceptSlack
 import os, sys
 
 # QA 23-04-22
 if __name__ == "__main__":
 
-    # Get your slack bot and enter _SLACK_WEBHOOK_URL
+    # Get your slcak bot and enter _SLACK_WEBHOOK_URL
     """Get your _SLACK_WEBHOOK_URL from HERE. 
     https://api.slack.com/messaging/webhooks#create_a_webhook"""
 
@@ -18,7 +18,7 @@ if __name__ == "__main__":
 
     try:
         print(1 / 0)
-        SuccessSlack().__call__()  # 1 success sender
+        SuccessSlcak().__call__()  # 1 success sender
 
     except ExceptSlack as e:  # 2 except sender
         sys.exit()

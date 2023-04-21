@@ -153,7 +153,7 @@ class SendDiscord:
 
 # if __name__ == "__main__":
 
-
+#     # Get your slcak bot and enter _DISCORD_WEBHOOK_URL
 #     """Get your _DISCORD_WEBHOOK_URL from HERE.
 #     https://discord.com/developers/docs/resources/webhook"""
 

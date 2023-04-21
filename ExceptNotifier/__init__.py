@@ -20,7 +20,7 @@ from ExceptNotifier.base.wechat_sender import send_wechat_msg
 from ExceptNotifier.base.desktop_sender import send_desktop_msg
 
 from ExceptNotifier.python.mail_notifier import SuccessMail, ExceptMail, SendMail
-from ExceptNotifier.python.slack_notifier import SuccessSlack, ExceptSlack, SendSlack
+from ExceptNotifier.python.slack_notifier import SuccessSlcak, ExceptSlack, SendSlack
 from ExceptNotifier.python.telegram_notifier import SuccessTelegram, ExceptTelegram, SendTelegram
 from ExceptNotifier.python.chime_notifier import SuccessChime, ExceptChime, SendChime
 from ExceptNotifier.python.discord_notifier import SuccessDiscord, ExceptDiscord, SendDiscord
@@ -49,7 +49,7 @@ __all__ = [
     "SuccessMail",
     "ExceptMail",
     "SendMail",
-    "SuccessSlack",
+    "SuccessSlcak",
     "ExceptSlack",
     "SendSlack",
     "SuccessTelegram",
