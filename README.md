@@ -2,7 +2,7 @@ Development Status :: 2 - Pre-Alpha <br>
 *Copyright (c) 2023 MinWoo Park, South Korea*<br>
 Before QA<br> 
 
-![](https://github.com/dsdanielpark/ExceptNotifier/blob/main/assets/imgs/logo2.png)
+![](./assets/imgs/logo2.png)
 
 <h5 align="center">Integrates AI-assisted debugging notifications into Python try-except statements for various messaging applications. </h5>
 
@@ -13,7 +13,7 @@ Before QA<br>
 <a href="https://github.com/psf/black"><img alt="Code style: black" src="https://img.shields.io/badge/code%20style-black-000000.svg"></a>
 </p>
 
-![](https://github.com/dsdanielpark/ExceptNotifier/blob/main/assets/imgs/main3.png)
+![](./assets/imgs/main3.png)
 ##### Provides a notification from the application shown in the captured screen.
 
 # Python Package: ExceptNotifier
@@ -103,24 +103,24 @@ $ pip install exceptnotifier
 
 | App | Required Enviroment Variables | Free or Paid | Ease of Setup | Time Required for Setup|Guide Tutorial Link|
 |:--:|:--|:--:|:--:|:--:|:---:|
-|Beep|N/A|Free|N/A|0min|[ExceptBeep](https://github.com/dsdanielpark/ExceptNotifier/blob/main/tutorials/ExceptBeep/GUIDE.md)|
-|Desktop|N/A|Free|N/A|0min|[ExceptDesktop](https://github.com/dsdanielpark/ExceptNotifier/blob/main/tutorials/ExceptDesktop/GUIDE.md)|
-|Telegram|`_TELEGRAM_TOKEN`|Freemium|Easy|2min|[ExceptTelegram](https://github.com/dsdanielpark/ExceptNotifier/blob/main/tutorials/ExceptTelegram/GUIDE.md) [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/drive/1jwWGs7eCUJQvj_g7SEMqm3a4Kdrp9ZQP?usp=sharing) |
-|Discord|`_DISCORD_WEBHOOK_URL`|Freemium|Easy|1min|[ExceptDiscord](https://github.com/dsdanielpark/ExceptNotifier/blob/main/tutorials/ExceptTelegram/GUIDE.md) [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/drive/1lwsIBpql_1zgEdIWRw6O_jBOZKJdHqBh?usp=sharing) |
-|AWS Chime|`_CHIME_WEBHOOK_URL`|Freemium|Easy|1min|[ExceptChime](https://github.com/dsdanielpark/ExceptNotifier/blob/main/tutorials/ExceptChime/GUIDE.md) [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/drive/1hUMMQ6He9M4MlspZ88J9kO8juxvC5b3a?usp=sharing)|
-|Slack|`_SLACK_WEBHOOK_URL`|Freemium|Easy|3min|[ExceptSlack](https://github.com/dsdanielpark/ExceptNotifier/blob/main/tutorials/ExceptSlack/GUIDE.md) [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/drive/1-dAaKl_gwX481FxH424aCVFqsq-thGXK?usp=sharing) |
-|G-Mail|`_GAMIL_RECIPIENT_ADDR`, `_GMAIL_SENDER_ADDR`, `_GMAIL_APP_PASSWORD_OF_SENDER` |Restricted free|Medium|3min|[ExceptMail](https://github.com/dsdanielpark/ExceptNotifier/blob/main/tutorials/ExceptMail/GUIDE.md)|
-|Line|`_LINE_NOTIFY_API_TOKEN`|Freemium|Medium|4min|[ExceptLine](https://github.com/dsdanielpark/ExceptNotifier/blob/main/tutorials/ExceptLine/GUIDE.md) [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/drive/1PDrJqxDq4NE6BRUrRkFvDBiMHQz0WbZh?usp=sharing) |
-|SMS|`_TWILIO_SID`, `_TWILIO_TOKEN`, `_RECIPIENT_PHONE_NUMBER`, `_SENDER_PHONE_NUMBER`|Not free|Medium|5min|[ExceptSMS](https://github.com/dsdanielpark/ExceptNotifier/blob/main/tutorials/ExceptSMS/GUIDE.md)|
-|Microsoft Teams|`_TEAMS_WEBHOOK_URL`|Not Free|Medium|5min|[ExceptTeams](https://github.com/dsdanielpark/ExceptNotifier/blob/main/tutorials/ExceptTeams/GUIDE.md)|
-|KakaoTalk|`_KAKAO_TOKEN_PATH`|Freemium|Hell|>=10min(Token refreshes daily)|[ExceptKakao](https://github.com/dsdanielpark/ExceptNotifier/blob/main/tutorials/ExceptKakao/GUIDE.md)|
+|Beep|N/A|Free|N/A|0min|[ExceptBeep](./tutorials/ExceptBeep/GUIDE.md)|
+|Desktop|N/A|Free|N/A|0min|[ExceptDesktop](./tutorials/ExceptDesktop/GUIDE.md)|
+|Telegram|`_TELEGRAM_TOKEN`|Freemium|Easy|2min|[ExceptTelegram](./tutorials/ExceptTelegram/GUIDE.md) [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/drive/1jwWGs7eCUJQvj_g7SEMqm3a4Kdrp9ZQP?usp=sharing) |
+|Discord|`_DISCORD_WEBHOOK_URL`|Freemium|Easy|1min|[ExceptDiscord](./tutorials/ExceptTelegram/GUIDE.md) [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/drive/1lwsIBpql_1zgEdIWRw6O_jBOZKJdHqBh?usp=sharing) |
+|AWS Chime|`_CHIME_WEBHOOK_URL`|Freemium|Easy|1min|[ExceptChime](./tutorials/ExceptChime/GUIDE.md) [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/drive/1hUMMQ6He9M4MlspZ88J9kO8juxvC5b3a?usp=sharing)|
+|Slack|`_SLACK_WEBHOOK_URL`|Freemium|Easy|3min|[ExceptSlack](./tutorials/ExceptSlack/GUIDE.md) [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/drive/1-dAaKl_gwX481FxH424aCVFqsq-thGXK?usp=sharing) |
+|G-Mail|`_GAMIL_RECIPIENT_ADDR`, `_GMAIL_SENDER_ADDR`, `_GMAIL_APP_PASSWORD_OF_SENDER` |Restricted free|Medium|3min|[ExceptMail](./tutorials/ExceptMail/GUIDE.md)|
+|Line|`_LINE_NOTIFY_API_TOKEN`|Freemium|Medium|4min|[ExceptLine](./tutorials/ExceptLine/GUIDE.md) [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/drive/1PDrJqxDq4NE6BRUrRkFvDBiMHQz0WbZh?usp=sharing) |
+|SMS|`_TWILIO_SID`, `_TWILIO_TOKEN`, `_RECIPIENT_PHONE_NUMBER`, `_SENDER_PHONE_NUMBER`|Not free|Medium|5min|[ExceptSMS](./tutorials/ExceptSMS/GUIDE.md)|
+|Microsoft Teams|`_TEAMS_WEBHOOK_URL`|Not Free|Medium|5min|[ExceptTeams](./tutorials/ExceptTeams/GUIDE.md)|
+|KakaoTalk|`_KAKAO_TOKEN_PATH`|Freemium|Hell|>=10min(Token refreshes daily)|[ExceptKakao](./tutorials/ExceptKakao/GUIDE.md)|
 
 
 If you add the following two variables to the required variables for each application in the table above, you can receive error location and explanation, as well as examples, from OpenAI's model
 
 | API | Required Variables | Free or Paid | Ease of Setup | Time Required for Setup|Guide Tutorial Link|
 |:--:|:--|:--:|:--:|:--:|:---:|
-| OpenAI API |`Required variables for each application`+ `_OPEN_AI_MODEL`,`_OPEN_AI_API`|Not free|Easy|2min|[APIOpenAI](https://github.com/dsdanielpark/ExceptNotifier/blob/main/documents/APIOpenAI/GUIDE.md)|
+| OpenAI API |`Required variables for each application`+ `_OPEN_AI_MODEL`,`_OPEN_AI_API`|Not free|Easy|2min|[APIOpenAI](./documents/APIOpenAI/GUIDE.md)|
 
 <br>
 
@@ -139,7 +139,7 @@ To use the desired application, you must define the necessary variables. Ensure 
 
 
 ## Except`Notifier`
-![](https://github.com/dsdanielpark/ExceptNotifier/blob/main/assets/imgs/ex1.png)
+![](./assets/imgs/ex1.png)
 If you use Python's try except statement as it is, but change except as follows, you can receive notifications through your application.
 - Format: Except`[appName]` <Br>
 - Type: class
@@ -164,7 +164,7 @@ except ExceptTelegram:    # sending except message to telegram
 
 
 ### AI Debbugging Infomation Notification
-![](https://github.com/dsdanielpark/ExceptNotifier/blob/main/assets/imgs/ex2.png)
+![](./assets/imgs/ex2.png)
 
 You can receive debugging information from ChatGPT via OpenAI's API when using the Except statement. The syntax remains the same, but you'll need to configure these two variables:
 `_OPEN_AI_MODEL`,`_OPEN_AI_API`
@@ -187,7 +187,7 @@ except ExceptTelegram: # sending msg WITH AI DEBUGGING to telegram
 
 
 ## Success`Notifier`
-![](https://github.com/dsdanielpark/ExceptNotifier/blob/main/assets/imgs/ex3.png)
+![](./assets/imgs/ex3.png)
 
 - Format: Success`[appName]`
 - Type: Class <br>
@@ -212,7 +212,7 @@ except:
 ```
 
 ## Send`Notifier`
-![](https://github.com/dsdanielpark/ExceptNotifier/blob/main/assets/imgs/ex4.png)
+![](./assets/imgs/ex4.png)
 - Format: Send`[appName]` 
 - Type: class <br>
 *ExampleClass* <br>
@@ -236,7 +236,7 @@ noti()                    # sending message to telegram
 
 
 ## Sender
-![](https://github.com/dsdanielpark/ExceptNotifier/blob/main/assets/imgs/ex5.png)
+![](./assets/imgs/ex5.png)
 It is recommended to conduct a simple message sending test through the `sender`. Assuming that you can communicate with REST API or WEBHOOK normally, `ExceptNotifier` can work normally.
 - Every application's ExceptNotifier uses the sender method.
 - Format: send_`[appName]`_msg 
@@ -266,7 +266,7 @@ You have to use `raise` in Ipython ExceptNotifier.
 
 *Example code without Open AI API*
 
-![](https://github.com/dsdanielpark/ExceptNotifier/blob/main/assets/imgs/ipyex1.png)
+![](./assets/imgs/ipyex1.png)
 
 ```python
 from ExceptNotifier import ExceptTelegramIpython
@@ -282,7 +282,7 @@ except:
 
 *Example code With Open AI API*
 
-![](https://github.com/dsdanielpark/ExceptNotifier/blob/main/assets/imgs/ipyex2.png)
+![](./assets/imgs/ipyex2.png)
 
 ```python
 from ExceptNotifier import ExceptTelegramIpython
@@ -300,7 +300,7 @@ except:
 ```
 
 ## Success`Notifier` in Ipython
-![](https://github.com/dsdanielpark/ExceptNotifier/blob/main/assets/imgs/ipyex3.png)
+![](./assets/imgs/ipyex3.png)
 - Same syntax in Python. See Python Core above.
 ```python
 import sys
@@ -318,7 +318,7 @@ except:
 
 ## Send`Notifier` in Ipython
 
-![](https://github.com/dsdanielpark/ExceptNotifier/blob/main/assets/imgs/ipyex4.png)
+![](./assets/imgs/ipyex4.png)
 
 - Same syntax in Python. See Python Core above.
 ```python
@@ -332,7 +332,7 @@ SendTelegram().__call__()         # Sending telegram message
 
 ## Sender in Ipython
 
-![](https://github.com/dsdanielpark/ExceptNotifier/blob/main/assets/imgs/ipyex5.png)
+![](./assets/imgs/ipyex5.png)
 
 - Same syntax in Python. See Python Core above.
 ```python
@@ -355,7 +355,7 @@ You can receive debugging information from ChatGPT via OpenAI's API when using t
 ## *Telegram*
 [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/drive/1jwWGs7eCUJQvj_g7SEMqm3a4Kdrp9ZQP?usp=sharing) 
 As all classes function the same, the example will only use one image, like in Telegram.
-![](https://github.com/dsdanielpark/ExceptNotifier/blob/main/assets/imgs/fig44.png)
+![](./assets/imgs/fig44.png)
 - a. Open your telegram app and search for BotFather. (A built-in Telegram bot that helps users create custom Telegram bots) <br>
 - b. Type /newbot to create a new bot <br>
 - c. Give your bot a name & a username <br>
@@ -752,7 +752,7 @@ SendTeams().__call__()        #3 customized sender
 - f. In the left Consent Items menu, set `Send message in KakaoTalk` to optional agreement.
 - g. Copy the `REST API Key` in `My Application > App Settings > Summary`.
 - h. If you have successfully completed all of the above steps, go to the following document and follow the instructions:
- https://github.com/dsdanielpark/ExceptNotifier/blob/main/tutorials/kakao_token_generator.ipynb
+ ./tutorials/kakao_token_generator.ipynb
 
 *API TEST*
 ```python
@@ -891,7 +891,7 @@ Everyone participating in the `ExceptNotifier` project, and in particular in the
 # Contacts
 Core maintainers: [Daniel Park, South Korea](https://github.com/DSDanielPark) <br>
 Email parkminwoo1991@gmail.com <br>
-- Developer note: [Link](https://github.com/dsdanielpark/ExceptNotifier/blob/main/documents/DEV_NOTE.md)
+- Developer note: [Link](./documents/DEV_NOTE.md)
 
 #### Could you kindly add this badge to your repository?
 ```
