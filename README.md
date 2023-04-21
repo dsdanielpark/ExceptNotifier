@@ -476,7 +476,7 @@ SendMail().__call__()
 <br>
 
 ## *Discord*
-[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/drive/1aVefwi44XMGiNxhAkqxRMWzCpaFZmqax?usp=sharing) 
+[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/drive/1lwsIBpql_1zgEdIWRw6O_jBOZKJdHqBh?usp=sharing) 
 - a. Select the channel to receive notifications.
 - b. Click `Edit Channel` in the upper right corner of the chat window.
 - c. Click `Integrations` - `Webhook` - `New Webhook`.
