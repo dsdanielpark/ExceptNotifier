@@ -214,9 +214,14 @@ from ExceptNotifier import send_telegram_msg
 send_telegram_msg(_TELEGRAM_TOKEN, "Any Test Message")
 ```
 
+<br><br>
+
 
 # IPython Core
 You can use all the same except for the python code and `ExceptNotifier` mentioned above. In other words, the `SuccesNotifier`, `SendNotifier`, and `Sender` functions can all be used same in IPython without any special processing. Only `ExceptNotifier` is need to be defined.
+
+<br><Br>
+
 
 ## Except`Notifier` in Ipython
 - Format: Except[appName]
