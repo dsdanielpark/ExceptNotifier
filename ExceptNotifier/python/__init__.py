@@ -48,5 +48,5 @@ __all__ = [
     "SuccessDesktop", "ExceptDesktop", "SendDesktop"
 ]
 
-__version__ = "0.1.22"
+__version__ = "0.2.0"
 __author__ = "daniel park <parkminwoo1991@gmail.com>"
