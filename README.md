@@ -99,7 +99,7 @@ To use the desired application, you must define the necessary variables. Ensure 
 
 
 ## Except`Notifier`
-![](https://github.com/dsdanielpark/ExceptNotifier/blob/main/assets/imgs/ex1.png)
+![](https://github.com/dsdanielpark/ExceptNotifier/blob/main/assets/imgs/pyex1.png)
 If you use Python's try except statement as it is, but change except as follows, you can receive notifications through your application.
 - Format: Except`[appName]` <Br>
 - Type: class
@@ -124,7 +124,7 @@ except ExceptTelegram:    # sending except message to telegram
 
 
 ### AI Debbugging Infomation Notification
-![](https://github.com/dsdanielpark/ExceptNotifier/blob/main/assets/imgs/ex2.png)
+![](https://github.com/dsdanielpark/ExceptNotifier/blob/main/assets/imgs/pyex2.png)
 
 You can receive debugging information from ChatGPT via OpenAI's API when using the Except statement. The syntax remains the same, but you'll need to configure these two variables:
 `_OPEN_AI_MODEL`,`_OPEN_AI_API`
@@ -147,7 +147,7 @@ except ExceptTelegram: # sending msg WITH AI DEBUGGING to telegram
 
 
 ## Success`Notifier`
-![](https://github.com/dsdanielpark/ExceptNotifier/blob/main/assets/imgs/ex3.png)
+![](https://github.com/dsdanielpark/ExceptNotifier/blob/main/assets/imgs/pyex3.png)
 
 - Format: Success`[appName]`
 - Type: Class <br>
@@ -172,7 +172,7 @@ except:
 ```
 
 ## Send`Notifier`
-![](https://github.com/dsdanielpark/ExceptNotifier/blob/main/assets/imgs/ex4.png)
+![](https://github.com/dsdanielpark/ExceptNotifier/blob/main/assets/imgs/pyex4.png)
 - Format: Send`[appName]` 
 - Type: class <br>
 *ExampleClass* <br>
