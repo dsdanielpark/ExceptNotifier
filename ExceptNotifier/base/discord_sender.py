@@ -18,12 +18,12 @@ def send_discord_msg(_DISCORD_WEBHOOK_URL: str, msg: str) -> dict:
         webhook = Webhook.from_url(
             _DISCORD_WEBHOOK_URL, adapter=RequestsWebhookAdapter()
         )
-        resp = webhook.send(msg[:150])
+        resp = webhook.send(msg)
     except:
         from discord import SyncWebhook
 
         webhook = SyncWebhook.from_url(_DISCORD_WEBHOOK_URL)  # Initializing webhook
-        resp = webhook.send(content=msg[:150])
+        resp = webhook.send(content=msg)
     return resp
 
 
