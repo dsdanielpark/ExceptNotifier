@@ -226,9 +226,9 @@ You can use all the same except for the python code and `ExceptNotifier` mention
 ## Except`Notifier` in Ipython
 - Format: Except[appName]
 - Type: function <br>
-*Example*
+*Examples*<br><Br>
 
-- Without Open AI API
+*Without Open AI API*
 ```python
 from ExceptNotifier import ExceptTelegramIpython
 import os
@@ -241,7 +241,7 @@ except:
   raise
 ```
 
-- With Open AI API
+*With Open AI API*
 ```python
 from ExceptNotifier import ExceptTelegramIpython
 import os
@@ -256,6 +256,13 @@ try:
 except:
   raise
 ```
+
+## Success`Notifier` in Ipython
+- Same syntax in Python. See Python Core above.
+## Send`Notifier` in Ipython
+- Same syntax in Python. See Python Core above.
+## Sender in Ipython
+- Same syntax in Python. See Python Core above.
 
 <br>
 
