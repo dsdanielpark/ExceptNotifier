@@ -110,10 +110,12 @@ I will update tutorial ASAP.
 1. Main-tutorials: [Notebook](https://github.com/DSDanielPark/ExceptNotifier/blob/main/tutorial/ExceptNotifier.ipynb)
 2. Sub-tutorial-folder: Tutorials for each function can be found in this [folder](https://github.com/DSDanielPark/ExceptNotifier/tree/main/tutorial). The tutorial is synchronized with the Python file name provided by ExceptNotifier.
 
+ **In this example, some API keys were exposed by creating and removing a test application, but for security reasons, your API key should not be exposed to the outside world.**
+<Br>
 
 <br>
 
-# 1. Key Features
+# 1. Main Features
 To use the desired application, you must define the necessary variables. Ensure that the variable names remain unchanged, and you can use either local or global variables. If you are using `Telegram`, an example is attached as an image.
 
 ## 1-1. Except`Notifier`
@@ -562,8 +564,7 @@ SendTeams().__call__()        #3 customized sender
 - g. Copy the REST API Key in My Application > App Settings > Summary, and go to the following document.
 - h. If you have successfully completed all of the above steps, go to the following document and follow the instructions:
  https://github.com/dsdanielpark/ExceptNotifier/blob/main/tutorials/kakao_token_generator.ipynb
- **In this example, some API keys were exposed by creating and removing a test application, but for security reasons, your API key should not be exposed to the outside world.**
-<Br>
+
 
 ```python
 import sys
@@ -656,7 +657,123 @@ SendDesktop().__call__()        #3 customized sender
 <br>
 
 ## 3. Sender
+In order to emphasize ExceptNotifier, the sender is configured in Table of Contents No. 3, but in reality, it is recommended to conduct a simple message sending test through the sender. Assuming that you can communicate with API or WEBHOOK normally, ExceptNotifier can work normally.
+- Every application's ExceptNotifier uses the sender method.
 
+### 3-1. *Telegram Sender*
+```python
+from ExceptNotifier import send_telegram_msg
+
+send_telegram_msg(_TELEGRAM_TOKEN, "Any Test Message")
+```
+
+### 3-2. *Mail Sender*
+```python
+from ExceptNotifier import send_gmail_msg
+
+_GMAIL_SENDER_ADDR = 'xxxx@gmail.com'
+_GAMIL_RECIPIENT_ADDR = 'xxxx@gmail.com'
+_GMAIL_APP_PASSWORD_OF_SENDER = 'xxxx'
+subject_msg = "Test Title"
+body_msg = "Test Body" 
+
+send_gmail_msg(
+    _GMAIL_SENDER_ADDR,
+    _GAMIL_RECIPIENT_ADDR,
+    _GMAIL_APP_PASSWORD_OF_SENDER,
+    subject_msg,
+    body_msg)
+```
+
+### 3-3. *Discord Sender*
+```python
+from ExceptNotifier import send_discord_msg
+
+send_discord_msg(_DISCORD_WEBHOOK_URL, "Any Test Message") 
+```
+
+### 3-4. *Chime Sender*
+```python
+from ExceptNotifier import send_chime_msg
+
+send_chime_msg(_CHIME_WEBHOOK_URL, "Any Test Message")
+
+```
+
+### 3-5. *Slack Sender*
+```python
+from ExceptNotifier import send_slack_msg
+
+send_slack_msg(_SLACK_WEBHOOK_URL, "Any Test Message")
+```
+
+### 3-6. *Line Sender*
+```python
+from ExceptNotifier import send_line_msg
+
+send_line_msg(_LINE_NOTIFY_API_TOKEN:, "Any Test Message")
+```
+
+### 3-7. *SMS Sender*
+```python
+from ExceptNotifier import send_sms_msg
+
+_TWILIO_SID = 'xxxx'
+_TWILIO_TOKEN = "xxxx"
+_SENDER_PHONE_NUMBER = "xxxx"
+_RECIPIENT_PHONE_NUMBER = "xxxx"
+
+send_sms_msg(
+    _TWILIO_SID,
+    _TWILIO_TOKEN,
+    _SENDER_PHONE_NUMBER,
+    _RECIPIENT_PHONE_NUMBER,
+    "Any Test Message")
+```
+
+### 3-8. *Teams Sender*
+```python
+from ExceptNotifier import send_teams_msg
+
+_TEAMS_WEBHOOK_URL = 'xxxx'
+
+send_teams_msg(_TEAMS_WEBHOOK_URL, "Any Test Message")
+```
+
+
+### 3-9. *Kakao Sender*
+```python
+from ExceptNotifier import send_kakao_msg
+
+_KAKAO_TOKEN_PATH = 'xxx/xx/xxx.json'
+
+send_kakao_msg(_KAKAO_TOKEN_PATH, msg)
+```
+
+### 3-10. *Wechat Sender*
+```python
+from ExceptNotifier import send_wechat_msg
+
+send_wechat_msg(_WECHAT_WEBHOOK_URL, msg)
+```
+
+### 3-11. *Beep Sender*
+```python
+from ExceptNotifier import beep
+
+beep(sec=1, freq=1000) 
+```
+
+### 3-12. *Desktop Sender*
+```python
+from ExceptNotifier import send_desktop_msg
+
+title_msg = "Test Title"
+body_msg = "Test Body"
+DISP_TIME = 5
+
+send_desktop_msg(title_msg, body_msg, DISP_TIME)
+```
 <Br><br><br>
 
 
@@ -678,6 +795,8 @@ Email parkminwoo1991@gmail.com <br>
 ```
 ![Except-Notifier](https://img.shields.io/badge/pypi-ExceptNotifier-orange)
 ```
+
+I would appreciate it if you could share the document widely by specifying that the source is the ExceptNotifier official github.
 
 ##### The package is currently in the development and QA stages, and the development stage will be updated at the top of this page. If it is determined that the product is stable through feature improvement, addition, and issue resolution, the development stage will reach stage 5. If no new updates or issues arise, it will be adjusted upward to stage 6 or higher.
 
