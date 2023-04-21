@@ -660,7 +660,7 @@ SendDesktop().__call__()        #3 customized sender
 ## 3. Sender
 In order to emphasize ExceptNotifier, the sender is configured in Table of Contents No. 3, but in reality, it is recommended to conduct a simple message sending test through the sender. Assuming that you can communicate with API or WEBHOOK normally, ExceptNotifier can work normally.
 - Every application's ExceptNotifier uses the sender method.
-- Format: send_[appName]_msg
+- Format: send_`[appName]`_msg
 
 ### 3-1. *Telegram Sender*
 ```python
