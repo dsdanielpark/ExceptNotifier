@@ -26,7 +26,6 @@ class ExceptTelegram(BaseException):
         :param tb: Traceback Information
         :type tb: _type_
         """
-        print(os.environ["_TELEGRAM_TOKEN"])
         excType = re.sub(
             "(<(type|class ')|'exceptions.|'>|__main__.)", "", str(etype)
         ).strip()
