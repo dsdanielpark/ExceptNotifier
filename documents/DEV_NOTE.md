@@ -61,6 +61,7 @@ I tried to keep the same structure for both Python and Ipython, but I noticed th
 |0.1.15|Fixed an os import typo.|
 |0.1.16|Fixed winsound in a static method when importing on Linux.|
 |0.1.17|Fixed some typos and added small unit tests. It still malfunctions in notebooks, but the Python file is functional.|
+|0.1.18|For implementation in IPython, the package structure is separated into py and ipy. Adds a function for telegram in ipython as a test.|
 
 
 # QA Note

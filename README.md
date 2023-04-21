@@ -172,6 +172,7 @@ except:
     sys.exit()
 ```
 
+<br>
 
 ## Send`Notifier`
 ![](https://github.com/dsdanielpark/ExceptNotifier/blob/main/assets/imgs/ex4.png)
@@ -228,16 +229,36 @@ You can use all the same except for the python code and `ExceptNotifier` mention
 - Type: function <br>
 *Example*
 
+- Without Open AI API
+```python
+from ExceptNotifier import ExceptTelegramIpython
+import os
+os.environ['_TELEGRAM_TOKEN'] = "xxxxx"
+get_ipython().set_custom_exc((Exception,), ExceptTelegramIpython)
 
+try:
+  print(1/0)
+except:
+  raise
+```
 
+- With Open AI API
+```python
+from ExceptNotifier import ExceptTelegramIpython
+import os
+get_ipython().set_custom_exc((Exception,), ExceptTelegramIpython)
 
+os.environ['_OPEN_AI_MODEL'] = "gpt-3.5-turbo"    
+os.environ['_OPEN_AI_API'] = "sk-xxxxx"
+os.environ['_TELEGRAM_TOKEN'] = "xxxxx"
 
+try:
+  print(1/0)
+except:
+  raise
+```
 
-
-
-
-
-
+<br>
 
 # Applied in each application
 You can receive debugging information from ChatGPT via OpenAI's API when using the Except statement. The syntax remains the same, but you'll need to configure these two variables:
@@ -313,6 +334,24 @@ SendTelegram().__call__()        #3. customized sender
 In the except statement, an email is sent along with the error message. Additionally, you can send emails from any desired line. <br>
 - a. Log in with the sender's email ID. <br>
 - b. Obtain an app password for sending Google Mail at the following [link](https://myaccount.google.com/u/3/apppasswords?utm_source=google-account&utm_medium=myaccountsecurity&utm_campaign=tsv-settings&rapt=AEjHL4N2bMRWO46VaMp_jP06zQK14BWNPv66l2o59iJ99CkO8BjYnmoRUe9dtSchkkbubHZMUhevkAnwVJRHb9ygO3afispNlw) or [google document](https://support.google.com/accounts/answer/185833?hl=en). 
+
+
+```python
+from ExceptNotifier import send_gmail_msg
+
+_GMAIL_SENDER_ADDR = 'xxxx@gmail.com'
+_GAMIL_RECIPIENT_ADDR = 'xxxx@gmail.com'
+_GMAIL_APP_PASSWORD_OF_SENDER = 'xxxx'
+subject_msg = "Test Title"
+body_msg = "Test Body" 
+
+send_gmail_msg(
+    _GMAIL_SENDER_ADDR,
+    _GAMIL_RECIPIENT_ADDR,
+    _GMAIL_APP_PASSWORD_OF_SENDER,
+    subject_msg,
+    body_msg)
+```
 
 ```python
 import sys, os
@@ -391,11 +430,17 @@ SendMail().__call__()
 
 <br>
 
-## *Discord Notifier*
+## *Discord*
 - a. Select the channel to receive notifications.
 - b. Click "Edit Channel" in the upper right corner of the chat window.
 - c. Click Integrations - Webhook - New Webhook.
 - d. Then click Copy Webhook.
+
+```python
+from ExceptNotifier import send_discord_msg
+
+send_discord_msg(_DISCORD_WEBHOOK_URL, "Any Test Message") 
+```
 
 ```python
 import sys, os
@@ -419,11 +464,19 @@ SendDiscord().__call__()        #3 customized sender
 
 <br>
 
-## *Chime Notifier*
+## *Chime*
 - a. Select the Chat room to receive notifications.
 - b. Click "Room Setting" in the upper right corner.
 - c. Click "Manage Webhook and bot."
 - d. Create Add Webhook, set it up, then click Copy Webhook.
+
+```python
+from ExceptNotifier import send_chime_msg
+
+send_chime_msg(_CHIME_WEBHOOK_URL, "Any Test Message")
+
+```
+
 ```python
 import sys, os
 from ExceptNotifier import SuccessChime, ExceptChime, SendChime
@@ -445,11 +498,17 @@ SendChime().__call__()        #3 customized sender
 ```
 <br>
 
-## *Slack Notifier*
+## *Slack*
 - a. visit https://api.slack.com/
 - b. `Create an app` - `From scratch` - `Create App`
 - c. Add webhook: Click `Incoming Webhooks` - Activate Incomming `On` - Add New Webhook to Workspace
 - d. Copy `Webhook URL`
+
+```python
+from ExceptNotifier import send_slack_msg
+
+send_slack_msg(_SLACK_WEBHOOK_URL, "Any Test Message")
+```
 
 ```python
 import sys
@@ -471,11 +530,19 @@ SendSlack().__call__()        #3 customized sender
 ```
 <Br>
 
-## *Line Notifier*
+## *Line*
 - a. Register [https://notify-bot.line.me/](https://notify-bot.line.me/)
 - b. Go to mypage [https://notify-bot.line.me/my/](https://notify-bot.line.me/my/)
 - c. Click `Generate Token`, enter Service Name and click `1-on-1 chat with LINE` (anything you like)
 - d. Copy Token.
+
+
+### 3-6. *Line Sender*
+```python
+from ExceptNotifier import send_line_msg
+
+send_line_msg(_LINE_NOTIFY_API_TOKEN:, "Any Test Message")
+```
 
 ```python
 import sys
@@ -498,10 +565,29 @@ SendLine().__call__()        #3 customized sender
 
 <Br>
 
-## *SMS Notifier*
+## *SMS*
 - a. Sign up for Twilio. [https://www.twilio.com/en-us](https://www.twilio.com/en-us)
 - b. Click Console in the upper right corner.
 - c. Copy the variables provided in the console.
+
+
+### 3-7. *SMS Sender*
+```python
+from ExceptNotifier import send_sms_msg
+
+_TWILIO_SID = 'xxxx'
+_TWILIO_TOKEN = "xxxx"
+_SENDER_PHONE_NUMBER = "xxxx"
+_RECIPIENT_PHONE_NUMBER = "xxxx"
+
+send_sms_msg(
+    _TWILIO_SID,
+    _TWILIO_TOKEN,
+    _SENDER_PHONE_NUMBER,
+    _RECIPIENT_PHONE_NUMBER,
+    "Any Test Message")
+```
+
 
 ```python
 import sys
@@ -526,7 +612,7 @@ SendSMS().__call__()        #3 customized sender
 ```
 <Br>
 
-## *Teams Notifier*
+## *Teams*
 - a. Create the channel that you want to notify.
 - b. App - Search: webhook - Incoming Webhook [https://teams.microsoft.com/l/app/203a1e2c-26cc-47ca-83ae-be98f960b6b2?source=app-details-dialog](https://teams.microsoft.com/l/app/203a1e2c-26cc-47ca-83ae-be98f960b6b2?source=app-details-dialog)
 - c. Click `Request Approval` <br>
@@ -534,6 +620,17 @@ After you can use webhook incomming. Proceed to next steps.
 Microsoft Teams allows limited application access per organization, so it can only be used if the webhook incoming application is available.
 - c. Go to the team channel to receive notifications, and click `Connectors` in Settings.
 - d. `Connectors` After configuring webhook incoming in Connector, copy the webhook URL.
+
+
+### 3-8. *Teams Sender*
+```python
+from ExceptNotifier import send_teams_msg
+
+_TEAMS_WEBHOOK_URL = 'xxxx'
+
+send_teams_msg(_TEAMS_WEBHOOK_URL, "Any Test Message")
+```
+
 
 ```python
 import sys
@@ -556,7 +653,7 @@ SendTeams().__call__()        #3 customized sender
 
 <Br>
 
-## *Kakaotalk Notifier*
+## *Kakaotalk*
 - a. Sign up at the following site: [https://developers.kakao.com/](https://developers.kakao.com/)
 - b. Click `My Application` on the top bar.
 - c. Click `Add an application`, set a name, and create it.
@@ -567,6 +664,13 @@ SendTeams().__call__()        #3 customized sender
 - h. If you have successfully completed all of the above steps, go to the following document and follow the instructions:
  https://github.com/dsdanielpark/ExceptNotifier/blob/main/tutorials/kakao_token_generator.ipynb
 
+```python
+from ExceptNotifier import send_kakao_msg
+
+_KAKAO_TOKEN_PATH = 'xxx/xx/xxx.json'
+
+send_kakao_msg(_KAKAO_TOKEN_PATH, msg)
+```
 
 ```python
 import sys
@@ -588,8 +692,14 @@ SendKakao().__call__()        #3 customized sender
 ```
 
 
-## *Wechat Notifier*
+## *Wechat*
 a. Get Webhook URL by visiting [here](https://work.weixin.qq.com/api/doc/90000/90136/91770)
+
+```python
+from ExceptNotifier import send_wechat_msg
+
+send_wechat_msg(_WECHAT_WEBHOOK_URL, msg)
+```
 
 ```python
 import sys
@@ -612,8 +722,14 @@ SendWechat().__call__()        #3 customized sender
 
 <Br>
 
-## *Beep Notifier*
+## *Beep*
 No setup is required. Use as follows.
+
+```python
+from ExceptNotifier import beep
+
+beep(sec=1, freq=1000) 
+```
 
 ```python
 from Exceptnotifier import ExceptBeep, SuccessBeep, SendBeep(), beep()
@@ -636,8 +752,18 @@ beep()
 <Br>
 
 
-## *Desktop Notifier*
+## *Desktop*
 No setup is required. Use as follows.
+
+```python
+from ExceptNotifier import send_desktop_msg
+
+title_msg = "Test Title"
+body_msg = "Test Body"
+DISP_TIME = 5
+
+send_desktop_msg(title_msg, body_msg, DISP_TIME)
+```
 
 ```python
 from ExceptNotifier import ExceptDesktop, SuccessDesktop, SendDesktop
@@ -659,115 +785,6 @@ SendDesktop().__call__()        #3 customized sender
 <br>
 
 
-
-
-### 3-2. *Mail Sender*
-```python
-from ExceptNotifier import send_gmail_msg
-
-_GMAIL_SENDER_ADDR = 'xxxx@gmail.com'
-_GAMIL_RECIPIENT_ADDR = 'xxxx@gmail.com'
-_GMAIL_APP_PASSWORD_OF_SENDER = 'xxxx'
-subject_msg = "Test Title"
-body_msg = "Test Body" 
-
-send_gmail_msg(
-    _GMAIL_SENDER_ADDR,
-    _GAMIL_RECIPIENT_ADDR,
-    _GMAIL_APP_PASSWORD_OF_SENDER,
-    subject_msg,
-    body_msg)
-```
-
-### 3-3. *Discord Sender*
-```python
-from ExceptNotifier import send_discord_msg
-
-send_discord_msg(_DISCORD_WEBHOOK_URL, "Any Test Message") 
-```
-
-### 3-4. *Chime Sender*
-```python
-from ExceptNotifier import send_chime_msg
-
-send_chime_msg(_CHIME_WEBHOOK_URL, "Any Test Message")
-
-```
-
-### 3-5. *Slack Sender*
-```python
-from ExceptNotifier import send_slack_msg
-
-send_slack_msg(_SLACK_WEBHOOK_URL, "Any Test Message")
-```
-
-### 3-6. *Line Sender*
-```python
-from ExceptNotifier import send_line_msg
-
-send_line_msg(_LINE_NOTIFY_API_TOKEN:, "Any Test Message")
-```
-
-### 3-7. *SMS Sender*
-```python
-from ExceptNotifier import send_sms_msg
-
-_TWILIO_SID = 'xxxx'
-_TWILIO_TOKEN = "xxxx"
-_SENDER_PHONE_NUMBER = "xxxx"
-_RECIPIENT_PHONE_NUMBER = "xxxx"
-
-send_sms_msg(
-    _TWILIO_SID,
-    _TWILIO_TOKEN,
-    _SENDER_PHONE_NUMBER,
-    _RECIPIENT_PHONE_NUMBER,
-    "Any Test Message")
-```
-
-### 3-8. *Teams Sender*
-```python
-from ExceptNotifier import send_teams_msg
-
-_TEAMS_WEBHOOK_URL = 'xxxx'
-
-send_teams_msg(_TEAMS_WEBHOOK_URL, "Any Test Message")
-```
-
-
-### 3-9. *Kakao Sender*
-```python
-from ExceptNotifier import send_kakao_msg
-
-_KAKAO_TOKEN_PATH = 'xxx/xx/xxx.json'
-
-send_kakao_msg(_KAKAO_TOKEN_PATH, msg)
-```
-
-### 3-10. *Wechat Sender*
-```python
-from ExceptNotifier import send_wechat_msg
-
-send_wechat_msg(_WECHAT_WEBHOOK_URL, msg)
-```
-
-### 3-11. *Beep Sender*
-```python
-from ExceptNotifier import beep
-
-beep(sec=1, freq=1000) 
-```
-
-### 3-12. *Desktop Sender*
-```python
-from ExceptNotifier import send_desktop_msg
-
-title_msg = "Test Title"
-body_msg = "Test Body"
-DISP_TIME = 5
-
-send_desktop_msg(title_msg, body_msg, DISP_TIME)
-```
 <Br><br><br>
 
 
