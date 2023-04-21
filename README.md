@@ -82,8 +82,8 @@ $ pip install exceptnotifier
 
 | App | Required Enviroment Variables | Free or Paid | Ease of Setup | Time Required for Setup|Guide Tutorial Link|
 |:--:|:--|:--:|:--:|:--:|:---:|
-|Beep|N/A|Free|N/A|0 min|[ExceptBeep](https://github.com/dsdanielpark/ExceptNotifier/blob/main/documents/ExceptBeep/GUIDE.md)|
-|Desktop|N/A|Free|N/A|0 min|[ExceptDesktop](https://github.com/dsdanielpark/ExceptNotifier/blob/main/documents/ExceptDesktop/GUIDE.md)|
+|Beep|N/A|Free|N/A|0min|[ExceptBeep](https://github.com/dsdanielpark/ExceptNotifier/blob/main/documents/ExceptBeep/GUIDE.md)|
+|Desktop|N/A|Free|N/A|0min|[ExceptDesktop](https://github.com/dsdanielpark/ExceptNotifier/blob/main/documents/ExceptDesktop/GUIDE.md)|
 |Telegram|`_TELEGRAM_TOKEN`|Freemium|Easy|2min|[ExceptTelegram](https://github.com/dsdanielpark/ExceptNotifier/blob/main/documents/ExceptTelegram/GUIDE.md)|
 |Discord|`_DISCORD_WEBHOOK_URL`|Freemium|Easy|1min|[ExceptDiscord](https://github.com/dsdanielpark/ExceptNotifier/blob/main/documents/ExceptTelegram/GUIDE.md)|
 |AWS Chime|`_CHIME_WEBHOOK_URL`|Freemium|Easy|1min|[ExceptChime](https://github.com/dsdanielpark/ExceptNotifier/blob/main/documents/ExceptChime/GUIDE.md)|
