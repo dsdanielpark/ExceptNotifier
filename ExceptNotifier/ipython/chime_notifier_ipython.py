@@ -1,3 +1,4 @@
+# Copyright 2023 parkminwoo
 from IPython.core.ultratb import AutoFormattedTB
 from ExceptNotifier import send_chime_msg, receive_openai_advice
 import os

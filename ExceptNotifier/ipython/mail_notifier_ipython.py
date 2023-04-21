@@ -1,17 +1,12 @@
+# Copyright 2023 parkminwoo
 from IPython.core.ultratb import AutoFormattedTB
-from ExceptNotifier import send_gmail_msg, receive_openai_advice
-import os
 import datetime
-DATE_FORMAT = "%Y-%m-%d %H:%M:%S"
-
-import sys
-import traceback
-import re
 import smtplib
 import datetime
-from email.message import EmailMessage
-from ExceptNotifier import send_gmail_msg, receive_openai_advice
+from ExceptNotifier import receive_openai_advice
 import os
+DATE_FORMAT = "%Y-%m-%d %H:%M:%S"
+
 
 def ExceptMailIpython(shell, etype, evalue, tb, tb_offset=1):
     """ExceptNotifier function for overriding custom execute in ipython

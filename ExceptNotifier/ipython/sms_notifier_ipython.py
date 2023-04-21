@@ -1,3 +1,4 @@
+# Copyright 2023 parkminwoo
 from IPython.core.ultratb import AutoFormattedTB
 from ExceptNotifier import send_sms_msg, receive_openai_advice
 import os
@@ -5,7 +6,7 @@ import datetime
 DATE_FORMAT = "%Y-%m-%d %H:%M:%S"
 
 
-def ExceptTelegramIpython(shell, etype, evalue, tb, tb_offset=1):
+def ExceptSMSIpython(shell, etype, evalue, tb, tb_offset=1):
     """ExceptNotifier function for overriding custom execute in ipython
 
     :param shell: Excecuted shell 

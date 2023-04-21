@@ -3,7 +3,19 @@
 import openai
 
 
-def receive_openai_advice(_OPEN_AI_MODEL, _OPEN_AI_API, error_message):
+def receive_openai_advice(_OPEN_AI_MODEL: str, _OPEN_AI_API: str, error_message: str) -> str:
+    """Receive debugging information about your code from models in open ai.
+
+    :param _OPEN_AI_MODEL: model name of open ai
+    :type _OPEN_AI_MODEL: str
+    :param _OPEN_AI_API: API KEY value of open ai
+    :type _OPEN_AI_API: str
+    :param error_message: Error message
+    :type error_message: str
+    :return: Returns a description and example of the code, the location of the error, and a debugging code example.
+    :rtype: str
+    """
+
     openai.api_key = _OPEN_AI_API
     model_engine = _OPEN_AI_MODEL
 
@@ -15,7 +27,18 @@ def receive_openai_advice(_OPEN_AI_MODEL, _OPEN_AI_API, error_message):
     return advice_msg
 
 
-def get_resp_openai_advice(_OPEN_AI_MODEL, _OPEN_AI_API, error_message):
+def get_resp_openai_advice(_OPEN_AI_MODEL: str, _OPEN_AI_API: str, error_message: str) -> dict:
+    """Receive debugging information about your code from models in open ai.
+
+    :param _OPEN_AI_MODEL: model name of open ai
+    :type _OPEN_AI_MODEL: str
+    :param _OPEN_AI_API: API KEY value of open ai
+    :type _OPEN_AI_API: str
+    :param error_message: Error message
+    :type error_message: str
+    :return: Returns response dict to openai
+    :rtype: dict
+    """
     openai.api_key = _OPEN_AI_API
     model_engine = _OPEN_AI_MODEL
 

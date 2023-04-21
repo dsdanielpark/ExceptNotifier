@@ -14,7 +14,8 @@ from ExceptNotifier.base.teams_sender import send_teams_msg
 from ExceptNotifier.base.whatsapp_sender import send_whatsapp_msg
 from ExceptNotifier.base.sms_sender import send_sms_msg
 from ExceptNotifier.base.beep_sender import beep
-from ExceptNotifier.base.openai_receiver import receive_openai_advice, get_resp_openai_advice
+from ExceptNotifier.base.openai_receiver import receive_openai_advice
+from ExceptNotifier.base.openai_receiver import get_resp_openai_advice
 from ExceptNotifier.base.wechat_sender import send_wechat_msg
 from ExceptNotifier.base.desktop_sender import send_desktop_msg
 
@@ -32,6 +33,15 @@ from ExceptNotifier.python.wechat_notifier import SuccessWechat, ExceptWechat, S
 from ExceptNotifier.python.desktop_notifier import SuccessDesktop, ExceptDesktop, SendDesktop
 
 from ExceptNotifier.ipython.telegram_notifier_ipython import ExceptTelegramIpython
+from ExceptNotifier.ipython.chime_notifier_ipython import ExceptChimeIpython
+from ExceptNotifier.ipython.discord_notifier_ipython import ExceptDiscordIpython
+from ExceptNotifier.ipython.kakao_notifier_ipython import ExceptKakaoIpython
+from ExceptNotifier.ipython.line_notifier_ipython import ExceptLineIpython
+from ExceptNotifier.ipython.mail_notifier_ipython import ExceptMailIpython
+from ExceptNotifier.ipython.slack_notifier_ipython import ExceptSlackIpython
+from ExceptNotifier.ipython.sms_notifier_ipython import ExceptSMSIpython
+from ExceptNotifier.ipython.teams_notifier_ipython import ExceptTeamsIpython
+from ExceptNotifier.ipython.wechat_notifier_ipython import ExceptWechatIpython
 
 
 __all__ = [
@@ -85,7 +95,10 @@ __all__ = [
     "ExceptWechat",
     "SendWechat",
     "send_wechat_msg",
-    "send_desktop_msg","SuccessDesktop", "ExceptDesktop", "SendDesktop", "ExceptTelegramIpython"
+    "send_desktop_msg","SuccessDesktop", "ExceptDesktop", "SendDesktop", "ExceptTelegramIpython",
+    "ExceptTelegramIpython", "ExceptChimeIpython", "ExceptDiscordIpython",
+           "ExceptKakaoIpython", "ExceptLineIpython", "ExceptMailIpython", "ExceptSlackIpython",
+           "ExceptSMSIpython", "ExceptTeamsIpython", "ExceptWechatIpython"
 
 ]
 
