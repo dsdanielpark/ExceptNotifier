@@ -14,5 +14,5 @@ __all__ = ["ExceptTelegramIpython", "ExceptChimeIpython", "ExceptDiscordIpython"
            "ExceptKakaoIpython", "ExceptLineIpython", "ExceptMailIpython", "ExceptSlackIpython",
            "ExceptSMSIpython", "ExceptTeamsIpython", "ExceptWechatIpython"]
 
-__version__ = "0.1.18"
+__version__ = "0.1.19"
 __author__ = "daniel park <parkminwoo1991@gmail.com>"

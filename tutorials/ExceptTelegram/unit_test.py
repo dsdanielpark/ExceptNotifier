@@ -1,5 +1,6 @@
-import os
-import sys
+
+# Copyright 2023 parkminwoo
+import sys, os
 from ExceptNotifier import ExceptTelegram, SuccessTelegram, SendTelegram
 
 

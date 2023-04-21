@@ -1,4 +1,4 @@
-
+# Copyright 2023 parkminwoo
 from ExceptNotifier import ExceptSMS, SuccessSMS, SendSMS 
 import os, sys
 

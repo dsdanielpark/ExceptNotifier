@@ -1,4 +1,4 @@
-
+# Copyright 2023 parkminwoo
 from ExceptNotifier import ExceptDiscord, SuccessDiscord, SendDiscord
 import os, sys
 

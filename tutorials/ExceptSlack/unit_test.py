@@ -1,4 +1,4 @@
-
+# Copyright 2023 parkminwoo
 from ExceptNotifier import SendSlack, SuccessSlcak, ExceptSlack
 import os, sys
 
