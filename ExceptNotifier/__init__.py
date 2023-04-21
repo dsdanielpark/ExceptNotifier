@@ -42,9 +42,12 @@ from ExceptNotifier.ipython.slack_notifier_ipython import ExceptSlackIpython
 from ExceptNotifier.ipython.sms_notifier_ipython import ExceptSMSIpython
 from ExceptNotifier.ipython.teams_notifier_ipython import ExceptTeamsIpython
 from ExceptNotifier.ipython.wechat_notifier_ipython import ExceptWechatIpython
+from ExceptNotifier.ipython.beep_notifier_ipython import ExceptBeepIpython
+from ExceptNotifier.ipython.desktop_notifier_ipython import ExceptDesktopIpython
 
 
 __all__ = [
+    "ExceptBeepIpython", "ExceptDesktopIpython"
     "get_resp_openai_advice"
     "SuccessMail",
     "ExceptMail",

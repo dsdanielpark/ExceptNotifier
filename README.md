@@ -511,6 +511,8 @@ SendDiscord().__call__()        #3 customized sender
 <br>
 
 ## *Chime*
+[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/drive/1hUMMQ6He9M4MlspZ88J9kO8juxvC5b3a?usp=sharing)
+
 - a. Select the Chat room to receive notifications.
 - b. Click `Room Setting` in the upper right corner.
 - c. Click `Manage Webhook and bot`
@@ -545,6 +547,7 @@ SendChime().__call__()        #3 customized sender
 <br>
 
 ## *Slack*
+[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/drive/1-dAaKl_gwX481FxH424aCVFqsq-thGXK?usp=sharing) 
 - a. visit https://api.slack.com/
 - b. `Create an app` - `From scratch` - `Create App`
 - c. Add webhook: Click `Incoming Webhooks` - Activate Incomming `On` - Add New Webhook to Workspace
@@ -577,6 +580,7 @@ SendSlack().__call__()        #3 customized sender
 <Br>
 
 ## *Line*
+[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/drive/1PDrJqxDq4NE6BRUrRkFvDBiMHQz0WbZh?usp=sharing) 
 - a. Register [https://notify-bot.line.me/](https://notify-bot.line.me/)
 - b. Go to mypage [https://notify-bot.line.me/my/](https://notify-bot.line.me/my/)
 - c. Click `Generate Token`, enter Service Name and click `1-on-1 chat with LINE` (anything you like)
