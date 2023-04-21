@@ -12,9 +12,20 @@ from ExceptNotifier.ipython.wechat_notifier_ipython import ExceptWechatIpython
 from ExceptNotifier.ipython.beep_notifier_ipython import ExceptBeepIpython
 from ExceptNotifier.ipython.desktop_notifier_ipython import ExceptDesktopIpython
 
-__all__ = ["ExceptTelegramIpython", "ExceptChimeIpython", "ExceptDiscordIpython",
-           "ExceptKakaoIpython", "ExceptLineIpython", "ExceptMailIpython", "ExceptSlackIpython",
-           "ExceptSMSIpython", "ExceptTeamsIpython", "ExceptWechatIpython", "ExceptBeepIpython", "ExceptDesktopIpython"]
+__all__ = [
+    "ExceptTelegramIpython",
+    "ExceptChimeIpython",
+    "ExceptDiscordIpython",
+    "ExceptKakaoIpython",
+    "ExceptLineIpython",
+    "ExceptMailIpython",
+    "ExceptSlackIpython",
+    "ExceptSMSIpython",
+    "ExceptTeamsIpython",
+    "ExceptWechatIpython",
+    "ExceptBeepIpython",
+    "ExceptDesktopIpython",
+]
 
 __version__ = "0.2.0"
 __author__ = "daniel park <parkminwoo1991@gmail.com>"

@@ -1,4 +1,3 @@
-
 # Copyright 2023 parkminwoo
 import sys, os
 from ExceptNotifier import ExceptTelegram, SuccessTelegram, SendTelegram
@@ -10,8 +9,7 @@ if __name__ == "__main__":
     """Get your bot from botfather. 
     https://core.telegram.org/bots/tutorial"""
 
-    
-    os.environ['_TELEGRAM_TOKEN'] = "xxxxxxxxxx"
+    os.environ["_TELEGRAM_TOKEN"] = "xxxxxxxxxx"
     # _OPEN_AI_MODEL = "gpt-3.5-turbo"
     # _OPEN_AI_API = "sk-xxxxxxxxx"
     sys.excepthook = ExceptTelegram.__call__

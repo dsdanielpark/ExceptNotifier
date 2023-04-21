@@ -3,7 +3,9 @@
 import openai
 
 
-def receive_openai_advice(_OPEN_AI_MODEL: str, _OPEN_AI_API: str, error_message: str) -> str:
+def receive_openai_advice(
+    _OPEN_AI_MODEL: str, _OPEN_AI_API: str, error_message: str
+) -> str:
     """Receive debugging information about your code from models in open ai.
 
     :param _OPEN_AI_MODEL: model name of open ai
@@ -27,7 +29,9 @@ def receive_openai_advice(_OPEN_AI_MODEL: str, _OPEN_AI_API: str, error_message:
     return advice_msg
 
 
-def get_resp_openai_advice(_OPEN_AI_MODEL: str, _OPEN_AI_API: str, error_message: str) -> dict:
+def get_resp_openai_advice(
+    _OPEN_AI_MODEL: str, _OPEN_AI_API: str, error_message: str
+) -> dict:
     """Receive debugging information about your code from models in open ai.
 
     :param _OPEN_AI_MODEL: model name of open ai

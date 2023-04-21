@@ -8,8 +8,7 @@ if __name__ == "__main__":
     """Get your Webhook _CHIME_WEBHOOK_URL from your chatroom. 
     https://docs.aws.amazon.com/chime/latest/ag/webhooks.html"""
 
-
-    os.environ['_CHIME_WEBHOOK_URL'] = 'xxxx'
+    os.environ["_CHIME_WEBHOOK_URL"] = "xxxx"
     # os.environ['_OPEN_AI_API'] = "sk-xxxxx"
     # os.environ['_OPEN_AI_MODEL'] = "gpt-3.5-turbo"
     sys.excepthook = ExceptChime.__call__

@@ -31,7 +31,8 @@ __all__ = [
     "send_whatsapp_msg",
     "send_sms_msg",
     "beep",
-    "receive_openai_advice", "get_resp_openai_advice"
+    "receive_openai_advice",
+    "get_resp_openai_advice",
 ]
 
 __version__ = "0.2.0"

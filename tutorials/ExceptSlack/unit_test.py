@@ -9,8 +9,7 @@ if __name__ == "__main__":
     """Get your _SLACK_WEBHOOK_URL from HERE. 
     https://api.slack.com/messaging/webhooks#create_a_webhook"""
 
-    
-    os.environ['_SLACK_WEBHOOK_URL'] ='xxxxx'
+    os.environ["_SLACK_WEBHOOK_URL"] = "xxxxx"
     # _OPEN_AI_MODEL = "gpt-3.5-turbo"
     # _OPEN_AI_API = "sk-xxxxxxxxx"
 

@@ -8,8 +8,7 @@ if __name__ == "__main__":
     """Get your _DISCORD_WEBHOOK_URL from HERE. 
     https://discord.com/developers/docs/resources/webhook"""
 
-  
-    os.environ['_DISCORD_WEBHOOK_URL'] = 'xxxxxxx'
+    os.environ["_DISCORD_WEBHOOK_URL"] = "xxxxxxx"
     # _OPEN_AI_MODEL = "gpt-3.5-turbo"
     # _OPEN_AI_API = "sk-xxxxxxxxx"
 

@@ -21,16 +21,32 @@ from ExceptNotifier.base.desktop_sender import send_desktop_msg
 
 from ExceptNotifier.python.mail_notifier import SuccessMail, ExceptMail, SendMail
 from ExceptNotifier.python.slack_notifier import SuccessSlack, ExceptSlack, SendSlack
-from ExceptNotifier.python.telegram_notifier import SuccessTelegram, ExceptTelegram, SendTelegram
+from ExceptNotifier.python.telegram_notifier import (
+    SuccessTelegram,
+    ExceptTelegram,
+    SendTelegram,
+)
 from ExceptNotifier.python.chime_notifier import SuccessChime, ExceptChime, SendChime
-from ExceptNotifier.python.discord_notifier import SuccessDiscord, ExceptDiscord, SendDiscord
+from ExceptNotifier.python.discord_notifier import (
+    SuccessDiscord,
+    ExceptDiscord,
+    SendDiscord,
+)
 from ExceptNotifier.python.kakao_notifier import SuccessKakao, ExceptKakao, SendKakao
 from ExceptNotifier.python.line_notifier import SuccessLine, ExceptLine, SendLine
 from ExceptNotifier.python.teams_notifier import SuccessTeams, ExceptTeams, SendTeams
 from ExceptNotifier.python.sms_notifier import SuccessSMS, ExceptSMS, SendSMS
 from ExceptNotifier.python.beep_notifier import SuccessBeep, ExceptBeep, SendBeep
-from ExceptNotifier.python.wechat_notifier import SuccessWechat, ExceptWechat, SendWechat
-from ExceptNotifier.python.desktop_notifier import SuccessDesktop, ExceptDesktop, SendDesktop
+from ExceptNotifier.python.wechat_notifier import (
+    SuccessWechat,
+    ExceptWechat,
+    SendWechat,
+)
+from ExceptNotifier.python.desktop_notifier import (
+    SuccessDesktop,
+    ExceptDesktop,
+    SendDesktop,
+)
 
 from ExceptNotifier.ipython.telegram_notifier_ipython import ExceptTelegramIpython
 from ExceptNotifier.ipython.chime_notifier_ipython import ExceptChimeIpython
@@ -47,9 +63,8 @@ from ExceptNotifier.ipython.desktop_notifier_ipython import ExceptDesktopIpython
 
 
 __all__ = [
-    "ExceptBeepIpython", "ExceptDesktopIpython"
-    "get_resp_openai_advice"
-    "SuccessMail",
+    "ExceptBeepIpython",
+    "ExceptDesktopIpython" "get_resp_openai_advice" "SuccessMail",
     "ExceptMail",
     "SendMail",
     "SuccessSlack",
@@ -98,11 +113,21 @@ __all__ = [
     "ExceptWechat",
     "SendWechat",
     "send_wechat_msg",
-    "send_desktop_msg","SuccessDesktop", "ExceptDesktop", "SendDesktop", "ExceptTelegramIpython",
-    "ExceptTelegramIpython", "ExceptChimeIpython", "ExceptDiscordIpython",
-           "ExceptKakaoIpython", "ExceptLineIpython", "ExceptMailIpython", "ExceptSlackIpython",
-           "ExceptSMSIpython", "ExceptTeamsIpython", "ExceptWechatIpython"
-
+    "send_desktop_msg",
+    "SuccessDesktop",
+    "ExceptDesktop",
+    "SendDesktop",
+    "ExceptTelegramIpython",
+    "ExceptTelegramIpython",
+    "ExceptChimeIpython",
+    "ExceptDiscordIpython",
+    "ExceptKakaoIpython",
+    "ExceptLineIpython",
+    "ExceptMailIpython",
+    "ExceptSlackIpython",
+    "ExceptSMSIpython",
+    "ExceptTeamsIpython",
+    "ExceptWechatIpython",
 ]
 
 __version__ = "0.2.0"
