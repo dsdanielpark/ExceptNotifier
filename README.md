@@ -172,7 +172,7 @@ except ExceptTelegram: # sending msg WITH AI DEBUGGING to telegram
 ![](https://github.com/dsdanielpark/ExceptNotifier/blob/main/assets/imgs/ex3.png)
 
 - Format: Success`[appName]` <br>
-*ExampleClass*
+*ExampleClass* <br>
 By placing the try except in python at the end of the try statement, applications can be notified that the try statement worked normally.
 ```
 SuccessChime, SuccessTelegram, SuccessDiscord, SuccessSMS, SuccessMail, SuccessKakao, SuccessLine, SuccessSlack, SuccessTeams, SuccessDesktope, SuccessBeep
@@ -196,7 +196,7 @@ except:
 ## 1-4. Send`Notifier`
 ![](https://github.com/dsdanielpark/ExceptNotifier/blob/main/assets/imgs/ex4.png)
 - Format: Send`[appName]` <Br>
-*ExampleClass*
+*ExampleClass* <br>
 Place it anywhere on the line of code you want, and you'll be notified when that line of code is reached.
 ```
 SendChime, SendTelegram, SendDiscord, SendSMS, SendMail, SendKakao, SendLine, SendSlack, SendTeams, SendDesktope, SendBeep
