@@ -69,7 +69,7 @@ The ExceptNotifier functions in IPython follow the class naming conventions. Thi
 |0.1.18|For implementation in IPython, the package structure is separated into py and ipy. Adds a function for telegram in ipython as a test.|
 |0.1.19|Adds a function for every applications in ipython.|
 |0.1.20|Delete offset arguments in ipython.|
-
+|0.1.21|Delete offset arguments in Slackipython.|
 
 ## QA Note
 QA tests are carried out from Python 3.6 to Python 3.9 environments through Windows, MacBook m1, and Google Colab, focusing on Telegram, Discord, Slack, Line, and Chime applications. QA for the rest proceeds whenever there is a request or whenever I have time to spare, and replaces it with responding to bug reports. After the QA test is conducted, we plan to raise the development stage and recruit QA testers by promoting it.
