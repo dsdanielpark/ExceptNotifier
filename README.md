@@ -85,7 +85,7 @@ If you add the following two variables to the required variables for each applic
 <br>
 
 # Tutorial
-I will update tutorial ASAP.
+I will update tutorial ASAP. `README.md` is sufficient, but read the application's official documentation if necessary. However, we are preparing a more detailed and friendly tutorial.
 
 1. Main-tutorials: [Notebook](https://github.com/DSDanielPark/ExceptNotifier/blob/main/tutorial/ExceptNotifier.ipynb)
 2. Sub-tutorial-folder: Tutorials for each function can be found in this [folder](https://github.com/DSDanielPark/ExceptNotifier/tree/main/tutorial). The tutorial is synchronized with the Python file name provided by ExceptNotifier.
@@ -477,9 +477,9 @@ SendMail().__call__()
 
 ## *Discord*
 - a. Select the channel to receive notifications.
-- b. Click "Edit Channel" in the upper right corner of the chat window.
-- c. Click Integrations - Webhook - New Webhook.
-- d. Then click Copy Webhook.
+- b. Click `Edit Channel` in the upper right corner of the chat window.
+- c. Click `Integrations` - `Webhook` - `New Webhook`.
+- d. Then click `Copy Webhook`.
 *API TEST*
 ```python
 from ExceptNotifier import send_discord_msg
@@ -511,9 +511,9 @@ SendDiscord().__call__()        #3 customized sender
 
 ## *Chime*
 - a. Select the Chat room to receive notifications.
-- b. Click "Room Setting" in the upper right corner.
-- c. Click "Manage Webhook and bot."
-- d. Create Add Webhook, set it up, then click Copy Webhook.
+- b. Click `Room Setting` in the upper right corner.
+- c. Click `Manage Webhook and bot`
+- d. Create Add Webhook, set it up, then click `Copy Webhook`.
 *API TEST*
 ```python
 from ExceptNotifier import send_chime_msg
@@ -659,7 +659,7 @@ SendSMS().__call__()        #3 customized sender
 
 ## *Teams*
 - a. Create the channel that you want to notify.
-- b. App - Search: webhook - Incoming Webhook [https://teams.microsoft.com/l/app/203a1e2c-26cc-47ca-83ae-be98f960b6b2?source=app-details-dialog](https://teams.microsoft.com/l/app/203a1e2c-26cc-47ca-83ae-be98f960b6b2?source=app-details-dialog)
+- b. `App` - `Search: webhook` - `Incoming Webhook` [https://teams.microsoft.com/l/app/203a1e2c-26cc-47ca-83ae-be98f960b6b2?source=app-details-dialog](https://teams.microsoft.com/l/app/203a1e2c-26cc-47ca-83ae-be98f960b6b2?source=app-details-dialog)
 - c. Click `Request Approval` <br>
 After you can use webhook incomming. Proceed to next steps.
 Microsoft Teams allows limited application access per organization, so it can only be used if the webhook incoming application is available.
