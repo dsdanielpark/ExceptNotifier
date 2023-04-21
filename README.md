@@ -476,6 +476,7 @@ SendMail().__call__()
 <br>
 
 ## *Discord*
+[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/drive/1aVefwi44XMGiNxhAkqxRMWzCpaFZmqax?usp=sharing) 
 - a. Select the channel to receive notifications.
 - b. Click `Edit Channel` in the upper right corner of the chat window.
 - c. Click `Integrations` - `Webhook` - `New Webhook`.
@@ -557,7 +558,7 @@ send_slack_msg(_SLACK_WEBHOOK_URL, "Any Test Message")
 *Notifier*
 ```python
 import sys
-from ExceptNotifier import ExceptSlack, SuccessSlcak, SendSlack
+from ExceptNotifier import ExceptSlack, SuccessSlack, SendSlack
 sys.excepthook = ExceptSlack.__call__
 
 # Define the next two variables optionally when using OpenAI's API.
@@ -567,7 +568,7 @@ os.environ['_SLACK_WEBHOOK_URL'] = 'https://hooks.slack.com/services/xxxxxxxxxxx
 
 try:
     print(1/0)  
-    SuccessSlcak().__call__() #1 success sender          
+    SuccessSlack().__call__() #1 success sender          
 except ExceptSlack as e:      #2 except sender            
     sys.exit()
 
