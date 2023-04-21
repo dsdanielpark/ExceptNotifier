@@ -1,4 +1,4 @@
-# ExceptTelegram
+# ExceptDesktop
 No setup is required. Use as follows. TEST
 ```python
 from ExceptNotifier import send_desktop_msg

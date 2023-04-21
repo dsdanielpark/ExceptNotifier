@@ -1,4 +1,4 @@
-# ExceptTelegram
+# ExceptMail
 
 ## Ready
 In the except statement, an email is sent along with the error message. Additionally, you can send emails from any desired line. <br>

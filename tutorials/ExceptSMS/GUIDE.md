@@ -1,4 +1,4 @@
-# ExceptTelegram
+# ExceptSMS
 
 ## Ready
 - a. Sign up for Twilio. [https://www.twilio.com/en-us](https://www.twilio.com/en-us)

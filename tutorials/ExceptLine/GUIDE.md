@@ -1,4 +1,4 @@
-# ExceptTelegram
+# ExceptLine
 
 ## Ready
 [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/drive/1PDrJqxDq4NE6BRUrRkFvDBiMHQz0WbZh?usp=sharing) 

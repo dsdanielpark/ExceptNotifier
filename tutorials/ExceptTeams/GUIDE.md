@@ -1,4 +1,4 @@
-# ExceptTelegram
+# ExceptTeams
 
 ## Ready
 - a. Create the channel that you want to notify.
