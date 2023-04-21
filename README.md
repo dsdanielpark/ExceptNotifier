@@ -253,8 +253,8 @@ As all classes function the same, the example will only use one image, like in T
 - b. Type /newbot to create a new bot <br>
 - c. Give your bot a name & a username <br>
 - d. Copy your new Telegram bot’s token <br>
-- e. You have to click `Start_bot` and enter anything to your bot.
-   - Before use Notifier, Please use this to check if you follow guide.
+- e. You have to click `Start_bot` and must enter anything to your bot.
+   - Before use Notifier, Please use this to check if you follow guide. The Telegram bot may have a slight delay and it responded within 2-3 minutes.
 ```
 from ExceptNotifier import send_telegram_msg
 
