@@ -23,16 +23,16 @@ With `ExceptNotifier`, you can obtain detailed compilation errors, including deb
 <Br>
 
 # Contents
-- [Python Package: ExceptNotifier](#python-package--exceptnotifier)
+- [Python Package: ExceptNotifier](#python-package-exceptnotifier)
 - [Supporting Applications](#supporting-applications)
 - [Quick Start](#quick-start)
 - [App Setup Overview](#app-setup-overview)
 - [Tutorial](#tutorial)
 - [1. Key Features](#1-key-features)
-  * [1-1. Except`Notifier`](#1-1-except--appname--)
+  * [1-1. Except`Notifier`](#1-1-except-appname-)
   * [1-2. AI Debbugging Infomation Notification](#1-2-ai-debbugging-infomation-notification)
-  * [1-3. Success`Notifier`](#1-3-success--appname--)
-  * [1-4. Send`Notifier`](#1-4-send--appname--)
+  * [1-3. Success`Notifier`](#1-3-success-appname-)
+  * [1-4. Send`Notifier`](#1-4-send-appname-)
 - [Features](#features)
   * [2. Notifier](#2-notifier)
   * [3. Sender](#3-sender)
