@@ -48,6 +48,22 @@ I tried to keep the same structure for both Python and Ipython, but I noticed th
 ## Naming in IPython Functions
 The ExceptNotifier functions in IPython follow the class naming conventions. This is done to override custom exceptions in IPython and minimize confusion for users. Therefore, unlike Python, it doesn't matter what goes into the except clause, but it's important to remember that the except statement must always contain a raise.
 
+<br>
+
+## Doc string style
+Applies to the original Sphinx documentation without using the Google Python Style Guide. This is a measure for automatic documentation generation, and was taken because the structure of the package is simple.
+
+<br>
+
+## About sub package
+Although it can be used without specifying it as a sub package, submodules can function even if they are distributed as individual packages, so define submodules as subpackages with the possibility of future interface changes or distribution of subpackages in mind. In addition, class and function names have been adjusted to avoid confusion in function names in Python and IPython, but they are separated into subpackages for clearer object-oriented programming. This is a temporary measure and may change as development progresses.
+
+<br>
+
+## Documentation 
+As mentioned above, ExceptNotifier seems to have a complex structure to support various applications, but in reality, it aims for a very simple package structure. Since the package structure was designed like that from the beginning, and usage is simple, Sphinx documentation also performs minimal documentation. Also, since this should be automated by workflow, etc., more complicated documentation will be done through markdown files or blog posts.
+
+<br>
 
 ## Release note
 |Version|Description|
