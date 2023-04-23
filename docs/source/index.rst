@@ -16,12 +16,4 @@ Welcome to ExceptNotifier's documentation!
    ExceptNotifier.base
    ExceptNotifier.python
    ExceptNotifier.ipython
-
-
-
-Indices and tables
-==================
-
-* :ref:`genindex`
-* :ref:`modindex`
-* :ref:`search`
+   ExceptNotifier.utils

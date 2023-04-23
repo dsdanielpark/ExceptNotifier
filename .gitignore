@@ -6,7 +6,7 @@ build
 
 !notebooks/kakao/Generate_Token.ipynb
 notebooks
-
+docs_1/
 
 
 # C extensions
