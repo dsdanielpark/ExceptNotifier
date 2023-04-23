@@ -153,18 +153,13 @@ class SendChime:
 
 #     """Get your Webhook _CHIME_WEBHOOK_URL from your chatroom.
 #     https://docs.aws.amazon.com/chime/latest/ag/webhooks.html"""
-
-
-# _CHIME_WEBHOOK_URL = "xxxxxxxxxxxxxxxxxx"
-# _OPEN_AI_API = "xxxxxxxxxxxxx"
-# _OPEN_AI_MODEL = "gpt-3.5-turbo"
+# os.environ['_CHIME_WEBHOOK_URL'] = "xxxxxxxxxxxxxxxxxx"
+# os.environ['_OPEN_AI_API'] = "xxxxxxxxxxxxx"  #optional
+# os.environ['_OPEN_AI_MODEL'] = "gpt-3.5-turbo" #optional
 # sys.excepthook = ExceptChime.__call__
-
 # try:
 #     print(1 / 0)
 #     SuccessChime().__call__()  # 1 success sender
-
 # except ExceptChime as e:  # 2 except sender
 #     sys.exit()
-
 # SendChime().__call__()  # 3 customized sender

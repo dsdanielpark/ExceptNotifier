@@ -44,7 +44,6 @@ def send_sms_msg(
 #     _SENDER_PHONE_NUMBER = "+aaaaa"
 #     _RECIPIENT_PHONE_NUMBER = "+bbbbb"
 #     msg = "ExceptNotifier Test"
-
 #     send_sms_msg(
 #         _TWILIO_SID, _TWILIO_TOKEN, _SENDER_PHONE_NUMBER, _RECIPIENT_PHONE_NUMBER, msg
 #     )

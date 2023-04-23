@@ -165,21 +165,15 @@ class SendKakao:
 
 
 # if __name__ == "__main__":
-
-#     """Follow next notebooks"""
-
-
-#     _KAKAO_TOKEN_PATH = (
+#     os.environ['_KAKAO_TOKEN_PATH'] = (
 #         r"C:\Users\parkm\Desktop\git\ExceptionNotifier\tutorials\token.json"
 #     )
-
+#     os.environ['_OPEN_AI_API'] = "xxxxxxxxxxxxx"  #optional
+#     os.environ['_OPEN_AI_MODEL'] = "gpt-3.5-turbo" #optional
 #     sys.excepthook = ExceptKakao.__call__
-
 #     try:
 #         print(1 / 0)
 #         SuccessKakao().__call__()  # 1 success sender
-
 #     except ExceptKakao as e:  # 2 except sender
 #         sys.exit()
-
 #     SendKakao().__call__()  # 3 customized sender

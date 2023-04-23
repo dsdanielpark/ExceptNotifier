@@ -1,5 +1,4 @@
 # Copyright 2023 parkminwoo Authors.
-
 import requests
 import traceback
 import re
@@ -147,20 +146,15 @@ class SendLine:
 
 
 # if __name__ == "__main__":
-
 #     """Get your URL from HERE.
 #     https://notify-bot.line.me/my/"""
-
-
-#     _LINE_NOTIFY_API_TOKEN = "xxxxxxxxxxx"
-
+# #     os.environ['_OPEN_AI_API'] = "xxxxxxxxxxxxx"  #optional
+# #     os.environ['_OPEN_AI_MODEL'] = "gpt-3.5-turbo" #optional
+#     os.environ['_LINE_NOTIFY_API_TOKEN'] = "xxxxxxxxxxx"
 #     sys.excepthook = ExceptLine.__call__
-
 #     try:
 #         print(1 / 20)
 #         SuccessLine().__call__()  # 1 success sender
-
 #     except ExceptLine as e:  # 2 except sender
 #         sys.exit()
-
 #     SendLine().__call__()  # 3 customized sender

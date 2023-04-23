@@ -50,7 +50,6 @@ def send_gmail_msg(
 #     _GAMIL_RECIPIENT_ADDR = "zzzzz@gmail.com"
 #     subject_msg = "Python Code Alarm: Process End."
 #     body_msg = "Python Code Notice: \nA notification has arrived from your code."
-
 #     send_gmail_msg(
 #         _GMAIL_SENDER_ADDR,
 #         _GAMIL_RECIPIENT_ADDR,

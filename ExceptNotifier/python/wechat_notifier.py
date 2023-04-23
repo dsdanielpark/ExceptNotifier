@@ -140,24 +140,17 @@ class SendWechat:
 
 
 # if __name__ == "__main__":
-
 #     """Get your wechat webhook URL.
 #     https://work.weixin.qq.com/api/doc/90000/90136/91770"""
-
-
-#     _WECHAT_WEBHOOK_URL = "xxxxxxxxxxx"
-#     _OPEN_AI_MODEL = "gpt-3.5-turbo"
-#     _OPEN_AI_API = "sk-xxxxxxxxx"
+#     os.environ['_WECHAT_WEBHOOK_URL'] = "xxxxxxxxxxx"
+#     # os.environ['_OPEN_AI_API'] = "xxxxxxxxxxxxx"  #optional
+#     # os.environ['_OPEN_AI_MODEL'] = "gpt-3.5-turbo" #optional
 #     sys.excepthook = ExceptWechat.__call__
-
 #     try:
 #         print(1 / 0)
 #         SuccessWechat().__call__()  # 1 success sender
-
 #     except ExceptWechat as e:  # 2 except sender
 #         sys.exit()
-
 #     SendWechat().__call__()  # 3 customized sender
-
 #     send = SendWechat()  # You can use it like this, too.
-#     send()
+#     send() # 3 cusotomized sender

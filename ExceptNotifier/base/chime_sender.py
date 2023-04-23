@@ -26,7 +26,6 @@ def send_chime_msg(_CHIME_WEBHOOK_URL: str, msg: str) -> dict:
     return resp
 
 
-if __name__ == "__main__":
-    _CHIME_WEBHOOK_URL = "xxxxx"
-
-    send_chime_msg(_CHIME_WEBHOOK_URL, "Test")
+# if __name__ == "__main__":
+#     _CHIME_WEBHOOK_URL = "xxxxx"
+#     send_chime_msg(_CHIME_WEBHOOK_URL, "Test")

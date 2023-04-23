@@ -27,7 +27,6 @@ def send_telegram_msg(_TELEGRAM_TOKEN: str, msg: str) -> dict:
 
 
 # if __name__ == "__main__":
-
 #     _TELEGRAM_TOKEN = "xxxxxxxxxx"
 #     msg = "Test Message"
 #     send_telegram_msg(_TELEGRAM_TOKEN, msg)

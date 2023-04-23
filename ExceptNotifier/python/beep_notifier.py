@@ -65,14 +65,11 @@ class SendBeep:
 
 
 # if __name__ == "__main__":
-#     BEEP_TIME = 1
+#     os.environ['BEEP_TIME'] = 1
 #     sys.excepthook = ExceptBeep.__call__
-
 #     try:
 #         print(1 / 20)
 #         SuccessBeep().__call__()  # 1 success beep-beep
-
 #     except ExceptBeep as e:  # 2 except beep-beep
 #         sys.exit()
-
 #     SendBeep().__call__()  # 3 customized beep-beep

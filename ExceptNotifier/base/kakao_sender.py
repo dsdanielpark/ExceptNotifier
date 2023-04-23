@@ -40,7 +40,6 @@ def send_kakao_msg(_KAKAO_TOKEN_PATH: str, msg: str) -> dict:
 #     _KAKAO_TOKEN_PATH = (
 #         r"C:\Users\parkm\Desktop\git\ExceptionNotifier\tutorials\token.json"
 #     )
-
 #     msg = "Sending Message Test"
 #     resp_status = send_kakao_msg(_KAKAO_TOKEN_PATH, msg)
 #     print(resp_status)
