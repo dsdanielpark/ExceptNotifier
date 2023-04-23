@@ -159,7 +159,7 @@ IPython Core
 AWS Chime 
 -------------------------
 
-.. automodule:: ExceptNotifier.ipython.chime_notifier_ipython
+.. automodule:: ExceptNotifier.ipython.chime_notifier
    :members:
    :undoc-members:
    :show-inheritance:
@@ -168,7 +168,7 @@ AWS Chime
 Discord 
 -------------------------
 
-.. automodule:: ExceptNotifier.ipython.discord_notifier_ipython
+.. automodule:: ExceptNotifier.ipython.discord_notifier
    :members:
    :undoc-members:
    :show-inheritance:
@@ -176,7 +176,7 @@ Discord
 Kakaotalk 
 -------------------------
 
-.. automodule:: ExceptNotifier.ipython.kakao_notifier_ipython
+.. automodule:: ExceptNotifier.ipython.kakao_notifier
    :members:
    :undoc-members:
    :show-inheritance:
@@ -184,7 +184,7 @@ Kakaotalk
 Line
 -------------------------
 
-.. automodule:: ExceptNotifier.ipython.line_notifier_ipython
+.. automodule:: ExceptNotifier.ipython.line_notifier
    :members:
    :undoc-members:
    :show-inheritance:
@@ -193,7 +193,7 @@ Line
 Google Mail
 -------------------------
 
-.. automodule:: ExceptNotifier.ipython.mail_notifier_ipython
+.. automodule:: ExceptNotifier.ipython.mail_notifier
    :members:
    :undoc-members:
    :show-inheritance:
@@ -202,7 +202,7 @@ Google Mail
 Slack
 -------------------------
 
-.. automodule:: ExceptNotifier.ipython.slack_notifier_ipython
+.. automodule:: ExceptNotifier.ipython.slack_notifier
    :members:
    :undoc-members:
    :show-inheritance:
@@ -210,7 +210,7 @@ Slack
 SMS
 -------------------------
 
-.. automodule:: ExceptNotifier.ipython.sms_notifier_ipython
+.. automodule:: ExceptNotifier.ipython.sms_notifier
    :members:
    :undoc-members:
    :show-inheritance:
@@ -218,7 +218,7 @@ SMS
 Microsoft Teams
 -------------------------
 
-.. automodule:: ExceptNotifier.ipython.teams_notifier_ipython
+.. automodule:: ExceptNotifier.ipython.teams_notifier
    :members:
    :undoc-members:
    :show-inheritance:
@@ -227,7 +227,7 @@ Microsoft Teams
 Telegram
 -------------------------
 
-.. automodule:: ExceptNotifier.ipython.telegram_notifier_ipython
+.. automodule:: ExceptNotifier.ipython.telegram_notifier
    :members:
    :undoc-members:
    :show-inheritance:
@@ -235,7 +235,7 @@ Telegram
 Wechat
 -------------------------
 
-.. automodule:: ExceptNotifier.ipython.wechat_notifier_ipython
+.. automodule:: ExceptNotifier.ipython.wechat_notifier
    :members:
    :undoc-members:
    :show-inheritance:
@@ -245,7 +245,7 @@ Wechat
 Desktop
 -------------------------
 
-.. automodule:: ExceptNotifier.ipython.desktop_notifier_ipython
+.. automodule:: ExceptNotifier.ipython.desktop_notifier
    :members:
    :undoc-members:
    :show-inheritance:
@@ -254,7 +254,7 @@ Desktop
 Beep
 -------------------------
 
-.. automodule:: ExceptNotifier.ipython.beep_notifier_ipython
+.. automodule:: ExceptNotifier.ipython.beep_notifier
    :members:
    :undoc-members:
    :show-inheritance:
