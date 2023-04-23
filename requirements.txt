@@ -1,7 +1,14 @@
-twilio
-plyer
-openai
-discord.py
-sphinx-autodocgen
-Sphinx
-sphinx_rtd_theme
+twilio==8.0.0
+plyer==2.1.0
+openai==0.27.4
+discord==2.2.2
+discord.py==2.2.2
+Sphinx @ file:///opt/conda/conda-bld/sphinx_1643644169832/work
+sphinx-rtd-theme==1.2.0
+sphinxcontrib-applehelp @ file:///home/ktietz/src/ci/sphinxcontrib-applehelp_1611920841464/work
+sphinxcontrib-devhelp @ file:///home/ktietz/src/ci/sphinxcontrib-devhelp_1611920923094/work
+sphinxcontrib-htmlhelp @ file:///tmp/build/80754af9/sphinxcontrib-htmlhelp_1623945626792/work
+sphinxcontrib-jquery==4.1
+sphinxcontrib-jsmath @ file:///home/ktietz/src/ci/sphinxcontrib-jsmath_1611920942228/work
+sphinxcontrib-qthelp @ file:///home/ktietz/src/ci/sphinxcontrib-qthelp_1611921055322/work
+sphinxcontrib-serializinghtml
