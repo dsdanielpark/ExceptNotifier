@@ -2,3 +2,6 @@ twilio
 plyer
 openai
 discord.py
+sphinx-autodocgen
+Sphinx
+sphinx_rtd_theme
