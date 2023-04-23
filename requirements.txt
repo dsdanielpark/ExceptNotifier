@@ -1,5 +1,4 @@
 twilio
 plyer
 openai
-discord
-rinoh
+discord.py
