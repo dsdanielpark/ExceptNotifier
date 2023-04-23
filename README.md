@@ -21,7 +21,7 @@ Before QA<br>
 <Br><br>
 With `ExceptNotifier`, you can obtain detailed compilation errors, including debug information, sent directly to your preferred messaging platform or email. By integrating OpenAI's ChatGPT, you can receive additional error code information as long as you provide the required API model name and key. This feature ensures that error handling and notifications are more informative and accessible, streamlining your debugging process.
 
-![](./assets/imgs/core.png)
+![](./assets/imgs/core01.png)
 
 <Br>
 
