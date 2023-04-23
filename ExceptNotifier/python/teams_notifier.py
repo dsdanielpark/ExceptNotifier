@@ -14,19 +14,19 @@ DATE_FORMAT = "%Y-%m-%d %H:%M:%S"
 
 
 class ExceptTeams(BaseException):
+    """Override excepthook to send error message to Microsoft Teams.
+
+    :param etype: Error Type
+    :type etype: _type_
+    :param value: Error Value
+    :type value: _type_
+    :param tb: Traceback Information
+    :type tb: _type_
+    """
     def __init__(self, *args: object) -> None:
         super().__init__(*args)
 
     def __call__(etype, value, tb):
-        """Override excepthook to send error message to Microsoft Teams.
-
-        :param etype: Error Type
-        :type etype: _type_
-        :param value: Error Value
-        :type value: _type_
-        :param tb: Traceback Information
-        :type tb: _type_
-        """
         excType = re.sub(
             "(<(type|class ')|'exceptions.|'>|__main__.)", "", str(etype)
         ).strip()
@@ -110,6 +110,8 @@ class ExceptTeams(BaseException):
 
 
 class SuccessTeams:
+    """Sending success message to microsoft teams
+    """
     def __init__(self) -> None:
         pass
 
@@ -130,6 +132,8 @@ class SuccessTeams:
 
 
 class SendTeams:
+    """Sending message to microsoft teams
+    """
     def __init__(self) -> None:
         pass
 

@@ -7,19 +7,20 @@ from ExceptNotifier import beep
 
 
 class ExceptBeep(BaseException):
+    """Override excepthook to send error message to beep.
+
+    :param etype: Error Type
+    :type etype: _type_
+    :param value: Error Value
+    :type value: _type_
+    :param tb: Traceback Information
+    :type tb: _type_
+    """
     def __init__(self, *args: object) -> None:
         super().__init__(*args)
 
     def __call__(etype, value, tb):
-        """Override excepthook to send error message to Line.
 
-        :param etype: Error Type
-        :type etype: _type_
-        :param value: Error Value
-        :type value: _type_
-        :param tb: Traceback Information
-        :type tb: _type_
-        """
 
         beep(os.environ["BEEP_TIME"])
         beep(os.environ["BEEP_TIME"])
@@ -48,6 +49,8 @@ class ExceptBeep(BaseException):
 
 
 class SuccessBeep:
+    """Success beep
+    """
     def __init__(self) -> None:
         pass
 
@@ -57,6 +60,8 @@ class SuccessBeep:
 
 
 class SendBeep:
+    """Send beep
+    """
     def __init__(self) -> None:
         pass
 

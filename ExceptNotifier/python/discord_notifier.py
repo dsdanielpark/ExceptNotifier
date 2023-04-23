@@ -12,19 +12,20 @@ DATE_FORMAT = "%Y-%m-%d %H:%M:%S"
 
 
 class ExceptDiscord(BaseException):
+    """Override excepthook to send error message to Discord.
+
+    :param etype: Error Type
+    :type etype: _type_
+    :param value: Error Value
+    :type value: _type_
+    :param tb: Traceback Information
+    :type tb: _type_
+    """
     def __init__(self, *args: object) -> None:
         super().__init__(*args)
 
     def __call__(etype, value, tb):
-        """Override excepthook to send error message to Discord.
 
-        :param etype: Error Type
-        :type etype: _type_
-        :param value: Error Value
-        :type value: _type_
-        :param tb: Traceback Information
-        :type tb: _type_
-        """
         excType = re.sub(
             "(<(type|class ')|'exceptions.|'>|__main__.)", "", str(etype)
         ).strip()
@@ -113,6 +114,8 @@ class ExceptDiscord(BaseException):
 
 
 class SuccessDiscord:
+    """Sending success message to Discord
+    """
     def __init__(self) -> None:
         pass
 
@@ -132,6 +135,8 @@ class SuccessDiscord:
 
 
 class SendDiscord:
+    """Sending message to Discord
+    """
     def __init__(self) -> None:
         pass
 

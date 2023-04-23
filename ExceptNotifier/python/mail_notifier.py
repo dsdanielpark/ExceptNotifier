@@ -11,19 +11,20 @@ DATE_FORMAT = "%Y-%m-%d %H:%M:%S"
 
 
 class ExceptMail(BaseException):
+    """Override excepthook to send error message to Gmail.
+
+    :param etype: Error Type
+    :type etype: _type_
+    :param value: Error Value
+    :type value: _type_
+    :param tb: Traceback Information
+    :type tb: _type_
+    """
     def __init__(self, *args: object) -> None:
         super().__init__(*args)
 
     def __call__(etype, value, tb):
-        """Override excepthook to send error message to Gmail.
 
-        :param etype: Error Type
-        :type etype: _type_
-        :param value: Error Value
-        :type value: _type_
-        :param tb: Traceback Information
-        :type tb: _type_
-        """
         excType = re.sub(
             "(<(type|class ')|'exceptions.|'>|__main__.)", "", str(etype)
         ).strip()
@@ -151,6 +152,8 @@ class ExceptMail(BaseException):
 
 
 class SuccessMail:
+    """Sending success message to Gmail
+    """
     def __init__(self) -> None:
         pass
 
@@ -180,6 +183,8 @@ class SuccessMail:
 
 
 class SendMail:
+    """Sending message to Gmail
+    """
     def __init__(self) -> None:
         pass
 

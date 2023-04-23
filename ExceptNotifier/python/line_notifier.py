@@ -12,19 +12,19 @@ DATE_FORMAT = "%Y-%m-%d %H:%M:%S"
 
 
 class ExceptLine(BaseException):
+    """Override excepthook to send error message to Line.
+
+    :param etype: Error Type
+    :type etype: _type_
+    :param value: Error Value
+    :type value: _type_
+    :param tb: Traceback Information
+    :type tb: _type_
+    """
     def __init__(self, *args: object) -> None:
         super().__init__(*args)
 
     def __call__(etype, value, tb):
-        """Override excepthook to send error message to Line.
-
-        :param etype: Error Type
-        :type etype: _type_
-        :param value: Error Value
-        :type value: _type_
-        :param tb: Traceback Information
-        :type tb: _type_
-        """
         excType = re.sub(
             "(<(type|class ')|'exceptions.|'>|__main__.)", "", str(etype)
         ).strip()
@@ -106,6 +106,8 @@ class ExceptLine(BaseException):
 
 
 class SuccessLine:
+    """Sending success message to Line
+    """
     def __init__(self) -> None:
         pass
 
@@ -126,6 +128,8 @@ class SuccessLine:
 
 
 class SendLine:
+    """Sending success message to Line
+    """
     def __init__(self) -> None:
         pass
 

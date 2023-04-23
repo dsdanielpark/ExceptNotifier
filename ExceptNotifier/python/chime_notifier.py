@@ -15,19 +15,19 @@ DATE_FORMAT = "%Y-%m-%d %H:%M:%S"
 
 
 class ExceptChime(BaseException):
+    """Override excepthook to send error message to AWS Chime.
+
+    :param etype: Error Type
+    :type etype: _type_
+    :param value: Error Value
+    :type value: _type_
+    :param tb: Traceback Information
+    :type tb: _type_
+    """
     def __init__(self, *args: object) -> None:
         super().__init__(*args)
 
     def __call__(etype, value, tb):
-        """Override excepthook to send error message to AWS Chime.
-
-        :param etype: Error Type
-        :type etype: _type_
-        :param value: Error Value
-        :type value: _type_
-        :param tb: Traceback Information
-        :type tb: _type_
-        """
         excType = re.sub(
             "(<(type|class ')|'exceptions.|'>|__main__.)", "", str(etype)
         ).strip()
@@ -110,6 +110,8 @@ class ExceptChime(BaseException):
 
 
 class SuccessChime:
+    """Sending success message to AWS Chime
+    """
     def __init__(self) -> None:
         pass
 
@@ -130,6 +132,8 @@ class SuccessChime:
 
 
 class SendChime:
+    """Sending message to AWS Chime
+    """
     def __init__(self) -> None:
         pass
 
