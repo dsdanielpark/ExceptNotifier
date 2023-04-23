@@ -21,6 +21,8 @@ Before QA<br>
 <Br><br>
 With `ExceptNotifier`, you can obtain detailed compilation errors, including debug information, sent directly to your preferred messaging platform or email. By integrating OpenAI's ChatGPT, you can receive additional error code information as long as you provide the required API model name and key. This feature ensures that error handling and notifications are more informative and accessible, streamlining your debugging process.
 
+![](./assets/imgs/summary.png)
+
 <Br>
 
 
@@ -58,17 +60,20 @@ $ pip install exceptnotifier
 
 - [App Setup Overview](#app-setup-overview)
 - [Tutorial](#tutorial)
+
 - [Python Core](#python-core)
   * [Except`Notifier`](#exceptnotifier)
     + [AI Debbugging Infomation Notification](#ai-debbugging-infomation-notification)
   * [Success`Notifier`](#successnotifier)
   * [Send`Notifier`](#sendnotifier)
   * [Sender](#sender)
+
 - [IPython Core](#ipython-core)
   * [Except`Notifier` in Ipython](#exceptnotifier-in-ipython)
   * [Success`Notifier` in Ipython](#successnotifier-in-ipython)
   * [Send`Notifier` in Ipython](#sendnotifier-in-ipython)
   * [Sender in Ipython](#sender-in-ipython)
+
 - [Applied in each application](#applied-in-each-application)
   * [*Telegram*](#telegram)
     + [a. Notifier without OpenAI API](#a-notifier-without-openai-api)
@@ -139,7 +144,7 @@ To use the desired application, you must define the necessary variables. Ensure 
 
 
 ## Except`Notifier`
-![](./assets/imgs/ex1.png)
+![](./assets/imgs/ex01.png)
 If you use Python's try except statement as it is, but change except as follows, you can receive notifications through your application.
 - Format: Except`[appName]` <Br>
 - Type: class
@@ -164,7 +169,7 @@ except ExceptTelegram:    # sending except message to telegram
 
 
 ### AI Debbugging Infomation Notification
-![](./assets/imgs/ex2.png)
+![](./assets/imgs/ex02.png)
 
 You can receive debugging information from ChatGPT via OpenAI's API when using the Except statement. The syntax remains the same, but you'll need to configure these two variables:
 `_OPEN_AI_MODEL`,`_OPEN_AI_API`
@@ -187,7 +192,7 @@ except ExceptTelegram: # sending msg WITH AI DEBUGGING to telegram
 
 
 ## Success`Notifier`
-![](./assets/imgs/ex3.png)
+![](./assets/imgs/ex03.png)
 
 - Format: Success`[appName]`
 - Type: Class <br>
@@ -212,7 +217,7 @@ except:
 ```
 
 ## Send`Notifier`
-![](./assets/imgs/ex4.png)
+![](./assets/imgs/ex04.png)
 - Format: Send`[appName]` 
 - Type: class <br>
 *ExampleClass* <br>
@@ -236,7 +241,7 @@ noti()                    # sending message to telegram
 
 
 ## Sender
-![](./assets/imgs/ex5.png)
+![](./assets/imgs/ex05.png)
 It is recommended to conduct a simple message sending test through the `sender`. Assuming that you can communicate with REST API or WEBHOOK normally, `ExceptNotifier` can work normally.
 - Every application's ExceptNotifier uses the sender method.
 - Format: send_`[appName]`_msg 
@@ -266,7 +271,7 @@ You have to use `raise` in Ipython ExceptNotifier.
 
 *Example code without Open AI API*
 
-![](./assets/imgs/ipyex1.png)
+![](./assets/imgs/ex06.png)
 
 ```python
 from ExceptNotifier import ExceptTelegramIpython
@@ -282,7 +287,7 @@ except:
 
 *Example code With Open AI API*
 
-![](./assets/imgs/ipyex2.png)
+![](./assets/imgs/ex07.png)
 
 ```python
 from ExceptNotifier import ExceptTelegramIpython
@@ -300,7 +305,7 @@ except:
 ```
 
 ## Success`Notifier` in Ipython
-![](./assets/imgs/ipyex3.png)
+![](./assets/imgs/ex08.png)
 - Same syntax in Python. See Python Core above.
 ```python
 import sys
@@ -318,7 +323,7 @@ except:
 
 ## Send`Notifier` in Ipython
 
-![](./assets/imgs/ipyex4.png)
+![](./assets/imgs/ex09.png)
 
 - Same syntax in Python. See Python Core above.
 ```python
@@ -332,7 +337,7 @@ SendTelegram().__call__()         # Sending telegram message
 
 ## Sender in Ipython
 
-![](./assets/imgs/ipyex5.png)
+![](./assets/imgs/ex10.png)
 
 - Same syntax in Python. See Python Core above.
 ```python
