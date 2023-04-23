@@ -1,17 +1,3 @@
-Install
-======================
-.. toctree::
-   :maxdepth: 1
-
-   install
-
-Projcet
-======================
-.. toctree::
-   :maxdepth: 1
-
-   project
-
 
 
 
