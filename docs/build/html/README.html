@@ -1,0 +1,1306 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>README.md</title>
+<meta http-equiv="Content-type" content="text/html;charset=UTF-8">
+
+<style>
+/* https://github.com/microsoft/vscode/blob/master/extensions/markdown-language-features/media/markdown.css */
+/*---------------------------------------------------------------------------------------------
+ *  Copyright (c) Microsoft Corporation. All rights reserved.
+ *  Licensed under the MIT License. See License.txt in the project root for license information.
+ *--------------------------------------------------------------------------------------------*/
+
+body {
+	font-family: var(--vscode-markdown-font-family, -apple-system, BlinkMacSystemFont, "Segoe WPC", "Segoe UI", "Ubuntu", "Droid Sans", sans-serif);
+	font-size: var(--vscode-markdown-font-size, 14px);
+	padding: 0 26px;
+	line-height: var(--vscode-markdown-line-height, 22px);
+	word-wrap: break-word;
+}
+
+#code-csp-warning {
+	position: fixed;
+	top: 0;
+	right: 0;
+	color: white;
+	margin: 16px;
+	text-align: center;
+	font-size: 12px;
+	font-family: sans-serif;
+	background-color:#444444;
+	cursor: pointer;
+	padding: 6px;
+	box-shadow: 1px 1px 1px rgba(0,0,0,.25);
+}
+
+#code-csp-warning:hover {
+	text-decoration: none;
+	background-color:#007acc;
+	box-shadow: 2px 2px 2px rgba(0,0,0,.25);
+}
+
+body.scrollBeyondLastLine {
+	margin-bottom: calc(100vh - 22px);
+}
+
+body.showEditorSelection .code-line {
+	position: relative;
+}
+
+body.showEditorSelection .code-active-line:before,
+body.showEditorSelection .code-line:hover:before {
+	content: "";
+	display: block;
+	position: absolute;
+	top: 0;
+	left: -12px;
+	height: 100%;
+}
+
+body.showEditorSelection li.code-active-line:before,
+body.showEditorSelection li.code-line:hover:before {
+	left: -30px;
+}
+
+.vscode-light.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(0, 0, 0, 0.15);
+}
+
+.vscode-light.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(0, 0, 0, 0.40);
+}
+
+.vscode-light.showEditorSelection .code-line .code-line:hover:before {
+	border-left: none;
+}
+
+.vscode-dark.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(255, 255, 255, 0.4);
+}
+
+.vscode-dark.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(255, 255, 255, 0.60);
+}
+
+.vscode-dark.showEditorSelection .code-line .code-line:hover:before {
+	border-left: none;
+}
+
+.vscode-high-contrast.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(255, 160, 0, 0.7);
+}
+
+.vscode-high-contrast.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(255, 160, 0, 1);
+}
+
+.vscode-high-contrast.showEditorSelection .code-line .code-line:hover:before {
+	border-left: none;
+}
+
+img {
+	max-width: 100%;
+	max-height: 100%;
+}
+
+a {
+	text-decoration: none;
+}
+
+a:hover {
+	text-decoration: underline;
+}
+
+a:focus,
+input:focus,
+select:focus,
+textarea:focus {
+	outline: 1px solid -webkit-focus-ring-color;
+	outline-offset: -1px;
+}
+
+hr {
+	border: 0;
+	height: 2px;
+	border-bottom: 2px solid;
+}
+
+h1 {
+	padding-bottom: 0.3em;
+	line-height: 1.2;
+	border-bottom-width: 1px;
+	border-bottom-style: solid;
+}
+
+h1, h2, h3 {
+	font-weight: normal;
+}
+
+table {
+	border-collapse: collapse;
+}
+
+table > thead > tr > th {
+	text-align: left;
+	border-bottom: 1px solid;
+}
+
+table > thead > tr > th,
+table > thead > tr > td,
+table > tbody > tr > th,
+table > tbody > tr > td {
+	padding: 5px 10px;
+}
+
+table > tbody > tr + tr > td {
+	border-top: 1px solid;
+}
+
+blockquote {
+	margin: 0 7px 0 5px;
+	padding: 0 16px 0 10px;
+	border-left-width: 5px;
+	border-left-style: solid;
+}
+
+code {
+	font-family: Menlo, Monaco, Consolas, "Droid Sans Mono", "Courier New", monospace, "Droid Sans Fallback";
+	font-size: 1em;
+	line-height: 1.357em;
+}
+
+body.wordWrap pre {
+	white-space: pre-wrap;
+}
+
+pre:not(.hljs),
+pre.hljs code > div {
+	padding: 16px;
+	border-radius: 3px;
+	overflow: auto;
+}
+
+pre code {
+	color: var(--vscode-editor-foreground);
+	tab-size: 4;
+}
+
+/** Theming */
+
+.vscode-light pre {
+	background-color: rgba(220, 220, 220, 0.4);
+}
+
+.vscode-dark pre {
+	background-color: rgba(10, 10, 10, 0.4);
+}
+
+.vscode-high-contrast pre {
+	background-color: rgb(0, 0, 0);
+}
+
+.vscode-high-contrast h1 {
+	border-color: rgb(0, 0, 0);
+}
+
+.vscode-light table > thead > tr > th {
+	border-color: rgba(0, 0, 0, 0.69);
+}
+
+.vscode-dark table > thead > tr > th {
+	border-color: rgba(255, 255, 255, 0.69);
+}
+
+.vscode-light h1,
+.vscode-light hr,
+.vscode-light table > tbody > tr + tr > td {
+	border-color: rgba(0, 0, 0, 0.18);
+}
+
+.vscode-dark h1,
+.vscode-dark hr,
+.vscode-dark table > tbody > tr + tr > td {
+	border-color: rgba(255, 255, 255, 0.18);
+}
+
+</style>
+
+<style>
+/* Tomorrow Theme */
+/* http://jmblog.github.com/color-themes-for-google-code-highlightjs */
+/* Original theme - https://github.com/chriskempson/tomorrow-theme */
+
+/* Tomorrow Comment */
+.hljs-comment,
+.hljs-quote {
+	color: #8e908c;
+}
+
+/* Tomorrow Red */
+.hljs-variable,
+.hljs-template-variable,
+.hljs-tag,
+.hljs-name,
+.hljs-selector-id,
+.hljs-selector-class,
+.hljs-regexp,
+.hljs-deletion {
+	color: #c82829;
+}
+
+/* Tomorrow Orange */
+.hljs-number,
+.hljs-built_in,
+.hljs-builtin-name,
+.hljs-literal,
+.hljs-type,
+.hljs-params,
+.hljs-meta,
+.hljs-link {
+	color: #f5871f;
+}
+
+/* Tomorrow Yellow */
+.hljs-attribute {
+	color: #eab700;
+}
+
+/* Tomorrow Green */
+.hljs-string,
+.hljs-symbol,
+.hljs-bullet,
+.hljs-addition {
+	color: #718c00;
+}
+
+/* Tomorrow Blue */
+.hljs-title,
+.hljs-section {
+	color: #4271ae;
+}
+
+/* Tomorrow Purple */
+.hljs-keyword,
+.hljs-selector-tag {
+	color: #8959a8;
+}
+
+.hljs {
+	display: block;
+	overflow-x: auto;
+	color: #4d4d4c;
+	padding: 0.5em;
+}
+
+.hljs-emphasis {
+	font-style: italic;
+}
+
+.hljs-strong {
+	font-weight: bold;
+}
+</style>
+
+<style>
+/*
+ * Markdown PDF CSS
+ */
+
+ body {
+	font-family: -apple-system, BlinkMacSystemFont, "Segoe WPC", "Segoe UI", "Ubuntu", "Droid Sans", sans-serif, "Meiryo";
+	padding: 0 12px;
+}
+
+pre {
+	background-color: #f8f8f8;
+	border: 1px solid #cccccc;
+	border-radius: 3px;
+	overflow-x: auto;
+	white-space: pre-wrap;
+	overflow-wrap: break-word;
+}
+
+pre:not(.hljs) {
+	padding: 23px;
+	line-height: 19px;
+}
+
+blockquote {
+	background: rgba(127, 127, 127, 0.1);
+	border-color: rgba(0, 122, 204, 0.5);
+}
+
+.emoji {
+	height: 1.4em;
+}
+
+code {
+	font-size: 14px;
+	line-height: 19px;
+}
+
+/* for inline code */
+:not(pre):not(.hljs) > code {
+	color: #C9AE75; /* Change the old color so it seems less like an error */
+	font-size: inherit;
+}
+
+/* Page Break : use <div class="page"/> to insert page break
+-------------------------------------------------------- */
+.page {
+	page-break-after: always;
+}
+
+</style>
+
+<script src="https://unpkg.com/mermaid/dist/mermaid.min.js"></script>
+</head>
+<body>
+  <script>
+    mermaid.initialize({
+      startOnLoad: true,
+      theme: document.body.classList.contains('vscode-dark') || document.body.classList.contains('vscode-high-contrast')
+          ? 'dark'
+          : 'default'
+    });
+  </script>
+<p>Development Status :: 2 - Pre-Alpha <br>
+<em>Copyright (c) 2023 MinWoo Park, South Korea</em><br>
+Before QA<br></p>
+<p><img src="./assets/imgs/logo2.png" alt=""></p>
+<h5 align="center">Integrates AI-assisted debugging notifications into Python try-except statements for various messaging applications. </h5>
+<p align="center">
+<a><img alt="PyPI package" src="https://img.shields.io/badge/pypi-ExceptNotifier-orange"></a>
+<a href="https://pypi.org/project/exceptnotifier/"><img alt="PyPI" src="https://img.shields.io/pypi/v/exceptnotifier"></a>
+<a href="https://pepy.tech/project/exceptnotifier"><img alt="Downloads" src="https://pepy.tech/badge/exceptnotifier"></a>
+<a href="https://github.com/psf/black"><img alt="Code style: black" src="https://img.shields.io/badge/code%20style-black-000000.svg"></a>
+</p>
+<p><img src="./assets/imgs/main3.png" alt=""></p>
+<h5 id="provides-a-notification-from-the-application-shown-in-the-captured-screen">Provides a notification from the application shown in the captured screen.</h5>
+<h1 id="python-package-exceptnotifier">Python Package: ExceptNotifier</h1>
+<p>The <code>ExceptNotifier</code> Python package offers a flexible approach to receiving notifications by enhancing Python's try-except statement. This package enables you to receive alerts through various messaging applications or emails.
+<Br><br>
+With <code>ExceptNotifier</code>, you can obtain detailed compilation errors, including debug information, sent directly to your preferred messaging platform or email. By integrating OpenAI's ChatGPT, you can receive additional error code information as long as you provide the required API model name and key. This feature ensures that error handling and notifications are more informative and accessible, streamlining your debugging process.</p>
+<p><img src="./assets/imgs/core02.png" alt=""></p>
+<Br>
+<h1 id="supporting-applications">Supporting Applications</h1>
+<p>Applicable to both <a href="https://ipython.org/">IPython</a> and <a href="https://www.python.org/">Python</a>, but needs to be ported differently only in <code>ExceptNotifier</code>. Please refer to the detailed example. (<code>SuccessNotifier</code> and <code>SendNotifier</code> have the same syntax.)</p>
+<ul>
+<li><a href="https://telegram.org/">Telegram</a></li>
+<li><a href="https://discord.com/">Discord</a></li>
+<li><a href="https://slack.com/">Slack</a></li>
+<li><a href="https://mail.google.com/">Google Mail</a></li>
+<li><a href="https://line.me/en/">Line</a></li>
+<li><a href="https://aws.amazon.com/ko/chime/download-chime/">AWS Chime</a></li>
+<li><a href="https://www.microsoft.com/en/microsoft-teams/download-app">Microsoft Teams</a></li>
+<li><a href="https://www.kakaocorp.com/page/service/service/KakaoTalk?lang=en">Kakao Talk</a></li>
+<li><a href="https://www.wechat.com/">Wecaht</a></li>
+<li>SMS Sending using <a href="https://www.twilio.com/en-us">Twilio</a></li>
+<li>Desktop Notification using <a href="https://github.com/kivy/plyer">Plyer</a></li>
+<li>Beep Sound from <a href="https://docs.python.org/3/library/winsound.html">system</a></li>
+<li><a href="https://openai.com/blog/openai-api">Opea AI API</a>
+- If you have OpenAI API Key and model name, you can get information and code examples for debugging in any application.</li>
+</ul>
+<br>
+<h1 id="quick-start">Quick Start</h1>
+<pre class="hljs"><code><div>$ pip install ExceptNotifier
+</div></code></pre>
+<pre class="hljs"><code><div>$ pip install exceptnotifier
+</div></code></pre>
+<p><br><br><br></p>
+<h1 id="contents">Contents</h1>
+<ul>
+<li>
+<p><a href="#app-setup-overview">App Setup Overview</a></p>
+</li>
+<li>
+<p><a href="#tutorial">Tutorial</a>
+<Br></p>
+</li>
+<li>
+<p><a href="#python-core">Python Core</a></p>
+<ul>
+<li><a href="#exceptnotifier">Except<code>Notifier</code></a>
+<ul>
+<li><a href="#ai-debbugging-infomation-notification">AI Debbugging Infomation Notification</a></li>
+</ul>
+</li>
+<li><a href="#successnotifier">Success<code>Notifier</code></a></li>
+<li><a href="#sendnotifier">Send<code>Notifier</code></a></li>
+<li><a href="#sender">Sender</a>
+<br></li>
+</ul>
+</li>
+<li>
+<p><a href="#ipython-core">IPython Core</a></p>
+<ul>
+<li><a href="#exceptnotifier-in-ipython">Except<code>Notifier</code> in Ipython</a></li>
+<li><a href="#successnotifier-in-ipython">Success<code>Notifier</code> in Ipython</a></li>
+<li><a href="#sendnotifier-in-ipython">Send<code>Notifier</code> in Ipython</a></li>
+<li><a href="#sender-in-ipython">Sender in Ipython</a>
+<br></li>
+</ul>
+</li>
+<li>
+<p><a href="#applied-in-each-application">Applied in each application</a></p>
+<ul>
+<li><a href="#telegram"><em>Telegram</em></a>
+<ul>
+<li><a href="#a-notifier-without-openai-api">a. Notifier without OpenAI API</a></li>
+<li><a href="#b-notifier-with-openai-api">b. Notifier with OpenAI API</a></li>
+</ul>
+</li>
+<li><a href="#mail"><em>Mail</em></a></li>
+<li><a href="#discord"><em>Discord</em></a></li>
+<li><a href="#chime"><em>Chime</em></a></li>
+<li><a href="#slack"><em>Slack</em></a></li>
+<li><a href="#line"><em>Line</em></a></li>
+<li><a href="#sms"><em>SMS</em></a></li>
+<li><a href="#teams"><em>Teams</em></a></li>
+<li><a href="#kakaotalk"><em>Kakaotalk</em></a></li>
+<li><a href="#wechat"><em>Wechat</em></a></li>
+<li><a href="#beep"><em>Beep</em></a></li>
+<li><a href="#desktop"><em>Desktop</em></a></li>
+</ul>
+</li>
+<li>
+<p><a href="#contributing-guide">Contributing Guide</a></p>
+</li>
+<li>
+<p><a href="#license">License</a></p>
+</li>
+<li>
+<p><a href="#code-of-conduct">Code of Conduct</a></p>
+</li>
+<li>
+<p><a href="#contacts">Contacts</a></p>
+</li>
+</ul>
+<p><br><br><br></p>
+<br>
+<h1 id="app-setup-overview">App Setup Overview</h1>
+<ul>
+<li>The variables in the following table must not be contaminated.</li>
+<li>Depending on the situation, consider designating them as global variables for use.</li>
+<li>As you already know, API Keys or security tokens must be secured. Note that the key values which exposured in github will be expired after insecured.</li>
+<li>We are trying to maintain the current architecture as much as possible by considering various methods such as inheriting decorators and Excepthook. We set it as an environment variable as follows, and we are refactoring and testing for a better method.</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">App</th>
+<th style="text-align:left">Required Enviroment Variables</th>
+<th style="text-align:center">Free or Paid</th>
+<th style="text-align:center">Ease of Setup</th>
+<th style="text-align:center">Time Required for Setup</th>
+<th style="text-align:center">Guide Tutorial Link</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">Beep</td>
+<td style="text-align:left">N/A</td>
+<td style="text-align:center">Free</td>
+<td style="text-align:center">N/A</td>
+<td style="text-align:center">0min</td>
+<td style="text-align:center"><a href="./tutorials/ExceptBeep/GUIDE.md">ExceptBeep</a></td>
+</tr>
+<tr>
+<td style="text-align:center">Desktop</td>
+<td style="text-align:left">N/A</td>
+<td style="text-align:center">Free</td>
+<td style="text-align:center">N/A</td>
+<td style="text-align:center">0min</td>
+<td style="text-align:center"><a href="./tutorials/ExceptDesktop/GUIDE.md">ExceptDesktop</a></td>
+</tr>
+<tr>
+<td style="text-align:center">Telegram</td>
+<td style="text-align:left"><code>_TELEGRAM_TOKEN</code></td>
+<td style="text-align:center">Freemium</td>
+<td style="text-align:center">Easy</td>
+<td style="text-align:center">2min</td>
+<td style="text-align:center"><a href="./tutorials/ExceptTelegram/GUIDE.md">ExceptTelegram</a> <a href="https://colab.research.google.com/drive/1jwWGs7eCUJQvj_g7SEMqm3a4Kdrp9ZQP?usp=sharing"><img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"></a></td>
+</tr>
+<tr>
+<td style="text-align:center">Discord</td>
+<td style="text-align:left"><code>_DISCORD_WEBHOOK_URL</code></td>
+<td style="text-align:center">Freemium</td>
+<td style="text-align:center">Easy</td>
+<td style="text-align:center">1min</td>
+<td style="text-align:center"><a href="./tutorials/ExceptTelegram/GUIDE.md">ExceptDiscord</a> <a href="https://colab.research.google.com/drive/1lwsIBpql_1zgEdIWRw6O_jBOZKJdHqBh?usp=sharing"><img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"></a></td>
+</tr>
+<tr>
+<td style="text-align:center">AWS Chime</td>
+<td style="text-align:left"><code>_CHIME_WEBHOOK_URL</code></td>
+<td style="text-align:center">Freemium</td>
+<td style="text-align:center">Easy</td>
+<td style="text-align:center">1min</td>
+<td style="text-align:center"><a href="./tutorials/ExceptChime/GUIDE.md">ExceptChime</a> <a href="https://colab.research.google.com/drive/1hUMMQ6He9M4MlspZ88J9kO8juxvC5b3a?usp=sharing"><img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"></a></td>
+</tr>
+<tr>
+<td style="text-align:center">Slack</td>
+<td style="text-align:left"><code>_SLACK_WEBHOOK_URL</code></td>
+<td style="text-align:center">Freemium</td>
+<td style="text-align:center">Easy</td>
+<td style="text-align:center">3min</td>
+<td style="text-align:center"><a href="./tutorials/ExceptSlack/GUIDE.md">ExceptSlack</a> <a href="https://colab.research.google.com/drive/1-dAaKl_gwX481FxH424aCVFqsq-thGXK?usp=sharing"><img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"></a></td>
+</tr>
+<tr>
+<td style="text-align:center">G-Mail</td>
+<td style="text-align:left"><code>_GAMIL_RECIPIENT_ADDR</code>, <code>_GMAIL_SENDER_ADDR</code>, <code>_GMAIL_APP_PASSWORD_OF_SENDER</code></td>
+<td style="text-align:center">Restricted free</td>
+<td style="text-align:center">Medium</td>
+<td style="text-align:center">3min</td>
+<td style="text-align:center"><a href="./tutorials/ExceptMail/GUIDE.md">ExceptMail</a></td>
+</tr>
+<tr>
+<td style="text-align:center">Line</td>
+<td style="text-align:left"><code>_LINE_NOTIFY_API_TOKEN</code></td>
+<td style="text-align:center">Freemium</td>
+<td style="text-align:center">Medium</td>
+<td style="text-align:center">4min</td>
+<td style="text-align:center"><a href="./tutorials/ExceptLine/GUIDE.md">ExceptLine</a> <a href="https://colab.research.google.com/drive/1PDrJqxDq4NE6BRUrRkFvDBiMHQz0WbZh?usp=sharing"><img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"></a></td>
+</tr>
+<tr>
+<td style="text-align:center">SMS</td>
+<td style="text-align:left"><code>_TWILIO_SID</code>, <code>_TWILIO_TOKEN</code>, <code>_RECIPIENT_PHONE_NUMBER</code>, <code>_SENDER_PHONE_NUMBER</code></td>
+<td style="text-align:center">Not free</td>
+<td style="text-align:center">Medium</td>
+<td style="text-align:center">5min</td>
+<td style="text-align:center"><a href="./tutorials/ExceptSMS/GUIDE.md">ExceptSMS</a></td>
+</tr>
+<tr>
+<td style="text-align:center">Microsoft Teams</td>
+<td style="text-align:left"><code>_TEAMS_WEBHOOK_URL</code></td>
+<td style="text-align:center">Not Free</td>
+<td style="text-align:center">Medium</td>
+<td style="text-align:center">5min</td>
+<td style="text-align:center"><a href="./tutorials/ExceptTeams/GUIDE.md">ExceptTeams</a></td>
+</tr>
+<tr>
+<td style="text-align:center">KakaoTalk</td>
+<td style="text-align:left"><code>_KAKAO_TOKEN_PATH</code></td>
+<td style="text-align:center">Freemium</td>
+<td style="text-align:center">Hell</td>
+<td style="text-align:center">&gt;=10min(Token refreshes daily)</td>
+<td style="text-align:center"><a href="./tutorials/ExceptKakao/GUIDE.md">ExceptKakao</a></td>
+</tr>
+</tbody>
+</table>
+<p>If you add the following two variables to the required variables for each application in the table above, you can receive error location and explanation, as well as examples, from OpenAI's model</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">API</th>
+<th style="text-align:left">Required Variables</th>
+<th style="text-align:center">Free or Paid</th>
+<th style="text-align:center">Ease of Setup</th>
+<th style="text-align:center">Time Required for Setup</th>
+<th style="text-align:center">Guide Tutorial Link</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">OpenAI API</td>
+<td style="text-align:left"><code>Required variables for each application</code>+ <code>_OPEN_AI_MODEL</code>,<code>_OPEN_AI_API</code></td>
+<td style="text-align:center">Not free</td>
+<td style="text-align:center">Easy</td>
+<td style="text-align:center">2min</td>
+<td style="text-align:center"><a href="./documents/APIOpenAI/GUIDE.md">APIOpenAI</a></td>
+</tr>
+</tbody>
+</table>
+<br>
+<h1 id="tutorial">Tutorial</h1>
+<p>I will update tutorial ASAP. <code>README.md</code> is sufficient, but read the application's official documentation if necessary. However, we are preparing a more detailed and friendly tutorial.</p>
+<ol>
+<li>Main-tutorials: <a href="https://github.com/DSDanielPark/ExceptNotifier/blob/main/tutorial/ExceptNotifier.ipynb">Notebook</a></li>
+<li>Sub-tutorial-folder: Tutorials for each function can be found in this <a href="https://github.com/DSDanielPark/ExceptNotifier/tree/main/tutorial">folder</a>. The tutorial is synchronized with the Python file name provided by ExceptNotifier.</li>
+</ol>
+<p><strong>In this example, some API keys were exposed by creating and removing a test application, but for security reasons, your API key should not be exposed to the outside world.</strong></p>
+<Br>
+<h1 id="python-core">Python Core</h1>
+<p>To use the desired application, you must define the necessary variables. Ensure that the variable names remain unchanged, and you can use either local or global variables. If you are using <code>Telegram</code>, an example is attached as an image.</p>
+<h2 id="exceptnotifier">Except<code>Notifier</code></h2>
+<p><img src="./assets/imgs/ex01.png" alt="">
+If you use Python's try except statement as it is, but change except as follows, you can receive notifications through your application.</p>
+<ul>
+<li>Format: Except<code>[appName]</code> <Br></li>
+<li>Type: class
+<em>ExampleClass</em></li>
+</ul>
+<pre class="hljs"><code><div>ExceptChime, ExceptTelegram, ExceptDiscord, ExceptSMS, ExceptMail, ExceptKakao, ExceptLine, ExceptSlack, ExceptTeams, ExceptDesktope, ExceptBeep
+</div></code></pre>
+<p><em>Example</em></p>
+<pre class="hljs"><code><div><span class="hljs-keyword">import</span> sys, os
+<span class="hljs-keyword">from</span> ExceptNotifier <span class="hljs-keyword">import</span> ExceptTelegram
+sys.excepthook = ExceptTelegram.__call__
+
+os.environ[<span class="hljs-string">'_TELEGRAM_TOKEN'</span>] = <span class="hljs-string">"xxxx"</span>
+
+<span class="hljs-keyword">try</span>:
+    print(<span class="hljs-number">1</span>/<span class="hljs-number">0</span>)
+<span class="hljs-keyword">except</span> ExceptTelegram:    <span class="hljs-comment"># sending except message to telegram</span>
+    sys.exit()
+</div></code></pre>
+<h3 id="ai-debbugging-infomation-notification">AI Debbugging Infomation Notification</h3>
+<p><img src="./assets/imgs/ex02.png" alt=""></p>
+<p>You can receive debugging information from ChatGPT via OpenAI's API when using the Except statement. The syntax remains the same, but you'll need to configure these two variables:
+<code>_OPEN_AI_MODEL</code>,<code>_OPEN_AI_API</code></p>
+<p><em>Example</em></p>
+<pre class="hljs"><code><div><span class="hljs-keyword">import</span> sys, os
+<span class="hljs-keyword">from</span> ExceptNotifier <span class="hljs-keyword">import</span> ExceptTelegram
+sys.excepthook = ExceptTelegram.__call__
+
+os.envirion[<span class="hljs-string">'_TELEGRAM_TOKEN'</span>] = <span class="hljs-string">"xxxx"</span>
+os.envirion[<span class="hljs-string">'_OPEN_AI_MODEL'</span>]=<span class="hljs-string">"gpt-3.5-turbo"</span>
+os.envirion[<span class="hljs-string">'_OPEN_AI_API'</span>]=<span class="hljs-string">"sk-xxxxxx"</span>
+
+<span class="hljs-keyword">try</span>:
+    print(<span class="hljs-number">1</span>/<span class="hljs-number">0</span>)
+<span class="hljs-keyword">except</span> ExceptTelegram: <span class="hljs-comment"># sending msg WITH AI DEBUGGING to telegram</span>
+    sys.exit()
+</div></code></pre>
+<h2 id="successnotifier">Success<code>Notifier</code></h2>
+<p><img src="./assets/imgs/ex03.png" alt=""></p>
+<ul>
+<li>Format: Success<code>[appName]</code></li>
+<li>Type: Class <br>
+<em>ExampleClass</em> <br>
+By placing the try except in python at the end of the try statement, applications can be notified that the try statement worked normally.</li>
+</ul>
+<pre class="hljs"><code><div>SuccessChime, SuccessTelegram, SuccessDiscord, SuccessSMS, SuccessMail, SuccessKakao, SuccessLine, SuccessSlack, SuccessTeams, SuccessDesktope, SuccessBeep
+</div></code></pre>
+<p><em>Example</em></p>
+<pre class="hljs"><code><div><span class="hljs-keyword">import</span> sys, os
+<span class="hljs-keyword">from</span> ExceptNotifier <span class="hljs-keyword">import</span> SuccessTelgeram
+sys.excepthook = ExceptTelegram.__call__
+os.environ[<span class="hljs-string">'_TELEGRAM_TOKEN'</span>] = <span class="hljs-string">"xxxx"</span>
+
+<span class="hljs-keyword">try</span>:
+    print(<span class="hljs-number">1</span>/<span class="hljs-number">20</span>)
+    SuccessTelgeram().__call__()  <span class="hljs-comment"># sending success message to telegram</span>
+<span class="hljs-keyword">except</span>:
+    sys.exit()
+</div></code></pre>
+<h2 id="sendnotifier">Send<code>Notifier</code></h2>
+<p><img src="./assets/imgs/ex04.png" alt=""></p>
+<ul>
+<li>Format: Send<code>[appName]</code></li>
+<li>Type: class <br>
+<em>ExampleClass</em> <br>
+Place it anywhere on the line of code you want, and you'll be notified when that line of code is reached.</li>
+</ul>
+<pre class="hljs"><code><div>SendChime, SendTelegram, SendDiscord, SendSMS, SendMail, SendKakao, SendLine, SendSlack, SendTeams, SendDesktope, SendBeep
+</div></code></pre>
+<p><em>Example</em></p>
+<pre class="hljs"><code><div><span class="hljs-keyword">import</span> sys, os
+<span class="hljs-keyword">from</span> ExceptNotifier <span class="hljs-keyword">import</span> SendTelegram
+sys.excepthook = ExceptTelegram.__call__
+os.environ[<span class="hljs-string">'_TELEGRAM_TOKEN'</span>] = <span class="hljs-string">"xxxx"</span>
+
+SendTelegram().__call__() <span class="hljs-comment"># sending message to telegram</span>
+
+noti = SendTelegram()
+noti()                    <span class="hljs-comment"># sending message to telegram</span>
+</div></code></pre>
+<h2 id="sender">Sender</h2>
+<p><img src="./assets/imgs/ex05.png" alt="">
+It is recommended to conduct a simple message sending test through the <code>sender</code>. Assuming that you can communicate with REST API or WEBHOOK normally, <code>ExceptNotifier</code> can work normally.</p>
+<ul>
+<li>Every application's ExceptNotifier uses the sender method.</li>
+<li>Format: send_<code>[appName]</code>_msg</li>
+<li>Type: Function <br>
+<em>Example</em> <br></li>
+</ul>
+<pre class="hljs"><code><div>send_chime_msg, send_telegram_msg, send_discord_msg, send_sms_msg, send_gmail_msg, send_kakao_msg, send_line_msg, send_slack_msg, send_teams_msg, send_desktop_msg, beep
+</div></code></pre>
+<p><em>Example</em></p>
+<pre class="hljs"><code><div><span class="hljs-keyword">from</span> ExceptNotifier <span class="hljs-keyword">import</span> send_telegram_msg
+
+send_telegram_msg(_TELEGRAM_TOKEN, <span class="hljs-string">"Any Test Message"</span>)
+</div></code></pre>
+<p><br><br></p>
+<h1 id="ipython-core">IPython Core</h1>
+<p>You can use all the same except for the python code and <code>ExceptNotifier</code> mentioned above. In other words, the <code>SuccesNotifier</code>, <code>SendNotifier</code>, and <code>Sender</code> functions can all be used same in IPython without any special processing. Only <code>ExceptNotifier</code> is need to be defined.</p>
+<ul>
+<li>Example in Telegram <a href="https://colab.research.google.com/drive/1jwWGs7eCUJQvj_g7SEMqm3a4Kdrp9ZQP?usp=sharing"><img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"></a></li>
+</ul>
+<h2 id="exceptnotifier-in-ipython">Except<code>Notifier</code> in Ipython</h2>
+<p>You have to use <code>raise</code> in Ipython ExceptNotifier.</p>
+<ul>
+<li>Format: Except[appName]</li>
+<li>Type: function <br></li>
+</ul>
+<p><em>Example code without Open AI API</em></p>
+<p><img src="./assets/imgs/ex06.png" alt=""></p>
+<pre class="hljs"><code><div><span class="hljs-keyword">from</span> ExceptNotifier <span class="hljs-keyword">import</span> ExceptTelegramIpython
+<span class="hljs-keyword">import</span> os
+os.environ[<span class="hljs-string">'_TELEGRAM_TOKEN'</span>] = <span class="hljs-string">"xxxxx"</span>
+get_ipython().set_custom_exc((Exception,), ExceptTelegramIpython)
+
+<span class="hljs-keyword">try</span>:
+  print(<span class="hljs-number">1</span>/<span class="hljs-number">0</span>)
+<span class="hljs-keyword">except</span>:
+  <span class="hljs-keyword">raise</span>
+</div></code></pre>
+<p><em>Example code With Open AI API</em></p>
+<p><img src="./assets/imgs/ex07.png" alt=""></p>
+<pre class="hljs"><code><div><span class="hljs-keyword">from</span> ExceptNotifier <span class="hljs-keyword">import</span> ExceptTelegramIpython
+<span class="hljs-keyword">import</span> os
+get_ipython().set_custom_exc((Exception,), ExceptTelegramIpython)
+
+os.environ[<span class="hljs-string">'_OPEN_AI_MODEL'</span>] = <span class="hljs-string">"gpt-3.5-turbo"</span>    
+os.environ[<span class="hljs-string">'_OPEN_AI_API'</span>] = <span class="hljs-string">"sk-xxxxx"</span>
+os.environ[<span class="hljs-string">'_TELEGRAM_TOKEN'</span>] = <span class="hljs-string">"xxxxx"</span>
+
+<span class="hljs-keyword">try</span>:
+  print(<span class="hljs-number">1</span>/<span class="hljs-number">0</span>)
+<span class="hljs-keyword">except</span>:
+  <span class="hljs-keyword">raise</span>
+</div></code></pre>
+<h2 id="successnotifier-in-ipython">Success<code>Notifier</code> in Ipython</h2>
+<p><img src="./assets/imgs/ex08.png" alt=""></p>
+<ul>
+<li>Same syntax in Python. See Python Core above.</li>
+</ul>
+<pre class="hljs"><code><div><span class="hljs-keyword">import</span> sys
+<span class="hljs-keyword">import</span> os
+<span class="hljs-keyword">from</span> ExceptNotifier <span class="hljs-keyword">import</span> SuccessTelegram
+os.environ[<span class="hljs-string">'_TELEGRAM_TOKEN'</span>] = <span class="hljs-string">"xxxxx"</span>
+
+<span class="hljs-keyword">try</span>:
+  print(<span class="hljs-number">1</span>/<span class="hljs-number">20</span>) <span class="hljs-comment"># Your Code Here</span>
+  SuccessTelegram().__call__()    <span class="hljs-comment"># Sending Success message</span>
+<span class="hljs-keyword">except</span>:
+  <span class="hljs-keyword">raise</span>
+</div></code></pre>
+<h2 id="sendnotifier-in-ipython">Send<code>Notifier</code> in Ipython</h2>
+<p><img src="./assets/imgs/ex09.png" alt=""></p>
+<ul>
+<li>Same syntax in Python. See Python Core above.</li>
+</ul>
+<pre class="hljs"><code><div><span class="hljs-keyword">import</span> sys
+<span class="hljs-keyword">import</span> os
+<span class="hljs-keyword">from</span> ExceptNotifier <span class="hljs-keyword">import</span> SendTelegram 
+os.environ[<span class="hljs-string">'_TELEGRAM_TOKEN'</span>] = <span class="hljs-string">"xxxxx"</span>
+
+SendTelegram().__call__()         <span class="hljs-comment"># Sending telegram message</span>
+</div></code></pre>
+<h2 id="sender-in-ipython">Sender in Ipython</h2>
+<p><img src="./assets/imgs/ex10.png" alt=""></p>
+<ul>
+<li>Same syntax in Python. See Python Core above.</li>
+</ul>
+<pre class="hljs"><code><div><span class="hljs-keyword">from</span> ExceptNotifier <span class="hljs-keyword">import</span> send_telegram_msg
+
+_TELEGRAM_TOKEN =  <span class="hljs-string">"xxxxx"</span>
+
+send_telegram_msg(_TELEGRAM_TOKEN, <span class="hljs-string">"This is test message"</span>)
+</div></code></pre>
+<br>
+<h1 id="applied-in-each-application">Applied in each application</h1>
+<p>You can receive debugging information from ChatGPT via OpenAI's API when using the Except statement. The syntax remains the same, but you'll need to configure these two variables:
+<code>_OPEN_AI_MODEL</code>,<code>_OPEN_AI_API</code></p>
+<br>
+<h2 id="telegram"><em>Telegram</em></h2>
+<p><a href="https://colab.research.google.com/drive/1jwWGs7eCUJQvj_g7SEMqm3a4Kdrp9ZQP?usp=sharing"><img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"></a>
+As all classes function the same, the example will only use one image, like in Telegram.
+<img src="./assets/imgs/fig44.png" alt=""></p>
+<ul>
+<li>a. Open your telegram app and search for BotFather. (A built-in Telegram bot that helps users create custom Telegram bots) <br></li>
+<li>b. Type /newbot to create a new bot <br></li>
+<li>c. Give your bot a name &amp; a username <br></li>
+<li>d. Copy your new Telegram bot’s token <br></li>
+<li>e. You have to click <code>Start_bot</code> and must enter anything to your bot.
+<ul>
+<li>Before use Notifier, Please use this to check if you follow guide. The Telegram bot may have a slight delay and it responded within 2-3 minutes.
+<em>API TEST</em></li>
+</ul>
+</li>
+</ul>
+<pre class="hljs"><code><div><span class="hljs-keyword">from</span> ExceptNotifier <span class="hljs-keyword">import</span> send_telegram_msg
+
+_TELEGRAM_TOKEN = <span class="hljs-string">"xxxxx:xxxxx-xxxx"</span>
+send_telegram_msg(_TELEGRAM_TOKEN, <span class="hljs-string">'msg'</span>)
+</div></code></pre>
+<p>For more infomation, visit <a href="https://core.telegram.org/bots/api">Telegram Bot Father API</a>
+<br><br></p>
+<h3 id="a-notifier-without-openai-api">a. Notifier without OpenAI API</h3>
+<p><em>Notifier</em></p>
+<pre class="hljs"><code><div><span class="hljs-keyword">from</span> ExceptNotifier <span class="hljs-keyword">import</span> ExceptTelegram, SuccessTelegram, SendTelegram
+<span class="hljs-keyword">import</span> sys, os
+sys.excepthook = ExceptTelegram.__call__
+os.environ[<span class="hljs-string">'_TELEGRAM_TOKEN'</span>] = <span class="hljs-string">"xxxx"</span>
+
+<span class="hljs-keyword">try</span>:
+    print(<span class="hljs-number">1</span>/<span class="hljs-number">0</span>)  
+    SuccessTelegram().__call__() <span class="hljs-comment">#1. success sender          </span>
+
+<span class="hljs-keyword">except</span> ExceptTelegram <span class="hljs-keyword">as</span> e:      <span class="hljs-comment">#2. except sender            </span>
+    sys.exit()
+
+SendTelegram().__call__()        <span class="hljs-comment">#3. customized sender     </span>
+</div></code></pre>
+<h3 id="b-notifier-with-openai-api">b. Notifier with OpenAI API</h3>
+<ul>
+<li>If you just set <code>_OPEN_AI_API</code> and <code>_OPEN_AI_MODEL</code> environment variables in all application use case, AI MODEL will automatically send debugging information as a message. Currently, it is mainly based on the <code>GPT-3.5-TURBO</code> model, but we plan to update it so that other models can be used later.
+<em>Notifier</em></li>
+</ul>
+<pre class="hljs"><code><div><span class="hljs-keyword">from</span> ExceptNotifier <span class="hljs-keyword">import</span> ExceptTelegram, SuccessTelegram, SendTelegram
+<span class="hljs-keyword">import</span> sys, os
+sys.excepthook = ExceptTelegram.__call__
+os.environ[<span class="hljs-string">'_TELEGRAM_TOKEN'</span>] = <span class="hljs-string">"xxxx"</span>
+os.envirion[<span class="hljs-string">'_OPEN_AI_MODEL'</span>]=<span class="hljs-string">"gpt-3.5-turbo"</span>
+os.envirion[<span class="hljs-string">'_OPEN_AI_API'</span>]=<span class="hljs-string">"sk-xxxxxx"</span>
+
+<span class="hljs-keyword">try</span>:
+    print(<span class="hljs-number">1</span>/<span class="hljs-number">0</span>)  
+    SuccessTelegram().__call__() <span class="hljs-comment">#1. success sender          </span>
+
+<span class="hljs-keyword">except</span> ExceptTelegram <span class="hljs-keyword">as</span> e:      <span class="hljs-comment">#2. except sender            </span>
+    sys.exit()
+
+SendTelegram().__call__()        <span class="hljs-comment">#3. customized sender     </span>
+
+</div></code></pre>
+<br>
+<h2 id="mail"><em>Mail</em></h2>
+<p>In the except statement, an email is sent along with the error message. Additionally, you can send emails from any desired line. <br></p>
+<ul>
+<li>a. Log in with the sender's email ID. <br></li>
+<li>b. Obtain an app password for sending Google Mail at the following <a href="https://myaccount.google.com/u/3/apppasswords?utm_source=google-account&amp;utm_medium=myaccountsecurity&amp;utm_campaign=tsv-settings&amp;rapt=AEjHL4N2bMRWO46VaMp_jP06zQK14BWNPv66l2o59iJ99CkO8BjYnmoRUe9dtSchkkbubHZMUhevkAnwVJRHb9ygO3afispNlw">link</a> or <a href="https://support.google.com/accounts/answer/185833?hl=en">google document</a>.</li>
+</ul>
+<p><em>API TEST</em></p>
+<pre class="hljs"><code><div><span class="hljs-keyword">from</span> ExceptNotifier <span class="hljs-keyword">import</span> send_gmail_msg
+
+_GMAIL_SENDER_ADDR = <span class="hljs-string">'xxxx@gmail.com'</span>
+_GAMIL_RECIPIENT_ADDR = <span class="hljs-string">'xxxx@gmail.com'</span>
+_GMAIL_APP_PASSWORD_OF_SENDER = <span class="hljs-string">'xxxx'</span>
+subject_msg = <span class="hljs-string">"Test Title"</span>
+body_msg = <span class="hljs-string">"Test Body"</span> 
+
+send_gmail_msg(
+    _GMAIL_SENDER_ADDR,
+    _GAMIL_RECIPIENT_ADDR,
+    _GMAIL_APP_PASSWORD_OF_SENDER,
+    subject_msg,
+    body_msg)
+</div></code></pre>
+<p><em>Notifier</em></p>
+<pre class="hljs"><code><div><span class="hljs-keyword">import</span> sys, os
+<span class="hljs-keyword">from</span> ExceptNotifier <span class="hljs-keyword">import</span> ExceptMail, SuccessMail, SendMail
+sys.excepthook = ExceptMail.__call__
+
+<span class="hljs-comment"># Define the next two variables optionally when using OpenAI's API.</span>
+<span class="hljs-comment"># os.environ['_OPEN_AI_MODEL']="gpt-3.5-turbo"    </span>
+<span class="hljs-comment"># os.environ['_OPEN_AI_API']="sk-xxxxxx"</span>
+os.environ[<span class="hljs-string">'_GAMIL_RECIPIENT_ADDR'</span>] = <span class="hljs-string">'xxxxxxx@gmail.com'</span>
+os.environ[<span class="hljs-string">'_GMAIL_SENDER_ADDR'</span>] = <span class="hljs-string">'yyyyyy@gmail.com'</span>
+os.environ[<span class="hljs-string">'_GMAIL_APP_PASSWORD_OF_SENDER'</span>] = <span class="hljs-string">'zzzzzz'</span>
+
+<span class="hljs-keyword">try</span>:
+    main()                      <span class="hljs-comment"># Your Code Here</span>
+    SuccessMail().__call__()    <span class="hljs-comment"># No Exception -&gt; Send Success mail.</span>
+<span class="hljs-keyword">except</span> ExceptMail:              <span class="hljs-comment"># Exception -&gt; Send Fail mail.</span>
+    <span class="hljs-keyword">pass</span>
+
+SendMail().__call__()           <span class="hljs-comment"># When Process Ended -&gt; Any Line mail.</span>
+</div></code></pre>
+<details>
+<summary> See Example...</summary>
+<pre class="hljs"><code><div><span class="hljs-keyword">import</span> sys, os
+<span class="hljs-keyword">from</span> ExceptNotifier <span class="hljs-keyword">import</span> ExceptMail, SuccessMail, SendMail
+
+<span class="hljs-comment"># Define the next two variables optionally when using OpenAI's API.</span>
+<span class="hljs-comment"># os.environ['_OPEN_AI_MODEL']="gpt-3.5-turbo"    </span>
+<span class="hljs-comment"># os.environ['_OPEN_AI_API']="sk-xxxxxx"</span>
+os.environ[<span class="hljs-string">'_GAMIL_RECIPIENT_ADDR'</span>] = <span class="hljs-string">'xxxxxxx@gmail.com'</span>
+os.environ[<span class="hljs-string">'_GMAIL_SENDER_ADDR'</span>] = <span class="hljs-string">'yyyyyy@gmail.com'</span>
+os.environ[<span class="hljs-string">'_GMAIL_APP_PASSWORD_OF_SENDER'</span>] = <span class="hljs-string">'zzzzzz'</span>
+
+sys.excepthook = ExceptMail.__call__
+
+<span class="hljs-keyword">try</span>:
+    <span class="hljs-comment"># 02.Locate your code</span>
+    print(<span class="hljs-number">1</span>/<span class="hljs-number">0</span>)   
+    SuccessMail().__call__()   <span class="hljs-comment"># Success Mail</span>
+
+<span class="hljs-keyword">except</span> ExceptMail <span class="hljs-keyword">as</span> e:        <span class="hljs-comment"># Exception Mail       </span>
+    sys.exit()
+    print(e)
+
+SendMail().__call__()          <span class="hljs-comment"># Put Any Line: Sending mail</span>
+</div></code></pre>
+</details>
+<details>
+<summary> Snippet for Python developers...</summary>
+<pre class="hljs"><code><div><span class="hljs-keyword">import</span> sys, os
+<span class="hljs-keyword">from</span> ExceptNotifier <span class="hljs-keyword">import</span> ExceptMail, SuccessMail, SendMail
+sys.excepthook = ExceptMail.__call__
+
+<span class="hljs-comment"># Define the next two variables optionally when using OpenAI's API.</span>
+<span class="hljs-comment"># os.environ['_OPEN_AI_MODEL']="gpt-3.5-turbo"    </span>
+<span class="hljs-comment"># os.environ['_OPEN_AI_API']="sk-xxxxxx"</span>
+os.environ[<span class="hljs-string">'_GAMIL_RECIPIENT_ADDR'</span>] = <span class="hljs-string">'xxxxxxx@gmail.com'</span>
+os.environ[<span class="hljs-string">'_GMAIL_SENDER_ADDR'</span>] = <span class="hljs-string">'yyyyyy@gmail.com'</span>
+os.environ[<span class="hljs-string">'_GMAIL_APP_PASSWORD_OF_SENDER'</span>] = <span class="hljs-string">'zzzzzz'</span>
+
+<span class="hljs-keyword">try</span>:
+    <span class="hljs-string">'your code'</span>
+    SuccessMail().__call__()
+<span class="hljs-keyword">except</span> ExceptMail:
+    <span class="hljs-keyword">pass</span>
+
+SendMail().__call__() 
+</div></code></pre>
+</details>
+<br>
+<h2 id="discord"><em>Discord</em></h2>
+<p><a href="https://colab.research.google.com/drive/1lwsIBpql_1zgEdIWRw6O_jBOZKJdHqBh?usp=sharing"><img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"></a></p>
+<ul>
+<li>a. Select the channel to receive notifications.</li>
+<li>b. Click <code>Edit Channel</code> in the upper right corner of the chat window.</li>
+<li>c. Click <code>Integrations</code> - <code>Webhook</code> - <code>New Webhook</code>.</li>
+<li>d. Then click <code>Copy Webhook</code>.
+<em>API TEST</em></li>
+</ul>
+<pre class="hljs"><code><div><span class="hljs-keyword">from</span> ExceptNotifier <span class="hljs-keyword">import</span> send_discord_msg
+
+send_discord_msg(_DISCORD_WEBHOOK_URL, <span class="hljs-string">"Any Test Message"</span>) 
+</div></code></pre>
+<p><em>Notifier</em></p>
+<pre class="hljs"><code><div><span class="hljs-keyword">import</span> sys, os
+<span class="hljs-keyword">from</span> ExceptNotifier <span class="hljs-keyword">import</span> ExceptDiscord, SuccessDiscord, SendDiscord
+sys.excepthook = ExceptDiscord.__call__
+
+<span class="hljs-comment"># Define the next two variables optionally when using OpenAI's API.</span>
+<span class="hljs-comment"># os.environ['_OPEN_AI_MODEL']="gpt-3.5-turbo"    </span>
+<span class="hljs-comment"># os.environ['_OPEN_AI_API']="sk-xxxxxx"</span>
+os.environ[<span class="hljs-string">'_DISCORD_WEBHOOK_URL'</span>] = <span class="hljs-string">"xxxxxxxxxxxxxxxxx"</span>
+
+
+<span class="hljs-keyword">try</span>:
+    print(<span class="hljs-number">1</span>/<span class="hljs-number">20</span>)  
+    SuccessDiscord().__call__() <span class="hljs-comment">#1 success sender          </span>
+<span class="hljs-keyword">except</span> ExceptDiscord <span class="hljs-keyword">as</span> e:      <span class="hljs-comment">#2 except sender            </span>
+    sys.exit()
+
+SendDiscord().__call__()        <span class="hljs-comment">#3 customized sender       </span>
+</div></code></pre>
+<br>
+<h2 id="chime"><em>Chime</em></h2>
+<p><a href="https://colab.research.google.com/drive/1hUMMQ6He9M4MlspZ88J9kO8juxvC5b3a?usp=sharing"><img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"></a></p>
+<ul>
+<li>a. Select the Chat room to receive notifications.</li>
+<li>b. Click <code>Room Setting</code> in the upper right corner.</li>
+<li>c. Click <code>Manage Webhook and bot</code></li>
+<li>d. Create Add Webhook, set it up, then click <code>Copy Webhook</code>.
+<em>API TEST</em></li>
+</ul>
+<pre class="hljs"><code><div><span class="hljs-keyword">from</span> ExceptNotifier <span class="hljs-keyword">import</span> send_chime_msg
+
+send_chime_msg(_CHIME_WEBHOOK_URL, <span class="hljs-string">"Any Test Message"</span>)
+
+</div></code></pre>
+<p><em>Notifier</em></p>
+<pre class="hljs"><code><div><span class="hljs-keyword">import</span> sys, os
+<span class="hljs-keyword">from</span> ExceptNotifier <span class="hljs-keyword">import</span> SuccessChime, ExceptChime, SendChime
+sys.excepthook = ExceptChime.__call__
+
+<span class="hljs-comment"># Define the next two variables optionally when using OpenAI's API.</span>
+<span class="hljs-comment"># os.environ['_OPEN_AI_MODEL']="gpt-3.5-turbo"    </span>
+<span class="hljs-comment"># os.environ['_OPEN_AI_API']="sk-xxxxxx"</span>
+os.environ[<span class="hljs-string">'_CHIME_WEBHOOK_URL'</span>] = <span class="hljs-string">"xxxxxxxxxxxxxxxxxx"</span>
+
+
+<span class="hljs-keyword">try</span>:
+    print(<span class="hljs-number">1</span>/<span class="hljs-number">0</span>)  
+    SuccessChime().__call__() <span class="hljs-comment">#1 success sender          </span>
+<span class="hljs-keyword">except</span> ExceptChime <span class="hljs-keyword">as</span> e:      <span class="hljs-comment">#2 except sender            </span>
+    sys.exit()
+
+SendChime().__call__()        <span class="hljs-comment">#3 customized sender       </span>
+</div></code></pre>
+<br>
+<h2 id="slack"><em>Slack</em></h2>
+<p><a href="https://colab.research.google.com/drive/1-dAaKl_gwX481FxH424aCVFqsq-thGXK?usp=sharing"><img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"></a></p>
+<ul>
+<li>a. visit https://api.slack.com/</li>
+<li>b. <code>Create an app</code> - <code>From scratch</code> - <code>Create App</code></li>
+<li>c. Add webhook: Click <code>Incoming Webhooks</code> - Activate Incomming <code>On</code> - Add New Webhook to Workspace</li>
+<li>d. Copy <code>Webhook URL</code>
+<em>API TEST</em></li>
+</ul>
+<pre class="hljs"><code><div><span class="hljs-keyword">from</span> ExceptNotifier <span class="hljs-keyword">import</span> send_slack_msg
+
+send_slack_msg(_SLACK_WEBHOOK_URL, <span class="hljs-string">"Any Test Message"</span>)
+</div></code></pre>
+<p><em>Notifier</em></p>
+<pre class="hljs"><code><div><span class="hljs-keyword">import</span> sys
+<span class="hljs-keyword">from</span> ExceptNotifier <span class="hljs-keyword">import</span> ExceptSlack, SuccessSlack, SendSlack
+sys.excepthook = ExceptSlack.__call__
+
+<span class="hljs-comment"># Define the next two variables optionally when using OpenAI's API.</span>
+<span class="hljs-comment"># os.environ['_OPEN_AI_MODEL']="gpt-3.5-turbo"    </span>
+<span class="hljs-comment"># os.environ['_OPEN_AI_API']="sk-xxxxxx"</span>
+os.environ[<span class="hljs-string">'_SLACK_WEBHOOK_URL'</span>] = <span class="hljs-string">'https://hooks.slack.com/services/xxxxxxxxxxxxxxxxxxx'</span>
+
+<span class="hljs-keyword">try</span>:
+    print(<span class="hljs-number">1</span>/<span class="hljs-number">0</span>)  
+    SuccessSlack().__call__() <span class="hljs-comment">#1 success sender          </span>
+<span class="hljs-keyword">except</span> ExceptSlack <span class="hljs-keyword">as</span> e:      <span class="hljs-comment">#2 except sender            </span>
+    sys.exit()
+
+SendSlack().__call__()        <span class="hljs-comment">#3 customized sender     </span>
+</div></code></pre>
+<Br>
+<h2 id="line"><em>Line</em></h2>
+<p><a href="https://colab.research.google.com/drive/1PDrJqxDq4NE6BRUrRkFvDBiMHQz0WbZh?usp=sharing"><img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"></a></p>
+<ul>
+<li>a. Register <a href="https://notify-bot.line.me/">https://notify-bot.line.me/</a></li>
+<li>b. Go to mypage <a href="https://notify-bot.line.me/my/">https://notify-bot.line.me/my/</a></li>
+<li>c. Click <code>Generate Token</code>, enter Service Name and click <code>1-on-1 chat with LINE</code> (anything you like)</li>
+<li>d. Copy Token.</li>
+</ul>
+<p><em>API TEST</em></p>
+<pre class="hljs"><code><div><span class="hljs-keyword">from</span> ExceptNotifier <span class="hljs-keyword">import</span> send_line_msg
+
+send_line_msg(_LINE_NOTIFY_API_TOKEN:, <span class="hljs-string">"Any Test Message"</span>)
+</div></code></pre>
+<p><em>Notifier</em></p>
+<pre class="hljs"><code><div><span class="hljs-keyword">import</span> sys
+<span class="hljs-keyword">from</span> ExceptNotifier <span class="hljs-keyword">import</span> ExceptLine, SuccessLine, SendLine
+sys.excepthook = ExceptLine.__call__
+
+<span class="hljs-comment"># Define the next two variables optionally when using OpenAI's API.</span>
+<span class="hljs-comment"># os.environ['_OPEN_AI_MODEL']="gpt-3.5-turbo"    </span>
+<span class="hljs-comment"># os.environ['_OPEN_AI_API']="sk-xxxxxx"</span>
+os.environ[<span class="hljs-string">'_LINE_NOTIFY_API_TOKEN'</span>] = <span class="hljs-string">'xxxxxxxxxxx'</span>
+
+<span class="hljs-keyword">try</span>:
+    print(<span class="hljs-number">1</span>/<span class="hljs-number">20</span>)  
+    SuccessLine().__call__() <span class="hljs-comment">#1 success sender          </span>
+<span class="hljs-keyword">except</span> ExceptLine <span class="hljs-keyword">as</span> e:      <span class="hljs-comment">#2 except sender            </span>
+    sys.exit()
+
+SendLine().__call__()        <span class="hljs-comment">#3 customized sender          </span>
+</div></code></pre>
+<Br>
+<h2 id="sms"><em>SMS</em></h2>
+<ul>
+<li>a. Sign up for Twilio. <a href="https://www.twilio.com/en-us">https://www.twilio.com/en-us</a></li>
+<li>b. Click Console in the upper right corner.</li>
+<li>c. Copy the variables provided in the console.</li>
+</ul>
+<p><em>API TEST</em></p>
+<pre class="hljs"><code><div><span class="hljs-keyword">from</span> ExceptNotifier <span class="hljs-keyword">import</span> send_sms_msg
+
+_TWILIO_SID = <span class="hljs-string">'xxxx'</span>
+_TWILIO_TOKEN = <span class="hljs-string">"xxxx"</span>
+_SENDER_PHONE_NUMBER = <span class="hljs-string">"xxxx"</span>
+_RECIPIENT_PHONE_NUMBER = <span class="hljs-string">"xxxx"</span>
+
+send_sms_msg(
+    _TWILIO_SID,
+    _TWILIO_TOKEN,
+    _SENDER_PHONE_NUMBER,
+    _RECIPIENT_PHONE_NUMBER,
+    <span class="hljs-string">"Any Test Message"</span>)
+</div></code></pre>
+<p><em>Notifier</em></p>
+<pre class="hljs"><code><div><span class="hljs-keyword">import</span> sys
+<span class="hljs-keyword">from</span> ExceptNotifier <span class="hljs-keyword">import</span> ExceptSMS, SuccessSMS, SendSMS
+sys.excepthook = ExceptSMS.__call__
+
+<span class="hljs-comment"># Define the next two variables optionally when using OpenAI's API.</span>
+<span class="hljs-comment"># os.environ['_OPEN_AI_MODEL']="gpt-3.5-turbo"    </span>
+<span class="hljs-comment"># os.environ['_OPEN_AI_API']="sk-xxxxxx"</span>
+os.environ[<span class="hljs-string">'_TWILIO_SID'</span>] = <span class="hljs-string">'xxxx'</span>
+os.environ[<span class="hljs-string">'_TWILIO_TOKEN'</span>] = <span class="hljs-string">'yyyyyy'</span>
+os.environ[<span class="hljs-string">'_RECIPIENT_PHONE_NUMBER'</span>]=<span class="hljs-string">"+aaaaaa"</span>,
+os.environ[<span class="hljs-string">'_SENDER_PHONE_NUMBER'</span>]=<span class="hljs-string">"+bbbbbb"</span>,  
+
+<span class="hljs-keyword">try</span>:
+    print(<span class="hljs-number">1</span>/<span class="hljs-number">10</span>)  
+    SuccessSMS().__call__() <span class="hljs-comment">#1 success sender          </span>
+<span class="hljs-keyword">except</span> ExceptSMS <span class="hljs-keyword">as</span> e:      <span class="hljs-comment">#2 except sender</span>
+    sys.exit()
+
+SendSMS().__call__()        <span class="hljs-comment">#3 customized sender        </span>
+</div></code></pre>
+<Br>
+<h2 id="teams"><em>Teams</em></h2>
+<ul>
+<li>a. Create the channel that you want to notify.</li>
+<li>b. <code>App</code> - <code>Search: webhook</code> - <code>Incoming Webhook</code> <a href="https://teams.microsoft.com/l/app/203a1e2c-26cc-47ca-83ae-be98f960b6b2?source=app-details-dialog">https://teams.microsoft.com/l/app/203a1e2c-26cc-47ca-83ae-be98f960b6b2?source=app-details-dialog</a></li>
+<li>c. Click <code>Request Approval</code> <br>
+After you can use webhook incomming. Proceed to next steps.
+Microsoft Teams allows limited application access per organization, so it can only be used if the webhook incoming application is available.</li>
+<li>c. Go to the team channel to receive notifications, and click <code>Connectors</code> in Settings.</li>
+<li>d. <code>Connectors</code> After configuring webhook incoming in Connector, copy the webhook URL.</li>
+</ul>
+<p><em>API TEST</em></p>
+<pre class="hljs"><code><div><span class="hljs-keyword">from</span> ExceptNotifier <span class="hljs-keyword">import</span> send_teams_msg
+
+_TEAMS_WEBHOOK_URL = <span class="hljs-string">'xxxx'</span>
+
+send_teams_msg(_TEAMS_WEBHOOK_URL, <span class="hljs-string">"Any Test Message"</span>)
+</div></code></pre>
+<p><em>Notifier</em></p>
+<pre class="hljs"><code><div><span class="hljs-keyword">import</span> sys
+<span class="hljs-keyword">from</span> ExceptNotifier <span class="hljs-keyword">import</span> ExceptTeams, SuccessTeams, SendTeams
+sys.excepthook = ExceptTeams.__call__
+
+<span class="hljs-comment"># Define the next two variables optionally when using OpenAI's API.</span>
+<span class="hljs-comment"># os.environ['_OPEN_AI_MODEL']="gpt-3.5-turbo"    </span>
+<span class="hljs-comment"># os.environ['_OPEN_AI_API']="sk-xxxxxx"</span>
+os.environ[<span class="hljs-string">'_TEAMS_WEBHOOK_URL'</span>] = <span class="hljs-string">'microsoft webhook _TEAMS_WEBHOOK_URL'</span>
+
+<span class="hljs-keyword">try</span>:
+    print(<span class="hljs-number">1</span>/<span class="hljs-number">20</span>)  
+    SuccessTeams().__call__() <span class="hljs-comment">#1 success sender          </span>
+<span class="hljs-keyword">except</span> ExceptTeams <span class="hljs-keyword">as</span> e:      <span class="hljs-comment">#2 except sender            </span>
+    sys.exit()
+
+SendTeams().__call__()        <span class="hljs-comment">#3 customized sender        </span>
+</div></code></pre>
+<Br>
+<h2 id="kakaotalk"><em>Kakaotalk</em></h2>
+<ul>
+<li>a. Sign up at the following site: <a href="https://developers.kakao.com/">https://developers.kakao.com/</a></li>
+<li>b. Click <code>My Application</code> on the top bar.</li>
+<li>c. Click <code>Add an application</code>, set a name, and create it.</li>
+<li>d. Click <code>Kakao Login</code> in the left menu, then change the State of <code>Kakao Login Activation</code> to ON on the resulting page.</li>
+<li>e. In <code>My Application &gt; Product Settings &gt; Kakao Login</code>, be sure to set <code>Redirect URI</code> as follows: <a href="https://example.com/oauth">https://example.com/oauth</a></li>
+<li>f. In the left Consent Items menu, set <code>Send message in KakaoTalk</code> to optional agreement.</li>
+<li>g. Copy the <code>REST API Key</code> in <code>My Application &gt; App Settings &gt; Summary</code>.</li>
+<li>h. If you have successfully completed all of the above steps, go to the following document and follow the instructions:
+./tutorials/kakao_token_generator.ipynb</li>
+</ul>
+<p><em>API TEST</em></p>
+<pre class="hljs"><code><div><span class="hljs-keyword">from</span> ExceptNotifier <span class="hljs-keyword">import</span> send_kakao_msg
+
+_KAKAO_TOKEN_PATH = <span class="hljs-string">'xxx/xx/xxx.json'</span>
+
+send_kakao_msg(_KAKAO_TOKEN_PATH, msg)
+</div></code></pre>
+<p><em>Notifier</em></p>
+<pre class="hljs"><code><div><span class="hljs-keyword">import</span> sys
+<span class="hljs-keyword">from</span> ExceptNotifier <span class="hljs-keyword">import</span> ExceptKakao, SuccessKakao, SendKakao
+sys.excepthook = ExceptKakao.__call__
+
+<span class="hljs-comment"># Define the next two variables optionally when using OpenAI's API.</span>
+<span class="hljs-comment"># os.environ['_OPEN_AI_MODEL']="gpt-3.5-turbo"    </span>
+<span class="hljs-comment"># os.environ['_OPEN_AI_API']="sk-xxxxxx"</span>
+os.environ[<span class="hljs-string">'_KAKAO_TOKEN_PATH'</span>] = <span class="hljs-string">'xxxx/xxx/xxx.json'</span><span class="hljs-string">'
+
+try:
+    print(1/0)  
+    SuccessKakao().__call__() #1 success sender          
+except ExceptKakao as e:      #2 except sender            
+    sys.exit()
+
+SendKakao().__call__()        #3 customized sender         
+</span></div></code></pre>
+<h2 id="wechat"><em>Wechat</em></h2>
+<p>a. Get Webhook URL by visiting <a href="https://work.weixin.qq.com/api/doc/90000/90136/91770">here</a>
+<em>API TEST</em></p>
+<pre class="hljs"><code><div><span class="hljs-keyword">from</span> ExceptNotifier <span class="hljs-keyword">import</span> send_wechat_msg
+
+send_wechat_msg(_WECHAT_WEBHOOK_URL, msg)
+</div></code></pre>
+<p><em>Notifier</em></p>
+<pre class="hljs"><code><div><span class="hljs-keyword">import</span> sys
+<span class="hljs-keyword">from</span> ExceptNotifier <span class="hljs-keyword">import</span> ExceptWechat, SuccessWechat, SendWechat
+
+<span class="hljs-comment"># Define the next two variables optionally when using OpenAI's API.</span>
+<span class="hljs-comment"># os.environ['_OPEN_AI_MODEL']="gpt-3.5-turbo"    </span>
+<span class="hljs-comment"># os.environ['_OPEN_AI_API']="sk-xxxxxx"</span>
+os.environ[<span class="hljs-string">'_WECHAT_WEBHOOK_URL'</span>] = <span class="hljs-string">"xxxxxxxxxxx"</span>
+sys.excepthook = ExceptWechat.__call__
+
+<span class="hljs-keyword">try</span>:
+    print(<span class="hljs-number">1</span>/<span class="hljs-number">0</span>)  
+    SuccessWechat().__call__() <span class="hljs-comment">#1 success sender          </span>
+<span class="hljs-keyword">except</span> ExceptWechat <span class="hljs-keyword">as</span> e:      <span class="hljs-comment">#2 except sender            </span>
+    sys.exit()
+
+SendWechat().__call__()        <span class="hljs-comment">#3 customized sender       </span>
+</div></code></pre>
+<Br>
+<h2 id="beep"><em>Beep</em></h2>
+<p>No setup is required. Use as follows.
+<em>TEST</em></p>
+<pre class="hljs"><code><div><span class="hljs-keyword">from</span> ExceptNotifier <span class="hljs-keyword">import</span> beep
+
+beep(sec=<span class="hljs-number">1</span>, freq=<span class="hljs-number">1000</span>) 
+</div></code></pre>
+<p><em>Notifier</em></p>
+<pre class="hljs"><code><div><span class="hljs-keyword">from</span> Exceptnotifier <span class="hljs-keyword">import</span> ExceptBeep, SuccessBeep, SendBeep(), beep()
+os.environ[<span class="hljs-string">'BEEP_TIME'</span>] = <span class="hljs-number">1</span>
+sys.excepthook = ExceptBeep.__call__
+
+<span class="hljs-keyword">try</span>:
+    print(<span class="hljs-number">1</span>/<span class="hljs-number">20</span>)  
+    SuccessBeep().__call__() <span class="hljs-comment">#1 success beep-beep          </span>
+
+<span class="hljs-keyword">except</span> ExceptBeep <span class="hljs-keyword">as</span> e:      <span class="hljs-comment">#2 except beep-beep                </span>
+    sys.exit()
+
+SendBeep().__call__()        <span class="hljs-comment">#3 customized beep-beep      </span>
+
+beep()
+
+</div></code></pre>
+<Br>
+<h2 id="desktop"><em>Desktop</em></h2>
+<p>No setup is required. Use as follows.
+<em>TEST</em></p>
+<pre class="hljs"><code><div><span class="hljs-keyword">from</span> ExceptNotifier <span class="hljs-keyword">import</span> send_desktop_msg
+
+title_msg = <span class="hljs-string">"Test Title"</span>
+body_msg = <span class="hljs-string">"Test Body"</span>
+DISP_TIME = <span class="hljs-number">5</span>
+
+send_desktop_msg(title_msg, body_msg, DISP_TIME)
+</div></code></pre>
+<p><em>Notifier</em></p>
+<pre class="hljs"><code><div><span class="hljs-keyword">from</span> ExceptNotifier <span class="hljs-keyword">import</span> ExceptDesktop, SuccessDesktop, SendDesktop
+sys.excepthook = ExceptDesktop.__call__
+<span class="hljs-comment"># Define the next two variables optionally when using OpenAI's API.</span>
+<span class="hljs-comment"># os.environ['_OPEN_AI_MODEL']="gpt-3.5-turbo"    </span>
+<span class="hljs-comment"># os.environ['_OPEN_AI_API']="sk-xxxxxx"</span>
+
+<span class="hljs-keyword">try</span>:
+    print(<span class="hljs-number">1</span>/<span class="hljs-number">0</span>)  
+    SuccessDesktop().__call__() <span class="hljs-comment">#1 success sender          </span>
+
+<span class="hljs-keyword">except</span> ExceptDesktop <span class="hljs-keyword">as</span> e:      <span class="hljs-comment">#2 except sender            </span>
+    sys.exit()
+
+SendDesktop().__call__()        <span class="hljs-comment">#3 customized sender         </span>
+</div></code></pre>
+<br>
+<p><Br><br><br></p>
+<h1 id="contributing-guide">Contributing Guide</h1>
+<p>I will announce contributing rules when the code development status changes to beta soon. Until then, please create an issue for feature requests and bug reports. I would greatly appreciate it if you use it a lot and give your opinions generously. Thank you sincerely.</p>
+<h1 id="license">License</h1>
+<p>MIT</p>
+<h1 id="code-of-conduct">Code of Conduct</h1>
+<p>Everyone participating in the <code>ExceptNotifier</code> project, and in particular in the issue tracker, pull requests, and social media activity, is expected to treat other people with respect and more generally to follow the guidelines articulated in <a href="https://www.python.org/psf/conduct/">the Python Community Code of Conduct</a>.</p>
+<h1 id="contacts">Contacts</h1>
+<p>Core maintainers: <a href="https://github.com/DSDanielPark">Daniel Park, South Korea</a> <br>
+Email parkminwoo1991@gmail.com <br></p>
+<ul>
+<li>Developer note: <a href="./documents/DEV_NOTE.md">Link</a></li>
+</ul>
+<h4 id="could-you-kindly-add-this-badge-to-your-repository">Could you kindly add this badge to your repository?</h4>
+<pre class="hljs"><code><div>![Except-Notifier](https://img.shields.io/badge/pypi-ExceptNotifier-orange)
+</div></code></pre>
+<p>I would appreciate it if you could share the document widely by specifying that the source is the ExceptNotifier official github.</p>
+<h5 id="the-package-is-currently-in-the-development-and-qa-stages-and-the-development-stage-will-be-updated-at-the-top-of-this-page-if-it-is-determined-that-the-product-is-stable-through-feature-improvement-addition-and-issue-resolution-the-development-stage-will-reach-stage-5-if-no-new-updates-or-issues-arise-it-will-be-adjusted-upward-to-stage-6-or-higher">The package is currently in the development and QA stages, and the development stage will be updated at the top of this page. If it is determined that the product is stable through feature improvement, addition, and issue resolution, the development stage will reach stage 5. If no new updates or issues arise, it will be adjusted upward to stage 6 or higher.</h5>
+
+</body>
+</html>

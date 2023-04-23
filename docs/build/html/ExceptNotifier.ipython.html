@@ -1,0 +1,584 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ExceptNotifier.ipython package &mdash; ExceptNotifier 0.2.0 documentation</title>
+      <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/doctools.js"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="ExceptNotifier.python package" href="ExceptNotifier.python.html" />
+    <link rel="prev" title="ExceptNotifier.base package" href="ExceptNotifier.base.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="index.html" class="icon icon-home">
+            ExceptNotifier
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="install.html">Install</a></li>
+<li class="toctree-l1"><a class="reference internal" href="project.html">Official Github</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ExceptNotifier.html">Install</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ExceptNotifier.html#projcet">Projcet</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ExceptNotifier.html#exceptnotifier">ExceptNotifier</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ExceptNotifier.html#base-sender">Base Sender</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ExceptNotifier.html#ipython-core">IPython Core</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ExceptNotifier.html#python-core">Python Core</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ExceptNotifier.html#utilities">Utilities</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ExceptNotifier.base.html">ExceptNotifier.base package</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ExceptNotifier.python.html">ExceptNotifier.python package</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">ExceptNotifier.ipython package</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#submodules">Submodules</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#module-ExceptNotifier.ipython.beep_notifier_ipython">ExceptNotifier.ipython.beep_notifier_ipython module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#module-ExceptNotifier.ipython.chime_notifier_ipython">ExceptNotifier.ipython.chime_notifier_ipython module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#module-ExceptNotifier.ipython.desktop_notifier_ipython">ExceptNotifier.ipython.desktop_notifier_ipython module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#module-ExceptNotifier.ipython.discord_notifier_ipython">ExceptNotifier.ipython.discord_notifier_ipython module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#module-ExceptNotifier.ipython.kakao_notifier_ipython">ExceptNotifier.ipython.kakao_notifier_ipython module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#module-ExceptNotifier.ipython.line_notifier_ipython">ExceptNotifier.ipython.line_notifier_ipython module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#module-ExceptNotifier.ipython.mail_notifier_ipython">ExceptNotifier.ipython.mail_notifier_ipython module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#module-ExceptNotifier.ipython.slack_notifier_ipython">ExceptNotifier.ipython.slack_notifier_ipython module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#module-ExceptNotifier.ipython.sms_notifier_ipython">ExceptNotifier.ipython.sms_notifier_ipython module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#module-ExceptNotifier.ipython.teams_notifier_ipython">ExceptNotifier.ipython.teams_notifier_ipython module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#module-ExceptNotifier.ipython.telegram_notifier_ipython">ExceptNotifier.ipython.telegram_notifier_ipython module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#module-ExceptNotifier.ipython.wechat_notifier_ipython">ExceptNotifier.ipython.wechat_notifier_ipython module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#module-ExceptNotifier.ipython">Module contents</a></li>
+</ul>
+</li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">ExceptNotifier</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="ExceptNotifier.html">Install</a></li>
+      <li class="breadcrumb-item active">ExceptNotifier.ipython package</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="_sources/ExceptNotifier.ipython.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="exceptnotifier-ipython-package">
+<h1>ExceptNotifier.ipython package<a class="headerlink" href="#exceptnotifier-ipython-package" title="Permalink to this headline"></a></h1>
+<section id="submodules">
+<h2>Submodules<a class="headerlink" href="#submodules" title="Permalink to this headline"></a></h2>
+</section>
+<section id="module-ExceptNotifier.ipython.beep_notifier_ipython">
+<span id="exceptnotifier-ipython-beep-notifier-ipython-module"></span><h2>ExceptNotifier.ipython.beep_notifier_ipython module<a class="headerlink" href="#module-ExceptNotifier.ipython.beep_notifier_ipython" title="Permalink to this headline"></a></h2>
+<dl class="py function">
+<dt class="sig sig-object py" id="ExceptNotifier.ipython.beep_notifier_ipython.ExceptBeepIpython">
+<span class="sig-prename descclassname"><span class="pre">ExceptNotifier.ipython.beep_notifier_ipython.</span></span><span class="sig-name descname"><span class="pre">ExceptBeepIpython</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">shell</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">etype</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">evalue</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">tb</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">tb_offset</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ExceptNotifier.ipython.beep_notifier_ipython.ExceptBeepIpython" title="Permalink to this definition"></a></dt>
+<dd><p>ExceptNotifier function for overriding custom execute in ipython</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>shell</strong> (<em>_type_</em>) – Excecuted shell</p></li>
+<li><p><strong>etype</strong> (<em>_type_</em>) – Error type</p></li>
+<li><p><strong>evalue</strong> (<em>_type_</em>) – Error value</p></li>
+<li><p><strong>tb</strong> (<em>_type_</em>) – TraceBack</p></li>
+<li><p><strong>tb_offset</strong> (<em>int</em><em>, </em><em>optional</em>) – Offset of traceback, defaults to 1</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+</section>
+<section id="module-ExceptNotifier.ipython.chime_notifier_ipython">
+<span id="exceptnotifier-ipython-chime-notifier-ipython-module"></span><h2>ExceptNotifier.ipython.chime_notifier_ipython module<a class="headerlink" href="#module-ExceptNotifier.ipython.chime_notifier_ipython" title="Permalink to this headline"></a></h2>
+<dl class="py function">
+<dt class="sig sig-object py" id="ExceptNotifier.ipython.chime_notifier_ipython.ExceptChimeIpython">
+<span class="sig-prename descclassname"><span class="pre">ExceptNotifier.ipython.chime_notifier_ipython.</span></span><span class="sig-name descname"><span class="pre">ExceptChimeIpython</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">shell</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">etype</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">evalue</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">tb</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">tb_offset</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ExceptNotifier.ipython.chime_notifier_ipython.ExceptChimeIpython" title="Permalink to this definition"></a></dt>
+<dd><p>ExceptNotifier function for overriding custom execute in ipython</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>shell</strong> (<em>_type_</em>) – Excecuted shell</p></li>
+<li><p><strong>etype</strong> (<em>_type_</em>) – Error type</p></li>
+<li><p><strong>evalue</strong> (<em>_type_</em>) – Error value</p></li>
+<li><p><strong>tb</strong> (<em>_type_</em>) – TraceBack</p></li>
+<li><p><strong>tb_offset</strong> (<em>int</em><em>, </em><em>optional</em>) – Offset of traceback, defaults to 1</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+</section>
+<section id="module-ExceptNotifier.ipython.desktop_notifier_ipython">
+<span id="exceptnotifier-ipython-desktop-notifier-ipython-module"></span><h2>ExceptNotifier.ipython.desktop_notifier_ipython module<a class="headerlink" href="#module-ExceptNotifier.ipython.desktop_notifier_ipython" title="Permalink to this headline"></a></h2>
+<dl class="py function">
+<dt class="sig sig-object py" id="ExceptNotifier.ipython.desktop_notifier_ipython.ExceptDesktopIpython">
+<span class="sig-prename descclassname"><span class="pre">ExceptNotifier.ipython.desktop_notifier_ipython.</span></span><span class="sig-name descname"><span class="pre">ExceptDesktopIpython</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">shell</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">etype</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">evalue</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">tb</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">tb_offset</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ExceptNotifier.ipython.desktop_notifier_ipython.ExceptDesktopIpython" title="Permalink to this definition"></a></dt>
+<dd><p>ExceptNotifier function for overriding custom execute in ipython</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>shell</strong> (<em>_type_</em>) – Excecuted shell</p></li>
+<li><p><strong>etype</strong> (<em>_type_</em>) – Error type</p></li>
+<li><p><strong>evalue</strong> (<em>_type_</em>) – Error value</p></li>
+<li><p><strong>tb</strong> (<em>_type_</em>) – TraceBack</p></li>
+<li><p><strong>tb_offset</strong> (<em>int</em><em>, </em><em>optional</em>) – Offset of traceback, defaults to 1</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+</section>
+<section id="module-ExceptNotifier.ipython.discord_notifier_ipython">
+<span id="exceptnotifier-ipython-discord-notifier-ipython-module"></span><h2>ExceptNotifier.ipython.discord_notifier_ipython module<a class="headerlink" href="#module-ExceptNotifier.ipython.discord_notifier_ipython" title="Permalink to this headline"></a></h2>
+<dl class="py function">
+<dt class="sig sig-object py" id="ExceptNotifier.ipython.discord_notifier_ipython.ExceptDiscordIpython">
+<span class="sig-prename descclassname"><span class="pre">ExceptNotifier.ipython.discord_notifier_ipython.</span></span><span class="sig-name descname"><span class="pre">ExceptDiscordIpython</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">shell</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">etype</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">evalue</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">tb</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">tb_offset</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ExceptNotifier.ipython.discord_notifier_ipython.ExceptDiscordIpython" title="Permalink to this definition"></a></dt>
+<dd><p>ExceptNotifier function for overriding custom execute in ipython</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>shell</strong> (<em>_type_</em>) – Excecuted shell</p></li>
+<li><p><strong>etype</strong> (<em>_type_</em>) – Error type</p></li>
+<li><p><strong>evalue</strong> (<em>_type_</em>) – Error value</p></li>
+<li><p><strong>tb</strong> (<em>_type_</em>) – TraceBack</p></li>
+<li><p><strong>tb_offset</strong> (<em>int</em><em>, </em><em>optional</em>) – Offset of traceback, defaults to 1</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+</section>
+<section id="module-ExceptNotifier.ipython.kakao_notifier_ipython">
+<span id="exceptnotifier-ipython-kakao-notifier-ipython-module"></span><h2>ExceptNotifier.ipython.kakao_notifier_ipython module<a class="headerlink" href="#module-ExceptNotifier.ipython.kakao_notifier_ipython" title="Permalink to this headline"></a></h2>
+<dl class="py function">
+<dt class="sig sig-object py" id="ExceptNotifier.ipython.kakao_notifier_ipython.ExceptKakaoIpython">
+<span class="sig-prename descclassname"><span class="pre">ExceptNotifier.ipython.kakao_notifier_ipython.</span></span><span class="sig-name descname"><span class="pre">ExceptKakaoIpython</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">shell</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">etype</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">evalue</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">tb</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">tb_offset</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ExceptNotifier.ipython.kakao_notifier_ipython.ExceptKakaoIpython" title="Permalink to this definition"></a></dt>
+<dd><p>ExceptNotifier function for overriding custom execute in ipython</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>shell</strong> (<em>_type_</em>) – Excecuted shell</p></li>
+<li><p><strong>etype</strong> (<em>_type_</em>) – Error type</p></li>
+<li><p><strong>evalue</strong> (<em>_type_</em>) – Error value</p></li>
+<li><p><strong>tb</strong> (<em>_type_</em>) – TraceBack</p></li>
+<li><p><strong>tb_offset</strong> (<em>int</em><em>, </em><em>optional</em>) – Offset of traceback, defaults to 1</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+</section>
+<section id="module-ExceptNotifier.ipython.line_notifier_ipython">
+<span id="exceptnotifier-ipython-line-notifier-ipython-module"></span><h2>ExceptNotifier.ipython.line_notifier_ipython module<a class="headerlink" href="#module-ExceptNotifier.ipython.line_notifier_ipython" title="Permalink to this headline"></a></h2>
+<dl class="py function">
+<dt class="sig sig-object py" id="ExceptNotifier.ipython.line_notifier_ipython.ExceptLineIpython">
+<span class="sig-prename descclassname"><span class="pre">ExceptNotifier.ipython.line_notifier_ipython.</span></span><span class="sig-name descname"><span class="pre">ExceptLineIpython</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">shell</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">etype</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">evalue</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">tb</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">tb_offset</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ExceptNotifier.ipython.line_notifier_ipython.ExceptLineIpython" title="Permalink to this definition"></a></dt>
+<dd><p>ExceptNotifier function for overriding custom execute in ipython</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>shell</strong> (<em>_type_</em>) – Excecuted shell</p></li>
+<li><p><strong>etype</strong> (<em>_type_</em>) – Error type</p></li>
+<li><p><strong>evalue</strong> (<em>_type_</em>) – Error value</p></li>
+<li><p><strong>tb</strong> (<em>_type_</em>) – TraceBack</p></li>
+<li><p><strong>tb_offset</strong> (<em>int</em><em>, </em><em>optional</em>) – Offset of traceback, defaults to 1</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+</section>
+<section id="module-ExceptNotifier.ipython.mail_notifier_ipython">
+<span id="exceptnotifier-ipython-mail-notifier-ipython-module"></span><h2>ExceptNotifier.ipython.mail_notifier_ipython module<a class="headerlink" href="#module-ExceptNotifier.ipython.mail_notifier_ipython" title="Permalink to this headline"></a></h2>
+<dl class="py function">
+<dt class="sig sig-object py" id="ExceptNotifier.ipython.mail_notifier_ipython.ExceptMailIpython">
+<span class="sig-prename descclassname"><span class="pre">ExceptNotifier.ipython.mail_notifier_ipython.</span></span><span class="sig-name descname"><span class="pre">ExceptMailIpython</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">shell</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">etype</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">evalue</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">tb</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">tb_offset</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ExceptNotifier.ipython.mail_notifier_ipython.ExceptMailIpython" title="Permalink to this definition"></a></dt>
+<dd><p>ExceptNotifier function for overriding custom execute in ipython</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>shell</strong> (<em>_type_</em>) – Excecuted shell</p></li>
+<li><p><strong>etype</strong> (<em>_type_</em>) – Error type</p></li>
+<li><p><strong>evalue</strong> (<em>_type_</em>) – Error value</p></li>
+<li><p><strong>tb</strong> (<em>_type_</em>) – TraceBack</p></li>
+<li><p><strong>tb_offset</strong> (<em>int</em><em>, </em><em>optional</em>) – Offset of traceback, defaults to 1</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+</section>
+<section id="module-ExceptNotifier.ipython.slack_notifier_ipython">
+<span id="exceptnotifier-ipython-slack-notifier-ipython-module"></span><h2>ExceptNotifier.ipython.slack_notifier_ipython module<a class="headerlink" href="#module-ExceptNotifier.ipython.slack_notifier_ipython" title="Permalink to this headline"></a></h2>
+<dl class="py function">
+<dt class="sig sig-object py" id="ExceptNotifier.ipython.slack_notifier_ipython.ExceptSlackIpython">
+<span class="sig-prename descclassname"><span class="pre">ExceptNotifier.ipython.slack_notifier_ipython.</span></span><span class="sig-name descname"><span class="pre">ExceptSlackIpython</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">shell</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">etype</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">evalue</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">tb</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">tb_offset</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ExceptNotifier.ipython.slack_notifier_ipython.ExceptSlackIpython" title="Permalink to this definition"></a></dt>
+<dd><p>ExceptNotifier function for overriding custom execute in ipython</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>shell</strong> (<em>_type_</em>) – Excecuted shell</p></li>
+<li><p><strong>etype</strong> (<em>_type_</em>) – Error type</p></li>
+<li><p><strong>evalue</strong> (<em>_type_</em>) – Error value</p></li>
+<li><p><strong>tb</strong> (<em>_type_</em>) – TraceBack</p></li>
+<li><p><strong>tb_offset</strong> (<em>int</em><em>, </em><em>optional</em>) – Offset of traceback, defaults to 1</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+</section>
+<section id="module-ExceptNotifier.ipython.sms_notifier_ipython">
+<span id="exceptnotifier-ipython-sms-notifier-ipython-module"></span><h2>ExceptNotifier.ipython.sms_notifier_ipython module<a class="headerlink" href="#module-ExceptNotifier.ipython.sms_notifier_ipython" title="Permalink to this headline"></a></h2>
+<dl class="py function">
+<dt class="sig sig-object py" id="ExceptNotifier.ipython.sms_notifier_ipython.ExceptSMSIpython">
+<span class="sig-prename descclassname"><span class="pre">ExceptNotifier.ipython.sms_notifier_ipython.</span></span><span class="sig-name descname"><span class="pre">ExceptSMSIpython</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">shell</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">etype</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">evalue</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">tb</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">tb_offset</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ExceptNotifier.ipython.sms_notifier_ipython.ExceptSMSIpython" title="Permalink to this definition"></a></dt>
+<dd><p>ExceptNotifier function for overriding custom execute in ipython</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>shell</strong> (<em>_type_</em>) – Excecuted shell</p></li>
+<li><p><strong>etype</strong> (<em>_type_</em>) – Error type</p></li>
+<li><p><strong>evalue</strong> (<em>_type_</em>) – Error value</p></li>
+<li><p><strong>tb</strong> (<em>_type_</em>) – TraceBack</p></li>
+<li><p><strong>tb_offset</strong> (<em>int</em><em>, </em><em>optional</em>) – Offset of traceback, defaults to 1</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+</section>
+<section id="module-ExceptNotifier.ipython.teams_notifier_ipython">
+<span id="exceptnotifier-ipython-teams-notifier-ipython-module"></span><h2>ExceptNotifier.ipython.teams_notifier_ipython module<a class="headerlink" href="#module-ExceptNotifier.ipython.teams_notifier_ipython" title="Permalink to this headline"></a></h2>
+<dl class="py function">
+<dt class="sig sig-object py" id="ExceptNotifier.ipython.teams_notifier_ipython.ExceptTeamsIpython">
+<span class="sig-prename descclassname"><span class="pre">ExceptNotifier.ipython.teams_notifier_ipython.</span></span><span class="sig-name descname"><span class="pre">ExceptTeamsIpython</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">shell</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">etype</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">evalue</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">tb</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">tb_offset</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ExceptNotifier.ipython.teams_notifier_ipython.ExceptTeamsIpython" title="Permalink to this definition"></a></dt>
+<dd><p>ExceptNotifier function for overriding custom execute in ipython</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>shell</strong> (<em>_type_</em>) – Excecuted shell</p></li>
+<li><p><strong>etype</strong> (<em>_type_</em>) – Error type</p></li>
+<li><p><strong>evalue</strong> (<em>_type_</em>) – Error value</p></li>
+<li><p><strong>tb</strong> (<em>_type_</em>) – TraceBack</p></li>
+<li><p><strong>tb_offset</strong> (<em>int</em><em>, </em><em>optional</em>) – Offset of traceback, defaults to 1</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+</section>
+<section id="module-ExceptNotifier.ipython.telegram_notifier_ipython">
+<span id="exceptnotifier-ipython-telegram-notifier-ipython-module"></span><h2>ExceptNotifier.ipython.telegram_notifier_ipython module<a class="headerlink" href="#module-ExceptNotifier.ipython.telegram_notifier_ipython" title="Permalink to this headline"></a></h2>
+<dl class="py function">
+<dt class="sig sig-object py" id="ExceptNotifier.ipython.telegram_notifier_ipython.ExceptTelegramIpython">
+<span class="sig-prename descclassname"><span class="pre">ExceptNotifier.ipython.telegram_notifier_ipython.</span></span><span class="sig-name descname"><span class="pre">ExceptTelegramIpython</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">shell</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">etype</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">evalue</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">tb</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">tb_offset</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ExceptNotifier.ipython.telegram_notifier_ipython.ExceptTelegramIpython" title="Permalink to this definition"></a></dt>
+<dd><p>ExceptNotifier function for overriding custom execute in ipython</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>shell</strong> (<em>_type_</em>) – Excecuted shell</p></li>
+<li><p><strong>etype</strong> (<em>_type_</em>) – Error type</p></li>
+<li><p><strong>evalue</strong> (<em>_type_</em>) – Error value</p></li>
+<li><p><strong>tb</strong> (<em>_type_</em>) – TraceBack</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+</section>
+<section id="module-ExceptNotifier.ipython.wechat_notifier_ipython">
+<span id="exceptnotifier-ipython-wechat-notifier-ipython-module"></span><h2>ExceptNotifier.ipython.wechat_notifier_ipython module<a class="headerlink" href="#module-ExceptNotifier.ipython.wechat_notifier_ipython" title="Permalink to this headline"></a></h2>
+<dl class="py function">
+<dt class="sig sig-object py" id="ExceptNotifier.ipython.wechat_notifier_ipython.ExceptWechatIpython">
+<span class="sig-prename descclassname"><span class="pre">ExceptNotifier.ipython.wechat_notifier_ipython.</span></span><span class="sig-name descname"><span class="pre">ExceptWechatIpython</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">shell</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">etype</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">evalue</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">tb</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">tb_offset</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ExceptNotifier.ipython.wechat_notifier_ipython.ExceptWechatIpython" title="Permalink to this definition"></a></dt>
+<dd><p>ExceptNotifier function for overriding custom execute in ipython</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>shell</strong> (<em>_type_</em>) – Excecuted shell</p></li>
+<li><p><strong>etype</strong> (<em>_type_</em>) – Error type</p></li>
+<li><p><strong>evalue</strong> (<em>_type_</em>) – Error value</p></li>
+<li><p><strong>tb</strong> (<em>_type_</em>) – TraceBack</p></li>
+<li><p><strong>tb_offset</strong> (<em>int</em><em>, </em><em>optional</em>) – Offset of traceback, defaults to 1</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+</section>
+<section id="module-ExceptNotifier.ipython">
+<span id="module-contents"></span><h2>Module contents<a class="headerlink" href="#module-ExceptNotifier.ipython" title="Permalink to this headline"></a></h2>
+<dl class="py function">
+<dt class="sig sig-object py" id="ExceptNotifier.ipython.ExceptBeepIpython">
+<span class="sig-prename descclassname"><span class="pre">ExceptNotifier.ipython.</span></span><span class="sig-name descname"><span class="pre">ExceptBeepIpython</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">shell</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">etype</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">evalue</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">tb</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">tb_offset</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ExceptNotifier.ipython.ExceptBeepIpython" title="Permalink to this definition"></a></dt>
+<dd><p>ExceptNotifier function for overriding custom execute in ipython</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>shell</strong> (<em>_type_</em>) – Excecuted shell</p></li>
+<li><p><strong>etype</strong> (<em>_type_</em>) – Error type</p></li>
+<li><p><strong>evalue</strong> (<em>_type_</em>) – Error value</p></li>
+<li><p><strong>tb</strong> (<em>_type_</em>) – TraceBack</p></li>
+<li><p><strong>tb_offset</strong> (<em>int</em><em>, </em><em>optional</em>) – Offset of traceback, defaults to 1</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="ExceptNotifier.ipython.ExceptChimeIpython">
+<span class="sig-prename descclassname"><span class="pre">ExceptNotifier.ipython.</span></span><span class="sig-name descname"><span class="pre">ExceptChimeIpython</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">shell</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">etype</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">evalue</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">tb</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">tb_offset</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ExceptNotifier.ipython.ExceptChimeIpython" title="Permalink to this definition"></a></dt>
+<dd><p>ExceptNotifier function for overriding custom execute in ipython</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>shell</strong> (<em>_type_</em>) – Excecuted shell</p></li>
+<li><p><strong>etype</strong> (<em>_type_</em>) – Error type</p></li>
+<li><p><strong>evalue</strong> (<em>_type_</em>) – Error value</p></li>
+<li><p><strong>tb</strong> (<em>_type_</em>) – TraceBack</p></li>
+<li><p><strong>tb_offset</strong> (<em>int</em><em>, </em><em>optional</em>) – Offset of traceback, defaults to 1</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="ExceptNotifier.ipython.ExceptDesktopIpython">
+<span class="sig-prename descclassname"><span class="pre">ExceptNotifier.ipython.</span></span><span class="sig-name descname"><span class="pre">ExceptDesktopIpython</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">shell</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">etype</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">evalue</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">tb</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">tb_offset</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ExceptNotifier.ipython.ExceptDesktopIpython" title="Permalink to this definition"></a></dt>
+<dd><p>ExceptNotifier function for overriding custom execute in ipython</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>shell</strong> (<em>_type_</em>) – Excecuted shell</p></li>
+<li><p><strong>etype</strong> (<em>_type_</em>) – Error type</p></li>
+<li><p><strong>evalue</strong> (<em>_type_</em>) – Error value</p></li>
+<li><p><strong>tb</strong> (<em>_type_</em>) – TraceBack</p></li>
+<li><p><strong>tb_offset</strong> (<em>int</em><em>, </em><em>optional</em>) – Offset of traceback, defaults to 1</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="ExceptNotifier.ipython.ExceptDiscordIpython">
+<span class="sig-prename descclassname"><span class="pre">ExceptNotifier.ipython.</span></span><span class="sig-name descname"><span class="pre">ExceptDiscordIpython</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">shell</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">etype</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">evalue</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">tb</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">tb_offset</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ExceptNotifier.ipython.ExceptDiscordIpython" title="Permalink to this definition"></a></dt>
+<dd><p>ExceptNotifier function for overriding custom execute in ipython</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>shell</strong> (<em>_type_</em>) – Excecuted shell</p></li>
+<li><p><strong>etype</strong> (<em>_type_</em>) – Error type</p></li>
+<li><p><strong>evalue</strong> (<em>_type_</em>) – Error value</p></li>
+<li><p><strong>tb</strong> (<em>_type_</em>) – TraceBack</p></li>
+<li><p><strong>tb_offset</strong> (<em>int</em><em>, </em><em>optional</em>) – Offset of traceback, defaults to 1</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="ExceptNotifier.ipython.ExceptKakaoIpython">
+<span class="sig-prename descclassname"><span class="pre">ExceptNotifier.ipython.</span></span><span class="sig-name descname"><span class="pre">ExceptKakaoIpython</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">shell</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">etype</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">evalue</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">tb</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">tb_offset</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ExceptNotifier.ipython.ExceptKakaoIpython" title="Permalink to this definition"></a></dt>
+<dd><p>ExceptNotifier function for overriding custom execute in ipython</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>shell</strong> (<em>_type_</em>) – Excecuted shell</p></li>
+<li><p><strong>etype</strong> (<em>_type_</em>) – Error type</p></li>
+<li><p><strong>evalue</strong> (<em>_type_</em>) – Error value</p></li>
+<li><p><strong>tb</strong> (<em>_type_</em>) – TraceBack</p></li>
+<li><p><strong>tb_offset</strong> (<em>int</em><em>, </em><em>optional</em>) – Offset of traceback, defaults to 1</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="ExceptNotifier.ipython.ExceptLineIpython">
+<span class="sig-prename descclassname"><span class="pre">ExceptNotifier.ipython.</span></span><span class="sig-name descname"><span class="pre">ExceptLineIpython</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">shell</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">etype</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">evalue</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">tb</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">tb_offset</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ExceptNotifier.ipython.ExceptLineIpython" title="Permalink to this definition"></a></dt>
+<dd><p>ExceptNotifier function for overriding custom execute in ipython</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>shell</strong> (<em>_type_</em>) – Excecuted shell</p></li>
+<li><p><strong>etype</strong> (<em>_type_</em>) – Error type</p></li>
+<li><p><strong>evalue</strong> (<em>_type_</em>) – Error value</p></li>
+<li><p><strong>tb</strong> (<em>_type_</em>) – TraceBack</p></li>
+<li><p><strong>tb_offset</strong> (<em>int</em><em>, </em><em>optional</em>) – Offset of traceback, defaults to 1</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="ExceptNotifier.ipython.ExceptMailIpython">
+<span class="sig-prename descclassname"><span class="pre">ExceptNotifier.ipython.</span></span><span class="sig-name descname"><span class="pre">ExceptMailIpython</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">shell</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">etype</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">evalue</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">tb</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">tb_offset</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ExceptNotifier.ipython.ExceptMailIpython" title="Permalink to this definition"></a></dt>
+<dd><p>ExceptNotifier function for overriding custom execute in ipython</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>shell</strong> (<em>_type_</em>) – Excecuted shell</p></li>
+<li><p><strong>etype</strong> (<em>_type_</em>) – Error type</p></li>
+<li><p><strong>evalue</strong> (<em>_type_</em>) – Error value</p></li>
+<li><p><strong>tb</strong> (<em>_type_</em>) – TraceBack</p></li>
+<li><p><strong>tb_offset</strong> (<em>int</em><em>, </em><em>optional</em>) – Offset of traceback, defaults to 1</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="ExceptNotifier.ipython.ExceptSMSIpython">
+<span class="sig-prename descclassname"><span class="pre">ExceptNotifier.ipython.</span></span><span class="sig-name descname"><span class="pre">ExceptSMSIpython</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">shell</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">etype</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">evalue</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">tb</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">tb_offset</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ExceptNotifier.ipython.ExceptSMSIpython" title="Permalink to this definition"></a></dt>
+<dd><p>ExceptNotifier function for overriding custom execute in ipython</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>shell</strong> (<em>_type_</em>) – Excecuted shell</p></li>
+<li><p><strong>etype</strong> (<em>_type_</em>) – Error type</p></li>
+<li><p><strong>evalue</strong> (<em>_type_</em>) – Error value</p></li>
+<li><p><strong>tb</strong> (<em>_type_</em>) – TraceBack</p></li>
+<li><p><strong>tb_offset</strong> (<em>int</em><em>, </em><em>optional</em>) – Offset of traceback, defaults to 1</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="ExceptNotifier.ipython.ExceptSlackIpython">
+<span class="sig-prename descclassname"><span class="pre">ExceptNotifier.ipython.</span></span><span class="sig-name descname"><span class="pre">ExceptSlackIpython</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">shell</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">etype</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">evalue</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">tb</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">tb_offset</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ExceptNotifier.ipython.ExceptSlackIpython" title="Permalink to this definition"></a></dt>
+<dd><p>ExceptNotifier function for overriding custom execute in ipython</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>shell</strong> (<em>_type_</em>) – Excecuted shell</p></li>
+<li><p><strong>etype</strong> (<em>_type_</em>) – Error type</p></li>
+<li><p><strong>evalue</strong> (<em>_type_</em>) – Error value</p></li>
+<li><p><strong>tb</strong> (<em>_type_</em>) – TraceBack</p></li>
+<li><p><strong>tb_offset</strong> (<em>int</em><em>, </em><em>optional</em>) – Offset of traceback, defaults to 1</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="ExceptNotifier.ipython.ExceptTeamsIpython">
+<span class="sig-prename descclassname"><span class="pre">ExceptNotifier.ipython.</span></span><span class="sig-name descname"><span class="pre">ExceptTeamsIpython</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">shell</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">etype</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">evalue</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">tb</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">tb_offset</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ExceptNotifier.ipython.ExceptTeamsIpython" title="Permalink to this definition"></a></dt>
+<dd><p>ExceptNotifier function for overriding custom execute in ipython</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>shell</strong> (<em>_type_</em>) – Excecuted shell</p></li>
+<li><p><strong>etype</strong> (<em>_type_</em>) – Error type</p></li>
+<li><p><strong>evalue</strong> (<em>_type_</em>) – Error value</p></li>
+<li><p><strong>tb</strong> (<em>_type_</em>) – TraceBack</p></li>
+<li><p><strong>tb_offset</strong> (<em>int</em><em>, </em><em>optional</em>) – Offset of traceback, defaults to 1</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="ExceptNotifier.ipython.ExceptTelegramIpython">
+<span class="sig-prename descclassname"><span class="pre">ExceptNotifier.ipython.</span></span><span class="sig-name descname"><span class="pre">ExceptTelegramIpython</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">shell</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">etype</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">evalue</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">tb</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">tb_offset</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ExceptNotifier.ipython.ExceptTelegramIpython" title="Permalink to this definition"></a></dt>
+<dd><p>ExceptNotifier function for overriding custom execute in ipython</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>shell</strong> (<em>_type_</em>) – Excecuted shell</p></li>
+<li><p><strong>etype</strong> (<em>_type_</em>) – Error type</p></li>
+<li><p><strong>evalue</strong> (<em>_type_</em>) – Error value</p></li>
+<li><p><strong>tb</strong> (<em>_type_</em>) – TraceBack</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="ExceptNotifier.ipython.ExceptWechatIpython">
+<span class="sig-prename descclassname"><span class="pre">ExceptNotifier.ipython.</span></span><span class="sig-name descname"><span class="pre">ExceptWechatIpython</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">shell</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">etype</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">evalue</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">tb</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">tb_offset</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ExceptNotifier.ipython.ExceptWechatIpython" title="Permalink to this definition"></a></dt>
+<dd><p>ExceptNotifier function for overriding custom execute in ipython</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>shell</strong> (<em>_type_</em>) – Excecuted shell</p></li>
+<li><p><strong>etype</strong> (<em>_type_</em>) – Error type</p></li>
+<li><p><strong>evalue</strong> (<em>_type_</em>) – Error value</p></li>
+<li><p><strong>tb</strong> (<em>_type_</em>) – TraceBack</p></li>
+<li><p><strong>tb_offset</strong> (<em>int</em><em>, </em><em>optional</em>) – Offset of traceback, defaults to 1</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="ExceptNotifier.base.html" class="btn btn-neutral float-left" title="ExceptNotifier.base package" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="ExceptNotifier.python.html" class="btn btn-neutral float-right" title="ExceptNotifier.python package" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2023, MinWoo Park.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>
