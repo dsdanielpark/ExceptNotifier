@@ -7,7 +7,7 @@ Go through the following process to prepare the `_TELEGRAM_TOKEN` variable.
 - b. Type /newbot to create a new bot
 - c. Give your bot a name & a username
 - d. Copy your new Telegram bot’s token
-- e. You have to click Start_bot and must enter anything to your bot. 
+- e. You have to click Start_bot and must enter anything to your bot. <br>
 
 Before use Notifier, Please use this to check if you follow guide. The Telegram bot may have a slight delay and it responded within 2-3 minutes. API TEST
 

@@ -5,7 +5,7 @@
 - a. Register [https://notify-bot.line.me/](https://notify-bot.line.me/)
 - b. Go to mypage [https://notify-bot.line.me/my/](https://notify-bot.line.me/my/)
 - c. Click `Generate Token`, enter Service Name and click `1-on-1 chat with LINE` (anything you like)
-- d. Copy Token.
+- d. Copy Token. <Br>
 
 *API TEST*
 ```python

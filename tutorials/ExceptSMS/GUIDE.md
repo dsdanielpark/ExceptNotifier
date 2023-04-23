@@ -3,7 +3,7 @@
 ## Ready
 - a. Sign up for Twilio. [https://www.twilio.com/en-us](https://www.twilio.com/en-us)
 - b. Click Console in the upper right corner.
-- c. Copy the variables provided in the console.
+- c. Copy the variables provided in the console. <br>
 
 
 *API TEST*

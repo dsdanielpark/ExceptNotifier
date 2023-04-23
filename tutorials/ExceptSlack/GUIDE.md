@@ -5,7 +5,7 @@
 - a. visit https://api.slack.com/
 - b. `Create an app` - `From scratch` - `Create App`
 - c. Add webhook: Click `Incoming Webhooks` - Activate Incomming `On` - Add New Webhook to Workspace
-- d. Copy `Webhook URL`
+- d. Copy `Webhook URL` <Br>
 *API TEST*
 ```python
 from ExceptNotifier import send_slack_msg

@@ -3,10 +3,10 @@
 ## Ready
 Go through the following process to prepare the `_TELEGRAM_TOKEN` variable.
 
--a. Select the channel to receive notifications.
--b. Click Edit Channel in the upper right corner of the chat window.
--c. Click Integrations - Webhook - New Webhook.
--d. Then click Copy Webhook. API TEST
+- a. Select the channel to receive notifications.
+- b. Click Edit Channel in the upper right corner of the chat window.
+- c. Click Integrations - Webhook - New Webhook.
+- d. Then click Copy Webhook. API TEST <Br>
 
 
 

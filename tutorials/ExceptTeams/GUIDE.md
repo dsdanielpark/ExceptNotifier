@@ -7,7 +7,7 @@
 After you can use webhook incomming. Proceed to next steps.
 Microsoft Teams allows limited application access per organization, so it can only be used if the webhook incoming application is available.
 - c. Go to the team channel to receive notifications, and click `Connectors` in Settings.
-- d. `Connectors` After configuring webhook incoming in Connector, copy the webhook URL.
+- d. `Connectors` After configuring webhook incoming in Connector, copy the webhook URL. <br>
 
 
 *API TEST*
