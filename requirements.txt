@@ -99,7 +99,6 @@ entrypoints @ file:///C:/ci/entrypoints_1649926621128/work
 ephem==4.1.4
 et-xmlfile==1.1.0
 exceptiongroup==1.1.1
-exceptnotifier==0.1.18
 executing @ file:///opt/conda/conda-bld/executing_1646925071911/work
 fastjsonschema @ file:///tmp/build/80754af9/python-fastjsonschema_1620414857593/work/dist
 filelock==3.9.0
