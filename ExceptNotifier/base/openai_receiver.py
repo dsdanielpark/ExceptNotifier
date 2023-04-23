@@ -32,7 +32,7 @@ def receive_openai_advice(
 def get_resp_openai_advice(
     _OPEN_AI_MODEL: str, _OPEN_AI_API: str, error_message: str
 ) -> dict:
-    """Receive debugging information about your code from models in open ai.
+    """Check response of Open AI API status
 
     :param _OPEN_AI_MODEL: model name of open ai
     :type _OPEN_AI_MODEL: str
