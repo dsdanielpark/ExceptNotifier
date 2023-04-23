@@ -5,6 +5,7 @@ import traceback
 import re
 import datetime
 from email.message import EmailMessage
+import sys
 import os
 from ExceptNotifier import send_slack_msg, receive_openai_advice
 
@@ -21,7 +22,6 @@ class ExceptSlack(BaseException):
     :param tb: Traceback Information
     :type tb: _type_
     """
-
     def __init__(self, *args: object) -> None:
         super().__init__(*args)
 
@@ -107,7 +107,6 @@ class ExceptSlack(BaseException):
 class SuccessSlack:
     """Sending success message to Slack
     """
-
     def __init__(self) -> None:
         pass
 
@@ -129,7 +128,6 @@ class SuccessSlack:
 class SendSlack:
     """Sending message to Slack
     """
-
     def __init__(self) -> None:
         pass
 

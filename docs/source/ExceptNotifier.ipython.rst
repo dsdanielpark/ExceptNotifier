@@ -4,98 +4,98 @@ ExceptNotifier.ipython package
 Submodules
 ----------
 
-ExceptNotifier.ipython.beep\_notifier module
---------------------------------------------
+ExceptNotifier.ipython.beep\beep_notifier_ipython module
+--------------------------------------------------------------------
 
-.. automodule:: ExceptNotifier.ipython.beep_notifier
+.. automodule:: ExceptNotifier.ipython.beep_notifier_ipython
    :members:
    :undoc-members:
    :show-inheritance:
 
-ExceptNotifier.ipython.chime\_notifier module
----------------------------------------------
+ExceptNotifier.ipython.chime\chime_notifier_ipython module
+---------------------------------------------------------------------
 
-.. automodule:: ExceptNotifier.ipython.chime_notifier
+.. automodule:: ExceptNotifier.ipython.chime_notifier_ipython
    :members:
    :undoc-members:
    :show-inheritance:
 
-ExceptNotifier.ipython.desktop\_notifier module
------------------------------------------------
+ExceptNotifier.ipython.desktop\desktop_notifier_ipython module
+-----------------------------------------------------------------------
 
-.. automodule:: ExceptNotifier.ipython.desktop_notifier
+.. automodule:: ExceptNotifier.ipython.desktop_notifier_ipython
    :members:
    :undoc-members:
    :show-inheritance:
 
-ExceptNotifier.ipython.discord\_notifier module
------------------------------------------------
+ExceptNotifier.ipython.discord\discord_notifier_ipython module
+-----------------------------------------------------------------------
 
-.. automodule:: ExceptNotifier.ipython.discord_notifier
+.. automodule:: ExceptNotifier.ipython.discord_notifier_ipython
    :members:
    :undoc-members:
    :show-inheritance:
 
-ExceptNotifier.ipython.kakao\_notifier module
----------------------------------------------
+ExceptNotifier.ipython.kakao\kakao_notifier_ipython module
+---------------------------------------------------------------------
 
-.. automodule:: ExceptNotifier.ipython.kakao_notifier
+.. automodule:: ExceptNotifier.ipython.kakao_notifier_ipython
    :members:
    :undoc-members:
    :show-inheritance:
 
-ExceptNotifier.ipython.line\_notifier module
---------------------------------------------
+ExceptNotifier.ipython.line\line_notifier_ipython module
+--------------------------------------------------------------------
 
-.. automodule:: ExceptNotifier.ipython.line_notifier
+.. automodule:: ExceptNotifier.ipython.line_notifier_ipython
    :members:
    :undoc-members:
    :show-inheritance:
 
-ExceptNotifier.ipython.mail\_notifier module
---------------------------------------------
+ExceptNotifier.ipython.mail\mail_notifier_ipython module
+--------------------------------------------------------------------
 
-.. automodule:: ExceptNotifier.ipython.mail_notifier
+.. automodule:: ExceptNotifier.ipython.mail_notifier_ipython
    :members:
    :undoc-members:
    :show-inheritance:
 
-ExceptNotifier.ipython.slack\_notifier module
----------------------------------------------
+ExceptNotifier.ipython.slack\slack_notifier_ipython module
+---------------------------------------------------------------------
 
-.. automodule:: ExceptNotifier.ipython.slack_notifier
+.. automodule:: ExceptNotifier.ipython.slack_notifier_ipython
    :members:
    :undoc-members:
    :show-inheritance:
 
-ExceptNotifier.ipython.sms\_notifier module
--------------------------------------------
+ExceptNotifier.ipython.sms\sms_notifier_ipython module
+-------------------------------------------------------------------
 
-.. automodule:: ExceptNotifier.ipython.sms_notifier
+.. automodule:: ExceptNotifier.ipython.sms_notifier_ipython
    :members:
    :undoc-members:
    :show-inheritance:
 
-ExceptNotifier.ipython.teams\_notifier module
----------------------------------------------
+ExceptNotifier.ipython.teams\teams_notifier_ipython module
+---------------------------------------------------------------------
 
-.. automodule:: ExceptNotifier.ipython.teams_notifier
+.. automodule:: ExceptNotifier.ipython.teams_notifier_ipython
    :members:
    :undoc-members:
    :show-inheritance:
 
-ExceptNotifier.ipython.telegram\_notifier module
-------------------------------------------------
+ExceptNotifier.ipython.telegram\telegram_notifier_ipython module
+------------------------------------------------------------------------
 
-.. automodule:: ExceptNotifier.ipython.telegram_notifier
+.. automodule:: ExceptNotifier.ipython.telegram_notifier_ipython
    :members:
    :undoc-members:
    :show-inheritance:
 
-ExceptNotifier.ipython.wechat\_notifier module
-----------------------------------------------
+ExceptNotifier.ipython.wechat\wechat_notifier_ipython module
+----------------------------------------------------------------------
 
-.. automodule:: ExceptNotifier.ipython.wechat_notifier
+.. automodule:: ExceptNotifier.ipython.wechat_notifier_ipython
    :members:
    :undoc-members:
    :show-inheritance:

@@ -5,6 +5,7 @@ import traceback
 import re
 import datetime
 from email.message import EmailMessage
+import sys
 from ExceptNotifier import send_wechat_msg, receive_openai_advice
 import os
 
@@ -21,7 +22,6 @@ class ExceptWechat(BaseException):
     :param tb: Traceback Information
     :type tb: _type_
     """
-
     def __init__(self, *args: object) -> None:
         super().__init__(*args)
 
@@ -102,7 +102,6 @@ class ExceptWechat(BaseException):
 class SuccessWechat:
     """Sending success message to wechat
     """
-
     def __init__(self) -> None:
         pass
 
@@ -125,7 +124,6 @@ class SuccessWechat:
 class SendWechat:
     """Sending message to wechat
     """
-
     def __init__(self) -> None:
         pass
 

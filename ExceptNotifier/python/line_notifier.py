@@ -4,6 +4,7 @@ import traceback
 import re
 import datetime
 from email.message import EmailMessage
+import sys
 from ExceptNotifier import send_line_msg, receive_openai_advice
 import os
 
@@ -20,7 +21,6 @@ class ExceptLine(BaseException):
     :param tb: Traceback Information
     :type tb: _type_
     """
-
     def __init__(self, *args: object) -> None:
         super().__init__(*args)
 
@@ -108,7 +108,6 @@ class ExceptLine(BaseException):
 class SuccessLine:
     """Sending success message to Line
     """
-
     def __init__(self) -> None:
         pass
 
@@ -131,7 +130,6 @@ class SuccessLine:
 class SendLine:
     """Sending success message to Line
     """
-
     def __init__(self) -> None:
         pass
 

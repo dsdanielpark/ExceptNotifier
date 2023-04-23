@@ -6,9 +6,7 @@ Subpackages
 
 .. toctree::
    :maxdepth: 4
-   
-   install
-   project
+
    ExceptNotifier.base
    ExceptNotifier.ipython
    ExceptNotifier.python

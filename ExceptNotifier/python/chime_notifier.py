@@ -4,6 +4,7 @@ import traceback
 import re
 import datetime
 from email.message import EmailMessage
+import sys
 import urllib3
 import json
 from ExceptNotifier import receive_openai_advice, send_chime_msg
@@ -23,7 +24,6 @@ class ExceptChime(BaseException):
     :param tb: Traceback Information
     :type tb: _type_
     """
-
     def __init__(self, *args: object) -> None:
         super().__init__(*args)
 
@@ -112,7 +112,6 @@ class ExceptChime(BaseException):
 class SuccessChime:
     """Sending success message to AWS Chime
     """
-
     def __init__(self) -> None:
         pass
 
@@ -135,7 +134,6 @@ class SuccessChime:
 class SendChime:
     """Sending message to AWS Chime
     """
-
     def __init__(self) -> None:
         pass
 

@@ -4,6 +4,7 @@ import traceback
 import re
 import datetime
 from email.message import EmailMessage
+import sys
 from ExceptNotifier import send_discord_msg, receive_openai_advice
 import os
 
@@ -20,7 +21,6 @@ class ExceptDiscord(BaseException):
     :param tb: Traceback Information
     :type tb: _type_
     """
-
     def __init__(self, *args: object) -> None:
         super().__init__(*args)
 
@@ -116,7 +116,6 @@ class ExceptDiscord(BaseException):
 class SuccessDiscord:
     """Sending success message to Discord
     """
-
     def __init__(self) -> None:
         pass
 
@@ -138,7 +137,6 @@ class SuccessDiscord:
 class SendDiscord:
     """Sending message to Discord
     """
-
     def __init__(self) -> None:
         pass
 
