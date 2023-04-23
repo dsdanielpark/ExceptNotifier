@@ -156,114 +156,105 @@ IPython Core
 
 
 
-AWS Chime 
--------------------------
 
-.. automodule:: ExceptNotifier.ipython.chime_notifier
+
+AWS Chime
+------------------------------------------------------
+
+.. automodule:: ExceptNotifier.ipython.chime_notifier_ipython
    :members:
    :undoc-members:
    :show-inheritance:
 
 
-Discord 
--------------------------
 
-.. automodule:: ExceptNotifier.ipython.discord_notifier
+Discord
+--------------------------------------------------------
+
+.. automodule:: ExceptNotifier.ipython.discord_notifier_ipython
    :members:
    :undoc-members:
    :show-inheritance:
 
-Kakaotalk 
--------------------------
+KakaoTalk
+------------------------------------------------------
 
-.. automodule:: ExceptNotifier.ipython.kakao_notifier
+.. automodule:: ExceptNotifier.ipython.kakao_notifier_ipython
    :members:
    :undoc-members:
    :show-inheritance:
 
 Line
--------------------------
+-----------------------------------------------------
 
-.. automodule:: ExceptNotifier.ipython.line_notifier
+.. automodule:: ExceptNotifier.ipython.line_notifier_ipython
    :members:
    :undoc-members:
    :show-inheritance:
-
 
 Google Mail
--------------------------
+-----------------------------------------------------
 
-.. automodule:: ExceptNotifier.ipython.mail_notifier
+.. automodule:: ExceptNotifier.ipython.mail_notifier_ipython
    :members:
    :undoc-members:
    :show-inheritance:
 
-
 Slack
--------------------------
+------------------------------------------------------
 
-.. automodule:: ExceptNotifier.ipython.slack_notifier
+.. automodule:: ExceptNotifier.ipython.slack_notifier_ipython
    :members:
    :undoc-members:
    :show-inheritance:
 
 SMS
--------------------------
+----------------------------------------------------
 
-.. automodule:: ExceptNotifier.ipython.sms_notifier
+.. automodule:: ExceptNotifier.ipython.sms_notifier_ipython
    :members:
    :undoc-members:
    :show-inheritance:
 
 Microsoft Teams
--------------------------
+------------------------------------------------------
 
-.. automodule:: ExceptNotifier.ipython.teams_notifier
+.. automodule:: ExceptNotifier.ipython.teams_notifier_ipython
    :members:
    :undoc-members:
    :show-inheritance:
-
 
 Telegram
--------------------------
+---------------------------------------------------------
 
-.. automodule:: ExceptNotifier.ipython.telegram_notifier
+.. automodule:: ExceptNotifier.ipython.telegram_notifier_ipython
    :members:
    :undoc-members:
    :show-inheritance:
 
-Wechat
--------------------------
+WeChat
+-------------------------------------------------------
 
-.. automodule:: ExceptNotifier.ipython.wechat_notifier
+.. automodule:: ExceptNotifier.ipython.wechat_notifier_ipython
    :members:
    :undoc-members:
    :show-inheritance:
-
-
 
 Desktop
--------------------------
+--------------------------------------------------------
 
-.. automodule:: ExceptNotifier.ipython.desktop_notifier
+.. automodule:: ExceptNotifier.ipython.desktop_notifier_ipython
    :members:
    :undoc-members:
    :show-inheritance:
-
 
 Beep
--------------------------
+-----------------------------------------------------
 
-.. automodule:: ExceptNotifier.ipython.beep_notifier
+.. automodule:: ExceptNotifier.ipython.beep_notifier_ipython
    :members:
    :undoc-members:
    :show-inheritance:
-
-
-
-
-
-
 
 
 
