@@ -7,6 +7,7 @@
 - c. Click `Generate Token`, enter Service Name and click `1-on-1 chat with LINE` (anything you like)
 - d. Copy Token. <Br>
 
+
 *API TEST*
 ```python
 from ExceptNotifier import send_line_msg

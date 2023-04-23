@@ -1,13 +1,11 @@
 # -*- coding: utf-8 -*-
 # Copyright 2023 parkminwoo
 import re
-import sys
 import datetime
 import traceback
 from plyer import notification
 from email.message import EmailMessage
 from ExceptNotifier import send_desktop_msg, receive_openai_advice
-import os
 
 DATE_FORMAT = "%Y-%m-%d %H:%M:%S"
 
@@ -22,6 +20,7 @@ class ExceptDesktop(BaseException):
     :param tb: Traceback Information
     :type tb: _type_
     """
+
     def __init__(self, *args: object) -> None:
         super().__init__(*args)
 
@@ -108,6 +107,7 @@ class ExceptDesktop(BaseException):
 class SuccessDesktop:
     """Sending success message to Desktop
     """
+
     def __init__(self) -> None:
         pass
 
@@ -130,6 +130,7 @@ class SuccessDesktop:
 class SendDesktop:
     """Sending message to Desktop
     """
+
     def __init__(self) -> None:
         pass
 

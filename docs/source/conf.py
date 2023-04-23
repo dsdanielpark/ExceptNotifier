@@ -58,7 +58,7 @@ release = '0.2.0'
 # extensions coming with Sphinx (named 'sphinx.ext.*') or your custom
 # ones.
 extensions = [
-    'sphinx.ext.autodoc','sphinx.ext.todo'
+    'rinoh.frontend.sphinx',  'sphinx.ext.autodoc','sphinx.ext.todo'
 ]
 
 # ,'sphinx.ext.napoleon'

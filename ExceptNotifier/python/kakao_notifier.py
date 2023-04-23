@@ -5,7 +5,6 @@ import traceback
 import re
 import datetime
 from email.message import EmailMessage
-import sys
 import json
 import os
 from ExceptNotifier import send_kakao_msg, receive_openai_advice
@@ -23,6 +22,7 @@ class ExceptKakao(BaseException):
     :param tb: Traceback Information
     :type tb: _type_
     """
+
     def __init__(self, *args: object) -> None:
         super().__init__(*args)
 
@@ -124,6 +124,7 @@ class ExceptKakao(BaseException):
 class SuccessKakao:
     """Sending success message to Kakaotalk
     """
+
     def __init__(self) -> None:
         pass
 
@@ -146,6 +147,7 @@ class SuccessKakao:
 class SendKakao:
     """Sending message to Kakaotalk
     """
+
     def __init__(self) -> None:
         pass
 

@@ -5,7 +5,6 @@ import traceback
 import re
 import datetime
 from email.message import EmailMessage
-import sys
 import json
 import os
 from ExceptNotifier import send_teams_msg, receive_openai_advice
@@ -23,6 +22,7 @@ class ExceptTeams(BaseException):
     :param tb: Traceback Information
     :type tb: _type_
     """
+
     def __init__(self, *args: object) -> None:
         super().__init__(*args)
 
@@ -112,6 +112,7 @@ class ExceptTeams(BaseException):
 class SuccessTeams:
     """Sending success message to microsoft teams
     """
+
     def __init__(self) -> None:
         pass
 
@@ -134,6 +135,7 @@ class SuccessTeams:
 class SendTeams:
     """Sending message to microsoft teams
     """
+
     def __init__(self) -> None:
         pass
 

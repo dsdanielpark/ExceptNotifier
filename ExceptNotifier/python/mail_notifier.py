@@ -1,4 +1,3 @@
-import sys
 import traceback
 import re
 import smtplib
@@ -20,6 +19,7 @@ class ExceptMail(BaseException):
     :param tb: Traceback Information
     :type tb: _type_
     """
+
     def __init__(self, *args: object) -> None:
         super().__init__(*args)
 
@@ -154,6 +154,7 @@ class ExceptMail(BaseException):
 class SuccessMail:
     """Sending success message to Gmail
     """
+
     def __init__(self) -> None:
         pass
 
@@ -185,6 +186,7 @@ class SuccessMail:
 class SendMail:
     """Sending message to Gmail
     """
+
     def __init__(self) -> None:
         pass
 

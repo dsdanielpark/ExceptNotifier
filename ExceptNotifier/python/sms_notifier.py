@@ -4,8 +4,6 @@ import traceback
 import re
 import datetime
 from email.message import EmailMessage
-import sys
-import pickle
 from twilio.rest import Client
 import os
 from ExceptNotifier import send_sms_msg, receive_openai_advice
@@ -23,6 +21,7 @@ class ExceptSMS(BaseException):
     :param tb: Traceback Information
     :type tb: _type_
     """
+
     def __init__(self, *args: object) -> None:
         super().__init__(*args)
 
@@ -135,6 +134,7 @@ class ExceptSMS(BaseException):
 class SuccessSMS:
     """Sending success message to SMS
     """
+
     def __init__(self) -> None:
         pass
 
@@ -163,6 +163,7 @@ class SuccessSMS:
 class SendSMS:
     """Sending message to SMS
     """
+
     def __init__(self) -> None:
         pass
 
