@@ -7,7 +7,7 @@ Welcome to ExceptNotifier's documentation!
 ==========================================
 
 .. image:: logo.png
-.. image:: main_apps.png
+.. image:: support_apps.png
 
 .. toctree::
    :maxdepth: 4
