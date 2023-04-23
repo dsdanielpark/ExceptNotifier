@@ -21,7 +21,7 @@ Before QA<br>
 <Br><br>
 With `ExceptNotifier`, you can obtain detailed compilation errors, including debug information, sent directly to your preferred messaging platform or email. By integrating OpenAI's ChatGPT, you can receive additional error code information as long as you provide the required API model name and key. This feature ensures that error handling and notifications are more informative and accessible, streamlining your debugging process.
 
-![](./assets/imgs/summary.png)
+![](./assets/imgs/core.png)
 
 <Br>
 
@@ -60,6 +60,7 @@ $ pip install exceptnotifier
 
 - [App Setup Overview](#app-setup-overview)
 - [Tutorial](#tutorial)
+<Br>
 
 - [Python Core](#python-core)
   * [Except`Notifier`](#exceptnotifier)
@@ -67,12 +68,14 @@ $ pip install exceptnotifier
   * [Success`Notifier`](#successnotifier)
   * [Send`Notifier`](#sendnotifier)
   * [Sender](#sender)
+<br>
 
 - [IPython Core](#ipython-core)
   * [Except`Notifier` in Ipython](#exceptnotifier-in-ipython)
   * [Success`Notifier` in Ipython](#successnotifier-in-ipython)
   * [Send`Notifier` in Ipython](#sendnotifier-in-ipython)
   * [Sender in Ipython](#sender-in-ipython)
+<br>
 
 - [Applied in each application](#applied-in-each-application)
   * [*Telegram*](#telegram)
