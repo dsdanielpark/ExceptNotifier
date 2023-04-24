@@ -3,7 +3,7 @@ from ExceptNotifier import beep
 
 
 def ExceptBeepIpython(shell, etype, evalue, tb, tb_offset=1):
-    """ExceptNotifier function for overriding custom execute in ipython
+    """ExceptNotifier function for overriding custom execute in ipython for sounding system beep.
 
     :param shell: Excecuted shell 
     :type shell: _type_

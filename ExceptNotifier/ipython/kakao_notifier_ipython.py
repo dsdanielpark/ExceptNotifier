@@ -8,7 +8,7 @@ DATE_FORMAT = "%Y-%m-%d %H:%M:%S"
 
 
 def ExceptKakaoIpython(shell, etype, evalue, tb, tb_offset=1):
-    """ExceptNotifier function for overriding custom execute in ipython
+    """ExceptNotifier function for overriding custom execute in ipython for sending Kakaotalk.
 
     :param shell: Excecuted shell 
     :type shell: _type_
