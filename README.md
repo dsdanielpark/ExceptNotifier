@@ -888,13 +888,14 @@ SendDesktop().__call__()        #3 customized sender
 
 
 <Br><br><br>
-
-
-# Contributing Guide
-I will announce contributing rules when the code development status changes to beta soon. Until then, please create an issue for feature requests and bug reports. I would greatly appreciate it if you use it a lot and give your opinions generously. Thank you sincerely.
-
 # License
 MIT
+
+# Bugs and Issues
+[Open a new issue](https://github.com/dsdanielpark/ExceptNotifier/issues)
+ 
+# Contributing Guide
+I will announce contributing rules when the code development status changes to beta soon. Until then, please create an issue for feature requests and bug reports. I would greatly appreciate it if you use it a lot and give your opinions generously. Thank you sincerely.
 
 # Code of Conduct
 Everyone participating in the `ExceptNotifier` project, and in particular in the issue tracker, pull requests, and social media activity, is expected to treat other people with respect and more generally to follow the guidelines articulated in [the Python Community Code of Conduct](https://www.python.org/psf/conduct/).
