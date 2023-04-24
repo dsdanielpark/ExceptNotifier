@@ -175,7 +175,7 @@ except ExceptTelegram:    # sending except message to telegram
 
 
 ### AI Debbugging Infomation Notification
-![](./assets/imgs/ex02.png)
+![](./assets/imgs/ex02_1.png)
 
 You can receive debugging information from ChatGPT via OpenAI's API when using the Except statement. The syntax remains the same, but you'll need to configure these two variables:
 `_OPEN_AI_MODEL`,`_OPEN_AI_API`
@@ -293,7 +293,7 @@ except:
 
 *Example code With Open AI API*
 
-![](./assets/imgs/ex07.png)
+![](./assets/imgs/ex07_1.png)
 
 ```python
 from ExceptNotifier import ExceptTelegramIpython
