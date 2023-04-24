@@ -1,4 +1,5 @@
 ## ExceptBeep
+No setup is required. Use as follows. <br>
 
 ```python
 from ExceptNotifier import beep

@@ -9,15 +9,9 @@ Go through the following process to prepare the `_TELEGRAM_TOKEN` variable.
 - d. Then click Copy Webhook. API TEST <Br>
 
 
-
 # Python
 
 ```python
-import os
-import sys
-from ExceptNotifier import ExceptDiscord, SuccessDiscord, SendDiscord
-
-
 # QA 23-04-22
 # Copyright 2023 parkminwoo
 from ExceptNotifier import ExceptDiscord, SuccessDiscord, SendDiscord
@@ -44,8 +38,6 @@ if __name__ == "__main__":
         sys.exit()
 
     SendDiscord().__call__()  # 3 customized sender
-
-
 ```
 
 # Ipython

@@ -23,6 +23,8 @@ send_gmail_msg(
     subject_msg,
     body_msg)
 ```
+
+
 *Notifier*
 ```python
 import sys, os
@@ -98,3 +100,6 @@ except ExceptMail:
 SendMail().__call__() 
 ```
 </details>
+
+# IPython
+[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/drive/1IfDIliImFKG4UuM0yzerhubL_Kx_TFKF?usp=sharing)

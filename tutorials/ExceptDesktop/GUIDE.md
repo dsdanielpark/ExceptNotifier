@@ -1,5 +1,7 @@
 # ExceptDesktop
-No setup is required. Use as follows. TEST
+No setup is required. Use as follows. <br>
+
+*Test*
 ```python
 from ExceptNotifier import send_desktop_msg
 
@@ -11,7 +13,7 @@ send_desktop_msg(title_msg, body_msg, DISP_TIME)
 ```
 
 
-Notifier
+*Notifier*
 ```python
 from ExceptNotifier import ExceptDesktop, SuccessDesktop, SendDesktop
 sys.excepthook = ExceptDesktop.__call__
