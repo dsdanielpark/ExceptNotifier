@@ -11,7 +11,9 @@ from ExceptNotifier.base.openai_receiver import receive_openai_advice
 DATE_FORMAT = "%Y-%m-%d %H:%M:%S"
 
 
-def ExceptMailIpython(shell: object, etype: object, evalue: object, tb: object, tb_offset=1) -> None:
+def ExceptMailIpython(
+    shell: object, etype: object, evalue: object, tb: object, tb_offset=1
+) -> None:
     """ExceptNotifier function for overriding custom execute in ipython for sending Gmail.
 
     :param shell: Excecuted shell, ZMQInteractiveShell object.

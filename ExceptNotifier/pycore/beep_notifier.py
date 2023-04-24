@@ -15,11 +15,11 @@ class ExceptBeep(BaseException):
     :param tb: Traceback Information
     :type tb: _type_
     """
+
     def __init__(self, *args: object) -> None:
         super().__init__(*args)
 
     def __call__(etype, value, tb):
-
 
         beep(os.environ["BEEP_TIME"])
         beep(os.environ["BEEP_TIME"])
@@ -50,6 +50,7 @@ class ExceptBeep(BaseException):
 class SuccessBeep:
     """Success beep
     """
+
     def __init__(self) -> None:
         pass
 
@@ -61,6 +62,7 @@ class SuccessBeep:
 class SendBeep:
     """Send beep
     """
+
     def __init__(self) -> None:
         pass
 

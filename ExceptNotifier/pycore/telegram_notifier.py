@@ -22,6 +22,7 @@ class ExceptTelegram(BaseException):
     :param tb: Traceback Information
     :type tb: _type_
     """
+
     def __init__(self, *args: object) -> None:
         super().__init__(*args)
 
@@ -111,6 +112,7 @@ class ExceptTelegram(BaseException):
 class SuccessTelegram:
     """Sending success message to telegram
     """
+
     def __init__(self) -> None:
         pass
 
@@ -133,6 +135,7 @@ class SuccessTelegram:
 class SendTelegram:
     """Sending message to telegram
     """
+
     def __init__(self) -> None:
         pass
 

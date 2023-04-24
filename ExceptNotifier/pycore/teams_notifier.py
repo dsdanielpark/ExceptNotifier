@@ -23,6 +23,7 @@ class ExceptTeams(BaseException):
     :param tb: Traceback Information
     :type tb: _type_
     """
+
     def __init__(self, *args: object) -> None:
         super().__init__(*args)
 
@@ -112,6 +113,7 @@ class ExceptTeams(BaseException):
 class SuccessTeams:
     """Sending success message to microsoft teams
     """
+
     def __init__(self) -> None:
         pass
 
@@ -134,6 +136,7 @@ class SuccessTeams:
 class SendTeams:
     """Sending message to microsoft teams
     """
+
     def __init__(self) -> None:
         pass
 

@@ -3,7 +3,9 @@
 from ExceptNotifier import beep
 
 
-def ExceptBeepIpython(shell: object, etype: object, evalue: object, tb: object, tb_offset=1) -> None:
+def ExceptBeepIpython(
+    shell: object, etype: object, evalue: object, tb: object, tb_offset=1
+) -> None:
     """ExceptNotifier function for overriding custom execute in ipython for sounding system beep.
 
     :param shell: Excecuted shell, ZMQInteractiveShell object.

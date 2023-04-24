@@ -22,6 +22,7 @@ class ExceptDesktop(BaseException):
     :param tb: Traceback Information
     :type tb: _type_
     """
+
     def __init__(self, *args: object) -> None:
         super().__init__(*args)
 
@@ -82,7 +83,7 @@ class ExceptDesktop(BaseException):
                 line[3],
             )
             advice_msg += receive_openai_advice(
-                os.environ['_OPEN_AI_MODEL'], os.environ['_OPEN_AI_API'], error_message
+                os.environ["_OPEN_AI_MODEL"], os.environ["_OPEN_AI_API"], error_message
             )  # NO-QA
             send_desktop_msg(
                 title="chatGPT: How to Debug your code.", message=advice_msg
@@ -108,6 +109,7 @@ class ExceptDesktop(BaseException):
 class SuccessDesktop:
     """Sending success message to Desktop
     """
+
     def __init__(self) -> None:
         pass
 
@@ -130,6 +132,7 @@ class SuccessDesktop:
 class SendDesktop:
     """Sending message to Desktop
     """
+
     def __init__(self) -> None:
         pass
 

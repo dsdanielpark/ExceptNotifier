@@ -23,6 +23,7 @@ class ExceptLine(BaseException):
     :param tb: Traceback Information
     :type tb: _type_
     """
+
     def __init__(self, *args: object) -> None:
         super().__init__(*args)
 
@@ -110,6 +111,7 @@ class ExceptLine(BaseException):
 class SuccessLine:
     """Sending success message to Line
     """
+
     def __init__(self) -> None:
         pass
 
@@ -132,6 +134,7 @@ class SuccessLine:
 class SendLine:
     """Sending success message to Line
     """
+
     def __init__(self) -> None:
         pass
 

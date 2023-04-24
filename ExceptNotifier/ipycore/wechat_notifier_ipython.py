@@ -10,7 +10,9 @@ from ExceptNotifier.base.openai_receiver import receive_openai_advice
 DATE_FORMAT = "%Y-%m-%d %H:%M:%S"
 
 
-def ExceptWechatIpython(shell: object, etype: object, evalue: object, tb: object, tb_offset=1) -> None:
+def ExceptWechatIpython(
+    shell: object, etype: object, evalue: object, tb: object, tb_offset=1
+) -> None:
     """ExceptNotifier function for overriding custom execute in ipython for sending Wechat message.
 
     :param shell: Excecuted shell, ZMQInteractiveShell object.

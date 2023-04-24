@@ -9,7 +9,6 @@ from email.message import EmailMessage
 from ExceptNotifier.base.openai_receiver import receive_openai_advice
 
 
-
 DATE_FORMAT = "%Y-%m-%d %H:%M:%S"
 
 
@@ -23,6 +22,7 @@ class ExceptMail(BaseException):
     :param tb: Traceback Information
     :type tb: _type_
     """
+
     def __init__(self, *args: object) -> None:
         super().__init__(*args)
 
@@ -157,6 +157,7 @@ class ExceptMail(BaseException):
 class SuccessMail:
     """Sending success message to Gmail
     """
+
     def __init__(self) -> None:
         pass
 
@@ -188,6 +189,7 @@ class SuccessMail:
 class SendMail:
     """Sending message to Gmail
     """
+
     def __init__(self) -> None:
         pass
 

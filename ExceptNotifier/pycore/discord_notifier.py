@@ -22,6 +22,7 @@ class ExceptDiscord(BaseException):
     :param tb: Traceback Information
     :type tb: _type_
     """
+
     def __init__(self, *args: object) -> None:
         super().__init__(*args)
 
@@ -117,6 +118,7 @@ class ExceptDiscord(BaseException):
 class SuccessDiscord:
     """Sending success message to Discord
     """
+
     def __init__(self) -> None:
         pass
 
@@ -138,6 +140,7 @@ class SuccessDiscord:
 class SendDiscord:
     """Sending message to Discord
     """
+
     def __init__(self) -> None:
         pass
 

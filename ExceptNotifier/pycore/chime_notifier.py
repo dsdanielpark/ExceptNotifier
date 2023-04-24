@@ -24,6 +24,7 @@ class ExceptChime(BaseException):
     :param tb: Traceback Information
     :type tb: _type_
     """
+
     def __init__(self, *args: object) -> None:
         super().__init__(*args)
 
@@ -112,6 +113,7 @@ class ExceptChime(BaseException):
 class SuccessChime:
     """Sending success message to AWS Chime
     """
+
     def __init__(self) -> None:
         pass
 
@@ -134,6 +136,7 @@ class SuccessChime:
 class SendChime:
     """Sending message to AWS Chime
     """
+
     def __init__(self) -> None:
         pass
 
