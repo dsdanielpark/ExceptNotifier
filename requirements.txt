@@ -18,3 +18,4 @@ pylons-sphinx-themes
 pylons_sphinx_latesturl
 repoze.sphinx.autointerface
 sphinxcontrib-autoprogram
+dbus-python
