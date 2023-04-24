@@ -7,9 +7,9 @@ import platform
 def beep(sec=1, freq=1000) -> None:
     """Make beep sound
 
-    :param sec: beep duration, defaults to 1
+    :param sec: Beep duration, defaults to 1
     :type sec: int, optional
-    :param freq: beep fequency, defaults to 1000
+    :param freq: Beep fequency, defaults to 1000
     :type freq: int, optional
     """
 
