@@ -1,11 +1,11 @@
 # -*- coding: utf-8 -*-
 # Copyright 2023 parkminwoo
 import re
-import os
 import json
 import urllib3
 import datetime
 import traceback
+from os import environ
 from email.message import EmailMessage
 from ExceptNotifier.base.chime_sender import send_chime_msg
 from ExceptNotifier.base.openai_receiver import receive_openai_advice
@@ -72,23 +72,23 @@ class ExceptChime(BaseException):
 
         data = {"text": exceptNotifier["SUBJECT"] + exceptNotifier["BODY"]}
 
-        send_chime_msg(os.environ["_CHIME_WEBHOOK_URL"], data["text"])
-
-        try:
-            error_message = f"error_type=={excType} error_type_document=={etype.__doc__} error_value=={value} stack infomation=={stack} code name=={frame.f_code.co_name}file name=={frame.f_code.co_filename} file_number=={frame.f_lineno}"
-            advice_msg = '\tFile: "%s"\n\t\t%s %s: %s\n' % (
-                line[0],
-                line[2],
-                line[1],
-                line[3],
-            )
-            advice_msg += receive_openai_advice(
-                os.environ["_OPEN_AI_MODEL"], os.environ["_OPEN_AI_API"], error_message
-            )  # NO-QA
-            send_chime_msg(os.environ["_CHIME_WEBHOOK_URL"], advice_msg)
-        except Exception as e:
-            print(e)
-            pass
+        send_chime_msg(environ["_CHIME_WEBHOOK_URL"], data["text"])
+        if environ.get('_OPEN_AI_API') is not None:
+            try:
+                error_message = f"error_type=={excType} error_type_document=={etype.__doc__} error_value=={value} stack infomation=={stack} code name=={frame.f_code.co_name}file name=={frame.f_code.co_filename} file_number=={frame.f_lineno}"
+                advice_msg = '\tFile: "%s"\n\t\t%s %s: %s\n' % (
+                    line[0],
+                    line[2],
+                    line[1],
+                    line[3],
+                )
+                advice_msg += receive_openai_advice(
+                    environ["_OPEN_AI_MODEL"], environ["_OPEN_AI_API"], error_message
+                )  # NO-QA
+                send_chime_msg(environ["_CHIME_WEBHOOK_URL"], advice_msg)
+            except Exception as e:
+                print(e)
+                pass
 
     @staticmethod
     def send_chime_msg(_CHIME_WEBHOOK_URL: str, msg: str) -> dict:
@@ -130,7 +130,7 @@ class SuccessChime:
 
         data = {"text": exceptNotifier["SUBJECT"] + exceptNotifier["BODY"]}
 
-        send_chime_msg(os.environ["_CHIME_WEBHOOK_URL"], data["text"])
+        send_chime_msg(environ["_CHIME_WEBHOOK_URL"], data["text"])
 
 
 class SendChime:
@@ -153,16 +153,16 @@ class SendChime:
 
         data = {"text": exceptNotifier["SUBJECT"] + exceptNotifier["BODY"]}
 
-        send_chime_msg(os.environ["_CHIME_WEBHOOK_URL"], data["text"])
+        send_chime_msg(environ["_CHIME_WEBHOOK_URL"], data["text"])
 
 
 # if __name__ == "__main__":
 
 #     """Get your Webhook _CHIME_WEBHOOK_URL from your chatroom.
 #     https://docs.aws.amazon.com/chime/latest/ag/webhooks.html"""
-# os.environ['_CHIME_WEBHOOK_URL'] = "xxxxxxxxxxxxxxxxxx"
-# os.environ['_OPEN_AI_API'] = "xxxxxxxxxxxxx"  #optional
-# os.environ['_OPEN_AI_MODEL'] = "gpt-3.5-turbo" #optional
+# environ['_CHIME_WEBHOOK_URL'] = "xxxxxxxxxxxxxxxxxx"
+# environ['_OPEN_AI_API'] = "xxxxxxxxxxxxx"  #optional
+# environ['_OPEN_AI_MODEL'] = "gpt-3.5-turbo" #optional
 # sys.excepthook = ExceptChime.__call__
 # try:
 #     print(1 / 0)

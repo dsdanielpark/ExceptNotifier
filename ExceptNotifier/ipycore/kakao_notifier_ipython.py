@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 # Copyright 2023 parkminwoo
-import os
 import datetime
+from os import environ
 from IPython.core.ultratb import AutoFormattedTB
 from ExceptNotifier.base.kakao_sender import send_kakao_msg
 from ExceptNotifier.base.openai_receiver import receive_openai_advice
@@ -35,15 +35,15 @@ def ExceptKakaoIpython(
         "text": f"[Except Notifier] ⚠️ Error! Python Code Exception Detected \n \n\nIMPORTANT WARNING \nPython Exception Detected in Your Code. \n\nHi there, \nThis is an exception catch notifier. \n\n - ☑️ Code Status: Fail.🛠 \n - ☑️ Detail: Python Code Ran Exceptions. \n - 🕐 Time: {start_time.strftime(DATE_FORMAT)} \n\n ⛔️ {sstb}"
     }
 
-    send_kakao_msg(os.environ["_KAKAO_TOKEN_PATH"], data["text"])
+    send_kakao_msg(environ["_KAKAO_TOKEN_PATH"], data["text"])
+    if environ.get('_OPEN_AI_API') is not None:
+        try:
+            error_message = f"error sheel=={shell}, error_type_document=={etype.__doc__}, error_value=={evalue}, error message in ipython cell=={sstb}"
+            advice_msg = receive_openai_advice(
+                environ["_OPEN_AI_MODEL"], environ["_OPEN_AI_API"], error_message
+            )
+            send_kakao_msg(environ["_KAKAO_TOKEN_PATH"], advice_msg)
 
-    try:
-        error_message = f"error sheel=={shell}, error_type_document=={etype.__doc__}, error_value=={evalue}, error message in ipython cell=={sstb}"
-        advice_msg = receive_openai_advice(
-            os.environ["_OPEN_AI_MODEL"], os.environ["_OPEN_AI_API"], error_message
-        )
-        send_kakao_msg(os.environ["_KAKAO_TOKEN_PATH"], advice_msg)
-
-    except Exception as e:
-        print(e)
-        pass
+        except Exception as e:
+            print(e)
+            pass

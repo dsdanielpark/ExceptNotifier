@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 # Copyright 2023 parkminwoo
-import os
+from os import system
 import platform
 
 
@@ -20,4 +20,4 @@ def beep(sec=1, freq=1000) -> None:
 
         winsound.Beep(int(1000 * sec), freq)
     else:
-        os.system("play -nq -t alsa synth {} sine {}".format(sec, freq))
+        system("play -nq -t alsa synth {} sine {}".format(sec, freq))

@@ -1,9 +1,9 @@
 # -*- coding: utf-8 -*-
 # Copyright 2023 parkminwoo
 import re
-import os
 import datetime
 import traceback
+from os import environ
 from email.message import EmailMessage
 from ExceptNotifier.base.discord_sender import send_discord_msg
 from ExceptNotifier.base.openai_receiver import receive_openai_advice
@@ -71,23 +71,23 @@ class ExceptDiscord(BaseException):
 
         print(exceptNotifier["BODY"])
         data = {"text": exceptNotifier["SUBJECT"] + exceptNotifier["BODY"]}
-        send_discord_msg(os.environ["_DISCORD_WEBHOOK_URL"], data["text"])
-
-        try:
-            error_message = f"error_type=={excType} error_type_document=={etype.__doc__} error_value=={value} stack infomation=={stack} code name=={frame.f_code.co_name}file name=={frame.f_code.co_filename} file_number=={frame.f_lineno}"
-            advice_msg = '\tFile: "%s"\n\t\t%s %s: %s\n' % (
-                line[0],
-                line[2],
-                line[1],
-                line[3],
-            )
-            advice_msg += receive_openai_advice(
-                os.environ["_OPEN_AI_MODEL"], os.environ["_OPEN_AI_API"], error_message
-            )  # NO-QA
-            send_discord_msg(os.environ["_DISCORD_WEBHOOK_URL"], advice_msg)
-        except Exception as e:
-            print(e)
-            pass
+        send_discord_msg(environ["_DISCORD_WEBHOOK_URL"], data["text"])
+        if environ.get('_OPEN_AI_API') is not None:
+            try:
+                error_message = f"error_type=={excType} error_type_document=={etype.__doc__} error_value=={value} stack infomation=={stack} code name=={frame.f_code.co_name}file name=={frame.f_code.co_filename} file_number=={frame.f_lineno}"
+                advice_msg = '\tFile: "%s"\n\t\t%s %s: %s\n' % (
+                    line[0],
+                    line[2],
+                    line[1],
+                    line[3],
+                )
+                advice_msg += receive_openai_advice(
+                    environ["_OPEN_AI_MODEL"], environ["_OPEN_AI_API"], error_message
+                )  # NO-QA
+                send_discord_msg(environ["_DISCORD_WEBHOOK_URL"], advice_msg)
+            except Exception as e:
+                print(e)
+                pass
 
     @staticmethod
     def send_discord_msg(_DISCORD_WEBHOOK_URL: str, msg: str) -> dict:
@@ -134,7 +134,7 @@ class SuccessDiscord:
         ] = f"\n\nHi there, \nThis is a success notifier.\n\n - :white_check_mark: Code Status: Success. \n - :white_check_mark: Detail: Python Code Ran Without Exceptions. \n - :clock2: Time: {start_time.strftime(DATE_FORMAT)} \n\nI just wanted to let you know that your Python code has run successfully without any exceptions. \n\nAll the best, \nExcept Notifier https://github.com/dsdanielpark/ExceptNotifier"
 
         data = {"text": exceptNotifier["SUBJECT"] + exceptNotifier["BODY"]}
-        send_discord_msg(os.environ["_DISCORD_WEBHOOK_URL"], data["text"][:2000])
+        send_discord_msg(environ["_DISCORD_WEBHOOK_URL"], data["text"][:2000])
 
 
 class SendDiscord:
@@ -157,15 +157,15 @@ class SendDiscord:
 
         data = {"text": exceptNotifier["SUBJECT"] + exceptNotifier["BODY"]}
 
-        send_discord_msg(os.environ["_DISCORD_WEBHOOK_URL"], data["text"][:2000])
+        send_discord_msg(environ["_DISCORD_WEBHOOK_URL"], data["text"][:2000])
 
 
 # if __name__ == "__main__":
 #     """Get your _DISCORD_WEBHOOK_URL from HERE.
 # #     https://discord.com/developers/docs/resources/webhook"""
-#     os.environ['_OPEN_AI_API'] = "xxxxxxxxxxxxx"  #optional
-#     os.environ['_OPEN_AI_MODEL'] = "gpt-3.5-turbo" #optional
-#     os.environ['_DISCORD_WEBHOOK_URL'] = "xxxxxxxxxxxxxxxxx"
+#     environ['_OPEN_AI_API'] = "xxxxxxxxxxxxx"  #optional
+#     environ['_OPEN_AI_MODEL'] = "gpt-3.5-turbo" #optional
+#     environ['_DISCORD_WEBHOOK_URL'] = "xxxxxxxxxxxxxxxxx"
 #     sys.excepthook = ExceptDiscord.__call__
 #     try:
 #         print(1 / 20)

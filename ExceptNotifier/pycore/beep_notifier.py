@@ -1,7 +1,8 @@
 # -*- coding: utf-8 -*-
 # Copyright 2023 parkminwoo
-import os
 import platform
+from os import environ
+from os import system
 from ExceptNotifier import beep
 
 
@@ -20,12 +21,14 @@ class ExceptBeep(BaseException):
         super().__init__(*args)
 
     def __call__(etype, value, tb):
-
-        beep(os.environ["BEEP_TIME"])
-        beep(os.environ["BEEP_TIME"])
-        beep(os.environ["BEEP_TIME"])
-        beep(os.environ["BEEP_TIME"])
-        beep(os.environ["BEEP_TIME"])
+        if environ.get('BEEP_TIME') is not None:
+            beep(environ["BEEP_TIME"])
+            beep(environ["BEEP_TIME"])
+            beep(environ["BEEP_TIME"])
+        else:
+            beep()
+            beep()
+            beep()
 
     @staticmethod
     def beep(sec=1, freq=1000) -> None:
@@ -44,7 +47,7 @@ class ExceptBeep(BaseException):
 
             winsound.Beep(int(1000 * sec), freq)
         else:
-            os.system("play -nq -t alsa synth {} sine {}".format(sec, freq))
+            system("play -nq -t alsa synth {} sine {}".format(sec, freq))
 
 
 class SuccessBeep:
@@ -55,9 +58,12 @@ class SuccessBeep:
         pass
 
     def __call__(self, *args, **kwds) -> None:
-        beep(os.environ["BEEP_TIME"])
-        beep(os.environ["BEEP_TIME"])
-
+        if environ.get('BEEP_TIME') is not None:
+            beep(environ["BEEP_TIME"])
+            beep(environ["BEEP_TIME"])
+        else:
+            beep()
+            beep()
 
 class SendBeep:
     """Send beep
@@ -67,11 +73,14 @@ class SendBeep:
         pass
 
     def __call__(self, *args, **kwds) -> None:
-        beep(os.environ["BEEP_TIME"])
+        if environ.get('BEEP_TIME') is not None:
+            beep(environ["BEEP_TIME"])
+        else:
+            beep()
 
 
 # if __name__ == "__main__":
-#     os.environ['BEEP_TIME'] = 1
+#     environ['BEEP_TIME'] = 1
 #     sys.excepthook = ExceptBeep.__call__
 #     try:
 #         print(1 / 20)

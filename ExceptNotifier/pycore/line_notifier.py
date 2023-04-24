@@ -1,10 +1,10 @@
 # -*- coding: utf-8 -*-
 # Copyright 2023 parkminwoo
 import re
-import os
 import datetime
 import requests
 import traceback
+from os import environ
 from email.message import EmailMessage
 from ExceptNotifier.base.line_sender import send_line_msg
 from ExceptNotifier.base.openai_receiver import receive_openai_advice
@@ -72,22 +72,22 @@ class ExceptLine(BaseException):
         print(exceptNotifier["BODY"])
         data = {"text": exceptNotifier["SUBJECT"] + exceptNotifier["BODY"]}
 
-        send_line_msg(os.environ["_LINE_NOTIFY_API_TOKEN"], data["text"])
-
-        try:
-            error_message = f"error_type=={excType} error_type_document=={etype.__doc__} error_value=={value} stack infomation=={stack} code name=={frame.f_code.co_name}file name=={frame.f_code.co_filename} file_number=={frame.f_lineno}"
-            advice_msg = '\tFile: "%s"\n\t\t%s %s: %s\n' % (
-                line[0],
-                line[2],
-                line[1],
-                line[3],
-            )
-            advice_msg += receive_openai_advice(
-                os.environ["_OPEN_AI_MODEL"], os.environ["_OPEN_AI_API"], error_message
-            )  # NO-QA
-            send_line_msg(os.environ["_LINE_NOTIFY_API_TOKEN"], advice_msg)
-        except Exception as e:
-            pass
+        send_line_msg(environ["_LINE_NOTIFY_API_TOKEN"], data["text"])
+        if environ.get('_OPEN_AI_API') is not None:
+            try:
+                error_message = f"error_type=={excType} error_type_document=={etype.__doc__} error_value=={value} stack infomation=={stack} code name=={frame.f_code.co_name}file name=={frame.f_code.co_filename} file_number=={frame.f_lineno}"
+                advice_msg = '\tFile: "%s"\n\t\t%s %s: %s\n' % (
+                    line[0],
+                    line[2],
+                    line[1],
+                    line[3],
+                )
+                advice_msg += receive_openai_advice(
+                    environ["_OPEN_AI_MODEL"], environ["_OPEN_AI_API"], error_message
+                )  # NO-QA
+                send_line_msg(environ["_LINE_NOTIFY_API_TOKEN"], advice_msg)
+            except Exception as e:
+                pass
 
     @staticmethod
     def send_line_msg(_LINE_NOTIFY_API_TOKEN: str, msg: str) -> dict:
@@ -128,7 +128,7 @@ class SuccessLine:
 
         data = {"text": exceptNotifier["SUBJECT"] + exceptNotifier["BODY"]}
 
-        send_line_msg(os.environ["_LINE_NOTIFY_API_TOKEN"], data["text"])
+        send_line_msg(environ["_LINE_NOTIFY_API_TOKEN"], data["text"])
 
 
 class SendLine:
@@ -151,15 +151,15 @@ class SendLine:
 
         data = {"text": exceptNotifier["SUBJECT"] + exceptNotifier["BODY"]}
 
-        send_line_msg(os.environ["_LINE_NOTIFY_API_TOKEN"], data["text"])
+        send_line_msg(environ["_LINE_NOTIFY_API_TOKEN"], data["text"])
 
 
 # if __name__ == "__main__":
 #     """Get your URL from HERE.
 #     https://notify-bot.line.me/my/"""
-# #     os.environ['_OPEN_AI_API'] = "xxxxxxxxxxxxx"  #optional
-# #     os.environ['_OPEN_AI_MODEL'] = "gpt-3.5-turbo" #optional
-#     os.environ['_LINE_NOTIFY_API_TOKEN'] = "xxxxxxxxxxx"
+# #     environ['_OPEN_AI_API'] = "xxxxxxxxxxxxx"  #optional
+# #     environ['_OPEN_AI_MODEL'] = "gpt-3.5-turbo" #optional
+#     environ['_LINE_NOTIFY_API_TOKEN'] = "xxxxxxxxxxx"
 #     sys.excepthook = ExceptLine.__call__
 #     try:
 #         print(1 / 20)

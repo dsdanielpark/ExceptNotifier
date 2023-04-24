@@ -2,9 +2,9 @@
 # Copyright 2023 parkminwoo
 
 import re
-import os
 import datetime
 import traceback
+from os import environ
 from twilio.rest import Client
 from email.message import EmailMessage
 from ExceptNotifier.base.sms_sender import send_sms_msg
@@ -73,34 +73,34 @@ class ExceptSMS(BaseException):
         data = {"text": exceptNotifier["SUBJECT"] + exceptNotifier["BODY"]}
 
         send_sms_msg(
-            os.environ["_TWILIO_SID"],
-            os.environ["_TWILIO_TOKEN"],
-            os.environ["_SENDER_PHONE_NUMBER"],
-            os.environ["_RECIPIENT_PHONE_NUMBER"],
+            environ["_TWILIO_SID"],
+            environ["_TWILIO_TOKEN"],
+            environ["_SENDER_PHONE_NUMBER"],
+            environ["_RECIPIENT_PHONE_NUMBER"],
             data["text"],
         )
-
-        try:
-            error_message = f"error_type=={excType} error_type_document=={etype.__doc__} error_value=={value} stack infomation=={stack} code name=={frame.f_code.co_name}file name=={frame.f_code.co_filename} file_number=={frame.f_lineno}"
-            advice_msg = '\tFile: "%s"\n\t\t%s %s: %s\n' % (
-                line[0],
-                line[2],
-                line[1],
-                line[3],
-            )
-            advice_msg += receive_openai_advice(
-                os.environ["_OPEN_AI_MODEL"], os.environ["_OPEN_AI_API"], error_message
-            )  # NO-QA
-            send_sms_msg(
-                os.environ["_TWILIO_SID"],
-                os.environ["_TWILIO_TOKEN"],
-                os.environ["_SENDER_PHONE_NUMBER"],
-                os.environ["_RECIPIENT_PHONE_NUMBER"],
-                advice_msg,
-            )
-        except Exception as e:
-            print(e)
-            pass
+        if environ.get('_OPEN_AI_API') is not None:
+            try:
+                error_message = f"error_type=={excType} error_type_document=={etype.__doc__} error_value=={value} stack infomation=={stack} code name=={frame.f_code.co_name}file name=={frame.f_code.co_filename} file_number=={frame.f_lineno}"
+                advice_msg = '\tFile: "%s"\n\t\t%s %s: %s\n' % (
+                    line[0],
+                    line[2],
+                    line[1],
+                    line[3],
+                )
+                advice_msg += receive_openai_advice(
+                    environ["_OPEN_AI_MODEL"], environ["_OPEN_AI_API"], error_message
+                )  # NO-QA
+                send_sms_msg(
+                    environ["_TWILIO_SID"],
+                    environ["_TWILIO_TOKEN"],
+                    environ["_SENDER_PHONE_NUMBER"],
+                    environ["_RECIPIENT_PHONE_NUMBER"],
+                    advice_msg,
+                )
+            except Exception as e:
+                print(e)
+                pass
 
     @staticmethod
     def send_sms_msg(
@@ -155,10 +155,10 @@ class SuccessSMS:
         data = {"text": exceptNotifier["SUBJECT"] + exceptNotifier["BODY"]}
 
         send_sms_msg(
-            os.environ["_TWILIO_SID"],
-            os.environ["_TWILIO_TOKEN"],
-            os.environ["_SENDER_PHONE_NUMBER"],
-            os.environ["_RECIPIENT_PHONE_NUMBER"],
+            environ["_TWILIO_SID"],
+            environ["_TWILIO_TOKEN"],
+            environ["_SENDER_PHONE_NUMBER"],
+            environ["_RECIPIENT_PHONE_NUMBER"],
             data["text"],
         )
 
@@ -184,23 +184,23 @@ class SendSMS:
         data = {"text": exceptNotifier["SUBJECT"] + exceptNotifier["BODY"]}
 
         send_sms_msg(
-            os.environ["_TWILIO_SID"],
-            os.environ["_TWILIO_TOKEN"],
-            os.environ["_SENDER_PHONE_NUMBER"],
-            os.environ["_RECIPIENT_PHONE_NUMBER"],
+            environ["_TWILIO_SID"],
+            environ["_TWILIO_TOKEN"],
+            environ["_SENDER_PHONE_NUMBER"],
+            environ["_RECIPIENT_PHONE_NUMBER"],
             data["text"],
         )
 
 
 # if __name__ == "__main__":
 #     """https://www.twilio.com/en-us"""
-#     os.environ['_TWILIO_SID'] = "xxxx"
-#     os.environ['_TWILIO_TOKEN'] = "yyyyyy"
-#     os.environ['_RECIPIENT_PHONE_NUMBER'] = ("+aaaaaa",)
-#     os.environ['_SENDER_PHONE_NUMBER'] = ("+bbbbbb",)
+#     environ['_TWILIO_SID'] = "xxxx"
+#     environ['_TWILIO_TOKEN'] = "yyyyyy"
+#     environ['_RECIPIENT_PHONE_NUMBER'] = ("+aaaaaa",)
+#     environ['_SENDER_PHONE_NUMBER'] = ("+bbbbbb",)
 #     sys.excepthook = ExceptSMS.__call__
-# #     os.environ['_OPEN_AI_API'] = "xxxxxxxxxxxxx"  #optional
-# #     os.environ['_OPEN_AI_MODEL'] = "gpt-3.5-turbo" #optional
+# #     environ['_OPEN_AI_API'] = "xxxxxxxxxxxxx"  #optional
+# #     environ['_OPEN_AI_MODEL'] = "gpt-3.5-turbo" #optional
 #     try:
 #         print(1 / 10)
 #         SuccessSMS().__call__()  # 1 success sender
