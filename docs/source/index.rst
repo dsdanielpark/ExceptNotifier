@@ -15,6 +15,10 @@ Welcome to ExceptNotifier's documentation!
    installation
    officialgithub
    ExceptNotifier
+   ExceptNotifier.base
+   ExceptNotifier.ipython
+   ExceptNotifier.python
+   ExceptNotifier.utils
 
 
 Indices and tables
