@@ -14,7 +14,4 @@ sphinxcontrib-serializinghtml
 docutils
 Sphinx >= 3.0.0
 pylons-sphinx-themes
-pylons_sphinx_latesturl
-repoze.sphinx.autointerface
 sphinxcontrib-autoprogram
-dbus-python
