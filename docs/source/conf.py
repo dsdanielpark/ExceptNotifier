@@ -61,6 +61,11 @@ release = '0.2.1'
 extensions = [
     'sphinx.ext.autodoc','sphinx.ext.todo',  'sphinx.ext.autosummary'
 ]
+import mock
+
+MOCK_MODULES = ['sphinx-rtd-theme', 'repoze.sphinx.autointerface', 'sphinxcontrib-autoprogram', 'Sphinx']
+for mod_name in MOCK_MODULES:
+    sys.modules[mod_name] = mock.Mock()
 
 autosummary_generate = True  # Turn on sphinx.ext.autosummary
 
