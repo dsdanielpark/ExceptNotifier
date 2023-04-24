@@ -7,17 +7,17 @@ import datetime
 DATE_FORMAT = "%Y-%m-%d %H:%M:%S"
 
 
-def ExceptSMSIpython(shell, etype, evalue, tb, tb_offset=1):
+def ExceptSMSIpython(shell: object, etype: object, evalue: object, tb: object, tb_offset=1) -> None:
     """ExceptNotifier function for overriding custom execute in ipython for sending SMS.
 
-    :param shell: Excecuted shell 
-    :type shell: _type_
+    :param shell: Excecuted shell, ZMQInteractiveShell object.
+    :type shell: object
     :param etype: Error type
-    :type etype: _type_
+    :type etype: object
     :param evalue: Error value
-    :type evalue: _type_
-    :param tb: TraceBack
-    :type tb: _type_
+    :type evalue: object
+    :param tb: TraceBack object of Ipython
+    :type tb: object
     :param tb_offset: Offset of traceback, defaults to 1
     :type tb_offset: int, optional
     """
