@@ -12,9 +12,9 @@ Welcome to ExceptNotifier's documentation!
 .. toctree::
    :maxdepth: 4
    :caption: Contents:
-
-   project
+   
    installation
+   officialgithub
    ExceptNotifier
    ExceptNotifier.base
    ExceptNotifier.ipython
