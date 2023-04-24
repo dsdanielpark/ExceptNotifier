@@ -12,7 +12,7 @@ Welcome to ExceptNotifier's documentation!
    :maxdepth: 4
    :caption: Contents:
    
-   Installation
+   installation
    officialgithub
    ExceptNotifier
 
