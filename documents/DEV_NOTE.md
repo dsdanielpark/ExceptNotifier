@@ -95,8 +95,8 @@ In upcoming updates, we aim to enhance the pylint score, eliminate superfluous i
 |0.1.22|Revert for fixing offset argument.|
 |0.2.0|Pre Alpha Release in 230422. git tag released.|
 |0.2.1|Package import error fixed.|
-|0.2.2|Discord api text length limit 1900 (actual limit is 2000)|
-
+|0.2.2|Discord api text length limit 1900 (actual text length limit is 2000).|
+|0.2.3|Reduced unnecessary calls by clarifying module imports and reduced flops using if statements. Post-refactoring, simple QA, then deploy (not yet deployed).|
 
 ## QA Note
 QA tests are carried out from Python 3.6 to Python 3.9 environments through Windows, MacBook m1, and Google Colab, focusing on Telegram, Discord, Slack, Line, and Chime applications. QA for the rest proceeds whenever there is a request or whenever I have time to spare, and replaces it with responding to bug reports. After the QA test is conducted, we plan to raise the development stage and recruit QA testers by promoting it.
