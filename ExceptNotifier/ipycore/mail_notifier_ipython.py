@@ -39,6 +39,13 @@ def ExceptMailIpython(
         "SUBJECT": "[Except Notifier] Error! Python Code Exception Detected.",
         "BODY": f"IMPORTANT WARNING \nPython Exception Detected in Your Code. \n\nHi there, \nThis is an exception catch notifier. \n\n * Code Status: Fail.🛠 \n * Detail: Python Code Ran Exceptions. \n * Time: {start_time.strftime(DATE_FORMAT)} \n\n ** {sstb}",
     }
+    print(exceptNotifier["BODY"])
+    exceptNotifier["ALL"] = "From: %s\nTo: %s\nSubject: %s\n\n%s" % (
+        exceptNotifier["FROM"],
+        exceptNotifier["TO"],
+        exceptNotifier["SUBJECT"],
+        exceptNotifier["BODY"],
+    )
     smtp = smtplib.SMTP_SSL(SMTP_SERVER, 465)
     smtp.login(
         environ["_GMAIL_SENDER_ADDR"], environ["_GMAIL_APP_PASSWORD_OF_SENDER"],
