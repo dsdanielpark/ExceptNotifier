@@ -13,8 +13,8 @@ Welcome to ExceptNotifier's documentation!
    :maxdepth: 4
    :caption: Contents:
 
-   install
    project
+   installation
    ExceptNotifier
    ExceptNotifier.base
    ExceptNotifier.ipython

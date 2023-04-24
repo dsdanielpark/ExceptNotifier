@@ -8,8 +8,8 @@ Subpackages
    :maxdepth: 4
    :caption: Contents:
 
-   install
    project
+   installation
    ExceptNotifier.base
    ExceptNotifier.ipython
    ExceptNotifier.python

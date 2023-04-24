@@ -27,6 +27,7 @@ import sys
 #     pass
 
 sys.path.insert(0, os.path.abspath('../..'))
+# sys.path.insert(0, os.path.abspath('../ExceptNotifier/__init__.py'))
 sys.setrecursionlimit(1500)
 
 
@@ -87,20 +88,49 @@ html_static_path = ['_static']
 # sys.path.insert(0, os.path.abspath(r'C:\Users\parkm\Desktop\git\ExceptionNotifier\ExceptNotifier'))
 
 
+# # RTD option args
+# html_theme_options = {
+#     # 'analytics_id': 'G-XXXXXXXXXX',  #  Provided by Google in your dashboard
+#     # 'analytics_anonymize_ip': False,
+#     'logo_only': False,
+#     'display_version': True,
+#     'prev_next_buttons_location': 'bottom',
+#     'style_external_links': False,
+#     'vcs_pageview_mode': '',
+#     'style_nav_header_background': 'white',
+#     # Toc options
+#     'collapse_navigation': True,
+#     'sticky_navigation': True,
+#     'navigation_depth': 4,
+#     'includehidden': False,
+#     'titles_only': True
+# }
 
-html_theme_options = {
-    # 'analytics_id': 'G-XXXXXXXXXX',  #  Provided by Google in your dashboard
-    # 'analytics_anonymize_ip': False,
-    'logo_only': False,
-    'display_version': True,
-    'prev_next_buttons_location': 'bottom',
-    'style_external_links': False,
-    'vcs_pageview_mode': '',
-    'style_nav_header_background': 'white',
-    # Toc options
-    'collapse_navigation': True,
-    'sticky_navigation': True,
-    'navigation_depth': 4,
-    'includehidden': False,
-    'titles_only': True
-}
+
+
+
+# # When need app setup
+# class GithubURLDomain(Domain):
+#     """
+#     Resolve .py links to their respective Github URL
+#     """
+
+#     name = "githuburl"
+#     ROOT = "https://github.com/UKPLab/sentence-transformers/tree/master"
+
+#     def resolve_any_xref(self, env, fromdocname, builder, target, node, contnode):
+#         if (target.endswith('.py') or target.endswith('.ipynb')) and not target.startswith('http'):
+#             from_folder = os.path.dirname(fromdocname)
+#             contnode["refuri"] = "/".join([self.ROOT, from_folder, target])
+#             return [("githuburl:any", contnode)]
+#         return []
+
+
+
+# def setup(app):
+#     app.add_domain(GithubURLDomain)
+#     app.add_config_value('recommonmark_config', {
+#             #'url_resolver': lambda url: github_doc_root + url,
+#             'auto_toc_tree_section': 'Contents',
+#             }, True)
+#     app.add_transform(AutoStructify)

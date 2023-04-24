@@ -65,6 +65,12 @@ As mentioned above, ExceptNotifier seems to have a complex structure to support 
 
 <br>
 
+## Refactoring
+In upcoming updates, we aim to enhance the pylint score, eliminate superfluous inheritance, streamline module imports, reduce redundant function calls, boost efficiency via cProfile, and restructure the package based on use cases. However, performing QA for all applications is a time-consuming process. As a result, we plan to initiate refactoring with the alpha release and complete it by the beta release.
+
+
+<br>
+
 ## Release note
 |Version|Description|
 |:--|:--|
