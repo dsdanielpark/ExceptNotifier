@@ -1,4 +1,5 @@
 # ExceptMail
+[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/drive/1IfDIliImFKG4UuM0yzerhubL_Kx_TFKF?usp=sharing)
 
 ## Ready
 In the except statement, an email is sent along with the error message. Additionally, you can send emails from any desired line. <br>
