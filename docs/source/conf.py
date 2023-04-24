@@ -63,7 +63,7 @@ extensions = [
 ]
 import mock
 
-MOCK_MODULES = ['sphinx-rtd-theme', 'repoze.sphinx.autointerface', 'sphinxcontrib-autoprogram', 'Sphinx']
+MOCK_MODULES = ['sphinx-rtd-theme', 'repoze.sphinx.autointerface', 'sphinxcontrib-autoprogram', 'Sphinx', 'dbus-python']
 for mod_name in MOCK_MODULES:
     sys.modules[mod_name] = mock.Mock()
 
