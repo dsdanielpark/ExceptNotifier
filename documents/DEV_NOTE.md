@@ -97,6 +97,7 @@ In upcoming updates, we aim to enhance the pylint score, eliminate superfluous i
 |0.2.1|Package import error fixed.|
 |0.2.2|Discord api text length limit 1900 (actual text length limit is 2000).|
 |0.2.3|Reduced unnecessary calls by clarifying module imports and reduced flops using if statements. Fix in EmailNotifierIpython sending dict|
+|0.2.4|Fix in EmailNotifierIpython open ai sending dict|
 need Refactoring, QA.
 
 ## QA Note

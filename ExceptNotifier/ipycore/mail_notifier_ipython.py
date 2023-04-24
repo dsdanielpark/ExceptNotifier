@@ -6,6 +6,7 @@ import datetime
 from os import environ
 from IPython.core.ultratb import AutoFormattedTB
 from ExceptNotifier.base.openai_receiver import receive_openai_advice
+from ExceptNotifier.base.mail_sender import send_gmail_msg
 
 
 DATE_FORMAT = "%Y-%m-%d %H:%M:%S"
@@ -39,33 +40,20 @@ def ExceptMailIpython(
         "SUBJECT": "[Except Notifier] Error! Python Code Exception Detected.",
         "BODY": f"IMPORTANT WARNING \nPython Exception Detected in Your Code. \n\nHi there, \nThis is an exception catch notifier. \n\n * Code Status: Fail.🛠 \n * Detail: Python Code Ran Exceptions. \n * Time: {start_time.strftime(DATE_FORMAT)} \n\n ** {sstb}",
     }
-    print(exceptNotifier["BODY"])
-    exceptNotifier["ALL"] = "From: %s\nTo: %s\nSubject: %s\n\n%s" % (
-        exceptNotifier["FROM"],
-        exceptNotifier["TO"],
-        exceptNotifier["SUBJECT"],
-        exceptNotifier["BODY"],
-    )
-    smtp = smtplib.SMTP_SSL(SMTP_SERVER, 465)
-    smtp.login(
-        environ["_GMAIL_SENDER_ADDR"], environ["_GMAIL_APP_PASSWORD_OF_SENDER"],
-    )
-    smtp.sendmail(exceptNotifier["FROM"], exceptNotifier["TO"], exceptNotifier["ALL"])
+    send_gmail_msg(environ['_GMAIL_SENDER_ADDR'], environ['_GAMIL_RECIPIENT_ADDR'], environ['_GMAIL_APP_PASSWORD_OF_SENDER'], exceptNotifier['SUBJECT'], exceptNotifier['BODY'])
+
     if environ.get('_OPEN_AI_API') is not None:
         try:
             error_message = f"error sheel=={shell}, error_type_document=={etype.__doc__}, error_value=={evalue}, error message in ipython cell=={sstb}"
             advice_msg = receive_openai_advice(
                 environ["_OPEN_AI_MODEL"], environ["_OPEN_AI_API"], error_message,
             )  # NO-QA
-            exceptNotifier = {
-                "TO": environ["_GAMIL_RECIPIENT_ADDR"],
-                "FROM": environ["_GMAIL_SENDER_ADDR"],
+            exceptNotifier_openai = {
                 "SUBJECT": "[Except AI Debugging] Error! chatGPT Debugging guide.",
                 "BODY": f"IMPORTANT WARNING: \nPython Exception Detected in Your Code. \n\nHi there, \nThis is advice from OpenAI ChatGPT \n\n {advice_msg}",
             }
-            smtp.sendmail(
-                exceptNotifier["FROM"], exceptNotifier["TO"], exceptNotifier["ALL"]
-            )
+            send_gmail_msg(environ['_GMAIL_SENDER_ADDR'], environ['_GAMIL_RECIPIENT_ADDR'], environ['_GMAIL_APP_PASSWORD_OF_SENDER'], exceptNotifier_openai['SUBJECT'], exceptNotifier_openai['BODY'])
+
 
         except Exception as e:
             print(e)

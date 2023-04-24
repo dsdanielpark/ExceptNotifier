@@ -127,5 +127,5 @@ __all__ = [
     "ExceptWechatIpython",
 ]
 
-__version__ = "0.2.2"
+__version__ = "0.2.4"
 __author__ = "daniel park <parkminwoo1991@gmail.com>"
