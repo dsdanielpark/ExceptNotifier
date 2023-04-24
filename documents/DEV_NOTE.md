@@ -95,6 +95,7 @@ In upcoming updates, we aim to enhance the pylint score, eliminate superfluous i
 |0.1.22|Revert for fixing offset argument.|
 |0.2.0|Pre Alpha Release in 230422. git tag released.|
 |0.2.1|Package import error fixed.|
+|0.2.2|Discord api text length limit 1900 (actual limit is 2000)|
 
 
 ## QA Note
