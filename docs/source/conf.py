@@ -59,8 +59,10 @@ release = '0.2.1'
 # extensions coming with Sphinx (named 'sphinx.ext.*') or your custom
 # ones.
 extensions = [
-    'sphinx.ext.autodoc','sphinx.ext.todo'
+    'sphinx.ext.autodoc','sphinx.ext.todo',  'sphinx.ext.autosummary'
 ]
+
+autosummary_generate = True  # Turn on sphinx.ext.autosummary
 
 # ,'sphinx.ext.napoleon'
 
