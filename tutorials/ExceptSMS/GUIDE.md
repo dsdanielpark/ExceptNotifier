@@ -4,7 +4,7 @@
 ## Ready
 - a. Sign up for Twilio. [https://www.twilio.com/en-us](https://www.twilio.com/en-us)
 - b. Click Console in the upper right corner.
-- c. Copy the variables provided in the console. <br>
+- c. Copy the variables provided in the console. <br><br>
 
 
 *API TEST*
@@ -23,6 +23,7 @@ send_sms_msg(
     _RECIPIENT_PHONE_NUMBER,
     "Any Test Message")
 ```
+# Python
 
 *Notifier*
 ```python
@@ -47,3 +48,6 @@ except ExceptSMS as e:      #2 except sender
 SendSMS().__call__()        #3 customized sender        
 ```
 <Br>
+
+# Ipython
+[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/drive/13NuBhAxhwo67oc4jn3y8zpJiJrR-LHrP?usp=sharing)

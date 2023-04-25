@@ -3,6 +3,22 @@ This package was carried out in a very short time (within 7 days) from the idea 
 
 ###### Since all API keys and URLs generated during the test phase are destroyed, all URLs and APIs in legacy code cannot be used.
 
+## Applying ExceptNotifier in Python
+In Python, I utilize [`sys.excepthook`](https://docs.python.org/ko/3/library/sys.html#sys.excepthook) to invoke the `ExceptNotifier` when an exception arises. The interpreter passes three arguments to `sys.excepthook`: exception class, exception instance, and traceback object. `ExceptNotifier` is a class inheriting from `BaseException`, and it overrides `sys.excepthook` as the top-level exception handler, which is executed right before the system terminates. To handle unraisable exceptions or exceptions occurring in threads, refer to the `sys.unraisablehook()` and `threading.excepthook()` functions, respectively.
+
+
+
+## Application of ExceptNotifier in iPython
+Strictly, IPython is not a programming language like Python, but a package. To clarify, IPython (Interactive Python) is a package consisting of a command shell for interactive computing across multiple programming languages.
+
+It's a useful package that enables compiling Python code bit by bit in an interactive session through the concept of an interactive shell. However, in IPython, control by `sys.excepthook` occurs just before the prompt is returned, making it impossible to receive a traceback object using `sys.excepthook` and send error messages to messenger apps. Moreover, since it's necessary to inherit from `BaseException`, other functions in IPython also need to be overridden.
+
+Therefore, at first, I considered the [magics](https://ipython.readthedocs.io/en/stable/interactive/magics.html) in cell, but the problem of having to import the magic function every time in the cell can be cumbersome to use, so I decided to use the [`set_custom_exc`](https://ipython.readthedocs.io/en/stable/api/generated/IPython.core.interactiveshell.html) in iPython, which can work even by overriding it once. The `set_custom_exc` allows you to set a custom exception handler that is called when an exception in the exc_tuple occurs in the main loop (especially the run_code() method), and is designed so that the handle can return a structured traceback or None. Therefore, I can receive the traceback and send it to each messenger app. Unlike `sys.excepthook`, the order of top-level exception handling in iPython is different, so just calling raise in the except statement can work properly.
+
+## Using Environment Variables (environ)
+ In Python's `except` statement, it was designed to inherit `ExceptionBase`. To pass variables into the class, I decided to use `os.environ` for setting variables and distributing them as a package. As the user's webhook URL or API key won't change, I named the variables in uppercase and gave them unique names to avoid conflicts. To indicate that the variables are used within the class, I added an underscore before the variable name.
+
+
 ## Dependencies
 This package communicates using the REST API or WEBHOOK URL of mobile messengers and applications. It inevitably depends on the interface and API policy of each application. To maintain a simple structure and flexibility, configure methods to communicate with each application in the base folder of ExceptNotifier. If an application's API policy or interface changes, ExceptNotifier will be addressed by updating the major version.
 
@@ -41,7 +57,7 @@ Typically, in Python, variable names are mangled by adding a double underscore p
 <br>
 
 ## Python and IPython
-I tried to keep the same structure for both Python and Ipython, but I noticed that the behavior of traceback and ExceptBase is slightly different. Significant development has already been carried out with a focus on operation in Python, and it was confirmed that some of the return values ​​are different because IPython's traceback message inevitably includes information about the cell. So we construct a new class to override in IPython. A brush that can be integrated for this
+I tried to keep the same structure for both Python and Ipython, but I noticed that the behavior of traceback and ExceptBase is slightly different. Significant development has already been carried out with a focus on operation in Python, and it was confirmed that some of the return values ​​are different because IPython's traceback message inevitably includes information about the cell. So I construct a new class to override in IPython. A brush that can be integrated for this
 
 <br>
 
@@ -66,7 +82,7 @@ As mentioned above, ExceptNotifier seems to have a complex structure to support 
 <br>
 
 ## Refactoring
-In upcoming updates, we aim to enhance the pylint score, eliminate superfluous inheritance, streamline module imports, reduce redundant function calls, boost efficiency via cProfile, and restructure the package based on use cases. However, performing QA for all applications is a time-consuming process. As a result, we plan to initiate refactoring with the alpha release and complete it by the beta release.
+In upcoming updates, I aim to enhance the pylint score, eliminate superfluous inheritance, streamline module imports, reduce redundant function calls, boost efficiency via cProfile, and restructure the package based on use cases. However, performing QA for all applications is a time-consuming process. As a result, I plan to initiate refactoring with the alpha release and complete it by the beta release.
 
 
 <br>
@@ -101,7 +117,7 @@ In upcoming updates, we aim to enhance the pylint score, eliminate superfluous i
 need Refactoring, QA.
 
 ## QA Note
-QA tests are carried out from Python 3.6 to Python 3.9 environments through Windows, MacBook m1, and Google Colab, focusing on Telegram, Discord, Slack, Line, and Chime applications. QA for the rest proceeds whenever there is a request or whenever I have time to spare, and replaces it with responding to bug reports. After the QA test is conducted, we plan to raise the development stage and recruit QA testers by promoting it.
+QA tests are carried out from Python 3.6 to Python 3.9 environments through Windows, MacBook m1, and Google Colab, focusing on Telegram, Discord, Slack, Line, and Chime applications. QA for the rest proceeds whenever there is a request or whenever I have time to spare, and replaces it with responding to bug reports. After the QA test is conducted, I plan to raise the development stage and recruit QA testers by promoting it.
 
 <br>
 

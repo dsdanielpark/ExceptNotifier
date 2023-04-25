@@ -1,4 +1,6 @@
 # ExceptDiscord
+[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/drive/1lwsIBpql_1zgEdIWRw6O_jBOZKJdHqBh?usp=sharing) 
+
 
 ## Ready
 Go through the following process to prepare the `_TELEGRAM_TOKEN` variable.

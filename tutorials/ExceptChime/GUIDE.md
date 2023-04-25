@@ -1,4 +1,5 @@
 # ExceptChime
+[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/drive/1hUMMQ6He9M4MlspZ88J9kO8juxvC5b3a?usp=sharing)
 
 ## Ready
 - a. Select the Chat room to receive notifications.

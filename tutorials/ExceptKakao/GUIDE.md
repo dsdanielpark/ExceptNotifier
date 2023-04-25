@@ -13,6 +13,8 @@
 - h. If you have successfully completed all of the above steps, go to the following document and follow the instructions:
  https://github.com/dsdanielpark/ExceptNotifier/blob/main/tutorials/kakao_token_generator.ipynb <Br>
 
+<br>
+
 *API TEST*
 ```python
 from ExceptNotifier import send_kakao_msg

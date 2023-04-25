@@ -1,11 +1,14 @@
 # ExceptLine
+[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/drive/1PDrJqxDq4NE6BRUrRkFvDBiMHQz0WbZh?usp=sharing) 
 
 ## Ready
 [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/drive/1PDrJqxDq4NE6BRUrRkFvDBiMHQz0WbZh?usp=sharing) 
+
 - a. Register [https://notify-bot.line.me/](https://notify-bot.line.me/)
 - b. Go to mypage [https://notify-bot.line.me/my/](https://notify-bot.line.me/my/)
 - c. Click `Generate Token`, enter Service Name and click `1-on-1 chat with LINE` (anything you like)
-- d. Copy Token. <Br>
+- d. Copy Token. <Br><br>
+
 
 *API TEST*
 ```python
@@ -65,6 +68,8 @@ if __name__ == "__main__":
 
     SendLine().__call__()  # 3 customized sender
 ```
+
+<br>
 
 # Ipython
 [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/drive/1PDrJqxDq4NE6BRUrRkFvDBiMHQz0WbZh?usp=sharing) 
