@@ -1,6 +1,5 @@
 Development Status :: 2 - Pre-Alpha <br>
 *Copyright (c) 2023 MinWoo Park, South Korea*<br>
-Before QA<br> 
 
 ![](https://exceptnotifier.readthedocs.io/en/latest/_images/logo.png)
 
