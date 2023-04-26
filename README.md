@@ -52,12 +52,15 @@ Applicable to both [IPython](https://ipython.org/) and [Python](https://www.pyth
 
 <br>
 
-# Quick Start
-```bash
-$ pip install ExceptNotifier
+# Install
+The latest stable release (and required dependencies) can be installed from PyPI:
 ```
-```bash
-$ pip install exceptnotifier
+pip install ExceptNotifier
+```
+
+You may instead want to use the development version from Github:
+```
+pip install git+https://github.com/dsdanielpark/ExceptNotifier.git
 ```
 
 <br><br><br>
