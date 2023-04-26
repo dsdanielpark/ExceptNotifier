@@ -805,7 +805,7 @@ SendKakao().__call__()        #3 customized sender
 
 
 ## *Wechat*
-a. Get Webhook URL by visiting [here](https://work.weixin.qq.com/api/doc/90000/90136/91770)
+a. Get Webhook URL by visiting [here](https://work.weixin.qq.com/api/doc/90000/90136/91770) <br>
 *API TEST*
 ```python
 from ExceptNotifier import send_wechat_msg
@@ -835,7 +835,7 @@ SendWechat().__call__()        #3 customized sender
 <Br>
 
 ## *Beep*
-No setup is required. Use as follows.
+No setup is required. Use as follows. <br>
 *TEST*
 ```python
 from ExceptNotifier import beep
@@ -865,7 +865,7 @@ beep()
 
 
 ## *Desktop*
-No setup is required. Use as follows.
+No setup is required. Use as follows. <br>
 *TEST*
 ```python
 from ExceptNotifier import send_desktop_msg
@@ -898,11 +898,13 @@ SendDesktop().__call__()        #3 customized sender
 
 
 <Br><br><br>
-# License
-MIT
+# License <br>
+ExceptNotifier: MIT <br>
+Licenses apply the each [dependencies package](https://choosealicense.com/licenses/), and the created posts follow [CC BY-NC-SA](https://creativecommons.org/licenses/by-nc-sa/4.0/).
 
 # Bugs and Issues
-[Open a new issue](https://github.com/dsdanielpark/ExceptNotifier/issues)
+Sincerely grateful for any reports on new features or bugs. Your valuable feedback on the code is highly appreciated.
+[[Open a new issue]](https://github.com/dsdanielpark/ExceptNotifier/issues) 
  
 # Contributing Guide
 I will announce contributing rules when the code development status changes to beta soon. Until then, please create an issue for feature requests and bug reports. I would greatly appreciate it if you use it a lot and give your opinions generously. Thank you sincerely.
