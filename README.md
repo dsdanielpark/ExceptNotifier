@@ -376,7 +376,8 @@ As all classes function the same, the example will only use one image, like in T
 - c. Give your bot a name & a username <br>
 - d. Copy your new Telegram bot’s token <br>
 - e. You have to click `Start_bot` and must enter anything to your bot.
-   - Before use Notifier, Please use this to check if you follow guide. The Telegram bot may have a slight delay and it responded within 2-3 minutes.
+   - Before use Notifier, Please use this to check if you follow guide. The Telegram bot may have a slight delay and it responded within 2-3 minutes. <br>
+ 
 *API TEST*
 ```python
 from ExceptNotifier import send_telegram_msg
@@ -538,6 +539,7 @@ SendMail().__call__()
 - b. Click `Edit Channel` in the upper right corner of the chat window.
 - c. Click `Integrations` - `Webhook` - `New Webhook`.
 - d. Then click `Copy Webhook`.
+ 
 *API TEST*
 ```python
 from ExceptNotifier import send_discord_msg
@@ -574,6 +576,7 @@ SendDiscord().__call__()        #3 customized sender
 - b. Click `Room Setting` in the upper right corner.
 - c. Click `Manage Webhook and bot`
 - d. Create Add Webhook, set it up, then click `Copy Webhook`.
+ 
 *API TEST*
 ```python
 from ExceptNotifier import send_chime_msg
@@ -609,6 +612,7 @@ SendChime().__call__()        #3 customized sender
 - b. `Create an app` - `From scratch` - `Create App`
 - c. Add webhook: Click `Incoming Webhooks` - Activate Incomming `On` - Add New Webhook to Workspace
 - d. Copy `Webhook URL`
+ 
 *API TEST*
 ```python
 from ExceptNotifier import send_slack_msg
