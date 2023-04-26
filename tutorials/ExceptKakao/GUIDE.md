@@ -11,7 +11,7 @@
 - f. In the left Consent Items menu, set `Send message in KakaoTalk` to optional agreement.
 - g. Copy the `REST API Key` in `My Application > App Settings > Summary`.
 - h. If you have successfully completed all of the above steps, go to the following document and follow the instructions:
- https://github.com/dsdanielpark/ExceptNotifier/blob/main/tutorials/kakao_token_generator.ipynb <Br>
+https://github.com/dsdanielpark/ExceptNotifier/blob/main/tutorials/ExceptKakao/kakao_token_generator.ipynb <Br>
 
 <br>
 
