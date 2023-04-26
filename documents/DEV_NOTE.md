@@ -6,8 +6,6 @@ This package was carried out in a very short time (within 7 days) from the idea 
 ## Applying ExceptNotifier in Python
 In Python, I utilize [`sys.excepthook`](https://docs.python.org/ko/3/library/sys.html#sys.excepthook) to invoke the `ExceptNotifier` when an exception arises. The interpreter passes three arguments to `sys.excepthook`: exception class, exception instance, and traceback object. `ExceptNotifier` is a class inheriting from `BaseException`, and it overrides `sys.excepthook` as the top-level exception handler, which is executed right before the system terminates. To handle unraisable exceptions or exceptions occurring in threads, refer to the `sys.unraisablehook()` and `threading.excepthook()` functions, respectively.
 
-
-
 ## Application of ExceptNotifier in iPython
 Strictly, IPython is not a programming language like Python, but a package. To clarify, IPython (Interactive Python) is a package consisting of a command shell for interactive computing across multiple programming languages.
 
@@ -18,31 +16,20 @@ Therefore, at first, I considered the [magics](https://ipython.readthedocs.io/en
 ## Using Environment Variables (environ)
  In Python's `except` statement, it was designed to inherit `ExceptionBase`. To pass variables into the class, I decided to use `os.environ` for setting variables and distributing them as a package. As the user's webhook URL or API key won't change, I named the variables in uppercase and gave them unique names to avoid conflicts. To indicate that the variables are used within the class, I added an underscore before the variable name.
 
-
 ## Dependencies
 This package communicates using the REST API or WEBHOOK URL of mobile messengers and applications. It inevitably depends on the interface and API policy of each application. To maintain a simple structure and flexibility, configure methods to communicate with each application in the base folder of ExceptNotifier. If an application's API policy or interface changes, ExceptNotifier will be addressed by updating the major version.
-
-<br>
 
 ## Consideration of PDB Adoption
 PDB was considered for implementation, but it was excluded to avoid complex dependencies and maintain a clean, extensible package structure focused on the notification function.
 
-<br>
-
 ## Debug Information using OPEN AI API
 Although it is a redundant feature, a separate class containing openAI debugging information is created to avoid double inheritance. This approach ensures the package is not dependent on the OpenAI API interface and prevents unnecessary code lines from increasing.
-
-<br>
 
 ## Refactoring and Optimization
 This package may contain unnecessary redundant declarations and local variables (or global variables, depending on the situation). These measures were implemented to avoid unnecessary double inheritance and prevent the package structure from becoming complicated. Additionally, since this package primarily focuses on notifications, millisecond time improvements are not required. Further refactoring will occur after the interface is fully established. This will be implemented after the development stage has matured into the product development stage following beta testing.
 
-<br>
-
 ## Regarding other emails
 The ExceptNotifier offers Gmail as the primary email service. Due to varying communication methods and detailed interfaces with ***TP servers, it's challenging to accommodate all email*** TP servers. It's also less effective as using other applications is slightly more useful. Furthermore, connecting with Gmail requires more preset variables compared to other classes. As a result, only Gmail is supported, and additional email server support will be implemented upon request. If a new email class function is required, it will be developed once the issue page has received over 50 consent votes. This requirement is immutable and mandatory.
-
-<br>
 
 ## Variable and Class naming
 In principle, all variable and class names are intuitive, and I keep them easy to refactor until major version 1. Various decorators and package structures are discussed after development stage 5 or higher.
@@ -53,39 +40,23 @@ In this class, I inherit from Python's exceptionBase and override the excepthook
 Typically, in Python, variable names are mangled by adding a double underscore prefix (__). However, in this case, I chose to use capital letters for internal variables to emphasize their constant-like usage. If you have suggestions for improving class names, method names, or variable names, please feel free to contribute.
 ##### In this package, a variable name prefixed with an _ signifies that it is used only within a function. Naming focused on function rather than mangling. If a particular method is only used within a class, it is used as the _method name.
 
-
-<br>
-
 ## Python and IPython
 I tried to keep the same structure for both Python and Ipython, but I noticed that the behavior of traceback and ExceptBase is slightly different. Significant development has already been carried out with a focus on operation in Python, and it was confirmed that some of the return values ​​are different because IPython's traceback message inevitably includes information about the cell. So I construct a new class to override in IPython. A brush that can be integrated for this
-
-<br>
 
 ## Naming in IPython Functions
 The ExceptNotifier functions in IPython follow the class naming conventions. This is done to override custom exceptions in IPython and minimize confusion for users. Therefore, unlike Python, it doesn't matter what goes into the except clause, but it's important to remember that the except statement must always contain a raise.
 
-<br>
-
 ## Doc string style
 Applies to the original Sphinx documentation without using the Google Python Style Guide. This is a measure for automatic documentation generation, and was taken because the structure of the package is simple.
-
-<br>
 
 ## About sub package
 Although it can be used without specifying it as a sub package, submodules can function even if they are distributed as individual packages, so define submodules as subpackages with the possibility of future interface changes or distribution of subpackages in mind. In addition, class and function names have been adjusted to avoid confusion in function names in Python and IPython, but they are separated into subpackages for clearer object-oriented programming. This is a temporary measure and may change as development progresses.
 
-<br>
-
 ## Documentation 
 As mentioned above, ExceptNotifier seems to have a complex structure to support various applications, but in reality, it aims for a very simple package structure. Since the package structure was designed like that from the beginning, and usage is simple, Sphinx documentation also performs minimal documentation. Also, since this should be automated by workflow, etc., more complicated documentation will be done through markdown files or blog posts.
 
-<br>
-
 ## Refactoring
 In upcoming updates, I aim to enhance the pylint score, eliminate superfluous inheritance, streamline module imports, reduce redundant function calls, boost efficiency via cProfile, and restructure the package based on use cases. However, performing QA for all applications is a time-consuming process. As a result, I plan to initiate refactoring with the alpha release and complete it by the beta release.
-
-
-<br>
 
 ## Release note
 |Version|Description|
@@ -114,14 +85,11 @@ In upcoming updates, I aim to enhance the pylint score, eliminate superfluous in
 |0.2.2|Discord api text length limit 1900 (actual text length limit is 2000).|
 |0.2.3|Reduced unnecessary calls by clarifying module imports and reduced flops using if statements. Fix in EmailNotifierIpython sending dict|
 |0.2.4|Fix in EmailNotifierIpython open ai sending dict|
+
 need Refactoring, QA.
 
 ## QA Note
 QA tests are carried out from Python 3.6 to Python 3.9 environments through Windows, MacBook m1, and Google Colab, focusing on Telegram, Discord, Slack, Line, and Chime applications. QA for the rest proceeds whenever there is a request or whenever I have time to spare, and replaces it with responding to bug reports. After the QA test is conducted, I plan to raise the development stage and recruit QA testers by promoting it.
 
-<br>
-
 ## Thanks To
 - Thanks to [Myunghak Lee](https://github.com/myeonghak) for providing great ideas on providing debugging information through OpenAI API.
-
-<br>
