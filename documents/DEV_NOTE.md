@@ -1,5 +1,6 @@
 # Developer Note
 This package was carried out in a very short time (within 7 days) from the idea to the pre-alpha version to documentation and simple QA testing by myself. Therefore, rather than sufficiently clean code, I tried to implement functions and create an initial interface. Therefore, I appreciate your contributions at any time.
+- Related blog post: https://dsdanielpark.github.io/package/2023-04-26-about_except_notifier.html
 
 ###### Since all API keys and URLs generated during the test phase are destroyed, all URLs and APIs in legacy code cannot be used.
 
