@@ -925,6 +925,26 @@ Everyone participating in the `ExceptNotifier` project, and in particular in the
 :mortar_board: Core maintainers: [Daniel Park, South Korea](https://github.com/DSDanielPark) <br>
 :envelope: Email: parkminwoo1991@gmail.com <br>
 - Developer note: [Link](./documents/DEV_NOTE.md)
+#### Dev Note
+1. Applying ExceptNotifier in Python
+
+    In Python, we use [sys.excepthook](https://docs.python.org/ko/3/library/sys.html#sys.excepthook) to call the exceptnotifier by taking advantage of the interpreter calling sys.excepthook with three arguments (exception class, exception instance, traceback object) when an exception occurs. Since sys.excepthook is the highest-level exception handler that occurs just before the system shuts down, exceptnotifier is implemented as a class that inherits from baseexception and overrides sys.excepthook. For overriding exceptions that cannot be raised or exceptions raised in threads, please refer to the sys.unraisablehook() function and the threading.excepthook() function, respectively.
+
+2. Application of ExceptNotifier in iPython
+
+    Strictly, iPython is a package, not a programming language like Python, but it has been classified to aid understanding.
+    IPython (Interactive Python) is a package consisting of a command shell for interactive computing for multiple programming languages.
+
+    It is a very useful package that allows you to compile Python bit by bit in an interactive session through the concept of an interactive shell, but in iPython, control by sys.excepthook occurs just before the prompt is returned, so it is impossible to receive a traceback object using sys.excepthook and send an error message to each messenger app. Additionally, because it was necessary to inherit from baseexception, it was necessary to override other functions in iPython.
+
+    Therefore, at first, we considered the [magics](https://ipython.readthedocs.io/en/stable/interactive/magics.html) in cell, but the problem of having to import the magic function every time in the cell can be cumbersome to use, so we decided to use the [set_custom_exc](https://ipython.readthedocs.io/en/stable/api/generated/IPython.core.interactiveshell.html) in iPython, which can work even by overriding it once. The set_custom_exc allows you to set a custom exception handler that is called when an exception in the exc_tuple occurs in the main loop (especially the run_code() method), and is designed so that the handle can return a structured traceback or None. Therefore, we can receive the traceback and send it to each messenger app. The order of top-level exception handling in iPython is different. You can use by `calling` raise in the `except` statement.
+
+3. Using Environment Variables (environ)
+    In Python's except statement, it was designed to inherit exceptionbase, so we thought about how to pass variables into the class and decided to set variables through os.environ to use them by distributing them as a package. Additionally, since the user's webhook URL or API key will not change, we named the variables in uppercase and set special names to prevent contamination from duplicate variables. Since the variables are used within the class, we added an underscore before the variable name.
+
+4. About example code
+
+    For explanation, in Python, the example uses the overrided `sys.excepthook` in the except statement, like `except ExceptTelegram as e:`. However, you can use it simply by overriding `sys.excepthook` once and calling `raise` in the `except` statement. In IPython, you can use `set_custom_exc` to override the `Exception` with a user-defined function once, and then call `raise` in the `except` statement to repeatedly take the desired ExceptNotifier action. Also, although the example uses` ExceptTelegram.__call__` or `SuccessTelegram().__call__()`, these are expressions to aid understanding, and you can change them to a more concise form if you prefer.
 
 #### Could you kindly add this badge to your repository?
 ```
