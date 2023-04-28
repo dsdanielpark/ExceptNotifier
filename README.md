@@ -13,19 +13,16 @@ Development Status :: 2 - Pre-Alpha <br>
 <a href="https://github.com/psf/black"><img alt="Code style: black" src="https://img.shields.io/badge/code%20style-black-000000.svg"></a>
 <a href="https://opensource.org/licenses/MIT"><img src="https://img.shields.io/github/license/dsdanielpark/ExceptNotifier?color=black"></a>
 
-
-
-
 </p>
 
 ![](./assets/imgs/main3.png)
 ##### Provides a notification from the application shown in the captured screen.
 
-# Python Package: ExceptNotifier
-[![Hits](https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fgithub.com%2Fdsdanielpark%2FExceptNotifier&count_bg=%2379C83D&title_bg=%23555555&icon=python.svg&icon_color=%23E7E7E7&title=ExceptNotifier&edge_flat=false)](https://hits.seeyoufarm.com) [](https://img.shields.io/badge/License-MIT-blue.svg)               
- The `ExceptNotifier` Python package offers a flexible approach to receiving notifications by enhancing Python's try-except statement. This package enables you to receive alerts through various messaging applications or emails.
+# Python Package: ExceptNotifier [![Hits](https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fgithub.com%2Fdsdanielpark%2FExceptNotifier&count_bg=%2379C83D&title_bg=%23555555&icon=python.svg&icon_color=%23E7E7E7&title=ExceptNotifier&edge_flat=false)](https://hits.seeyoufarm.com) [](https://img.shields.io/badge/License-MIT-blue.svg) 
+
+ The ExceptNotifier Python package offers a flexible approach to receiving notifications by enhancing Python's try-except statement. This package enables you to receive alerts through various messaging applications or emails.
 <Br><br>
-With `ExceptNotifier`, you can obtain detailed compilation errors, including debug information, sent directly to your preferred messaging platform or email. By integrating OpenAI's ChatGPT, you can receive additional error code information as long as you provide the required API model name and key. This feature ensures that error handling and notifications are more informative and accessible, streamlining your debugging process.
+With ExceptNotifier, you can obtain detailed compilation errors, including debug information, sent directly to your preferred messaging platform or email. By integrating OpenAI's ChatGPT, you can receive additional error code information as long as you provide the required API model name and key. This feature ensures that error handling and notifications are more informative and accessible, streamlining your debugging process.
 
 ![](./assets/imgs/core02.png)
 
@@ -52,12 +49,15 @@ Applicable to both [IPython](https://ipython.org/) and [Python](https://www.pyth
 
 <br>
 
-# Quick Start
-```bash
-$ pip install ExceptNotifier
+# Install
+The latest stable release (and required dependencies) can be installed from PyPI:
 ```
-```bash
-$ pip install exceptnotifier
+pip install ExceptNotifier
+```
+
+You may instead want to use the development version from Github:
+```
+pip install git+https://github.com/dsdanielpark/ExceptNotifier.git
 ```
 
 <br><br><br>
@@ -375,7 +375,8 @@ As all classes function the same, the example will only use one image, like in T
 - c. Give your bot a name & a username <br>
 - d. Copy your new Telegram bot’s token <br>
 - e. You have to click `Start_bot` and must enter anything to your bot.
-   - Before use Notifier, Please use this to check if you follow guide. The Telegram bot may have a slight delay and it responded within 2-3 minutes.
+   - Before use Notifier, Please use this to check if you follow guide. The Telegram bot may have a slight delay and it responded within 2-3 minutes. <br>
+ 
 *API TEST*
 ```python
 from ExceptNotifier import send_telegram_msg
@@ -537,6 +538,7 @@ SendMail().__call__()
 - b. Click `Edit Channel` in the upper right corner of the chat window.
 - c. Click `Integrations` - `Webhook` - `New Webhook`.
 - d. Then click `Copy Webhook`.
+ 
 *API TEST*
 ```python
 from ExceptNotifier import send_discord_msg
@@ -573,6 +575,7 @@ SendDiscord().__call__()        #3 customized sender
 - b. Click `Room Setting` in the upper right corner.
 - c. Click `Manage Webhook and bot`
 - d. Create Add Webhook, set it up, then click `Copy Webhook`.
+ 
 *API TEST*
 ```python
 from ExceptNotifier import send_chime_msg
@@ -608,6 +611,7 @@ SendChime().__call__()        #3 customized sender
 - b. `Create an app` - `From scratch` - `Create App`
 - c. Add webhook: Click `Incoming Webhooks` - Activate Incomming `On` - Add New Webhook to Workspace
 - d. Copy `Webhook URL`
+ 
 *API TEST*
 ```python
 from ExceptNotifier import send_slack_msg
@@ -802,7 +806,7 @@ SendKakao().__call__()        #3 customized sender
 
 
 ## *Wechat*
-a. Get Webhook URL by visiting [here](https://work.weixin.qq.com/api/doc/90000/90136/91770)
+a. Get Webhook URL by visiting [here](https://work.weixin.qq.com/api/doc/90000/90136/91770) <br>
 *API TEST*
 ```python
 from ExceptNotifier import send_wechat_msg
@@ -832,7 +836,7 @@ SendWechat().__call__()        #3 customized sender
 <Br>
 
 ## *Beep*
-No setup is required. Use as follows.
+No setup is required. Use as follows. <br>
 *TEST*
 ```python
 from ExceptNotifier import beep
@@ -862,7 +866,7 @@ beep()
 
 
 ## *Desktop*
-No setup is required. Use as follows.
+No setup is required. Use as follows. <br>
 *TEST*
 ```python
 from ExceptNotifier import send_desktop_msg
@@ -895,11 +899,21 @@ SendDesktop().__call__()        #3 customized sender
 
 
 <Br><br><br>
-# License
-MIT
+ 
+# Documentation [![Documentation Status](https://readthedocs.org/projects/exceptnotifier/badge/?version=latest)](https://exceptnotifier.readthedocs.io/en/latest/)
+ 
+Official Document: https://exceptnotifier.readthedocs.io/en/latest/ <br> 
+Documentation can be automatically generated by [Sphinx](https://www.sphinx-doc.org/en/master/usage/quickstart.html). But, I do not use [Google style](https://google.github.io/styleguide/pyguide.html#383-functions-and-methods) because it requires [the Napoleon extension](https://sphinxcontrib-napoleon.readthedocs.io/en/latest/example_google.html) for Sphinx. I will use [m2r](https://github.com/miyakogi/m2r) to convert the README.md file to .rst so that it can be included.
+
+Having generated it with Sphinx, we can also host the documentation freely at [ReadTheDocs.org](https://citation-graph.readthedocs.io/en/latest/). 
+ 
+# License 
+ExceptNotifier: MIT <br>
+Licenses apply the each [dependencies package](https://choosealicense.com/licenses/), and the created posts follow [CC BY-NC-SA](https://creativecommons.org/licenses/by-nc-sa/4.0/).
 
 # Bugs and Issues
-[Open a new issue](https://github.com/dsdanielpark/ExceptNotifier/issues)
+Sincerely grateful for any reports on new features or bugs. Your valuable feedback on the code is highly appreciated.
+[[Open a new issue]](https://github.com/dsdanielpark/ExceptNotifier/issues) 
  
 # Contributing Guide
 I will announce contributing rules when the code development status changes to beta soon. Until then, please create an issue for feature requests and bug reports. I would greatly appreciate it if you use it a lot and give your opinions generously. Thank you sincerely.
@@ -908,9 +922,29 @@ I will announce contributing rules when the code development status changes to b
 Everyone participating in the `ExceptNotifier` project, and in particular in the issue tracker, pull requests, and social media activity, is expected to treat other people with respect and more generally to follow the guidelines articulated in [the Python Community Code of Conduct](https://www.python.org/psf/conduct/).
 
 # Contacts
-Core maintainers: [Daniel Park, South Korea](https://github.com/DSDanielPark) <br>
-Email parkminwoo1991@gmail.com <br>
+:mortar_board: Core maintainers: [Daniel Park, South Korea](https://github.com/DSDanielPark) <br>
+:envelope: Email: parkminwoo1991@gmail.com <br>
 - Developer note: [Link](./documents/DEV_NOTE.md)
+#### Dev Note
+1. Applying ExceptNotifier in Python
+
+    In Python, we use [sys.excepthook](https://docs.python.org/ko/3/library/sys.html#sys.excepthook) to call the exceptnotifier by taking advantage of the interpreter calling sys.excepthook with three arguments (exception class, exception instance, traceback object) when an exception occurs. Since sys.excepthook is the highest-level exception handler that occurs just before the system shuts down, exceptnotifier is implemented as a class that inherits from baseexception and overrides sys.excepthook. For overriding exceptions that cannot be raised or exceptions raised in threads, please refer to the sys.unraisablehook() function and the threading.excepthook() function, respectively.
+
+2. Application of ExceptNotifier in iPython
+
+    Strictly, iPython is a package, not a programming language like Python, but it has been classified to aid understanding.
+    IPython (Interactive Python) is a package consisting of a command shell for interactive computing for multiple programming languages.
+
+    It is a very useful package that allows you to compile Python bit by bit in an interactive session through the concept of an interactive shell, but in iPython, control by sys.excepthook occurs just before the prompt is returned, so it is impossible to receive a traceback object using sys.excepthook and send an error message to each messenger app. Additionally, because it was necessary to inherit from baseexception, it was necessary to override other functions in iPython.
+
+    Therefore, at first, we considered the [magics](https://ipython.readthedocs.io/en/stable/interactive/magics.html) in cell, but the problem of having to import the magic function every time in the cell can be cumbersome to use, so we decided to use the [set_custom_exc](https://ipython.readthedocs.io/en/stable/api/generated/IPython.core.interactiveshell.html) in iPython, which can work even by overriding it once. The set_custom_exc allows you to set a custom exception handler that is called when an exception in the exc_tuple occurs in the main loop (especially the run_code() method), and is designed so that the handle can return a structured traceback or None. Therefore, we can receive the traceback and send it to each messenger app. The order of top-level exception handling in iPython is different. You can use by `calling` raise in the `except` statement.
+
+3. Using Environment Variables (environ)
+    In Python's except statement, it was designed to inherit exceptionbase, so we thought about how to pass variables into the class and decided to set variables through os.environ to use them by distributing them as a package. Additionally, since the user's webhook URL or API key will not change, we named the variables in uppercase and set special names to prevent contamination from duplicate variables. Since the variables are used within the class, we added an underscore before the variable name.
+
+4. About example code
+
+    For explanation, in Python, the example uses the overrided `sys.excepthook` in the except statement, like `except ExceptTelegram as e:`. However, you can use it simply by overriding `sys.excepthook` once and calling `raise` in the `except` statement. In IPython, you can use `set_custom_exc` to override the `Exception` with a user-defined function once, and then call `raise` in the `except` statement to repeatedly take the desired ExceptNotifier action. Also, although the example uses` ExceptTelegram.__call__` or `SuccessTelegram().__call__()`, these are expressions to aid understanding, and you can change them to a more concise form if you prefer.
 
 #### Could you kindly add this badge to your repository?
 ```
