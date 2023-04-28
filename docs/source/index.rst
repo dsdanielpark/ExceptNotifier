@@ -7,7 +7,6 @@ Welcome to Python Package ExceptNotifier official document!
 ======================================================
 
 .. image:: logo.png
-.. image:: support_apps.png
 .. toctree::
    :maxdepth: 4
    :caption: Contents:
