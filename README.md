@@ -389,7 +389,7 @@ send_telegram_msg(_TELEGRAM_TOKEN, 'msg')
 For more infomation, visit [Telegram Bot Father API](https://core.telegram.org/bots/api)
 <br><br>
  
-#### This is a Python (*.py) example. If you are using IPython, please click the Google Colab icon above to view the example code.
+##### This is a Python (*.py) example. If you are using IPython, please click the Google Colab icon above to view the example code.
  
 ### a. Notifier without OpenAI API
 *Notifier*
@@ -458,7 +458,7 @@ send_gmail_msg(
     body_msg)
 ```
  
-#### This is a Python (*.py) example. If you are using IPython, please click the Google Colab icon above to view the example code.
+##### This is a Python (*.py) example. If you are using IPython, please click the Google Colab icon above to view the example code.
  
 *Notifier*
 ```python
@@ -552,7 +552,7 @@ from ExceptNotifier import send_discord_msg
 send_discord_msg(_DISCORD_WEBHOOK_URL, "Any Test Message") 
 ```
  
-#### This is a Python (*.py) example. If you are using IPython, please click the Google Colab icon above to view the example code.
+##### This is a Python (*.py) example. If you are using IPython, please click the Google Colab icon above to view the example code.
  
 *Notifier*
 ```python
@@ -592,7 +592,7 @@ from ExceptNotifier import send_chime_msg
 send_chime_msg(_CHIME_WEBHOOK_URL, "Any Test Message")
 ```
  
-#### This is a Python (*.py) example. If you are using IPython, please click the Google Colab icon above to view the example code.
+##### This is a Python (*.py) example. If you are using IPython, please click the Google Colab icon above to view the example code.
  
 *Notifier*
 ```python
@@ -630,7 +630,7 @@ from ExceptNotifier import send_slack_msg
 send_slack_msg(_SLACK_WEBHOOK_URL, "Any Test Message")
 ```
  
-#### This is a Python (*.py) example. If you are using IPython, please click the Google Colab icon above to view the example code.
+##### This is a Python (*.py) example. If you are using IPython, please click the Google Colab icon above to view the example code.
  
  
 *Notifier*
@@ -667,7 +667,7 @@ from ExceptNotifier import send_line_msg
 
 send_line_msg(_LINE_NOTIFY_API_TOKEN:, "Any Test Message")
 ```
-#### This is a Python (*.py) example. If you are using IPython, please click the Google Colab icon above to view the example code.
+##### This is a Python (*.py) example. If you are using IPython, please click the Google Colab icon above to view the example code.
  
 *Notifier*
 ```python
@@ -716,7 +716,7 @@ send_sms_msg(
     "Any Test Message")
 ```
 
-#### This is a Python (*.py) example. If you are using IPython, please click the Google Colab icon above to view the example code.
+##### This is a Python (*.py) example. If you are using IPython, please click the Google Colab icon above to view the example code.
  
 *Notifier*
 ```python
@@ -761,7 +761,7 @@ _TEAMS_WEBHOOK_URL = 'xxxx'
 send_teams_msg(_TEAMS_WEBHOOK_URL, "Any Test Message")
 ```
  
-#### This is a Python (*.py) example. If you are using IPython, please click the Google Colab icon above to view the example code.
+##### This is a Python (*.py) example. If you are using IPython, please click the Google Colab icon above to view the example code.
 
 *Notifier*
 ```python
@@ -805,7 +805,7 @@ _KAKAO_TOKEN_PATH = 'xxx/xx/xxx.json'
 send_kakao_msg(_KAKAO_TOKEN_PATH, msg)
 ```
  
-#### This is a Python (*.py) example. If you are using IPython, please click the Google Colab icon above to view the example code. 
+##### This is a Python (*.py) example. If you are using IPython, please click the Google Colab icon above to view the example code. 
 
 *Notifier*
 ```python
@@ -837,7 +837,7 @@ from ExceptNotifier import send_wechat_msg
 send_wechat_msg(_WECHAT_WEBHOOK_URL, msg)
 ```
  
-*This is a Python (*.py) example. If you are using IPython, please click the Google Colab icon above to view the example code.*
+##### This is a Python (*.py) example. If you are using IPython, please click the Google Colab icon above to view the example code.
  
 *Notifier*
 ```python
