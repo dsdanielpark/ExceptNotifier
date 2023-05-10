@@ -13,7 +13,8 @@ sphinxcontrib-qthelp
 sphinxcontrib-serializinghtml
 docutils
 # Sphinx >= 3.0.0
+shpinx
 pylons-sphinx-themes
 sphinxcontrib-autoprogram
 IPython
-sphinx==1.4.8
+# sphinx==1.4.8
