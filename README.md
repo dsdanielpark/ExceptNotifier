@@ -378,6 +378,8 @@ As all classes function the same, the example will only use one image, like in T
    - Before use Notifier, Please use this to check if you follow guide. The Telegram bot may have a slight delay and it responded within 2-3 minutes. <br>
 
 
+![](./assets/imgs/telegram.gif)
+
 *API TEST*
 ```python
 from ExceptNotifier import send_telegram_msg
@@ -545,6 +547,8 @@ SendMail().__call__()
 - c. Click `Integrations` - `Webhook` - `New Webhook`.
 - d. Then click `Copy Webhook`.
  
+![](./assets/imgs/discord.gif)
+
 *API TEST*
 ```python
 from ExceptNotifier import send_discord_msg

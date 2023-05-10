@@ -1,6 +1,8 @@
 # ExceptTelegram
 [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/drive/1jwWGs7eCUJQvj_g7SEMqm3a4Kdrp9ZQP?usp=sharing) 
 
+![](.../assets/imgs/telegram.gif)
+
 ## Ready
 Go through the following process to prepare the `_TELEGRAM_TOKEN` variable.
 
