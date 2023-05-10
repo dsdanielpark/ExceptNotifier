@@ -1,3 +1,4 @@
+
 Development Status :: 3 - Alpha <br>
 *Copyright (c) 2023 MinWoo Park, South Korea*<br>
 
@@ -16,9 +17,9 @@ Development Status :: 3 - Alpha <br>
 </p>
 
 ![](./assets/imgs/main3.png)
-##### Provides a notification from the application shown in the captured screen.
+##### Provides a notification from the application shown in the captured screen. 
 
-# Python Package: ExceptNotifier [![Hits](https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fgithub.com%2Fdsdanielpark%2FExceptNotifier&count_bg=%2379C83D&title_bg=%23555555&icon=python.svg&icon_color=%23E7E7E7&title=ExceptNotifier&edge_flat=false)](https://hits.seeyoufarm.com) [](https://img.shields.io/badge/License-MIT-blue.svg) 
+# Python Package: ExceptNotifier [![Hits](https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fgithub.com%2Fdsdanielpark%2FExceptNotifier&count_bg=%2379C83D&title_bg=&icon=python.svg&icon_color=%23E7E7E7&title=ExceptNotifier&edge_flat=false)](https://hits.seeyoufarm.com) [](https://img.shields.io/badge/License-MIT-blue.svg) [![Documentation Status](https://readthedocs.org/projects/exceptnotifier/badge/?version=latest)](https://exceptnotifier.readthedocs.io/en/latest/)
 
  The ExceptNotifier Python package offers a flexible approach to receiving notifications by enhancing Python's try-except statement. This package enables you to receive alerts through various messaging applications or emails.
 <Br><br>
