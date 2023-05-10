@@ -1,6 +1,6 @@
 package:
   name: "exceptnotifier"
-  version: "0.1.13"
+  version: "0.2.4"
 
 source:
   git_url: https://github.com/dsdanielpark/ExceptNotifier
