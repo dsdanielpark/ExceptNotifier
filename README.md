@@ -13,7 +13,6 @@ Development Status :: 3 - Alpha <br>
 <a href="https://github.com/psf/black"><img alt="Code style: black" src="https://img.shields.io/badge/code%20style-black-000000.svg"></a>
 <a href="https://opensource.org/licenses/MIT"><img src="https://img.shields.io/github/license/dsdanielpark/ExceptNotifier?color=black"></a>
 <a href="https://www.buymeacoffee.com/parkminwoo"><img src="https://www.buymeacoffee.com/assets/img/custom_images/orange_img.png" height="20px"></a>
-<a href="https://toss.me/dsdaniel"><img src="https://img.shields.io/badge/korea-toss_donation-blue"></a>
 </p>
 
 ![](./assets/imgs/main3.png)
