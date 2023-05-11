@@ -89,6 +89,7 @@ In upcoming updates, I aim to enhance the pylint score, eliminate superfluous in
 |0.2.2|Discord api text length limit 1900 (actual text length limit is 2000).|
 |0.2.3|Reduced unnecessary calls by clarifying module imports and reduced flops using if statements. Fix in EmailNotifierIpython sending dict|
 |0.2.4|Fix in EmailNotifierIpython open ai sending dict|
+|0.2.5|I have removed printed unnecessary error messages caused by the absence of an API key. By including the bardapi package, I have organized it so that all packages can receive hints about code errors from Google BARD. Additional QA has not been conducted for the bardapi package. Furthermore, as unexpected features are added, it may be necessary to plan refactoring work. I am currently unable to do so due to time constraints, but I will work on refactoring and code efficiency improvements as soon as I can.|
 
 need Refactoring, QA.
 
