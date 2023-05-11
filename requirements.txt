@@ -17,6 +17,7 @@ pylons-sphinx-themes
 sphinxcontrib-autoprogram
 IPython
 dbus-python
+bardapi
 # sphinx==1.4.8
 # Sphinx >= 3.0.0
 # twilio==8.0.0
