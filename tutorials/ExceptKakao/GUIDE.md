@@ -1,5 +1,7 @@
 # ExceptKakao
 
+[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/drive/1E5Q-lnWStG1MqtnGCr5pzInlfWt2uc2S?usp=sharing)
+
 ## Ready
 
 ## *Kakaotalk*
@@ -23,6 +25,9 @@ _KAKAO_TOKEN_PATH = 'xxx/xx/xxx.json'
 
 send_kakao_msg(_KAKAO_TOKEN_PATH, msg)
 ```
+
+## In Python
+
 *Notifier*
 ```python
 import sys
@@ -43,3 +48,6 @@ except ExceptKakao as e:      #2 except sender
 SendKakao().__call__()        #3 customized sender         
 ```
 
+## In Ipython
+
+[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/drive/1E5Q-lnWStG1MqtnGCr5pzInlfWt2uc2S?usp=sharing)
