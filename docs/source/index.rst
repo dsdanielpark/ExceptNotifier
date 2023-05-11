@@ -4,7 +4,7 @@
    contain the root `toctree` directive.
 
 Welcome to Python Package ExceptNotifier official document!
-======================================================
+================================================================
 
 .. image:: logo.png
 .. toctree::
