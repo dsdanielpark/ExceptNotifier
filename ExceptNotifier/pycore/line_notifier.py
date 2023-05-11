@@ -8,7 +8,7 @@ from os import environ
 from email.message import EmailMessage
 from ExceptNotifier.base.line_sender import send_line_msg
 from ExceptNotifier.base.openai_receiver import receive_openai_advice
-
+from ExceptNotifier.base.bard_receiver import receive_bard_advice
 
 DATE_FORMAT = "%Y-%m-%d %H:%M:%S"
 
@@ -84,6 +84,22 @@ class ExceptLine(BaseException):
                 )
                 advice_msg += receive_openai_advice(
                     environ["_OPEN_AI_MODEL"], environ["_OPEN_AI_API"], error_message
+                )  # NO-QA
+                send_line_msg(environ["_LINE_NOTIFY_API_TOKEN"], advice_msg)
+            except Exception as e:
+                pass
+
+        if environ.get('_BARD_API_KEY') is not None:
+            try:
+                error_message = f"error_type=={excType} error_type_document=={etype.__doc__} error_value=={value} stack infomation=={stack} code name=={frame.f_code.co_name}file name=={frame.f_code.co_filename} file_number=={frame.f_lineno}"
+                advice_msg = '\tFile: "%s"\n\t\t%s %s: %s\n' % (
+                    line[0],
+                    line[2],
+                    line[1],
+                    line[3],
+                )
+                advice_msg += receive_bard_advice(
+                    environ["_BARD_API_KEY"], error_message
                 )  # NO-QA
                 send_line_msg(environ["_LINE_NOTIFY_API_TOKEN"], advice_msg)
             except Exception as e:

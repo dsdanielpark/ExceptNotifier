@@ -5,7 +5,7 @@ from os import environ
 from IPython.core.ultratb import AutoFormattedTB
 from ExceptNotifier.base.telegram_sender import send_telegram_msg
 from ExceptNotifier.base.openai_receiver import receive_openai_advice
-
+from ExceptNotifier.base.bard_receiver import receive_bard_advice
 
 DATE_FORMAT = "%Y-%m-%d %H:%M:%S"
 
@@ -45,5 +45,16 @@ def ExceptTelegramIpython(
             send_telegram_msg(environ["_TELEGRAM_TOKEN"], advice_msg)
 
         except Exception as e:
-            # print(e)
             pass
+
+    if environ.get('_BARD_API_KEY') is not None:
+        try:
+            error_message = f"error sheel=={shell}, error_type_document=={etype.__doc__}, error_value=={evalue}, error message in ipython cell=={sstb}"
+            advice_msg = receive_bard_advice(
+                environ["_BARD_API_KEY"], error_message
+            )
+            send_telegram_msg(environ["_TELEGRAM_TOKEN"], advice_msg)
+
+        except Exception as e:
+            pass
+

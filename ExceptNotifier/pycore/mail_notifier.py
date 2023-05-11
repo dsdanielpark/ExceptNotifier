@@ -3,11 +3,12 @@
 import re
 import os
 import smtplib
+from os import environ
 import datetime
 import traceback
 from email.message import EmailMessage
 from ExceptNotifier.base.openai_receiver import receive_openai_advice
-
+from ExceptNotifier.base.bard_receiver import receive_bard_advice
 
 DATE_FORMAT = "%Y-%m-%d %H:%M:%S"
 
@@ -32,8 +33,8 @@ class ExceptMail(BaseException):
             "(<(type|class ')|'exceptions.|'>|__main__.)", "", str(etype)
         ).strip()
         exceptNotifier = {
-            "TO": os.environ["_GAMIL_RECIPIENT_ADDR"],
-            "FROM": os.environ["_GMAIL_SENDER_ADDR"],
+            "TO": environ["_GAMIL_RECIPIENT_ADDR"],
+            "FROM": environ["_GMAIL_SENDER_ADDR"],
             "SUBJECT": "[Except Notifier] Error! Python Code Exception Detected",
             "BODY": f"IMPORTANT WARNING: \nPython Exception Detected in Your Code. \n\nHi there, \nThis is an exception catch notifier.\n\n{excType}: %{etype.__doc__}\n\n {value} \n\n",
         }
@@ -81,35 +82,60 @@ class ExceptMail(BaseException):
         )
         smtp = smtplib.SMTP_SSL(SMTP_SERVER, 465)
         smtp.login(
-            os.environ["_GMAIL_SENDER_ADDR"],
-            os.environ["_GMAIL_APP_PASSWORD_OF_SENDER"],
+            environ["_GMAIL_SENDER_ADDR"],
+            environ["_GMAIL_APP_PASSWORD_OF_SENDER"],
         )
         smtp.sendmail(
             exceptNotifier["FROM"], exceptNotifier["TO"], exceptNotifier["ALL"]
         )
 
-        try:
-            error_message = f"error_type=={excType} error_type_document=={etype.__doc__} error_value=={value} stack infomation=={stack} code name=={frame.f_code.co_name}file name=={frame.f_code.co_filename} file_number=={frame.f_lineno}"
-            advice_msg = '\tFile: "%s"\n\t\t%s %s: %s\n' % (
-                line[0],
-                line[2],
-                line[1],
-                line[3],
-            )
-            advice_msg += receive_openai_advice(
-                os.environ["_OPEN_AI_MODEL"], os.environ["_OPEN_AI_API"], error_message,
-            )  # NO-QA
-            exceptNotifier = {
-                "TO": os.environ["_GAMIL_RECIPIENT_ADDR"],
-                "FROM": os.environ["_GMAIL_SENDER_ADDR"],
-                "SUBJECT": "[Except AI Debugging] Error! chatGPT Debugging guide.",
-                "BODY": f"IMPORTANT WARNING: \nPython Exception Detected in Your Code. \n\nHi there, \nThis is advice from OpenAI ChatGPT \n\n {advice_msg}",
-            }
-            smtp.sendmail(
-                exceptNotifier["FROM"], exceptNotifier["TO"], exceptNotifier["ALL"]
-            )
-        except Exception as e:
-            pass
+        if environ['_OPEN_AI_MODEL'] is not None:
+            try:
+                error_message = f"error_type=={excType} error_type_document=={etype.__doc__} error_value=={value} stack infomation=={stack} code name=={frame.f_code.co_name}file name=={frame.f_code.co_filename} file_number=={frame.f_lineno}"
+                advice_msg = '\tFile: "%s"\n\t\t%s %s: %s\n' % (
+                    line[0],
+                    line[2],
+                    line[1],
+                    line[3],
+                )
+                advice_msg += receive_openai_advice(
+                    environ["_OPEN_AI_MODEL"], environ["_OPEN_AI_API"], error_message,
+                )  # NO-QA
+                exceptNotifier = {
+                    "TO": environ["_GAMIL_RECIPIENT_ADDR"],
+                    "FROM": environ["_GMAIL_SENDER_ADDR"],
+                    "SUBJECT": "[Except AI Debugging] Error! chatGPT Debugging guide.",
+                    "BODY": f"IMPORTANT WARNING: \nPython Exception Detected in Your Code. \n\nHi there, \nThis is advice from OpenAI ChatGPT \n\n {advice_msg}",
+                }
+                smtp.sendmail(
+                    exceptNotifier["FROM"], exceptNotifier["TO"], exceptNotifier["ALL"]
+                )
+            except Exception as e:
+                pass
+
+        if environ['_BARD_API_KEY'] is not None:
+            try:
+                error_message = f"error_type=={excType} error_type_document=={etype.__doc__} error_value=={value} stack infomation=={stack} code name=={frame.f_code.co_name}file name=={frame.f_code.co_filename} file_number=={frame.f_lineno}"
+                advice_msg = '\tFile: "%s"\n\t\t%s %s: %s\n' % (
+                    line[0],
+                    line[2],
+                    line[1],
+                    line[3],
+                )
+                advice_msg += receive_bard_advice(
+                    environ["_BARD_API_KEY"], error_message,
+                )  # NO-QA
+                exceptNotifier = {
+                    "TO": environ["_GAMIL_RECIPIENT_ADDR"],
+                    "FROM": environ["_GMAIL_SENDER_ADDR"],
+                    "SUBJECT": "[Except AI Debugging] Error! chatGPT Debugging guide.",
+                    "BODY": f"IMPORTANT WARNING: \nPython Exception Detected in Your Code. \n\nHi there, \nThis is advice from OpenAI ChatGPT \n\n {advice_msg}",
+                }
+                smtp.sendmail(
+                    exceptNotifier["FROM"], exceptNotifier["TO"], exceptNotifier["ALL"]
+                )
+            except Exception as e:
+                pass
 
         smtp.quit()
 
@@ -166,8 +192,8 @@ class SuccessMail:
         SMTP_PORT = 465
         smtp = smtplib.SMTP_SSL(SMTP_SERVER, SMTP_PORT)
         smtp.login(
-            os.environ["_GMAIL_SENDER_ADDR"],
-            os.environ["_GMAIL_APP_PASSWORD_OF_SENDER"],
+            environ["_GMAIL_SENDER_ADDR"],
+            environ["_GMAIL_APP_PASSWORD_OF_SENDER"],
         )
         message = EmailMessage()
         start_time = datetime.datetime.now()
@@ -179,8 +205,8 @@ class SuccessMail:
         message[
             "Subject"
         ] = "[Success Notifier] Success! Python Code Executed Successfully"
-        message["From"] = os.environ["_GMAIL_SENDER_ADDR"]
-        message["To"] = os.environ["_GAMIL_RECIPIENT_ADDR"]
+        message["From"] = environ["_GMAIL_SENDER_ADDR"]
+        message["To"] = environ["_GAMIL_RECIPIENT_ADDR"]
 
         smtp.send_message(message)
         smtp.quit()
@@ -198,8 +224,8 @@ class SendMail:
         SMTP_PORT = 465
         smtp = smtplib.SMTP_SSL(SMTP_SERVER, SMTP_PORT)
         smtp.login(
-            os.environ["_GMAIL_SENDER_ADDR"],
-            os.environ["_GMAIL_APP_PASSWORD_OF_SENDER"],
+            environ["_GMAIL_SENDER_ADDR"],
+            environ["_GMAIL_APP_PASSWORD_OF_SENDER"],
         )
         message = EmailMessage()
         start_time = datetime.datetime.now()
@@ -211,16 +237,16 @@ class SendMail:
         message[
             "Subject"
         ] = "[Codeline Notifier] Notice! Code Execution Reached Specified Line"
-        message["From"] = os.environ["_GMAIL_SENDER_ADDR"]
-        message["To"] = os.environ["_GAMIL_RECIPIENT_ADDR"]
+        message["From"] = environ["_GMAIL_SENDER_ADDR"]
+        message["To"] = environ["_GAMIL_RECIPIENT_ADDR"]
         smtp.send_message(message)
         smtp.quit()
 
 
 # if __name__ == "__main__":
 #     # Set global variables
-# #     os.environ['_OPEN_AI_API'] = "xxxxxxxxxxxxx"  #optional
-# #     os.environ['_OPEN_AI_MODEL'] = "gpt-3.5-turbo" #optional
+# #     environ['_OPEN_AI_API'] = "xxxxxxxxxxxxx"  #optional
+# #     environ['_OPEN_AI_MODEL'] = "gpt-3.5-turbo" #optional
 #     global _GAMIL_RECIPIENT_ADDR, _GMAIL_SENDER_ADDR, _GMAIL_APP_PASSWORD_OF_SENDER
 #     _GAMIL_RECIPIENT_ADDR = "xxx@gmail.com"
 #     _GMAIL_SENDER_ADDR = "xxxx@gmail.com"

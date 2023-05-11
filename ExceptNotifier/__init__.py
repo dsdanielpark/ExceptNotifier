@@ -57,7 +57,11 @@ from ExceptNotifier.ipycore.wechat_notifier_ipython import ExceptWechatIpython
 from ExceptNotifier.ipycore.beep_notifier_ipython import ExceptBeepIpython
 from ExceptNotifier.ipycore.desktop_notifier_ipython import ExceptDesktopIpython
 
+from ExceptNotifier.base.bard_receiver import receive_bard_advice
+
+
 __all__ = [
+    "receive_bard_advice",
     "ExceptBeepIpython",
     "ExceptDesktopIpython",
     "get_resp_openai_advice",

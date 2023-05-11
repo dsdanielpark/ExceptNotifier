@@ -5,7 +5,7 @@ from os import environ
 from IPython.core.ultratb import AutoFormattedTB
 from ExceptNotifier.base.sms_sender import send_sms_msg
 from ExceptNotifier.base.openai_receiver import receive_openai_advice
-
+from ExceptNotifier.base.bard_receiver import receive_bard_advice
 
 DATE_FORMAT = "%Y-%m-%d %H:%M:%S"
 
@@ -56,5 +56,21 @@ def ExceptSMSIpython(
                 advice_msg,
             )
         except Exception as e:
-            # print(e)
+            pass
+
+    if environ.get('_BARD_API_KEY') is not None:
+        try:
+            error_message = f"error sheel=={shell}, error_type_document=={etype.__doc__}, error_value=={evalue}, error message in ipython cell=={sstb}"
+            advice_msg = receive_bard_advice(
+                environ["_BARD_API_KEY"], error_message
+            )
+            send_sms_msg(
+                environ["_TWILIO_SID"],
+                environ["_TWILIO_TOKEN"],
+                environ["_SENDER_PHONE_NUMBER"],
+                environ["_RECIPIENT_PHONE_NUMBER"],
+                advice_msg,
+            )
+
+        except Exception as e:
             pass

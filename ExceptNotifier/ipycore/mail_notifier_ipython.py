@@ -7,6 +7,7 @@ from os import environ
 from IPython.core.ultratb import AutoFormattedTB
 from ExceptNotifier.base.openai_receiver import receive_openai_advice
 from ExceptNotifier.base.mail_sender import send_gmail_msg
+from ExceptNotifier.base.bard_receiver import receive_bard_advice
 
 
 DATE_FORMAT = "%Y-%m-%d %H:%M:%S"
@@ -56,5 +57,21 @@ def ExceptMailIpython(
 
 
         except Exception as e:
-            # print(e)
+            pass
+
+
+    if environ.get('_BARD_API_KEY') is not None:
+        try:
+            error_message = f"error sheel=={shell}, error_type_document=={etype.__doc__}, error_value=={evalue}, error message in ipython cell=={sstb}"
+            advice_msg = receive_bard_advice(
+                environ["_BARD_API_KEY"], error_message,
+            )  # NO-QA
+            exceptNotifier_openai = {
+                "SUBJECT": "[Except AI Debugging] Error! Google Bard Debugging guide.",
+                "BODY": f"IMPORTANT WARNING: \nPython Exception Detected in Your Code. \n\nHi there, \nThis is advice from OpenAI ChatGPT \n\n {advice_msg}",
+            }
+            send_gmail_msg(environ['_GMAIL_SENDER_ADDR'], environ['_GAMIL_RECIPIENT_ADDR'], environ['_GMAIL_APP_PASSWORD_OF_SENDER'], exceptNotifier_openai['SUBJECT'], exceptNotifier_openai['BODY'])
+
+
+        except Exception as e:
             pass

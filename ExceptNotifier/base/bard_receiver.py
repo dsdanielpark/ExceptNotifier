@@ -22,9 +22,9 @@ def receive_bard_advice(
     return advice_msg
 
 
-if __name__ == "__main__":
-    _BARD_API_KEY = "xxxxxxxxxxxxxx."
-    error_message = " Cell 3 in ()----> 1 1/0 ZeroDivisionError: division by zero"
-    advice_msg = receive_bard_advice(_BARD_API_KEY, error_message)
+# if __name__ == "__main__":
+#     _BARD_API_KEY = "xxxxxxxxxxxxxx."
+#     error_message = " Cell 3 in ()----> 1 1/0 ZeroDivisionError: division by zero"
+#     advice_msg = receive_bard_advice(_BARD_API_KEY, error_message)
 
-    print(advice_msg)
+#     print(advice_msg)
