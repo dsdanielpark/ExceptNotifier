@@ -46,8 +46,9 @@ Applicable to both [IPython](https://ipython.org/) and [Python](https://www.pyth
 - Beep Sound from [system](https://docs.python.org/3/library/winsound.html)
 - [Opea AI API](https://openai.com/blog/openai-api)
         - If you have OpenAI API Key and model name, you can get information and code examples for debugging in any application.
-
-
+- [Google Bard](https://bard.google.com/) Python package [BardAPI](https://github.com/dsdanielpark/BARD_API)
+        - Starting from Exceptnotifier version 0.2.5
+        - Using the Python package [Bard API](https://github.com/dsdanielpark/BARD_API), if you declare the __Secure-1PSID value as a global variable , you can receive debugging hints and explanations about errors in your code through Google Bard.
 <br>
 
 # Install
