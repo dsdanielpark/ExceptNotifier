@@ -47,6 +47,9 @@ I tried to keep the same structure for both Python and Ipython, but I noticed th
 ## Naming in IPython Functions
 The ExceptNotifier functions in IPython follow the class naming conventions. This is done to override custom exceptions in IPython and minimize confusion for users. Therefore, unlike Python, it doesn't matter what goes into the except clause, but it's important to remember that the except statement must always contain a raise.
 
+## About whether the next shell can be executed after sending an except message in ipython with exceptnotifier
+In conclusion, it can't work like that. As mentioned several times above, the order of error handling in Ipython is very different. Therefore, it can be quite difficult to create a new structure by inheriting BaseException because the interfaces enforced by Ipython and Python are different. Therefore, it is currently recommended to use only one shell as a try-except statement.
+
 ## Doc string style
 Applies to the original Sphinx documentation without using the Google Python Style Guide. This is a measure for automatic documentation generation, and was taken because the structure of the package is simple.
 
