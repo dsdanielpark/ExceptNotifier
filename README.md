@@ -136,6 +136,9 @@ If you add the following two variables to the required variables for each applic
 | API | Required Variables | Free or Paid | Ease of Setup | Time Required for Setup|Guide Tutorial Link|
 |:--:|:--|:--:|:--:|:--:|:---:|
 | OpenAI API |`Required variables for each application`+ `_OPEN_AI_MODEL`,`_OPEN_AI_API`|Not free|Easy|2min|[APIOpenAI](./documents/APIOpenAI/GUIDE.md)|
+| Google Bard API |`Required variables for each application`+ `_BARD_API_KEY`,|Free|Easy|1min|[Google Bard](https://bard.google.com/)|
+
+- Starting from v0.2.5, you can receive debugging hints and examples through Google Bard using the same syntax as the OpenAI API. However, due to time constraints, examples will only be added for Telegram and Discord.
 
 <br>
 
