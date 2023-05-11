@@ -23,7 +23,7 @@ def receive_bard_advice(
 
 
 if __name__ == "__main__":
-    _BARD_API_KEY = "VwhVqhvFpnOm_sSsLszdru_DWm8otZBt3hPR9fud2BePGTk2jQmGmfcbKb_vyr3IjJFKEA."
+    _BARD_API_KEY = "xxxxxxxxxxxxxx."
     error_message = " Cell 3 in ()----> 1 1/0 ZeroDivisionError: division by zero"
     advice_msg = receive_bard_advice(_BARD_API_KEY, error_message)
 
