@@ -46,5 +46,5 @@ def ExceptTeamsIpython(
             send_teams_msg(environ["_TEAMS_WEBHOOK_URL"], advice_msg)
 
         except Exception as e:
-            print(e)
+            # print(e)
             pass

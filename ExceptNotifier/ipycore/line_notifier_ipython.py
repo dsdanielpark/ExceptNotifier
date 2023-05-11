@@ -45,5 +45,5 @@ def ExceptLineIpython(
             send_line_msg(environ["_LINE_NOTIFY_API_TOKEN"], advice_msg)
 
         except Exception as e:
-            print(e)
+            # print(e)
             pass

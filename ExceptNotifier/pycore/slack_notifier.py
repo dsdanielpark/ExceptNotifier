@@ -86,7 +86,7 @@ class ExceptSlack(BaseException):
                 )  # NO-QA
                 send_slack_msg(environ["_SLACK_WEBHOOK_URL"], advice_msg)
             except Exception as e:
-                print(e)
+                # print(e)
                 pass
 
     @staticmethod

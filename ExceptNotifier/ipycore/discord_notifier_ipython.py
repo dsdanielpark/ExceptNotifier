@@ -45,5 +45,5 @@ def ExceptDiscordIpython(
             send_discord_msg(environ["_DISCORD_WEBHOOK_URL"], advice_msg)
 
         except Exception as e:
-            print(e)
+            # print(e)
             pass

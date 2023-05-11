@@ -45,5 +45,5 @@ def ExceptKakaoIpython(
             send_kakao_msg(environ["_KAKAO_TOKEN_PATH"], advice_msg)
 
         except Exception as e:
-            print(e)
+            # print(e)
             pass

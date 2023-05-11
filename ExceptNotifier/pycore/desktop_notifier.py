@@ -90,7 +90,7 @@ class ExceptDesktop(BaseException):
                     title="chatGPT: How to Debug your code.", message=advice_msg
                 )
             except Exception as e:
-                print(e)
+                # print(e)
                 pass
 
     @staticmethod

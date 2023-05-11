@@ -45,5 +45,5 @@ def ExceptTelegramIpython(
             send_telegram_msg(environ["_TELEGRAM_TOKEN"], advice_msg)
 
         except Exception as e:
-            print(e)
+            # print(e)
             pass

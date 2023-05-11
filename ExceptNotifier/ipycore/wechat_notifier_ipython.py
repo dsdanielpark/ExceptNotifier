@@ -45,5 +45,5 @@ def ExceptWechatIpython(
         send_wechat_msg(environ["_WECHAT_WEBHOOK_URL"], advice_msg)
 
     except Exception as e:
-        print(e)
+        # print(e)
         pass

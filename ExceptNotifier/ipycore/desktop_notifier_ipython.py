@@ -48,5 +48,5 @@ def ExceptDesktopIpython(
             send_desktop_msg(environ["_CHIME_WEBHOOK_URL"], advice_msg)
 
         except Exception as e:
-            print(e)
+            # print(e)
             pass
