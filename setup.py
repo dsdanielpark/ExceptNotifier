@@ -40,7 +40,7 @@ setup(
         "openai",
         "discord",
         "sphinx-rtd-theme",
-        "Sphinx",
+        "Sphinx", "bardapi"
     ],
     keywords="Exception, Python, Python Exception Alarm, Error notifications, Customizable notifications, Traceback management, Single line alarm",
     classifiers=[
