@@ -471,7 +471,7 @@ SendTelegram().__call__()        #3. customized sender
 
 
 ### c. Notifier with Google Bard API
-- Just set `_BARD_API_KEY`. If you would like to receive guidance in Korean, you can optionally set the following. Set `_BARD_ADVICE_LANG` as `kor`
+- Just set `_BARD_API_KEY`. If you would like to receive guidance in Korean, you can optionally set the following. Set `_BARD_ADVICE_LANG` as `ko` or `jp`.
 *Notifier*
 ```python
 from ExceptNotifier import ExceptTelegram, SuccessTelegram, SendTelegram
