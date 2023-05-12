@@ -91,6 +91,7 @@ In upcoming updates, I aim to enhance the pylint score, eliminate superfluous in
 |0.2.4|Fix in EmailNotifierIpython open ai sending dict|
 |0.2.5| I have removed printed unnecessary error messages caused by the absence of an API key. By including the bardapi package, I have organized it so that all packages can receive hints about code errors from Google BARD. Additional QA has not been conducted for the bardapi package. Furthermore, as unexpected features are added, it may be necessary to plan refactoring work. I am currently unable to do so due to time constraints, but I will work on refactoring and code efficiency improvements as soon as I can. ExceptNotifier Github address in the message is previewed in some applications and readability is poor, so `http://` in front of the official github address has been removed.|
 |0.2.6| Google Bard officially supports Korean, so you can set the language of Bard Advice to Korean. Additionally, if `_BARD_ADVICE_LANG` is set to korean, debugging hints for code in Korean are provided. Also you can use 'japanese'|
+|0.2.7| Fix bard advice function. you can customize your prompt by setting `_PROMPT_COMMAND` |
 
 need Refactoring, QA.
 
