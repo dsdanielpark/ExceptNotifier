@@ -50,7 +50,7 @@ author = "MinWoo Park"
 exclude_patterns = ["_build", "**tests**", "**spi**"]
 
 # The full version, including alpha/beta/rc tags
-release = "0.2.8"
+release = "0.2.9"
 
 
 # -- General configuration ---------------------------------------------------

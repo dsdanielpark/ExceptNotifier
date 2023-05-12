@@ -93,6 +93,7 @@ In upcoming updates, I aim to enhance the pylint score, eliminate superfluous in
 |0.2.6| Google Bard officially supports Korean, so you can set the language of Bard Advice to Korean. Additionally, if `_BARD_ADVICE_LANG` is set to korean, debugging hints for code in Korean are provided. Also you can use 'japanese'|
 |0.2.7| Fix bard advice function. you can customize your prompt by setting `_PROMPT_COMMAND` |
 |0.2.8| Update equirement pacakge `bardapi` |
+|0.2.9| Fix without `_BARD_ADVICE_LANG` |
 
 need Refactoring, QA.
 
