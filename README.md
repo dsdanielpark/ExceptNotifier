@@ -300,6 +300,9 @@ send_telegram_msg(_TELEGRAM_TOKEN, "Any Test Message")
 
 
 # IPython Core
+
+> IMPORTANT:: In the case of IPython, the example is marked as except, but in fact, if you set it to set_custom_exc only once, a message will be sent even if an exception occurs in any cell from then on, even if it is not a try-except statement. Please refer to the following [article](https://dsdanielpark.github.io/package/2023-04-25-About_except_notifier.html).
+
 You can use all the same except for the python code and `ExceptNotifier` mentioned above. In other words, the `SuccesNotifier`, `SendNotifier`, and `Sender` functions can all be used same in IPython without any special processing. Only `ExceptNotifier` is need to be defined.
 - Example in Telegram [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/drive/1jwWGs7eCUJQvj_g7SEMqm3a4Kdrp9ZQP?usp=sharing) 
 
