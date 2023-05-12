@@ -82,14 +82,13 @@ class ExceptMail(BaseException):
         )
         smtp = smtplib.SMTP_SSL(SMTP_SERVER, 465)
         smtp.login(
-            environ["_GMAIL_SENDER_ADDR"],
-            environ["_GMAIL_APP_PASSWORD_OF_SENDER"],
+            environ["_GMAIL_SENDER_ADDR"], environ["_GMAIL_APP_PASSWORD_OF_SENDER"],
         )
         smtp.sendmail(
             exceptNotifier["FROM"], exceptNotifier["TO"], exceptNotifier["ALL"]
         )
 
-        if environ['_OPEN_AI_MODEL'] is not None:
+        if environ["_OPEN_AI_MODEL"] is not None:
             try:
                 error_message = f"error_type=={excType} error_type_document=={etype.__doc__} error_value=={value} stack infomation=={stack} code name=={frame.f_code.co_name}file name=={frame.f_code.co_filename} file_number=={frame.f_lineno}"
                 advice_msg = '\tFile: "%s"\n\t\t%s %s: %s\n' % (
@@ -113,7 +112,7 @@ class ExceptMail(BaseException):
             except Exception as e:
                 pass
 
-        if environ['_BARD_API_KEY'] is not None:
+        if environ["_BARD_API_KEY"] is not None:
             try:
                 error_message = f"error_type=={excType} error_type_document=={etype.__doc__} error_value=={value} stack infomation=={stack} code name=={frame.f_code.co_name}file name=={frame.f_code.co_filename} file_number=={frame.f_lineno}"
                 advice_msg = '\tFile: "%s"\n\t\t%s %s: %s\n' % (
@@ -192,8 +191,7 @@ class SuccessMail:
         SMTP_PORT = 465
         smtp = smtplib.SMTP_SSL(SMTP_SERVER, SMTP_PORT)
         smtp.login(
-            environ["_GMAIL_SENDER_ADDR"],
-            environ["_GMAIL_APP_PASSWORD_OF_SENDER"],
+            environ["_GMAIL_SENDER_ADDR"], environ["_GMAIL_APP_PASSWORD_OF_SENDER"],
         )
         message = EmailMessage()
         start_time = datetime.datetime.now()
@@ -224,8 +222,7 @@ class SendMail:
         SMTP_PORT = 465
         smtp = smtplib.SMTP_SSL(SMTP_SERVER, SMTP_PORT)
         smtp.login(
-            environ["_GMAIL_SENDER_ADDR"],
-            environ["_GMAIL_APP_PASSWORD_OF_SENDER"],
+            environ["_GMAIL_SENDER_ADDR"], environ["_GMAIL_APP_PASSWORD_OF_SENDER"],
         )
         message = EmailMessage()
         start_time = datetime.datetime.now()

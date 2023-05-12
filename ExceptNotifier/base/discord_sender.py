@@ -14,12 +14,14 @@ def send_discord_msg(_DISCORD_WEBHOOK_URL: str, msg: str) -> dict:
     """
     try:
         from discord import Webhook, RequestsWebhookAdapter
+
         webhook = Webhook.from_url(
             _DISCORD_WEBHOOK_URL, adapter=RequestsWebhookAdapter()
         )
         resp = webhook.send(msg)
     except:
         from discord import SyncWebhook
+
         webhook = SyncWebhook.from_url(_DISCORD_WEBHOOK_URL)  # Initializing webhook
         resp = webhook.send(content=msg[:1900])
     return resp

@@ -21,7 +21,7 @@ class ExceptBeep(BaseException):
         super().__init__(*args)
 
     def __call__(etype, value, tb):
-        if environ.get('BEEP_TIME') is not None:
+        if environ.get("BEEP_TIME") is not None:
             beep(environ["BEEP_TIME"])
             beep(environ["BEEP_TIME"])
             beep(environ["BEEP_TIME"])
@@ -58,12 +58,13 @@ class SuccessBeep:
         pass
 
     def __call__(self, *args, **kwds) -> None:
-        if environ.get('BEEP_TIME') is not None:
+        if environ.get("BEEP_TIME") is not None:
             beep(environ["BEEP_TIME"])
             beep(environ["BEEP_TIME"])
         else:
             beep()
             beep()
+
 
 class SendBeep:
     """Send beep
@@ -73,7 +74,7 @@ class SendBeep:
         pass
 
     def __call__(self, *args, **kwds) -> None:
-        if environ.get('BEEP_TIME') is not None:
+        if environ.get("BEEP_TIME") is not None:
             beep(environ["BEEP_TIME"])
         else:
             beep()

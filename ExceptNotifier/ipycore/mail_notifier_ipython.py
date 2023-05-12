@@ -41,9 +41,15 @@ def ExceptMailIpython(
         "SUBJECT": "[Except Notifier] Error! Python Code Exception Detected.",
         "BODY": f"IMPORTANT WARNING \nPython Exception Detected in Your Code. \n\nHi there, \nThis is an exception catch notifier. \n\n * Code Status: Fail.🛠 \n * Detail: Python Code Ran Exceptions. \n * Time: {start_time.strftime(DATE_FORMAT)} \n\n ** {sstb}",
     }
-    send_gmail_msg(environ['_GMAIL_SENDER_ADDR'], environ['_GAMIL_RECIPIENT_ADDR'], environ['_GMAIL_APP_PASSWORD_OF_SENDER'], exceptNotifier['SUBJECT'], exceptNotifier['BODY'])
+    send_gmail_msg(
+        environ["_GMAIL_SENDER_ADDR"],
+        environ["_GAMIL_RECIPIENT_ADDR"],
+        environ["_GMAIL_APP_PASSWORD_OF_SENDER"],
+        exceptNotifier["SUBJECT"],
+        exceptNotifier["BODY"],
+    )
 
-    if environ.get('_OPEN_AI_API') is not None:
+    if environ.get("_OPEN_AI_API") is not None:
         try:
             error_message = f"error sheel=={shell}, error_type_document=={etype.__doc__}, error_value=={evalue}, error message in ipython cell=={sstb}"
             advice_msg = receive_openai_advice(
@@ -53,14 +59,18 @@ def ExceptMailIpython(
                 "SUBJECT": "[Except AI Debugging] Error! chatGPT Debugging guide.",
                 "BODY": f"IMPORTANT WARNING: \nPython Exception Detected in Your Code. \n\nHi there, \nThis is advice from OpenAI ChatGPT \n\n {advice_msg}",
             }
-            send_gmail_msg(environ['_GMAIL_SENDER_ADDR'], environ['_GAMIL_RECIPIENT_ADDR'], environ['_GMAIL_APP_PASSWORD_OF_SENDER'], exceptNotifier_openai['SUBJECT'], exceptNotifier_openai['BODY'])
-
+            send_gmail_msg(
+                environ["_GMAIL_SENDER_ADDR"],
+                environ["_GAMIL_RECIPIENT_ADDR"],
+                environ["_GMAIL_APP_PASSWORD_OF_SENDER"],
+                exceptNotifier_openai["SUBJECT"],
+                exceptNotifier_openai["BODY"],
+            )
 
         except Exception as e:
             pass
 
-
-    if environ.get('_BARD_API_KEY') is not None:
+    if environ.get("_BARD_API_KEY") is not None:
         try:
             error_message = f"error sheel=={shell}, error_type_document=={etype.__doc__}, error_value=={evalue}, error message in ipython cell=={sstb}"
             advice_msg = receive_bard_advice(
@@ -70,8 +80,13 @@ def ExceptMailIpython(
                 "SUBJECT": "[Except AI Debugging] Error! Google Bard Debugging guide.",
                 "BODY": f"IMPORTANT WARNING: \nPython Exception Detected in Your Code. \n\nHi there, \nThis is advice from OpenAI ChatGPT \n\n {advice_msg}",
             }
-            send_gmail_msg(environ['_GMAIL_SENDER_ADDR'], environ['_GAMIL_RECIPIENT_ADDR'], environ['_GMAIL_APP_PASSWORD_OF_SENDER'], exceptNotifier_openai['SUBJECT'], exceptNotifier_openai['BODY'])
-
+            send_gmail_msg(
+                environ["_GMAIL_SENDER_ADDR"],
+                environ["_GAMIL_RECIPIENT_ADDR"],
+                environ["_GMAIL_APP_PASSWORD_OF_SENDER"],
+                exceptNotifier_openai["SUBJECT"],
+                exceptNotifier_openai["BODY"],
+            )
 
         except Exception as e:
             pass

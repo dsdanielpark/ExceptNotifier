@@ -42,7 +42,7 @@ def ExceptSMSIpython(
         environ["_RECIPIENT_PHONE_NUMBER"],
         data["text"],
     )
-    if environ.get('_OPEN_AI_API') is not None:
+    if environ.get("_OPEN_AI_API") is not None:
         try:
             error_message = f"error sheel=={shell}, error_type_document=={etype.__doc__}, error_value=={evalue}, error message in ipython cell=={sstb}"
             advice_msg = receive_openai_advice(
@@ -58,12 +58,10 @@ def ExceptSMSIpython(
         except Exception as e:
             pass
 
-    if environ.get('_BARD_API_KEY') is not None:
+    if environ.get("_BARD_API_KEY") is not None:
         try:
             error_message = f"error sheel=={shell}, error_type_document=={etype.__doc__}, error_value=={evalue}, error message in ipython cell=={sstb}"
-            advice_msg = receive_bard_advice(
-                environ["_BARD_API_KEY"], error_message
-            )
+            advice_msg = receive_bard_advice(environ["_BARD_API_KEY"], error_message)
             send_sms_msg(
                 environ["_TWILIO_SID"],
                 environ["_TWILIO_TOKEN"],

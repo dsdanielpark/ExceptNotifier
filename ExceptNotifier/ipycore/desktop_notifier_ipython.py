@@ -39,7 +39,7 @@ def ExceptDesktopIpython(
         "body"
     ] = f"IMPORTANT WARNING \nPython Exception Detected in Your Code. \n\nHi there, \nThis is an exception catch notifier. \n\n - :x: Code Status: Fail. \n - :x: Detail: Python Code Ran Exceptions. \n - :clock2: Time: {start_time.strftime(DATE_FORMAT)} \n\n :no_entry:  {sstb}"
     send_desktop_msg(data["head"], data["body"])
-    if environ.get('_OPEN_AI_API') is not None:
+    if environ.get("_OPEN_AI_API") is not None:
         try:
             error_message = f"error sheel=={shell}, error_type_document=={etype.__doc__}, error_value=={evalue}, error message in ipython cell=={sstb}"
             advice_msg = receive_openai_advice(
@@ -49,12 +49,10 @@ def ExceptDesktopIpython(
 
         except Exception as e:
             pass
-    if environ.get('_BARD_API_KEY') is not None:
+    if environ.get("_BARD_API_KEY") is not None:
         try:
             error_message = f"error sheel=={shell}, error_type_document=={etype.__doc__}, error_value=={evalue}, error message in ipython cell=={sstb}"
-            advice_msg = receive_bard_advice(
-                environ["_BARD_API_KEY"], error_message
-            )
+            advice_msg = receive_bard_advice(environ["_BARD_API_KEY"], error_message)
             send_desktop_msg(data["head"], advice_msg)
 
         except Exception as e:

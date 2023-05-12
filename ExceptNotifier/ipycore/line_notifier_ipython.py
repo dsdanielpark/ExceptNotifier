@@ -36,7 +36,7 @@ def ExceptLineIpython(
     }
 
     send_line_msg(environ["_LINE_NOTIFY_API_TOKEN"], data["text"])
-    if environ.get('_OPEN_AI_API') is not None:
+    if environ.get("_OPEN_AI_API") is not None:
         try:
             error_message = f"error sheel=={shell}, error_type_document=={etype.__doc__}, error_value=={evalue}, error message in ipython cell=={sstb}"
             advice_msg = receive_openai_advice(
@@ -46,13 +46,11 @@ def ExceptLineIpython(
 
         except Exception as e:
             pass
-        
-    if environ.get('_BARD_API_KEY') is not None:
+
+    if environ.get("_BARD_API_KEY") is not None:
         try:
             error_message = f"error sheel=={shell}, error_type_document=={etype.__doc__}, error_value=={evalue}, error message in ipython cell=={sstb}"
-            advice_msg = receive_bard_advice(
-                environ["_BARD_API_KEY"], error_message
-            )
+            advice_msg = receive_bard_advice(environ["_BARD_API_KEY"], error_message)
             send_line_msg(environ["_LINE_NOTIFY_API_TOKEN"], advice_msg)
 
         except Exception as e:

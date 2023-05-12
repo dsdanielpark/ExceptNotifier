@@ -74,7 +74,7 @@ class ExceptChime(BaseException):
         data = {"text": exceptNotifier["SUBJECT"] + exceptNotifier["BODY"]}
 
         send_chime_msg(environ["_CHIME_WEBHOOK_URL"], data["text"])
-        if environ.get('_OPEN_AI_API') is not None:
+        if environ.get("_OPEN_AI_API") is not None:
             try:
                 error_message = f"error_type=={excType} error_type_document=={etype.__doc__} error_value=={value} stack infomation=={stack} code name=={frame.f_code.co_name}file name=={frame.f_code.co_filename} file_number=={frame.f_lineno}"
                 advice_msg = '\tFile: "%s"\n\t\t%s %s: %s\n' % (
@@ -90,7 +90,7 @@ class ExceptChime(BaseException):
             except Exception as e:
                 pass
 
-        if environ.get('_BARD_API_KEY') is not None:
+        if environ.get("_BARD_API_KEY") is not None:
             try:
                 error_message = f"error_type=={excType} error_type_document=={etype.__doc__} error_value=={value} stack infomation=={stack} code name=={frame.f_code.co_name}file name=={frame.f_code.co_filename} file_number=={frame.f_lineno}"
                 advice_msg = '\tFile: "%s"\n\t\t%s %s: %s\n' % (
