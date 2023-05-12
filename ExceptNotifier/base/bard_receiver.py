@@ -22,7 +22,10 @@ def receive_bard_advice(_BARD_API_KEY: str, error_message: str) -> str:
             elif environ["_BARD_ADVICE_LANG"]=='jp':
                 input_text = f"次のエラーをどのように修正できますか？次のエラーについて説明し、どの場所でどのコードが間違っているかを教えてください。そして、このコードを修正できるサンプルコードを見せてください。 error=={error_message}"
             else:
+                print('You can only use ko or jp for the _BARD_ADVICE_LANG variable. Hence, answers will be provided in English.')
                 input_text = f"How can I fix this error? Give me short infomation about next error. Let me know which code line and which code is incorrect. and try to make it fix or fix example. error=={error_message}"
+        else:
+            input_text = f"How can I fix this error? Give me short infomation about next error. Let me know which code line and which code is incorrect. and try to make it fix or fix example. error=={error_message}"
     else:
         input_text = f"{environ['_PROMPT_COMMAND']} error=={error_message}" 
 
