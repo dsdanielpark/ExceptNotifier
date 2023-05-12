@@ -1039,7 +1039,7 @@ Everyone participating in the `ExceptNotifier` project, and in particular in the
 
 #### Could you kindly add this badge to your repository?
 ```
-![Except-Notifier](https://img.shields.io/badge/pypi-ExceptNotifier-orange)
+![Except-Notifier](https://img.shields.io/badge/pypi-ExceptNotifier-blue)
 ```
 
 I would appreciate it if you could share the document widely by specifying that the source is the ExceptNotifier official github.
