@@ -142,6 +142,7 @@ If you add the following two variables to the required variables for each applic
 
 - Starting from v0.2.5, you can receive debugging hints and examples through Google Bard using the same syntax as the OpenAI API. However, due to time constraints, examples will only be added for Telegram and Discord.
 - Starting from v0.2.6, you can receive debugging hints in Korean or Japanese by setting `_BARD_ADVICE_LANG` to 'ko' or 'jp'.
+- Starting from v0.2.10, you can customize AI advice message by setting `_PROMPT_COMMAND` system variable.
 
 <br>
 
