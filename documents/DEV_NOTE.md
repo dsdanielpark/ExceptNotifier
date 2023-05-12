@@ -95,6 +95,7 @@ In upcoming updates, I aim to enhance the pylint score, eliminate superfluous in
 |0.2.8| Update equirement pacakge `bardapi` |
 |0.2.9| Fix without `_BARD_ADVICE_LANG` |
 |0.2.10| Update customize prompt in Open AI chatbot |
+|0.2.11| Fix check system variable of `_BARD_ADVICE_LANG` and modify some prompt. |
 
 need Refactoring, QA.
 
