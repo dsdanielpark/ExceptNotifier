@@ -194,9 +194,9 @@ import sys, os
 from ExceptNotifier import ExceptTelegram
 sys.excepthook = ExceptTelegram.__call__
 
-os.envirion['_TELEGRAM_TOKEN'] = "xxxx"
-os.envirion['_OPEN_AI_MODEL']="gpt-3.5-turbo"
-os.envirion['_OPEN_AI_API']="sk-xxxxxx"
+os.environ['_TELEGRAM_TOKEN'] = "xxxx"
+os.environ['_OPEN_AI_MODEL']="gpt-3.5-turbo"
+os.environ['_OPEN_AI_API']="sk-xxxxxx"
 
 try:
     print(1/0)
@@ -365,9 +365,14 @@ send_telegram_msg(_TELEGRAM_TOKEN, "This is test message")
 <br>
 
 # Applied in each application
+
+## Open AI - Chat GPT
 You can receive debugging information from ChatGPT via OpenAI's API when using the Except statement. The syntax remains the same, but you'll need to configure these two variables:
 `_OPEN_AI_MODEL`,`_OPEN_AI_API`
 
+## Google - Bard (ExceptNotifier v0.2.5 ~)
+You can receive debugging information from Google Bard via the python package [Bard API](https://github.com/dsdanielpark/BARD_API) when using the Except statement. The syntax remains the same, but you'll need to configure a variable:
+`_BARD_API_KEY`
 
 <br>
 
@@ -425,13 +430,36 @@ from ExceptNotifier import ExceptTelegram, SuccessTelegram, SendTelegram
 import sys, os
 sys.excepthook = ExceptTelegram.__call__
 os.environ['_TELEGRAM_TOKEN'] = "xxxx"
-os.envirion['_OPEN_AI_MODEL']="gpt-3.5-turbo"
-os.envirion['_OPEN_AI_API']="sk-xxxxxx"
+os.environ['_OPEN_AI_MODEL']="gpt-3.5-turbo"
+os.environ['_OPEN_AI_API']="sk-xxxxxx"
 
 try:
     print(1/0)  
     SuccessTelegram().__call__() #1. success sender          
 
+except ExceptTelegram as e:      #2. except sender            
+    sys.exit()
+
+SendTelegram().__call__()        #3. customized sender     
+
+```
+<br>
+
+
+### c. Notifier with Google Bard API
+- Just set `_BARD_API_KEY`. If you would like to receive guidance in Korean, you can optionally set the following. Set `_BARD_KOR` as `True`
+*Notifier*
+```python
+from ExceptNotifier import ExceptTelegram, SuccessTelegram, SendTelegram
+import sys, os
+sys.excepthook = ExceptTelegram.__call__
+os.environ['_TELEGRAM_TOKEN'] = "xxxxxxxxx"
+os.environ['_BARD_API_KEY']="xxxxxxxxx"
+# os.environ['_BARD_ADVICE_LANG']="korean"
+
+try:
+    print(1/0)  
+    SuccessTelegram().__call__() #1. success sender          
 except ExceptTelegram as e:      #2. except sender            
     sys.exit()
 
