@@ -89,7 +89,7 @@ pip install git+https://github.com/dsdanielpark/ExceptNotifier.git
   * [*Telegram*](#telegram)
     + [a. Notifier without OpenAI API](#a-notifier-without-openai-api)
     + [b. Notifier with OpenAI API](#b-notifier-with-openai-api)
-    + [c. Notifier with Google Bard API](#b-notifier-with-google-bard-api)
+    + [c. Notifier with Google Bard API](#c-notifier-with-google-bard-api)
   * [*Mail*](#mail)
   * [*Discord*](#discord)
   * [*Chime*](#chime)
