@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 # Copyright 2023 parkminwoo
 import openai
-
+from os import environ
 
 def receive_openai_advice(
     _OPEN_AI_MODEL: str, _OPEN_AI_API: str, error_message: str
@@ -21,7 +21,10 @@ def receive_openai_advice(
     openai.api_key = _OPEN_AI_API
     model_engine = _OPEN_AI_MODEL
 
-    input_text = f"How can I fix this error? Give me short infomation about next error. Let me know which code line and which code is incorrect. and try to make it fix or fix exampel. error== {error_message}"
+    if environ.get("_PROMPT_COMMAND") is None:
+        input_text = f"How can I fix this error? Give me short infomation about next error. Let me know which code line and which code is incorrect. and try to make it fix or fix exampel. error== {error_message}"
+    else:
+        input_text = f"{environ['_PROMPT_COMMAND']} error=={error_message}" 
     resp = openai.ChatCompletion.create(
         model=model_engine, messages=[{"role": "user", "content": input_text}]
     )
