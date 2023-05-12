@@ -94,6 +94,7 @@ In upcoming updates, I aim to enhance the pylint score, eliminate superfluous in
 |0.2.7| Fix bard advice function. you can customize your prompt by setting `_PROMPT_COMMAND` |
 |0.2.8| Update equirement pacakge `bardapi` |
 |0.2.9| Fix without `_BARD_ADVICE_LANG` |
+|0.2.10| Update customize prompt in Open AI chatbot |
 
 need Refactoring, QA.
 
