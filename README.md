@@ -31,7 +31,7 @@ With ExceptNotifier, you can obtain detailed compilation errors, including debug
  
 ## Except Notifier Is All You Need.
 
-### Although all explanations use the try-except block as an example, in reality, once overridden, it will send messages for exceptions that occurred without the try-except statement.
+### Most explanations of exceptions use the try-except block as an example. However, if the try-except block is overridden, the program will send messages for exceptions that occurred without the try-except statement.
 
 <br>
  
@@ -138,7 +138,7 @@ pip install git+https://github.com/dsdanielpark/ExceptNotifier.git
 |KakaoTalk|`_KAKAO_TOKEN_PATH`|Freemium|Hell|>=10min(Token refreshes daily)|[ExceptKakao](./tutorials/ExceptKakao/GUIDE.md)[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/drive/1E5Q-lnWStG1MqtnGCr5pzInlfWt2uc2S?usp=sharing)|
 
 
-If you add the following two variables to the required variables for each application in the table above, you can receive error location and explanation, as well as examples, from OpenAI's model
+If you add the following two variables to the required variables for each application in the table above, you can receive error location and explanation, as well as examples, from OpenAI's model.
 
 | API | Required Variables | Free or Paid | Ease of Setup | Time Required for Setup|Guide Tutorial Link|
 |:--:|:--|:--:|:--:|:--:|:---:|
@@ -152,7 +152,7 @@ If you add the following two variables to the required variables for each applic
 <br>
 
 # Tutorial
-I will update tutorial ASAP. `README.md` is sufficient, but read the application's official documentation if necessary. However, we are preparing a more detailed and friendly tutorial.
+I will update the tutorial ASAP. `README.md` is sufficient, but read the application's official documentation if necessary. However, we are preparing a more detailed and friendly tutorial.
 
 1. Main-tutorials: [Notebook](https://github.com/DSDanielPark/ExceptNotifier/blob/main/tutorial/ExceptNotifier.ipynb)
 2. Sub-tutorial-folder: Tutorials for each function can be found in this [folder](https://github.com/DSDanielPark/ExceptNotifier/tree/main/tutorial). The tutorial is synchronized with the Python file name provided by ExceptNotifier.
