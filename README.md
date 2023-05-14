@@ -33,7 +33,8 @@ With ExceptNotifier, you can obtain detailed compilation errors, including debug
 
 ### Although all explanations use the try-except block as an example, in reality, once overridden, it will send messages for exceptions that occurred without the try-except statement.
 
-
+<br>
+ 
 # Supporting Applications
 Applicable to both [IPython](https://ipython.org/) and [Python](https://www.python.org/), but needs to be ported differently only in `ExceptNotifier`. Please refer to the detailed example. (`SuccessNotifier` and `SendNotifier` have the same syntax.)
 - [Telegram](https://telegram.org/)
