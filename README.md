@@ -31,7 +31,7 @@ With ExceptNotifier, you can obtain detailed compilation errors, including debug
  
 ## Except Notifier Is All You Need.
 
-### Most explanations of exceptions use the try-except block as an example. However, if the try-except block is overridden, the program will send messages for exceptions that occurred without the try-except statement.
+### All explanations of exceptions use the try-except block as an example. However, if the try-except block is overridden, the program will send messages for exceptions that occurred without the try-except statement.
 
 <br>
  
@@ -52,7 +52,7 @@ Applicable to both [IPython](https://ipython.org/) and [Python](https://www.pyth
 - [Opea AI API](https://openai.com/blog/openai-api)
         - If you have OpenAI API Key and model name, you can get information and code examples for debugging in any application.
 - [Google Bard](https://bard.google.com/) Python package [BardAPI](https://github.com/dsdanielpark/BARD_API)
-        - Starting from Exceptnotifier version 0.2.5
+        - Starting from ExceptNotifier version 0.2.5
         - Using the Python package [Bard API](https://github.com/dsdanielpark/BARD_API), if you declare the __Secure-1PSID value as a global variable , you can receive debugging hints and explanations about errors in your code through Google Bard.
 <br>
 
@@ -457,7 +457,7 @@ SendTelegram().__call__()        #3. customized sender
 
 
 ### b. Notifier with OpenAI API
-- If you just set `_OPEN_AI_API` and `_OPEN_AI_MODEL` environment variables in all application use case, AI MODEL will automatically send debugging information as a message. Currently, it is mainly based on the `GPT-3.5-TURBO` model, but we plan to update it so that other models can be used later.
+- If you just set `_OPEN_AI_API` and `_OPEN_AI_MODEL` environment variables in all application use cases, AI MODEL will automatically send debugging information as a message. Currently, it is mainly based on the `GPT-3.5-TURBO` model, but we plan to update it so that other models can be used later.
 *Notifier*
 ```python
 from ExceptNotifier import ExceptTelegram, SuccessTelegram, SendTelegram
