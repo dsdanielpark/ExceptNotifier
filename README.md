@@ -28,6 +28,8 @@ With ExceptNotifier, you can obtain detailed compilation errors, including debug
 ![](./assets/imgs/core02.png)
 
 <Br>
+ 
+## Except Notifier Is All You Need.
 
 ### Although all explanations use the try-except block as an example, in reality, once overridden, it will send messages for exceptions that occurred without the try-except statement.
 
