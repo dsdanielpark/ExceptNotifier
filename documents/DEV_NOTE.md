@@ -89,15 +89,15 @@ In upcoming updates, I aim to enhance the pylint score, eliminate superfluous in
 |0.2.2|Discord api text length limit 1900 (actual text length limit is 2000).|
 |0.2.3|Reduced unnecessary calls by clarifying module imports and reduced flops using if statements. Fix in EmailNotifierIpython sending dict|
 |0.2.4|Fix in EmailNotifierIpython open ai sending dict|
-|0.2.5| I have removed printed unnecessary error messages caused by the absence of an API key. By including the bardapi package, I have organized it so that all packages can receive hints about code errors from Google BARD. Additional QA has not been conducted for the bardapi package. Furthermore, as unexpected features are added, it may be necessary to plan refactoring work. I am currently unable to do so due to time constraints, but I will work on refactoring and code efficiency improvements as soon as I can. ExceptNotifier Github address in the message is previewed in some applications and readability is poor, so `http://` in front of the official github address has been removed.|
+|0.2.5| I've eliminated unnecessary error messages resulting from a missing API key and integrated the bardapi package to enable all packages to receive hints about code errors from Google BARD. No additional QA has been performed for the bardapi package. As unforeseen features emerge, refactoring efforts might be required. Although time constraints prevent me from addressing this now, I'll prioritize refactoring and enhancing code efficiency as soon as possible. To improve readability, as some applications preview the ExceptNotifier Github address poorly, I've removed `http://` from the official Github address.|
 |0.2.6| Google Bard officially supports Korean, so you can set the language of Bard Advice to Korean. Additionally, if `_BARD_ADVICE_LANG` is set to korean, debugging hints for code in Korean are provided. Also you can use 'japanese'|
 |0.2.7| Fix bard advice function. you can customize your prompt by setting `_PROMPT_COMMAND` |
-|0.2.8| Update equirement pacakge `bardapi` |
+|0.2.8| Update requirement pacakge `bardapi` |
 |0.2.9| Fix without `_BARD_ADVICE_LANG` |
 |0.2.10| Update customize prompt in Open AI chatbot |
 |0.2.11| Fix check system variable of `_BARD_ADVICE_LANG` and modify some prompt. |
 
-need Refactoring, QA.
+Need Refactoring, QA.
 
 ## QA Note
 QA tests are carried out from Python 3.6 to Python 3.9 environments through Windows, MacBook m1, and Google Colab, focusing on Telegram, Discord, Slack, Line, and Chime applications. QA for the rest proceeds whenever there is a request or whenever I have time to spare, and replaces it with responding to bug reports. After the QA test is conducted, I plan to raise the development stage and recruit QA testers by promoting it.
