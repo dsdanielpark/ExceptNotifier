@@ -31,7 +31,7 @@ With ExceptNotifier, you can obtain detailed compilation errors, including debug
  
 ## Except Notifier Is All You Need.
 
-### Although all explanations use the try-except block as an example, in reality, once overridden, it will send messages for exceptions that occurred without the try-except statement.
+###  Although most explanations involve the try-except block, in actual use cases, once you override the ExceptNotifier only once, an alert will be sent to the pre-configured messenger application when an error occurs, even without the try-except statement.
 
 <br>
  
