@@ -10,9 +10,9 @@ Development Status :: 3 - Alpha <br>
 <a><img alt="PyPI package" src="https://img.shields.io/badge/pypi-ExceptNotifier-blue"></a>
 <a href="https://pypi.org/project/exceptnotifier/"><img alt="PyPI" src="https://img.shields.io/pypi/v/exceptnotifier"></a>
 <a href="https://pepy.tech/project/exceptnotifier"><img alt="Downloads" src="https://pepy.tech/badge/exceptnotifier"></a>
-<a><img alt="commit update" src="https://img.shields.io/github/last-commit/dsdanielpark/ExceptNotifier?color=blue"></a>
+<!-- <a><img alt="commit update" src="https://img.shields.io/github/last-commit/dsdanielpark/ExceptNotifier?color=blue"></a> -->
 <a href="https://github.com/psf/black"><img alt="Code style: black" src="https://img.shields.io/badge/code%20style-black-000000.svg"></a>
-<a href="https://opensource.org/licenses/MIT"><img src="https://img.shields.io/github/license/dsdanielpark/ExceptNotifier?color=black"></a>
+<!-- <a href="https://opensource.org/licenses/MIT"><img src="https://img.shields.io/github/license/dsdanielpark/ExceptNotifier?color=black"></a> -->
 <a href="https://www.buymeacoffee.com/parkminwoo"><img src="https://www.buymeacoffee.com/assets/img/custom_images/orange_img.png" height="20px"></a>
 </p>
 
@@ -28,10 +28,13 @@ With ExceptNotifier, you can obtain detailed compilation errors, including debug
 ![](./assets/imgs/core02.png)
 
 <Br>
+ 
+## Except Notifier Is All You Need.
 
-### Although all explanations use the try-except block as an example, in reality, once overridden, it will send messages for exceptions that occurred without the try-except statement.
+###  Although most explanations involve the try-except block, in actual use cases, once you override the ExceptNotifier only once, an alert will be sent to the pre-configured messenger application when an error occurs, even without the try-except statement.
 
-
+<br>
+ 
 # Supporting Applications
 Applicable to both [IPython](https://ipython.org/) and [Python](https://www.python.org/), but needs to be ported differently only in `ExceptNotifier`. Please refer to the detailed example. (`SuccessNotifier` and `SendNotifier` have the same syntax.)
 - [Telegram](https://telegram.org/)
@@ -140,10 +143,10 @@ If you add the following two variables to the required variables for each applic
 | API | Required Variables | Free or Paid | Ease of Setup | Time Required for Setup|Guide Tutorial Link|
 |:--:|:--|:--:|:--:|:--:|:---:|
 | OpenAI API |`Required variables for each application`+ `_OPEN_AI_MODEL`,`_OPEN_AI_API`|Not free|Easy|2min|[APIOpenAI](./documents/OpenAI/GUIDE.md)|
-| Google Bard API |`Required variables for each application`+ `_BARD_API_KEY`,'_BARD_ADVICE_LANG'|Free|Easy|1min|[Google Bard](./documents/GoogleBard/GUIDE.md)|
+| Google Bard API |`Required variables for each application`+ `_BARD_API_KEY`,`_BARD_ADVICE_LANG`|Free|Easy|1min|[Google Bard](./documents/GoogleBard/GUIDE.md)|
 
 - Starting from v0.2.5, you can receive debugging hints and examples through Google Bard using the same syntax as the OpenAI API. However, due to time constraints, examples will only be added for Telegram and Discord.
-- Starting from v0.2.6, you can receive debugging hints in Korean or Japanese by setting `_BARD_ADVICE_LANG` to 'ko' or 'jp'.
+- Starting from v0.2.6, you can receive debugging hints in Korean or Japanese by setting `_BARD_ADVICE_LANG` to 'ko' or 'jp'. The default language is english.
 - Starting from v0.2.10, you can customize AI advice message by setting `_PROMPT_COMMAND` system variable.
 
 <br>
@@ -1019,9 +1022,10 @@ I will announce contributing rules when the code development status changes to b
 Everyone participating in the `ExceptNotifier` project, and in particular in the issue tracker, pull requests, and social media activity, is expected to treat other people with respect and more generally to follow the guidelines articulated in [the Python Community Code of Conduct](https://www.python.org/psf/conduct/).
 
 # Contacts
-:mortar_board: Core maintainer: [Daniel Park, South Korea](https://github.com/DSDanielPark) <br>
-:envelope: Email: parkminwoo1991@gmail.com <br>
+- Core maintainer: [Daniel Park, South Korea](https://github.com/DSDanielPark) <br>
+- Email: parkminwoo1991@gmail.com 
 - Developer note: [Link](./documents/DEV_NOTE.md)
+ 
 #### Dev Note
 1. Applying ExceptNotifier in Python
 
