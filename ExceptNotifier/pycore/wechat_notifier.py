@@ -6,9 +6,9 @@ import traceback
 import datetime
 from os import environ
 from email.message import EmailMessage
-from ExceptNotifier.base.wechat_sender import send_wechat_msg
-from ExceptNotifier.base.openai_receiver import receive_openai_advice
-from ExceptNotifier.base.bard_receiver import receive_bard_advice
+from ExceptNotifier.sender.wechat_sender import send_wechat_msg
+from ExceptNotifier.sender.openai_receiver import receive_openai_advice
+from ExceptNotifier.sender.bard_receiver import receive_bard_advice
 
 
 DATE_FORMAT = "%Y-%m-%d %H:%M:%S"

@@ -5,9 +5,9 @@ import smtplib
 import datetime
 from os import environ
 from IPython.core.ultratb import AutoFormattedTB
-from ExceptNotifier.base.openai_receiver import receive_openai_advice
-from ExceptNotifier.base.mail_sender import send_gmail_msg
-from ExceptNotifier.base.bard_receiver import receive_bard_advice
+from ExceptNotifier.sender.openai_receiver import receive_openai_advice
+from ExceptNotifier.sender.mail_sender import send_gmail_msg
+from ExceptNotifier.sender.bard_receiver import receive_bard_advice
 
 
 DATE_FORMAT = "%Y-%m-%d %H:%M:%S"
@@ -29,7 +29,6 @@ def ExceptMailIpython(
     :param tb_offset: Offset of traceback, defaults to 1
     :type tb_offset: int, optional
     """
-    SMTP_SERVER = "smtp.gmail.com"
     itb = AutoFormattedTB(mode="Plain", tb_offset=1)
     shell.showtraceback((etype, evalue, tb), tb_offset=tb_offset)
     stb = itb.structured_traceback(etype, evalue, tb)
