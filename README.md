@@ -1022,9 +1022,10 @@ I will announce contributing rules when the code development status changes to b
 Everyone participating in the `ExceptNotifier` project, and in particular in the issue tracker, pull requests, and social media activity, is expected to treat other people with respect and more generally to follow the guidelines articulated in [the Python Community Code of Conduct](https://www.python.org/psf/conduct/).
 
 # Contacts
-:mortar_board: Core maintainer: [Daniel Park, South Korea](https://github.com/DSDanielPark) <br>
-:envelope: Email: parkminwoo1991@gmail.com <br>
+- Core maintainer: [Daniel Park, South Korea](https://github.com/DSDanielPark) <br>
+- Email: parkminwoo1991@gmail.com 
 - Developer note: [Link](./documents/DEV_NOTE.md)
+ 
 #### Dev Note
 1. Applying ExceptNotifier in Python
 
