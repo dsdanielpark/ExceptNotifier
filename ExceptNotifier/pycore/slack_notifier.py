@@ -129,7 +129,7 @@ class SuccessSlack:
     def __init__(self) -> None:
         pass
 
-    def __call__(self, *args, **kwds) -> None:
+    def __call__(self) -> None:
         exceptNotifier = EmailMessage()
         start_time = datetime.datetime.now()
         f"Time Stamp: {start_time.strftime(DATE_FORMAT)}"
@@ -151,7 +151,7 @@ class SendSlack:
     def __init__(self) -> None:
         pass
 
-    def __call__(self, *args, **kwds) -> None:
+    def __call__(self) -> None:
         exceptNotifier = EmailMessage()
         start_time = datetime.datetime.now()
         f"Time Stamp: {start_time.strftime(DATE_FORMAT)}"

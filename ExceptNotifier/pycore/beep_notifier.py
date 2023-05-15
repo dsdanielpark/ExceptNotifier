@@ -57,7 +57,7 @@ class SuccessBeep:
     def __init__(self) -> None:
         pass
 
-    def __call__(self, *args, **kwds) -> None:
+    def __call__(self) -> None:
         if environ.get("BEEP_TIME") is not None:
             beep(environ["BEEP_TIME"])
             beep(environ["BEEP_TIME"])
@@ -73,7 +73,7 @@ class SendBeep:
     def __init__(self) -> None:
         pass
 
-    def __call__(self, *args, **kwds) -> None:
+    def __call__(self) -> None:
         if environ.get("BEEP_TIME") is not None:
             beep(environ["BEEP_TIME"])
         else:
