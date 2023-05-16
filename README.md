@@ -2,6 +2,8 @@
 Development Status :: 3 - Alpha <br>
 *Copyright (c) 2023 MinWoo Park, South Korea*<br>
 
+Preparing a `beta release`, including usability improvements, refactoring, and document simplification.
+
 ![](https://exceptnotifier.readthedocs.io/en/latest/_images/logo.png)
 
 <h5 align="center">Integrates AI-assisted debugging notifications into Python try-except statements for various messaging applications. </h5>
