@@ -4,7 +4,7 @@ import bardapi
 from os import environ
 
 
-def receive_bard_advice(_BARD_API_KEY: str, error_message: str) -> str:
+def receive_bard_advice(bard_api_key: str, error_message: str) -> str:
     """Receive debugging information about your code from google bard.
     :param _OPEN_AI_API:__Secure-1PSID value of google bard
     :type _OPEN_AI_API: str
@@ -13,7 +13,7 @@ def receive_bard_advice(_BARD_API_KEY: str, error_message: str) -> str:
     :return: Returns a description and example of the code, the location of the error, and a debugging code example.
     :rtype: str
     """
-    environ["_BARD_API_KEY"] = _BARD_API_KEY
+    environ["_BARD_API_KEY"] = bard_api_key
 
     if environ.get("_PROMPT_COMMAND") is None:
         if environ.get("_BARD_ADVICE_LANG") is None:
@@ -35,11 +35,3 @@ def receive_bard_advice(_BARD_API_KEY: str, error_message: str) -> str:
     advice_msg = response["content"]
 
     return advice_msg
-
-
-# if __name__ == "__main__":
-#     _BARD_API_KEY = "xxxxxxxxxxxxxx."
-#     error_message = " Cell 3 in ()----> 1 1/0 ZeroDivisionError: division by zero"
-#     advice_msg = receive_bard_advice(_BARD_API_KEY, error_message)
-
-#     print(advice_msg)

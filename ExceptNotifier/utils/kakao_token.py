@@ -9,7 +9,6 @@ def get_authorize_code(rest_api_key: str) -> None:
     :type rest_api_key: str
     """
     redirect_uri = "https://example.com/oauth"
-    print()
     print(
         f"\n\nhttps://kauth.kakao.com/oauth/authorize?client_id={rest_api_key}&redirect_uri={redirect_uri}&response_type=code"
     )
