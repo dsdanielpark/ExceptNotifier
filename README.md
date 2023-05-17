@@ -33,6 +33,9 @@ With ExceptNotifier, you can obtain detailed compilation errors, including debug
 
 ###  Although most explanations involve the try-except block, in actual use cases, once you override the ExceptNotifier only once, an alert will be sent to the pre-configured messenger application when an error occurs, even without the try-except statement.
 
+When you look at the GIF in [Python Package Co-Coder](https://github.com/dsdanielpark/Co-Coder), you can see what it means that even when overriden once, a message is sent every time an exception occurs at different code line or shell in ipython. **Be sure to check it out.**
+
+
 <br>
  
 # Supporting Applications
@@ -221,18 +224,21 @@ You can receive debugging information from Google Bard via the python package [B
 ```python
 from ExceptNotifier import ExceptTelegram, SuccessTelegram, SendTelegram
 import sys, os
-sys.excepthook = ExceptTelegram.__call__
+sys.excepthook = ExceptTelegram()
 os.environ['_TELEGRAM_TOKEN'] = "xxxxxxxxx"
 os.environ['_BARD_API_KEY']="xxxxxxxxx"
 # os.environ['_BARD_ADVICE_LANG']="ko"
 
+send_success = SuccessTelegram()
+send = SendTelegram()
+
 try:
     print(1/0)  
-    SuccessTelegram().__call__() #1. success sender          
+    send_success() #1. success sender          
 except ExceptTelegram as e:      #2. except sender            
     sys.exit()
 
-SendTelegram().__call__()        #3. customized sender     
+send()        #3. customized sender     
 ```
 
 ## Success`Notifier`
@@ -250,12 +256,14 @@ SuccessChime, SuccessTelegram, SuccessDiscord, SuccessSMS, SuccessMail, SuccessK
 ```python
 import sys, os
 from ExceptNotifier import SuccessTelgeram
-sys.excepthook = ExceptTelegram.__call__
+sys.excepthook = ExceptTelegram()
 os.environ['_TELEGRAM_TOKEN'] = "xxxx"
+
+send_success = SuccessTelgeram()
 
 try:
     print(1/20)
-    SuccessTelgeram().__call__()  # sending success message to telegram
+    send_success()  # sending success message to telegram
 except:
     sys.exit()
 ```
@@ -274,13 +282,14 @@ SendChime, SendTelegram, SendDiscord, SendSMS, SendMail, SendKakao, SendLine, Se
 ```python
 import sys, os
 from ExceptNotifier import SendTelegram
-sys.excepthook = ExceptTelegram.__call__
+sys.excepthook = ExceptTelegram()
 os.environ['_TELEGRAM_TOKEN'] = "xxxx"
 
-SendTelegram().__call__() # sending message to telegram
 
-noti = SendTelegram()
-noti()                    # sending message to telegram
+send = SendTelegram()
+send()                    # sending message to telegram
+
+SendTelegram().__call__() # sending message to telegram
 ```
 
 
@@ -360,9 +369,12 @@ import os
 from ExceptNotifier import SuccessTelegram
 os.environ['_TELEGRAM_TOKEN'] = "xxxxx"
 
+send_success = SuccessTelegram()
+
+
 try:
   print(1/20) # Your Code Here
-  SuccessTelegram().__call__()    # Sending Success message
+  send_success()    # Sending Success message
 except:
   raise
 ```
@@ -442,17 +454,20 @@ For more infomation, visit [Telegram Bot Father API](https://core.telegram.org/b
 ```python
 from ExceptNotifier import ExceptTelegram, SuccessTelegram, SendTelegram
 import sys, os
-sys.excepthook = ExceptTelegram.__call__
+sys.excepthook = ExceptTelegram()
 os.environ['_TELEGRAM_TOKEN'] = "xxxx"
+
+send_success = SuccessTelegram()
+send = SendTelegram()
 
 try:
     print(1/0)  
-    SuccessTelegram().__call__() #1. success sender          
+    send_success() #1. success sender          
 
 except ExceptTelegram as e:      #2. except sender            
     sys.exit()
 
-SendTelegram().__call__()        #3. customized sender     
+send()        #3. customized sender     
 ```
 
 
@@ -462,19 +477,22 @@ SendTelegram().__call__()        #3. customized sender
 ```python
 from ExceptNotifier import ExceptTelegram, SuccessTelegram, SendTelegram
 import sys, os
-sys.excepthook = ExceptTelegram.__call__
+sys.excepthook = ExceptTelegram()
 os.environ['_TELEGRAM_TOKEN'] = "xxxx"
 os.environ['_OPEN_AI_MODEL']="gpt-3.5-turbo"
 os.environ['_OPEN_AI_API']="sk-xxxxxx"
 
+send_success = SuccessTelegram()
+send = SendTelegram()
+
 try:
     print(1/0)  
-    SuccessTelegram().__call__() #1. success sender          
+    send_success() #1. success sender          
 
 except ExceptTelegram as e:      #2. except sender            
     sys.exit()
 
-SendTelegram().__call__()        #3. customized sender     
+send()        #3. customized sender     
 
 ```
 <br>
@@ -486,18 +504,21 @@ SendTelegram().__call__()        #3. customized sender
 ```python
 from ExceptNotifier import ExceptTelegram, SuccessTelegram, SendTelegram
 import sys, os
-sys.excepthook = ExceptTelegram.__call__
+sys.excepthook = ExceptTelegram()
 os.environ['_TELEGRAM_TOKEN'] = "xxxxxxxxx"
 os.environ['_BARD_API_KEY']="xxxxxxxxx"
 # os.environ['_BARD_ADVICE_LANG']="ko"
 
+send_success = SuccessTelegram()
+send = SendTelegram()
+
 try:
     print(1/0)  
-    SuccessTelegram().__call__() #1. success sender          
+    send_success() #1. success sender          
 except ExceptTelegram as e:      #2. except sender            
     sys.exit()
 
-SendTelegram().__call__()        #3. customized sender     
+send()        #3. customized sender     
 ```
 <br>
 
@@ -532,7 +553,7 @@ send_gmail_msg(
 ```python
 import sys, os
 from ExceptNotifier import ExceptMail, SuccessMail, SendMail
-sys.excepthook = ExceptMail.__call__
+sys.excepthook = ExceptMail()
 
 # Define the next two variables optionally when using OpenAI's API.
 # os.environ['_OPEN_AI_MODEL']="gpt-3.5-turbo"    
@@ -541,13 +562,16 @@ os.environ['_GAMIL_RECIPIENT_ADDR'] = 'xxxxxxx@gmail.com'
 os.environ['_GMAIL_SENDER_ADDR'] = 'yyyyyy@gmail.com'
 os.environ['_GMAIL_APP_PASSWORD_OF_SENDER'] = 'zzzzzz'
 
+send_success = SuccessMail()
+send = SendMail()
+
 try:
     main()                      # Your Code Here
-    SuccessMail().__call__()    # No Exception -> Send Success mail.
+    send_success()    # No Exception -> Send Success mail.
 except ExceptMail:              # Exception -> Send Fail mail.
     pass
 
-SendMail().__call__()           # When Process Ended -> Any Line mail.
+send()           # When Process Ended -> Any Line mail.
 ```
 
 <details>
@@ -564,18 +588,21 @@ os.environ['_GAMIL_RECIPIENT_ADDR'] = 'xxxxxxx@gmail.com'
 os.environ['_GMAIL_SENDER_ADDR'] = 'yyyyyy@gmail.com'
 os.environ['_GMAIL_APP_PASSWORD_OF_SENDER'] = 'zzzzzz'
 
-sys.excepthook = ExceptMail.__call__
+sys.excepthook = ExceptMail()
+
+send_success = SuccessMail()
+send = SendMail()
 
 try:
     # 02.Locate your code
     print(1/0)   
-    SuccessMail().__call__()   # Success Mail
+    send_success()   # Success Mail
 
 except ExceptMail as e:        # Exception Mail       
     sys.exit()
     print(e)
 
-SendMail().__call__()          # Put Any Line: Sending mail
+send()          # Put Any Line: Sending mail
 ```
 </details>
 
@@ -585,7 +612,7 @@ SendMail().__call__()          # Put Any Line: Sending mail
 ```python
 import sys, os
 from ExceptNotifier import ExceptMail, SuccessMail, SendMail
-sys.excepthook = ExceptMail.__call__
+sys.excepthook = ExceptMail()
 
 # Define the next two variables optionally when using OpenAI's API.
 # os.environ['_OPEN_AI_MODEL']="gpt-3.5-turbo"    
@@ -594,13 +621,16 @@ os.environ['_GAMIL_RECIPIENT_ADDR'] = 'xxxxxxx@gmail.com'
 os.environ['_GMAIL_SENDER_ADDR'] = 'yyyyyy@gmail.com'
 os.environ['_GMAIL_APP_PASSWORD_OF_SENDER'] = 'zzzzzz'
 
+send_success = SuccessMail()
+send = SendMail()
+
 try:
     'your code'
-    SuccessMail().__call__()
+    send_success()
 except ExceptMail:
     pass
 
-SendMail().__call__() 
+send() 
 ```
 </details>
 
@@ -628,21 +658,23 @@ send_discord_msg(_DISCORD_WEBHOOK_URL, "Any Test Message")
 ```python
 import sys, os
 from ExceptNotifier import ExceptDiscord, SuccessDiscord, SendDiscord
-sys.excepthook = ExceptDiscord.__call__
+sys.excepthook = ExceptDiscord()
 
 # Define the next two variables optionally when using OpenAI's API.
 # os.environ['_OPEN_AI_MODEL']="gpt-3.5-turbo"    
 # os.environ['_OPEN_AI_API']="sk-xxxxxx"
 os.environ['_DISCORD_WEBHOOK_URL'] = "xxxxxxxxxxxxxxxxx"
 
+send_success = SuccessDiscord()
+send = SendDiscord()
 
 try:
     print(1/20)  
-    SuccessDiscord().__call__() #1 success sender          
+    send_success() #1 success sender          
 except ExceptDiscord as e:      #2 except sender            
     sys.exit()
 
-SendDiscord().__call__()        #3 customized sender       
+send()        #3 customized sender       
 ```
 
 <br>
@@ -668,21 +700,24 @@ send_chime_msg(_CHIME_WEBHOOK_URL, "Any Test Message")
 ```python
 import sys, os
 from ExceptNotifier import SuccessChime, ExceptChime, SendChime
-sys.excepthook = ExceptChime.__call__
+sys.excepthook = ExceptChime()
 
 # Define the next two variables optionally when using OpenAI's API.
 # os.environ['_OPEN_AI_MODEL']="gpt-3.5-turbo"    
 # os.environ['_OPEN_AI_API']="sk-xxxxxx"
 os.environ['_CHIME_WEBHOOK_URL'] = "xxxxxxxxxxxxxxxxxx"
 
+send_success = SuccessChime()
+send = SendChime()
+
 
 try:
     print(1/0)  
-    SuccessChime().__call__() #1 success sender          
+    send_success() #1 success sender          
 except ExceptChime as e:      #2 except sender            
     sys.exit()
 
-SendChime().__call__()        #3 customized sender       
+send()        #3 customized sender       
 ```
 <br>
 
@@ -707,20 +742,23 @@ send_slack_msg(_SLACK_WEBHOOK_URL, "Any Test Message")
 ```python
 import sys
 from ExceptNotifier import ExceptSlack, SuccessSlack, SendSlack
-sys.excepthook = ExceptSlack.__call__
+sys.excepthook = ExceptSlack()
 
 # Define the next two variables optionally when using OpenAI's API.
 # os.environ['_OPEN_AI_MODEL']="gpt-3.5-turbo"    
 # os.environ['_OPEN_AI_API']="sk-xxxxxx"
 os.environ['_SLACK_WEBHOOK_URL'] = 'https://hooks.slack.com/services/xxxxxxxxxxxxxxxxxxx'
 
+send_success = SuccessSlack()
+send = SendSlack()
+
 try:
     print(1/0)  
-    SuccessSlack().__call__() #1 success sender          
+    send_success() #1 success sender          
 except ExceptSlack as e:      #2 except sender            
     sys.exit()
 
-SendSlack().__call__()        #3 customized sender     
+send()        #3 customized sender     
 ```
 <Br>
 
@@ -743,20 +781,23 @@ send_line_msg(_LINE_NOTIFY_API_TOKEN:, "Any Test Message")
 ```python
 import sys
 from ExceptNotifier import ExceptLine, SuccessLine, SendLine
-sys.excepthook = ExceptLine.__call__
+sys.excepthook = ExceptLine()
 
 # Define the next two variables optionally when using OpenAI's API.
 # os.environ['_OPEN_AI_MODEL']="gpt-3.5-turbo"    
 # os.environ['_OPEN_AI_API']="sk-xxxxxx"
 os.environ['_LINE_NOTIFY_API_TOKEN'] = 'xxxxxxxxxxx'
 
+send_success = SuccessLine()
+send = SendLine()
+
 try:
     print(1/20)  
-    SuccessLine().__call__() #1 success sender          
+    send_success() #1 success sender          
 except ExceptLine as e:      #2 except sender            
     sys.exit()
 
-SendLine().__call__()        #3 customized sender          
+send()        #3 customized sender          
 ```
 
 <Br>
@@ -792,23 +833,26 @@ send_sms_msg(
 ```python
 import sys
 from ExceptNotifier import ExceptSMS, SuccessSMS, SendSMS
-sys.excepthook = ExceptSMS.__call__
+sys.excepthook = ExceptSMS()
 
 # Define the next two variables optionally when using OpenAI's API.
 # os.environ['_OPEN_AI_MODEL']="gpt-3.5-turbo"    
 # os.environ['_OPEN_AI_API']="sk-xxxxxx"
 os.environ['_TWILIO_SID'] = 'xxxx'
 os.environ['_TWILIO_TOKEN'] = 'yyyyyy'
-os.environ['_RECIPIENT_PHONE_NUMBER']="+aaaaaa",
-os.environ['_SENDER_PHONE_NUMBER']="+bbbbbb",  
+os.environ['_RECIPIENT_PHONE_NUMBER']="+aaaaaa"
+os.environ['_SENDER_PHONE_NUMBER']="+bbbbbb"
+
+send_success = SuccessSMS()
+send = SendSMS()
 
 try:
     print(1/10)  
-    SuccessSMS().__call__() #1 success sender          
+    send_success() #1 success sender          
 except ExceptSMS as e:      #2 except sender
     sys.exit()
 
-SendSMS().__call__()        #3 customized sender        
+send()        #3 customized sender        
 ```
 <Br>
 
@@ -837,20 +881,23 @@ send_teams_msg(_TEAMS_WEBHOOK_URL, "Any Test Message")
 ```python
 import sys
 from ExceptNotifier import ExceptTeams, SuccessTeams, SendTeams
-sys.excepthook = ExceptTeams.__call__
+sys.excepthook = ExceptTeams()
 
 # Define the next two variables optionally when using OpenAI's API.
 # os.environ['_OPEN_AI_MODEL']="gpt-3.5-turbo"    
 # os.environ['_OPEN_AI_API']="sk-xxxxxx"
 os.environ['_TEAMS_WEBHOOK_URL'] = 'microsoft webhook _TEAMS_WEBHOOK_URL'
 
+send_success = SuccessTeams()
+send = SendTeams()
+
 try:
     print(1/20)  
-    SuccessTeams().__call__() #1 success sender          
+    send_success() #1 success sender          
 except ExceptTeams as e:      #2 except sender            
     sys.exit()
 
-SendTeams().__call__()        #3 customized sender        
+send()        #3 customized sender        
 ```
 
 <Br>
@@ -885,20 +932,23 @@ send_kakao_msg(_KAKAO_TOKEN_PATH, msg)
 ```python
 import sys
 from ExceptNotifier import ExceptKakao, SuccessKakao, SendKakao
-sys.excepthook = ExceptKakao.__call__
+sys.excepthook = ExceptKakao()
 
 # Define the next two variables optionally when using OpenAI's API.
 # os.environ['_OPEN_AI_MODEL']="gpt-3.5-turbo"    
 # os.environ['_OPEN_AI_API']="sk-xxxxxx"
-os.environ['_KAKAO_TOKEN_PATH'] = 'xxxx/xxx/xxx.json''
+os.environ['_KAKAO_TOKEN_PATH'] = 'xxxx/xxx/xxx.json'
+
+send_success = SuccessKakao()
+send = SendKakao()
 
 try:
     print(1/0)  
-    SuccessKakao().__call__() #1 success sender          
+    send_success() #1 success sender          
 except ExceptKakao as e:      #2 except sender            
     sys.exit()
 
-SendKakao().__call__()        #3 customized sender         
+send()        #3 customized sender         
 ```
 
 
@@ -922,15 +972,18 @@ from ExceptNotifier import ExceptWechat, SuccessWechat, SendWechat
 # os.environ['_OPEN_AI_MODEL']="gpt-3.5-turbo"    
 # os.environ['_OPEN_AI_API']="sk-xxxxxx"
 os.environ['_WECHAT_WEBHOOK_URL'] = "xxxxxxxxxxx"
-sys.excepthook = ExceptWechat.__call__
+sys.excepthook = ExceptWechat()
+
+send_success = SuccessWechat()
+send = SendWechat()
 
 try:
     print(1/0)  
-    SuccessWechat().__call__() #1 success sender          
+    send_success() #1 success sender          
 except ExceptWechat as e:      #2 except sender            
     sys.exit()
 
-SendWechat().__call__()        #3 customized sender       
+send()        #3 customized sender       
 ```
 
 <Br>
@@ -947,16 +1000,19 @@ beep(sec=1, freq=1000)
 ```python
 from Exceptnotifier import ExceptBeep, SuccessBeep, SendBeep(), beep()
 os.environ['BEEP_TIME'] = 1
-sys.excepthook = ExceptBeep.__call__
+sys.excepthook = ExceptBeep()
+
+send_success = SuccessBeep()
+send = SendBeep()
 
 try:
     print(1/20)  
-    SuccessBeep().__call__() #1 success beep-beep          
+    send_success() #1 success beep-beep          
 
 except ExceptBeep as e:      #2 except beep-beep                
     sys.exit()
 
-SendBeep().__call__()        #3 customized beep-beep      
+send()        #3 customized beep-beep      
 
 beep()
 
@@ -980,19 +1036,22 @@ send_desktop_msg(title_msg, body_msg, DISP_TIME)
 *Notifier*
 ```python
 from ExceptNotifier import ExceptDesktop, SuccessDesktop, SendDesktop
-sys.excepthook = ExceptDesktop.__call__
+sys.excepthook = ExceptDesktop()
 # Define the next two variables optionally when using OpenAI's API.
 # os.environ['_OPEN_AI_MODEL']="gpt-3.5-turbo"    
 # os.environ['_OPEN_AI_API']="sk-xxxxxx"
 
+send_success = SuccessDesktop()
+send = SendDesktop()
+
 try:
     print(1/0)  
-    SuccessDesktop().__call__() #1 success sender          
+    send_success() #1 success sender          
 
 except ExceptDesktop as e:      #2 except sender            
     sys.exit()
 
-SendDesktop().__call__()        #3 customized sender         
+send()        #3 customized sender         
 ```
 
 <br>
