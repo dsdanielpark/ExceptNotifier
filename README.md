@@ -184,7 +184,7 @@ ExceptChime, ExceptTelegram, ExceptDiscord, ExceptSMS, ExceptMail, ExceptKakao, 
 ```python
 import sys, os
 from ExceptNotifier import ExceptTelegram
-sys.excepthook = ExceptTelegram.__call__
+sys.excepthook = ExceptTelegram()
 
 os.environ['_TELEGRAM_TOKEN'] = "xxxx"
 
@@ -206,7 +206,7 @@ You can receive debugging information from ChatGPT via OpenAI's API when using t
 ```python
 import sys, os
 from ExceptNotifier import ExceptTelegram
-sys.excepthook = ExceptTelegram.__call__
+sys.excepthook = ExceptTelegram()
 
 os.environ['_TELEGRAM_TOKEN'] = "xxxx"
 os.environ['_OPEN_AI_MODEL']="gpt-3.5-turbo"
@@ -393,7 +393,9 @@ import os
 from ExceptNotifier import SendTelegram 
 os.environ['_TELEGRAM_TOKEN'] = "xxxxx"
 
-SendTelegram().__call__()         # Sending telegram message
+send = SendTelegram()
+
+send()         # Sending telegram message
 ```
 
 ## Sender in Ipython
