@@ -4,11 +4,11 @@
 import requests
 
 
-def send_slack_msg(_SLACK_WEBHOOK_URL: str, msg: str) -> dict:
+def send_slack_msg(slack_webhook_url: str, msg: str) -> dict:
     """Send message to chat room through slack app's api.
 
-    :param _SLACK_WEBHOOK_URL: _SLACK_WEBHOOK_URL from slack app
-    :type _SLACK_WEBHOOK_URL: str
+    :param slack_webhook_url: slack_webhook_url from slack app
+    :type slack_webhook_url: str
     :param msg: Message text
     :type msg: str
     :return: Response according to REST API request
@@ -16,12 +16,12 @@ def send_slack_msg(_SLACK_WEBHOOK_URL: str, msg: str) -> dict:
     """
 
     data = {"text": msg}
-    resp = requests.post(url=_SLACK_WEBHOOK_URL, json=data)
+    resp = requests.post(url=slack_webhook_url, json=data)
 
     return resp
 
 
 # if __name__ == "__main__":
-#     _SLACK_WEBHOOK_URL = "xxxxx"
+#     slack_webhook_url = "xxxxx"
 #     msg = "Test Message"
-#     send_slack_msg(_SLACK_WEBHOOK_URL, msg)
+#     send_slack_msg(slack_webhook_url, msg)

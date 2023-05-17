@@ -174,17 +174,3 @@ class SendDiscord:
 
         send_discord_msg(environ["_DISCORD_WEBHOOK_URL"], data["text"][:2000])
 
-
-# if __name__ == "__main__":
-#     """Get your _DISCORD_WEBHOOK_URL from HERE.
-# #     https://discord.com/developers/docs/resources/webhook"""
-#     environ['_OPEN_AI_API'] = "xxxxxxxxxxxxx"  #optional
-#     environ['_OPEN_AI_MODEL'] = "gpt-3.5-turbo" #optional
-#     environ['_DISCORD_WEBHOOK_URL'] = "xxxxxxxxxxxxxxxxx"
-#     sys.excepthook = ExceptDiscord.__call__
-#     try:
-#         print(1 / 20)
-#         SuccessDiscord().__call__()  # 1 success sender
-#     except ExceptDiscord as e:  # 2 except sender
-#         sys.exit()
-#     SendDiscord().__call__()  # 3 customized sender

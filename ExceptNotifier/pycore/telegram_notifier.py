@@ -170,19 +170,3 @@ class SendTelegram:
 
         send_telegram_msg(environ["_TELEGRAM_TOKEN"], data["text"])
 
-
-# if __name__ == "__main__":
-#     """Get your bot from botfather.
-#     https://core.telegram.org/bots/tutorial"""
-#     environ['_TELEGRAM_TOKEN'] = "xxxxxxxxx"
-#     # environ['_OPEN_AI_API'] = "xxxxxxxxxxxxx"  #optional
-#     # environ['_OPEN_AI_MODEL'] = "gpt-3.5-turbo" #optional
-#     sys.excepthook = ExceptTelegram.__call__
-#     try:
-#         print(1 / 0)
-#         SuccessTelegram().__call__()  # 1 success sender
-#     except ExceptTelegram as e:  # 2 except sender
-#         sys.exit()
-#     SendTelegram().__call__()  # 3 customized sender
-#     send = SendTelegram()  # You can use it like this, too.
-#     send()

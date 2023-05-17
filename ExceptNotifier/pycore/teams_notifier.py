@@ -171,16 +171,3 @@ class SendTeams:
 
         send_teams_msg(environ["_TEAMS_WEBHOOK_URL"], data["text"])
 
-
-# if __name__ == "__main__":
-#     """Follow next page"""
-#     environ['_TEAMS_WEBHOOK_URL'] = "microsoft webhook _TEAMS_WEBHOOK_URL"
-# #     environ['_OPEN_AI_API'] = "xxxxxxxxxxxxx"  #optional
-# #     environ['_OPEN_AI_MODEL'] = "gpt-3.5-turbo" #optional
-#     sys.excepthook = ExceptTeams.__call__
-#     try:
-#         print(1 / 20)
-#         SuccessTeams().__call__()  # 1 success sender
-#     except ExceptTeams as e:  # 2 except sender
-#         sys.exit()
-#     SendTeams().__call__()  # 3 customized sender

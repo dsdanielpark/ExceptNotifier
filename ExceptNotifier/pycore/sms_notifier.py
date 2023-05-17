@@ -212,23 +212,3 @@ class SendSMS:
             environ["_RECIPIENT_PHONE_NUMBER"],
             data["text"],
         )
-
-
-# if __name__ == "__main__":
-#     """https://www.twilio.com/en-us"""
-#     environ['_TWILIO_SID'] = "xxxx"
-#     environ['_TWILIO_TOKEN'] = "yyyyyy"
-#     environ['_RECIPIENT_PHONE_NUMBER'] = ("+aaaaaa",)
-#     environ['_SENDER_PHONE_NUMBER'] = ("+bbbbbb",)
-#     sys.excepthook = ExceptSMS.__call__
-# #     environ['_OPEN_AI_API'] = "xxxxxxxxxxxxx"  #optional
-# #     environ['_OPEN_AI_MODEL'] = "gpt-3.5-turbo" #optional
-#     try:
-#         print(1 / 10)
-#         SuccessSMS().__call__()  # 1 success sender
-#     except ExceptSMS as e:  # 2 except sender
-#         with open("exceptError.pickle", "wb") as f:
-#             pickle.dump(e, f)
-#         raise pickle.load(f)
-#         sys.exit()
-#     SendSMS().__call__()  # 3 customized sender

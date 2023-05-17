@@ -168,18 +168,3 @@ class SendLine:
         data = {"text": exceptNotifier["SUBJECT"] + exceptNotifier["BODY"]}
 
         send_line_msg(environ["_LINE_NOTIFY_API_TOKEN"], data["text"])
-
-
-# if __name__ == "__main__":
-#     """Get your URL from HERE.
-#     https://notify-bot.line.me/my/"""
-# #     environ['_OPEN_AI_API'] = "xxxxxxxxxxxxx"  #optional
-# #     environ['_OPEN_AI_MODEL'] = "gpt-3.5-turbo" #optional
-#     environ['_LINE_NOTIFY_API_TOKEN'] = "xxxxxxxxxxx"
-#     sys.excepthook = ExceptLine.__call__
-#     try:
-#         print(1 / 20)
-#         SuccessLine().__call__()  # 1 success sender
-#     except ExceptLine as e:  # 2 except sender
-#         sys.exit()
-#     SendLine().__call__()  # 3 customized sender

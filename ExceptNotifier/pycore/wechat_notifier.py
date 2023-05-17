@@ -160,20 +160,3 @@ class SendWechat:
         data = {"text": exceptNotifier["SUBJECT"] + exceptNotifier["BODY"]}
 
         send_wechat_msg(environ["_WECHAT_WEBHOOK_URL"], data["text"])
-
-
-# if __name__ == "__main__":
-#     """Get your wechat webhook URL.
-#     https://work.weixin.qq.com/api/doc/90000/90136/91770"""
-#     environ['_WECHAT_WEBHOOK_URL'] = "xxxxxxxxxxx"
-#     # environ['_OPEN_AI_API'] = "xxxxxxxxxxxxx"  #optional
-#     # environ['_OPEN_AI_MODEL'] = "gpt-3.5-turbo" #optional
-#     sys.excepthook = ExceptWechat.__call__
-#     try:
-#         print(1 / 0)
-#         SuccessWechat().__call__()  # 1 success sender
-#     except ExceptWechat as e:  # 2 except sender
-#         sys.exit()
-#     SendWechat().__call__()  # 3 customized sender
-#     send = SendWechat()  # You can use it like this, too.
-#     send() # 3 cusotomized sender

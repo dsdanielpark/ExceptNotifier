@@ -239,19 +239,3 @@ class SendMail:
         smtp.send_message(message)
         smtp.quit()
 
-
-# if __name__ == "__main__":
-#     # Set global variables
-# #     environ['_OPEN_AI_API'] = "xxxxxxxxxxxxx"  #optional
-# #     environ['_OPEN_AI_MODEL'] = "gpt-3.5-turbo" #optional
-#     global _GAMIL_RECIPIENT_ADDR, _GMAIL_SENDER_ADDR, _GMAIL_APP_PASSWORD_OF_SENDER
-#     _GAMIL_RECIPIENT_ADDR = "xxx@gmail.com"
-#     _GMAIL_SENDER_ADDR = "xxxx@gmail.com"
-#     _GMAIL_APP_PASSWORD_OF_SENDER = "xxxxxxxxxxx"
-#     sys.excepthook = ExceptMail.__call__
-#     try:
-#         print(1 / 0)
-#         SuccessMail().__call__()  # 1 success sender
-#     except ExceptMail as e:  # 2 except sender
-#         sys.exit()
-#     SendMail().__call__()  # 3 Any line sender
