@@ -3,6 +3,7 @@ Development Status :: 3 - Alpha <br>
 *Copyright (c) 2023 MinWoo Park, South Korea*<br>
 
 Preparing a `beta release`, including usability improvements, refactoring, and document simplification.
+You can contribute by reading the [contribution rules and guidelines](https://github.com/dsdanielpark/ExceptNotifier/blob/main/.github/CONTRIBUTING.md).
 
 ![](https://exceptnotifier.readthedocs.io/en/latest/_images/logo.png)
 
