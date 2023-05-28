@@ -16,7 +16,7 @@ Core maintainer: @[dsdanielpark](https://github.com/dsdanielpark)
 2. Please submit a Pull Request after completing documentation, QA, refactoring, and feature implementation for one or more applications.
 3. If you have suggestions for a better structure, create a Discussion or submit a Draft Pull Request for code review.
 4. Pull Requests will be accepted if the contributor has made sufficient contributions.
-   - (Minor fixes such as typos, black formatting, or very small documentation changes may not be accepted as Pull Requests, but we will review and make the necessary modifications.)
+   - Minor fixes such as typos, black formatting, or very small documentation changes may not be accepted as Pull Requests, but we will review and make the necessary modifications.
 5. Exceptionally, contributions related to fixing non-functional code or bugs will be considered.
 6. Contribution rules may be added by the community.
 

@@ -62,12 +62,12 @@ Applicable to both [IPython](https://ipython.org/) and [Python](https://www.pyth
 <br>
 
 # Install
-The latest stable release (and required dependencies) can be installed from PyPI:
+The latest stable release (and required dependencies) can be installed from PyPI(v0.2.11):
 ```
 pip install ExceptNotifier
 ```
 
-You may instead want to use the development version from Github:
+You may instead want to use the development version from Github for contributing:
 ```
 pip install git+https://github.com/dsdanielpark/ExceptNotifier.git
 ```
@@ -1079,7 +1079,8 @@ Sincerely grateful for any reports on new features or bugs. Your valuable feedba
 [[Open a new issue]](https://github.com/dsdanielpark/ExceptNotifier/issues) 
  
 # Contributing Guide
-I will announce contributing rules when the code development status changes to beta soon. Until then, please create an issue for feature requests and bug reports. I would greatly appreciate it if you use it a lot and give your opinions generously. Thank you sincerely.
+You can contribute to the project by referring to the following CONTRIBUTING GUIDE document.
+- https://github.com/dsdanielpark/ExceptNotifier/blob/main/.github/CONTRIBUTING.md
 
 # Code of Conduct
 Everyone participating in the `ExceptNotifier` project, and in particular in the issue tracker, pull requests, and social media activity, is expected to treat other people with respect and more generally to follow the guidelines articulated in [the Python Community Code of Conduct](https://www.python.org/psf/conduct/).

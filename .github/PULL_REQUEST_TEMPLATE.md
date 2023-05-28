@@ -1,6 +1,6 @@
 To make a contribution, you must ensure that one or more applications have implemented (or extended) complete functionality or have been refactored and are functioning correctly.
 
-Please make sure to read the Contributing rules before submitting a Pull Request.
+Please make sure to read the [Contributing rules](https://github.com/dsdanielpark/ExceptNotifier/blob/main/.github/CONTRIBUTING.md) before submitting a Pull Request.
 
 <!--- Provide a general summary of your changes in the Title above -->
 
