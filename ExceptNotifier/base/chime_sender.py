@@ -23,4 +23,3 @@ def send_chime_msg(chime_webhook_url: str, msg: str) -> dict:
     resp = http.request("POST", url, body=encoded_msg)
 
     return resp
-

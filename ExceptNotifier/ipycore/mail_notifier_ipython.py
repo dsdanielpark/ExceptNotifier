@@ -52,7 +52,9 @@ def ExceptMailIpython(
         try:
             error_message = f"error sheel=={shell}, error_type_document=={etype.__doc__}, error_value=={evalue}, error message in ipython cell=={sstb}"
             advice_msg = receive_openai_advice(
-                environ["_OPEN_AI_MODEL"], environ["_OPEN_AI_API"], error_message,
+                environ["_OPEN_AI_MODEL"],
+                environ["_OPEN_AI_API"],
+                error_message,
             )  # NO-QA
             exceptNotifier_openai = {
                 "SUBJECT": "[Except AI Debugging] Error! chatGPT Debugging guide.",
@@ -73,7 +75,8 @@ def ExceptMailIpython(
         try:
             error_message = f"error sheel=={shell}, error_type_document=={etype.__doc__}, error_value=={evalue}, error message in ipython cell=={sstb}"
             advice_msg = receive_bard_advice(
-                environ["_BARD_API_KEY"], error_message,
+                environ["_BARD_API_KEY"],
+                error_message,
             )  # NO-QA
             exceptNotifier_openai = {
                 "SUBJECT": "[Except AI Debugging] Error! Google Bard Debugging guide.",

@@ -127,8 +127,7 @@ class ExceptTeams(BaseException):
 
 
 class SuccessTeams:
-    """Sending success message to microsoft teams
-    """
+    """Sending success message to microsoft teams"""
 
     def __init__(self) -> None:
         pass
@@ -150,8 +149,7 @@ class SuccessTeams:
 
 
 class SendTeams:
-    """Sending message to microsoft teams
-    """
+    """Sending message to microsoft teams"""
 
     def __init__(self) -> None:
         pass
@@ -170,4 +168,3 @@ class SendTeams:
         data = {"text": exceptNotifier["SUBJECT"] + exceptNotifier["BODY"]}
 
         send_teams_msg(environ["_TEAMS_WEBHOOK_URL"], data["text"])
-

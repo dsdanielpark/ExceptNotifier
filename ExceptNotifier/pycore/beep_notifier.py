@@ -51,8 +51,7 @@ class ExceptBeep(BaseException):
 
 
 class SuccessBeep:
-    """Success beep
-    """
+    """Success beep"""
 
     def __init__(self) -> None:
         pass
@@ -67,8 +66,7 @@ class SuccessBeep:
 
 
 class SendBeep:
-    """Send beep
-    """
+    """Send beep"""
 
     def __init__(self) -> None:
         pass
@@ -78,4 +76,3 @@ class SendBeep:
             beep(environ["BEEP_TIME"])
         else:
             beep()
-

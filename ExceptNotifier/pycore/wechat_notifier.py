@@ -117,8 +117,7 @@ class ExceptWechat(BaseException):
 
 
 class SuccessWechat:
-    """Sending success message to wechat
-    """
+    """Sending success message to wechat"""
 
     def __init__(self) -> None:
         pass
@@ -140,8 +139,7 @@ class SuccessWechat:
 
 
 class SendWechat:
-    """Sending message to wechat
-    """
+    """Sending message to wechat"""
 
     def __init__(self) -> None:
         pass

@@ -5,8 +5,7 @@ import os, sys
 
 # QA 23-04-22
 if __name__ == "__main__":
-
-    """Get your URL from HERE. 
+    """Get your URL from HERE.
     https://notify-bot.line.me/my/"""
 
     os.environ["_LINE_NOTIFY_API_TOKEN"] = "xxxxxx"

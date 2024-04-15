@@ -125,8 +125,7 @@ class ExceptLine(BaseException):
 
 
 class SuccessLine:
-    """Sending success message to Line
-    """
+    """Sending success message to Line"""
 
     def __init__(self) -> None:
         pass
@@ -148,8 +147,7 @@ class SuccessLine:
 
 
 class SendLine:
-    """Sending success message to Line
-    """
+    """Sending success message to Line"""
 
     def __init__(self) -> None:
         pass

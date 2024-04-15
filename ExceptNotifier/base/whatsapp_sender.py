@@ -11,7 +11,7 @@ def send_whatsapp_msg(
     recipient_type: str = "individual",
 ) -> dict:
     """Send me a message via whatsapp.
-    However, from v16 api, it seems to have been changed so that templates that have passed deliberation can be sent. 
+    However, from v16 api, it seems to have been changed so that templates that have passed deliberation can be sent.
     Therefore, it is *NOT used* by ExceptNotifier.
 
     :param msg: Message content (Cannot be used as it is not a template)

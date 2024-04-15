@@ -5,8 +5,7 @@ from ExceptNotifier import ExceptTelegram, SuccessTelegram, SendTelegram
 
 # QA 23-04-22
 if __name__ == "__main__":
-
-    """Get your bot from botfather. 
+    """Get your bot from botfather.
     https://core.telegram.org/bots/tutorial"""
 
     os.environ["_TELEGRAM_TOKEN"] = "xxxxxxxxxx"

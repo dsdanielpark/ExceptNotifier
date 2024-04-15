@@ -3,9 +3,8 @@ from ExceptNotifier import ExceptChime, SuccessChime, SendChime
 import os, sys
 
 if __name__ == "__main__":
-
     # Get your slack bot and enter _CHIME_WEBHOOK_URL
-    """Get your Webhook _CHIME_WEBHOOK_URL from your chatroom. 
+    """Get your Webhook _CHIME_WEBHOOK_URL from your chatroom.
     https://docs.aws.amazon.com/chime/latest/ag/webhooks.html"""
 
     os.environ["_CHIME_WEBHOOK_URL"] = "xxxx"

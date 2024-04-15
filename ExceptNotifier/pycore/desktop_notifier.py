@@ -126,8 +126,7 @@ class ExceptDesktop(BaseException):
 
 
 class SuccessDesktop:
-    """Sending success message to Desktop
-    """
+    """Sending success message to Desktop"""
 
     def __init__(self) -> None:
         pass
@@ -149,8 +148,7 @@ class SuccessDesktop:
 
 
 class SendDesktop:
-    """Sending message to Desktop
-    """
+    """Sending message to Desktop"""
 
     def __init__(self) -> None:
         pass
@@ -169,4 +167,3 @@ class SendDesktop:
         send_desktop_msg(
             title=exceptNotifier["SUBJECT"][:20], message=exceptNotifier["BODY"][:200]
         )
-

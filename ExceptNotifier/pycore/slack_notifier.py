@@ -28,7 +28,6 @@ class ExceptSlack(BaseException):
         super().__init__(*args)
 
     def __call__(etype, value, tb):
-
         excType = re.sub(
             "(<(type|class ')|'exceptions.|'>|__main__.)", "", str(etype)
         ).strip()
@@ -123,8 +122,7 @@ class ExceptSlack(BaseException):
 
 
 class SuccessSlack:
-    """Sending success message to Slack
-    """
+    """Sending success message to Slack"""
 
     def __init__(self) -> None:
         pass
@@ -145,8 +143,7 @@ class SuccessSlack:
 
 
 class SendSlack:
-    """Sending message to Slack
-    """
+    """Sending message to Slack"""
 
     def __init__(self) -> None:
         pass
@@ -164,4 +161,3 @@ class SendSlack:
 
         data = {"text": exceptNotifier["SUBJECT"] + exceptNotifier["BODY"]}
         send_slack_msg(environ["_SLACK_WEBHOOK_URL"], data["text"])
-

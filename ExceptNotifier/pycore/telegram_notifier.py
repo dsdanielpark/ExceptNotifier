@@ -28,7 +28,6 @@ class ExceptTelegram(BaseException):
         super().__init__(*args)
 
     def __call__(etype, value, tb):
-
         excType = re.sub(
             "(<(type|class ')|'exceptions.|'>|__main__.)", "", str(etype)
         ).strip()
@@ -126,8 +125,7 @@ class ExceptTelegram(BaseException):
 
 
 class SuccessTelegram:
-    """Sending success message to telegram
-    """
+    """Sending success message to telegram"""
 
     def __init__(self) -> None:
         pass
@@ -149,8 +147,7 @@ class SuccessTelegram:
 
 
 class SendTelegram:
-    """Sending message to telegram
-    """
+    """Sending message to telegram"""
 
     def __init__(self) -> None:
         pass
@@ -169,4 +166,3 @@ class SendTelegram:
         data = {"text": exceptNotifier["SUBJECT"] + exceptNotifier["BODY"]}
 
         send_telegram_msg(environ["_TELEGRAM_TOKEN"], data["text"])
-

@@ -28,7 +28,6 @@ class ExceptMail(BaseException):
         super().__init__(*args)
 
     def __call__(etype, value, tb):
-
         excType = re.sub(
             "(<(type|class ')|'exceptions.|'>|__main__.)", "", str(etype)
         ).strip()
@@ -82,7 +81,8 @@ class ExceptMail(BaseException):
         )
         smtp = smtplib.SMTP_SSL(SMTP_SERVER, 465)
         smtp.login(
-            environ["_GMAIL_SENDER_ADDR"], environ["_GMAIL_APP_PASSWORD_OF_SENDER"],
+            environ["_GMAIL_SENDER_ADDR"],
+            environ["_GMAIL_APP_PASSWORD_OF_SENDER"],
         )
         smtp.sendmail(
             exceptNotifier["FROM"], exceptNotifier["TO"], exceptNotifier["ALL"]
@@ -98,7 +98,9 @@ class ExceptMail(BaseException):
                     line[3],
                 )
                 advice_msg += receive_openai_advice(
-                    environ["_OPEN_AI_MODEL"], environ["_OPEN_AI_API"], error_message,
+                    environ["_OPEN_AI_MODEL"],
+                    environ["_OPEN_AI_API"],
+                    error_message,
                 )  # NO-QA
                 exceptNotifier = {
                     "TO": environ["_GAMIL_RECIPIENT_ADDR"],
@@ -122,7 +124,8 @@ class ExceptMail(BaseException):
                     line[3],
                 )
                 advice_msg += receive_bard_advice(
-                    environ["_BARD_API_KEY"], error_message,
+                    environ["_BARD_API_KEY"],
+                    error_message,
                 )  # NO-QA
                 exceptNotifier = {
                     "TO": environ["_GAMIL_RECIPIENT_ADDR"],
@@ -180,8 +183,7 @@ class ExceptMail(BaseException):
 
 
 class SuccessMail:
-    """Sending success message to Gmail
-    """
+    """Sending success message to Gmail"""
 
     def __init__(self) -> None:
         pass
@@ -191,7 +193,8 @@ class SuccessMail:
         SMTP_PORT = 465
         smtp = smtplib.SMTP_SSL(SMTP_SERVER, SMTP_PORT)
         smtp.login(
-            environ["_GMAIL_SENDER_ADDR"], environ["_GMAIL_APP_PASSWORD_OF_SENDER"],
+            environ["_GMAIL_SENDER_ADDR"],
+            environ["_GMAIL_APP_PASSWORD_OF_SENDER"],
         )
         message = EmailMessage()
         start_time = datetime.datetime.now()
@@ -211,8 +214,7 @@ class SuccessMail:
 
 
 class SendMail:
-    """Sending message to Gmail
-    """
+    """Sending message to Gmail"""
 
     def __init__(self) -> None:
         pass
@@ -222,7 +224,8 @@ class SendMail:
         SMTP_PORT = 465
         smtp = smtplib.SMTP_SSL(SMTP_SERVER, SMTP_PORT)
         smtp.login(
-            environ["_GMAIL_SENDER_ADDR"], environ["_GMAIL_APP_PASSWORD_OF_SENDER"],
+            environ["_GMAIL_SENDER_ADDR"],
+            environ["_GMAIL_APP_PASSWORD_OF_SENDER"],
         )
         message = EmailMessage()
         start_time = datetime.datetime.now()
@@ -238,4 +241,3 @@ class SendMail:
         message["To"] = environ["_GAMIL_RECIPIENT_ADDR"]
         smtp.send_message(message)
         smtp.quit()
-

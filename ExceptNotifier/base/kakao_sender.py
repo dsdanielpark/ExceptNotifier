@@ -33,4 +33,3 @@ def send_kakao_msg(kakao_token_path: str, msg: str) -> dict:
     resp = requests.post(url, headers=headers, data=data)
 
     return resp
-

@@ -4,9 +4,8 @@ import os, sys
 
 # QA 23-04-22
 if __name__ == "__main__":
-
     # Get your slack bot and enter _SLACK_WEBHOOK_URL
-    """Get your _SLACK_WEBHOOK_URL from HERE. 
+    """Get your _SLACK_WEBHOOK_URL from HERE.
     https://api.slack.com/messaging/webhooks#create_a_webhook"""
 
     os.environ["_SLACK_WEBHOOK_URL"] = "xxxxx"

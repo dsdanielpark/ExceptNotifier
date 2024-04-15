@@ -157,8 +157,7 @@ class ExceptSMS(BaseException):
 
 
 class SuccessSMS:
-    """Sending success message to SMS
-    """
+    """Sending success message to SMS"""
 
     def __init__(self) -> None:
         pass
@@ -186,8 +185,7 @@ class SuccessSMS:
 
 
 class SendSMS:
-    """Sending message to SMS
-    """
+    """Sending message to SMS"""
 
     def __init__(self) -> None:
         pass

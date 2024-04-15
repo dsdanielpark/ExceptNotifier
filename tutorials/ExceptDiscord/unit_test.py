@@ -3,9 +3,8 @@ from ExceptNotifier import ExceptDiscord, SuccessDiscord, SendDiscord
 import os, sys
 
 if __name__ == "__main__":
-
     # Get your slack bot and enter _DISCORD_WEBHOOK_URL
-    """Get your _DISCORD_WEBHOOK_URL from HERE. 
+    """Get your _DISCORD_WEBHOOK_URL from HERE.
     https://discord.com/developers/docs/resources/webhook"""
 
     os.environ["_DISCORD_WEBHOOK_URL"] = "xxxxxxx"

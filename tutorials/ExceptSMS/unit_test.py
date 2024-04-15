@@ -4,7 +4,6 @@ import os, sys
 
 # QA 23-04-22
 if __name__ == "__main__":
-
     """https://www.twilio.com/en-us"""
 
     os.environ["_TWILIO_SID"] = "xxxxx"

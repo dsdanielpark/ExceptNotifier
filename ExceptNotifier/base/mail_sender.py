@@ -42,4 +42,3 @@ def send_gmail_msg(
     smtp.quit()
 
     return resp
-

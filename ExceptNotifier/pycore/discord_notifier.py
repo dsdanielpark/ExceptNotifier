@@ -27,7 +27,6 @@ class ExceptDiscord(BaseException):
         super().__init__(*args)
 
     def __call__(etype, value, tb):
-
         excType = re.sub(
             "(<(type|class ')|'exceptions.|'>|__main__.)", "", str(etype)
         ).strip()
@@ -131,8 +130,7 @@ class ExceptDiscord(BaseException):
 
 
 class SuccessDiscord:
-    """Sending success message to Discord
-    """
+    """Sending success message to Discord"""
 
     def __init__(self) -> None:
         pass
@@ -153,8 +151,7 @@ class SuccessDiscord:
 
 
 class SendDiscord:
-    """Sending message to Discord
-    """
+    """Sending message to Discord"""
 
     def __init__(self) -> None:
         pass
@@ -173,4 +170,3 @@ class SendDiscord:
         data = {"text": exceptNotifier["SUBJECT"] + exceptNotifier["BODY"]}
 
         send_discord_msg(environ["_DISCORD_WEBHOOK_URL"], data["text"][:2000])
-
