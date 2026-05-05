@@ -65,7 +65,7 @@ class ExceptDiscord(BaseException):
                 exceptNotifier["BODY"] += "\n\t%20s = " % key
                 try:
                     exceptNotifier["BODY"] += str(val)
-                except:
+                except Exception:
                     exceptNotifier["BODY"] += "<ERROR WHILE PRINTING VALUE>"
 
         print(exceptNotifier["BODY"])
@@ -121,7 +121,7 @@ class ExceptDiscord(BaseException):
                 _DISCORD_WEBHOOK_URL, adapter=RequestsWebhookAdapter()
             )
             resp = webhook.send(msg)
-        except:
+        except Exception:
             from discord import SyncWebhook
 
             webhook = SyncWebhook.from_url(_DISCORD_WEBHOOK_URL)  # Initializing webhook
